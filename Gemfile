@@ -37,4 +37,6 @@ gem 'rspec-rails'
 gem 'devise' 
 gem 'ruby-debug19' 
 gem 'ruby-debug-base19x' 
-gem 'ruby-debug-ide' #'0.4.6' 
+gem 'ruby-debug-ide' #'0.4.6'
+
+#Lenin
