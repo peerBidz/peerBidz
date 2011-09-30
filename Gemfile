@@ -40,4 +40,7 @@ gem 'ruby-debug-base19x'
 gem 'ruby-debug-ide' #'0.4.6'
 
 #Added for Heroku
-gem 'pg' 
+gem 'pg'
+
+#Added for rspec
+gem 'webrat'
