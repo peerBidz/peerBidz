@@ -1,11 +1,13 @@
 .bundle
 db/*.sqlite3
 log/*.log
-tmp/
+tmp/*
+doc/
+*.swp
+*~
+.project
+.DS_Store
 .idea/*
 coverage/*
 doc/coverage/*
-tmp/*
-*DS_Store
 .rspec
-.bundle
