@@ -112,3 +112,11 @@ footer {
 footer nav {
   float: none;
 }
+
+/* Sidebar */
+.sidebar {
+  width: 20%;
+  padding: 1em;
+  vertical-align: top;
+  background: #bbb;
+}

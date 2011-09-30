@@ -27,16 +27,6 @@ describe PagesController do
     end
   end
 
-  describe "GET 'items'" do
-    it "should be successful" do
-      get 'items'
-      response.should be_success
-    end
 
-    it "should have the right title" do
-      get 'items'
-      response.should have_selector("title", :content => "| Items")
-    end
-  end
 end
 
