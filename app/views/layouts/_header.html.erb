@@ -6,6 +6,7 @@
       <li><%= link_to "Home", root_path %></li>
       <li><%= link_to "Sign In", '#' %></li>
       <li><%= link_to "Register", register_path %></li>
+      <%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %>
     </ul>
   </nav>
 </header>

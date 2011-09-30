@@ -1,6 +1,8 @@
 BestBay::Application.routes.draw do
 
 
+  devise_for :users
+
   resources :items
 
   match '/register',  :to => 'users#new'
