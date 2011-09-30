@@ -49,3 +49,4 @@ gem 'pg'
 
 #Added for rspec
 gem 'webrat'
+
