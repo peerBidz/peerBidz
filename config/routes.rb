@@ -5,7 +5,7 @@ BestBay::Application.routes.draw do
 
   resources :items
 
-  match '/register',  :to => 'users#new'
+  #match '/register',  :to => 'users#new'
   match '/contact', :to => 'pages#contact'
   match '/items',   :to => 'pages#items'
   match '/help',    :to => 'pages#help'
