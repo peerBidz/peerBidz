@@ -1,30 +1,86 @@
-.container {
-  width: 1080px;
+html, body {
+	margin: 0;
+	padding: 0;
 }
 
 body {
-  background: #fff;
+	font-family: Arial, Helvetica, Verdana, Sans-serif;
+	font-size: 12px;
+	color: #666666;
+	background: #ffffff;
+}
+
+.hidden {
+	display: none;
+}
+
+#page-container {
+	width: 850px;
+	margin: auto;
+}
+
+#main-nav {
+	height: 50px;
+	font-size: 12px;
+	padding: 10px;
+	text-align: right;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 header {
-  padding-top: 20px;
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+footer {
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#sidebar-a {
+	float: left;
+	width: 180px;
+	line-height: 18px;
+	font-size: 20px;
+}
+
+#content {
+	margin-left: 180px;
+	line-height: 18px;
+}
+
+h1 {
+	margin: 0;
+	padding: 0;
+}
+
+#content h2 {
+	margin: 0;
+	padding: 0;
+	padding-bottom: 15px;
+}
+
+#content p {
+	margin: 0;
+	padding: 0;
+	padding-bottom: 15px;
+}
+
+#content .padding {
+	padding: 25px;
+}
+
+
+/* CSS FROM RAILS TUTORIAL:  */
 header img {
   padding: 1em;
   background: #fff;
 }
 
-section {
-  margin-top: 1em;
-  font-size: 120%;
-  padding: 20px;
-  background: #fff;
-}
-
-section h1 {
-  font-size: 200%;
-}
 
 /* Links */
 
@@ -76,47 +132,4 @@ nav ul li a:visited {
 
 nav ul li a:hover {
   text-decoration: underline;
-}
-
-/* Sign up button */
-
-a.signup_button {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  text-align: center;
-  width: 190px;
-  color: #fff;
-  background: #006400;
-  font-size: 150%;
-  font-weight: bold;
-  padding: 20px;
-}
-
-/* Round corners */
-
-.round {
-  -moz-border-radius:    10px;
-  -webkit-border-radius: 10px;
-  border-radius:         10px;
-}
-
-footer {
-  text-align: center;
-  margin-top: 10px;
-  width: 1080px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-footer nav {
-  float: none;
-}
-
-/* Sidebar */
-.sidebar {
-  width: 20%;
-  padding: 1em;
-  vertical-align: top;
-  background: #bbb;
 }
