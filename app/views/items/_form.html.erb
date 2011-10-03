@@ -24,6 +24,14 @@
     <%= f.check_box :condition %>
   </div>
   <div class="field">
+  	<select name="condition">
+  		<option value=""></option>
+  		<option value="1" selected="selected">Administrator</option>
+  		<option value="2">User</option>
+  		<option value="3">Editor</option>
+	</select>
+  </div>
+  <div class="field">
     <%= f.label :starting_price %><br />
     <%= f.text_field :starting_price %>
   </div>

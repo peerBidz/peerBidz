@@ -13,6 +13,7 @@ tmp/*
 .project
 .rspec
 .bundle
+*.orig
 doc/
 *.swp
 *~
