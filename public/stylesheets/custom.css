@@ -10,13 +10,13 @@ body {
 	background: #ffffff;
 }
 
-.hidden {
-	display: none;
+.container {
+    width: 850px;
+    margin: auto;
 }
 
-#page-container {
-	width: 850px;
-	margin: auto;
+.hidden {
+	display: none;
 }
 
 #main-nav {
@@ -36,8 +36,7 @@ header {
 
 footer {
     width: 850px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
 }
 
 
