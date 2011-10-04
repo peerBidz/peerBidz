@@ -1,63 +1,82 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-<head>
+<% if user_signed_in? %>
+    <div class="container">
+      <div class="hero-unit">
+        <h2>Welcome back!</h2>
 
-<title>Home page</title>
-<p>
-  Welcome to BESTBAY !
-</p>
+        <p>Check out the hot items below</p>
+      </div>
+    </div>
+<% else %>
+    <div class="container">
+      <div class="hero-unit">
+        <h1>Welcome to BestBay!</h1>
+      </div>
+    </div>
+<% end %>
 
-<!--<table class="sidebar">
-  <tr><td>category 1</td></tr>
-  <tr><td>category 2</td></tr>
-  <tr><td>category 3</td></tr>
-  <tr><td>category 4</td></tr>
-  <tr><td>category 5</td></tr>
-</table>  -->
+<!-- Example row of columns -->
+<div class="row">
+  <div class="span6">
+    <h2>Apple iPod touch - $188</h2>
 
-</head>
+    <p>Apple iPod touch 4th Generation (8 GB) (Latest Model). The Gyro+ Accelerometer of the iPod touch 4G enables
+      better motion sensing like full 3D attitude, rotation rate and user acceleration, making gaming even more
+      enjoyable. With a built-in editing feature, you do not have to wait to get to your PC to edit your videos; you can
+      do that right away on this Apple media player. The two cameras of this digital media player shoot amazing videos
+      in HD 720p resolution while the integrated microphone can record conversations or music simultaneously.
+    </p>
 
-<body>
+    <p><a class="btn" href="#">View details &raquo;</a></p>
+  </div>
+  <div class="span5">
+    <h2>Floor Lamp - $12</h2>
 
-<div id="page-container">
+    <p>Gives a lot of light for the whole room</p>
 
-	<div id="sidebar-a">
-		<div class="padding">
-			Electronics<br />
-			Fashion<br />
-			Books<br />
-			Furniture<br />
-		</div>
-	</div>
+    <p><a class="btn" href="#">View details &raquo;</a></p>
+  </div>
+  <div class="span5">
+    <h2>Lenovo Thinkpad - $1000</h2>
 
+    <p>Intel i7, 8GB RAM ......</p>
 
-	<div id="content">
-		<table border="1">
-			<tr>
-				<td>
-				Item 1.  $20.00
-				Ending in: 20 mins
-				</td>
-				<td>
-				Item 2.  $11.50
-				Ending in: 1 hr, 20 mins
-				</td>
-			</tr>
-			<tr>
-				<td>
-				Item 3.  $15.00
-				Ending in: 3 days, 4 hrs, 20 mins
-				</td>
-				<td>
-				Item 4.  $140.90
-				Ending in: 7 days, 1 hr, 20 mins
-				</td>
-			</tr>
-		</table>
-	</div>
-
+    <p><a class="btn" href="#">View details &raquo;</a></p>
+  </div>
 </div>
 
-</body>
-</html>
+<hr>
+
+<!-- Example row of columns -->
+<div class="row">
+  <div class="span6">
+    <h2>Apple iPad - $500</h2>
+
+    <p>Apple iPod touch 4th Generation (8 GB) (Latest Model). The Gyro+ Accelerometer of the iPod touch 4G enables
+      better motion sensing like full 3D attitude, rotation rate and user acceleration, making gaming even more
+      enjoyable. With a built-in editing feature, you do not have to wait to get to your PC to edit your videos; you can
+      do that right away on this Apple media player. The two cameras of this digital media player shoot amazing videos
+      in HD 720p resolution while the integrated microphone can record conversations or music simultaneously.</p>
+
+    <p><a class="btn" href="#">View details &raquo;</a></p>
+  </div>
+  <div class="span5">
+    <h2>Kindle Fire -$200</h2>
+
+    <p>Apple iPod touch 4th Generation (8 GB) (Latest Model). The Gyro+ Accelerometer of the iPod touch 4G enables
+      better motion sensing like full 3D attitude, rotation rate and user acceleration, making gaming even more
+      enjoyable. With a built-in editing feature, you do not have to wait to get to your PC to edit your videos; you can
+      do that right away on this Apple media player. The two cameras of this digital media player shoot amazing videos
+      in HD 720p resolution while the integrated microphone can record conversations or music simultaneously.</p>
+
+    <p><a class="btn" href="#">View details &raquo;</a></p>
+  </div>
+  <div class="span5">
+    <h2>Nike Shoes - $50</h2>
+
+    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis
+      euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo
+      sit amet risus.</p>
+
+    <p><a class="btn" href="#">View details &raquo;</a></p>
+  </div>
+</div>
