@@ -133,3 +133,15 @@ nav ul li a:visited {
 nav ul li a:hover {
   text-decoration: underline;
 }
+
+.header-links {
+    font: 12px;
+    color: #0099ff;
+    text-align: right;
+}
+
+.footer-links {
+    font: 12px;
+    color: #0099ff;
+    text-align: center;
+}
