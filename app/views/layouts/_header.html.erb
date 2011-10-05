@@ -1,14 +1,13 @@
 <header>
-  <% logo = image_tag("BBW.png", :alt => "Sample App", :class => "round") %>
-  <%= link_to logo, root_path %>
   <%= javascript_include_tag 'rails' %>
   <%= javascript_include_tag :defaults %>
-  <nav>
-    <ul class="header-links">
-      <li><%= link_to "Home", root_path %></li>
-        <%= render 'devise/menu/registration_items' %>
-        <%= render 'devise/menu/login_items' %>
-    </ul>
-  </nav>
+
+  <a class="brand" href="#">BestBay!</a>
+  <ul class="nav">
+    <li class="active"><%= link_to "Home", root_path %></li>
+    <%= render 'devise/menu/registration_items' %>
+    <%= render 'devise/menu/login_items' %>
+  </ul>
+
 </header>
 

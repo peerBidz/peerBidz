@@ -1,28 +1,70 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <%= javascript_include_tag :defaults %>
-    <%= csrf_meta_tag %>
-    <%= render 'layouts/stylesheets' %>
-  </head>
-  <body>
+<head>
+  <title><%= title %></title>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+  <%= render 'layouts/stylesheets' %>
 
-    <div class="container">
-      <%= render 'layouts/header' %>
-
-     <% if notice.present? -%>
-        <p class="notice"><%= notice %></p>
-      <% end -%>
-
-      <% if alert.present? -%>
-        <p class="alert"><%= alert %></p>
-      <% end -%>
-
-      <section class="round">
-        <%= yield %>
-      </section>
-      <%= render 'layouts/footer' %>
+  <div class="topbar">
+    <div class="fill">
+      <div class="container">
+        <%= render 'layouts/header' %>
+      </div>
     </div>
-  </body>
+  </div>
+
+  <style type="text/css">
+      body {
+          padding-top: 60px;
+      }
+  </style>
+
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="sidebar">
+    <div class="well">
+      <h5>General Categories</h5>
+      <ul>
+        <li><a href="#">Books</a></li>
+        <li><a href="#">Music</a></li>
+        <li><a href="#">Movies</a></li>
+      </ul>
+      <h5>Electronics</h5>
+      <ul>
+        <li><a href="#">Computer</a></li>
+        <li><a href="#">Mobile</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Cameras</a></li>
+      </ul>
+      <h5>Fashion</h5>
+      <ul>
+        <li><a href="#">Men</a></li>
+        <li><a href="#">Women</a></li>
+        <li><a href="#">Kids</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="content">
+    <!-- Main hero unit for a primary marketing message or call to action -->
+
+    <% if notice.present? -%>
+        <p class="notice"><%= notice %></p>
+    <% end -%>
+
+    <% if alert.present? -%>
+        <p class="alert"><%= alert %></p>
+    <% end -%>
+
+    <%= yield %>
+
+    <footer>
+      <%= render 'layouts/footer' %>
+    </footer>
+  </div>
+</div>
+</body>
 </html>

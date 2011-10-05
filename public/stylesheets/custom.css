@@ -1,29 +1,29 @@
 html, body {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-	font-family: Arial, Helvetica, Verdana, Sans-serif;
-	font-size: 12px;
-	color: #666666;
-	background: #ffffff;
+    font-family: Arial, Helvetica, Verdana, Sans-serif;
+    font-size: 12px;
+    color: #666666;
+    background: #ffffff;
+}
+
+.container {
+    width: 850px;
+    margin: auto;
 }
 
 .hidden {
-	display: none;
-}
-
-#page-container {
-	width: 850px;
-	margin: auto;
+    display: none;
 }
 
 #main-nav {
-	height: 50px;
-	font-size: 12px;
-	padding: 10px;
-	text-align: right;
+    height: 50px;
+    font-size: 12px;
+    padding: 10px;
+    text-align: right;
     margin-left: auto;
     margin-right: auto;
 }
@@ -36,102 +36,98 @@ header {
 
 footer {
     width: 850px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
 }
 
-
 #sidebar-a {
-	float: left;
-	width: 180px;
-	line-height: 18px;
-	font-size: 20px;
+    float: left;
+    width: 180px;
+    line-height: 18px;
+    font-size: 20px;
 }
 
 #content {
-	margin-left: 180px;
-	line-height: 18px;
+    margin-left: 180px;
+    line-height: 18px;
 }
 
 h1 {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 #content h2 {
-	margin: 0;
-	padding: 0;
-	padding-bottom: 15px;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 15px;
 }
 
 #content p {
-	margin: 0;
-	padding: 0;
-	padding-bottom: 15px;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 15px;
 }
 
 #content .padding {
-	padding: 25px;
+    padding: 25px;
 }
-
 
 /* CSS FROM RAILS TUTORIAL:  */
 header img {
-  padding: 1em;
-  background: #fff;
+    padding: 1em;
+    background: #fff;
 }
-
 
 /* Links */
 
 a {
-  color: #09c;
-  text-decoration: none;
+    color: #09c;
+    text-decoration: none;
 }
 
 a:hover {
-  color: #069;
-  text-decoration: underline;
+    color: #069;
+    text-decoration: underline;
 }
 
 a:visited {
-  color: #069;
+    color: #069;
 }
 
 /* Navigation */
 
 nav {
-  float: right;
+    float: right;
 }
 
 nav {
-  background-color: white;
-  padding: 0 0.7em;
-  white-space: nowrap;
+    background-color: white;
+    padding: 0 0.7em;
+    white-space: nowrap;
 }
 
 nav ul {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
-  list-style-type: none;
-  display: inline-block;
-  padding: 0.2em 0;
+    list-style-type: none;
+    display: inline-block;
+    padding: 0.2em 0;
 }
 
 nav ul li a {
-  padding: 0 5px;
-  font-weight: bold;
+    padding: 0 5px;
+    font-weight: bold;
 }
 
 nav ul li a:visited {
-  color: #09c;
+    color: #09c;
 }
 
 nav ul li a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .header-links {
