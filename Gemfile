@@ -50,3 +50,5 @@ gem 'pg'
 #Added for rspec
 gem 'webrat'
 
+#Paperclip
+gem "paperclip", "~> 2.4"
