@@ -11,7 +11,7 @@
     <th>Seller</th>
     <th></th>
     <th></th>
-    <th></th>
+    <!--<th></th>-->
   </tr>
 
 <% @items.each do |item| %>
@@ -25,7 +25,9 @@
     <td><%= item.seller_id %></td>
     <td><%= link_to 'Show', item %></td>
     <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
+    <!--
+    <td><%#= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
+    -->
   </tr>
 <% end %>
 </table>
