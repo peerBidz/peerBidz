@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Title</th>
+    <th>Photo</th>
     <th>Description</th>
     <th>Condition</th>
     <th>Starting price</th>
@@ -17,6 +18,7 @@
 <% @items.each do |item| %>
   <tr>
     <td><%= item.title %></td>
+    <td><%= image_tag item.photo.url(:small) %></td>
     <td><%= item.description %></td>
     <td><%= item.condition %></td>
     <td><%= item.starting_price %></td>
