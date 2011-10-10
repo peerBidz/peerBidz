@@ -3,29 +3,34 @@
 <table>
   <tr>
     <th>Title</th>
+    <th>Photo</th>
     <th>Description</th>
     <th>Condition</th>
     <th>Starting price</th>
-    <th>Duration</th>
+    <!--<th>Duration</th>-->
     <th>Category</th>
     <th>Seller</th>
     <th></th>
     <th></th>
-    <th></th>
+    <!--<th></th>-->
   </tr>
 
 <% @items.each do |item| %>
   <tr>
     <td><%= item.title %></td>
+    <td><%= image_tag item.photo.url(:small) %></td>
     <td><%= item.description %></td>
     <td><%= item.condition %></td>
     <td><%= item.starting_price %></td>
-    <td><%= item.duration %></td>
+    <!--<td><%#= item.duration %></td>         -->
     <td><%= item.category_id %></td>
     <td><%= item.seller_id %></td>
     <td><%= link_to 'Show', item %></td>
     <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
+
+  <!-- <td><%#= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>      -->
+
+
   </tr>
 <% end %>
 </table>
