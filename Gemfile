@@ -32,6 +32,7 @@ gem 'sqlite3'
 
 #suggested gems by Todd
 gem 'jquery-rails', '>= 1.0.3'
+#gem 'jquery-rails', '>= 1.0.12'
 gem 'factory_girl_rails' 
 gem 'rspec-rails' 
 gem 'devise' 
@@ -39,12 +40,7 @@ gem 'ruby-debug19'
 gem 'ruby-debug-base19x' 
 gem 'ruby-debug-ide' #'0.4.6'
 
-
-
-
 #Added for Heroku
-
-
 gem 'pg'
 
 #Added for rspec
