@@ -6,8 +6,9 @@ BestBay::Application.routes.draw do
   devise_for :users
 
   resources :items
+  resources :users
 
-  #match '/register',  :to => 'users#new'
+  match '/allusers',  :to => 'users#index'
   match '/contact', :to => 'pages#contact'
   match '/items',   :to => 'pages#items'
   match '/help',    :to => 'pages#help'
