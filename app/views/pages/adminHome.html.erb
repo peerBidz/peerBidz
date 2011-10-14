@@ -1,0 +1,13 @@
+<% if admin_signed_in? %>
+    <div class="container">
+      <div class="hero-unit1">
+        <h2>Hello admin!</h2>
+        <p>Our site is rocking these days. We are getting good hits.</p><br><br>
+        <p>Keep track of all the users and all the items</p>
+        <!--<a class="btn primary large" href='<%#=users_path%>'>Manage Users »</a>-->
+        <a class="btn primary large" href='<%=items_path%>'>Manage Items »</a>
+      </div>
+    </div>
+<% else %>
+    <p>Please sign-in before you can access admin home page</p>
+<% end %>

@@ -1,83 +1,31 @@
 <% if user_signed_in? %>
     <div class="container">
-      <div class="hero-unit">
+      <div class="hero-unit1">
         <h2>Welcome back!</h2>
         <p>Check out the today's hot deals below or Put your item up for sale</p>
-        <p><a class="btn primary large" href='<%=new_item_path%>'>Sell your item »</a></p>
-        <p><a class="btn primary large" href='<%=items_path%>'>Hot items »</a></p>
+        <a class="btn primary large" href='<%=new_item_path%>'>Offer Your Item »</a>
+        <a class="btn primary large" href='<%=items_path%>'>Hot Items »</a>
       </div>
     </div>
 <% else %>
     <div class="container">
       <div class="hero-unit">
-        <h1>Welcome to BestBay!</h1>
+        <!--<h1>BestBay!</h1>-->
       </div>
     </div>
 <% end %>
 
 <!-- Example row of columns -->
+  <hr>
 <div class="row">
-  <div class="span6">
-    <h2>Apple iPad $200</h2>
+ <% @items.each_with_index do |item,i| %>
 
-    <p>Apple iPad (8 GB) (Latest Model). The Gyro+ Accelerometer of the iPod touch 4G enables
-      better motion sensing like full 3D attitude, rotation rate and user acceleration, making gaming even more
-      enjoyable. With a built-in editing feature, you do not have to wait to get to your PC to edit your videos; you can
-      do that right away on this Apple media player. The two cameras of this digital media player shoot amazing videos
-      in HD 720p resolution while the integrated microphone can record conversations or music simultaneously.
-    </p>
+   <div class="home-item-desc span6">
+    <h2 class ="heading"><%= item.title %></h2>
 
-    <p><a class="btn" href="/items/1">View details &raquo;</a></p>
-  </div>
-  <div class="span5">
-    <h2>Floor Lamp - $12</h2>
-
-    <p>Gives a lot of light for the whole room</p>
-
-    <p><a class="btn" href="#">View details &raquo;</a></p>
-  </div>
-  <div class="span5">
-    <h2>Lenovo Thinkpad - $1000</h2>
-
-    <p>Intel i7, 8GB RAM ......</p>
-
-    <p><a class="btn" href="#">View details &raquo;</a></p>
-  </div>
+    <p><%= item.description %></p>
+    <%= link_to 'View Details', item ,:class=> 'btn' %>
+   </div>
+ <% end %>
 </div>
-
 <hr>
-
-<!-- Example row of columns -->
-<div class="row">
-  <div class="span6">
-    <h2>Apple iPad - $500</h2>
-
-    <p>Apple iPod touch 4th Generation (8 GB) (Latest Model). The Gyro+ Accelerometer of the iPod touch 4G enables
-      better motion sensing like full 3D attitude, rotation rate and user acceleration, making gaming even more
-      enjoyable. With a built-in editing feature, you do not have to wait to get to your PC to edit your videos; you can
-      do that right away on this Apple media player. The two cameras of this digital media player shoot amazing videos
-      in HD 720p resolution while the integrated microphone can record conversations or music simultaneously.</p>
-
-    <p><a class="btn" href="#">View details &raquo;</a></p>
-  </div>
-  <div class="span5">
-    <h2>Kindle Fire -$200</h2>
-
-    <p>Apple iPod touch 4th Generation (8 GB) (Latest Model). The Gyro+ Accelerometer of the iPod touch 4G enables
-      better motion sensing like full 3D attitude, rotation rate and user acceleration, making gaming even more
-      enjoyable. With a built-in editing feature, you do not have to wait to get to your PC to edit your videos; you can
-      do that right away on this Apple media player. The two cameras of this digital media player shoot amazing videos
-      in HD 720p resolution while the integrated microphone can record conversations or music simultaneously.</p>
-
-    <p><a class="btn" href="#">View details &raquo;</a></p>
-  </div>
-  <div class="span5">
-    <h2>Nike Shoes - $50</h2>
-
-    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis
-      euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo
-      sit amet risus.</p>
-
-    <p><a class="btn" href="#">View details &raquo;</a></p>
-  </div>
-</div>
