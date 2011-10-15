@@ -30,22 +30,23 @@
       <h5>General Categories</h5>
       <ul>
         <li class="active"><%= link_to "All Items", items_path %></li>
-        <li class="active"><%= link_to "Books", items_path(:browse=>Category.find_by_name("Books").id) %></a></li>
-        <li class="active"><%= link_to "Music", items_path(:browse=>Category.find_by_name("Music").id) %></a></li>
-        <li class="active"><%= link_to "Movies", items_path(:browse=>Category.find_by_name("Movies").id) %></a></li>
+        <li class="active"><%= link_to "Books", items_path(:browse=>Category.find_by_name("Books").id) %></li>
+        <li class="active"><%= link_to "Music", items_path(:browse=>Category.find_by_name("Music").id) %></li>
+        <li class="active"><%= link_to "Movies", items_path(:browse=>Category.find_by_name("Movies").id) %></li>
       </ul>
       <h5>Electronics</h5>
       <ul>
-        <li class="active"><%= link_to "Computers", items_path(:browse=>Category.find_by_name("Computers").id) %></a></li>
-        <li class="active"><%= link_to "Mobile", items_path(:browse=>Category.find_by_name("Mobile").id) %></a></li>
-        <li class="active"><%= link_to "Home", items_path(:browse=>Category.find_by_name("Home").id) %></a></li>
-        <li class="active"><%= link_to "Cameras", items_path(:browse=>Category.find_by_name("Cameras").id) %></a></li>
+        <li class="active"><%= link_to "Computer", items_path(:browse=>Category.find_by_name("Computer").id) %></li>
+        <li class="active"><%= link_to "Mobile", items_path(:browse=>Category.find_by_name("Mobile").id) %></li>
+        <li class="active"><%= link_to "Home", items_path(:browse=>Category.find_by_name("Home").id) %></li>
+        <li class="active"><%= link_to "Cameras", items_path(:browse=>Category.find_by_name("Cameras").id) %></li>
+
       </ul>
       <h5>Fashion</h5>
       <ul>
-        <li class="active"><%= link_to "Men", items_path(:browse=>Category.find_by_name("Men").id) %></a></li>
-        <li class="active"><%= link_to "Women", items_path(:browse=>Category.find_by_name("Women").id) %></a></li>
-        <li class="active"><%= link_to "Kids", items_path(:browse=>Category.find_by_name("Kids").id) %></a></li>
+        <li class="active"><%= link_to "Men", items_path(:browse=>Category.find_by_name("Men").id) %></li>
+        <li class="active"><%= link_to "Women", items_path(:browse=>Category.find_by_name("Women").id) %></li>
+        <li class="active"><%= link_to "Kids", items_path(:browse=>Category.find_by_name("Kids").id) %></li>
       </ul>
     </div>
   </div>
