@@ -14,7 +14,11 @@
 
 <p>
   <b>Condition:</b>
-  <%= @item.condition %>
+  <%if @item.condition?%>
+    <p>New</p>
+  <%else%>
+    <p>Used</p>
+  <%end%>
 </p>
 
 <p>
@@ -22,10 +26,10 @@
   <%= @item.starting_price %>
 </p>
 
-<p>
+<!-- <p>
   <b>Duration:</b>
-  <%= @item.duration %>
-</p>
+  <%#= @item.duration %>
+</p> -->
 
 <p>
   <b>Category:</b>

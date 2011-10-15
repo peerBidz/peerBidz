@@ -1,4 +1,10 @@
-<h1>Listing items</h1>
+<!--<h1>Listing items</h1>-->
+
+<% if user_signed_in? %>
+<a class="btn primary large offer-item" href='<%=new_item_path%>'>Offer your item for bidding »</a>
+<% else %>
+<a class="btn primary large offer-item" href='/users/sign_in'>Login to offer your item »</a>
+ <% end %>
 
 <table>
   <tr>
@@ -18,9 +24,14 @@
 <% @items.each do |item| %>
   <tr>
     <td><%= item.title %></td>
-    <td><%= image_tag item.photo.url(:small) %></td>
+    <td><%= link_to image_tag (item.photo.url(:small)), {:action => 'show', :controller => 'items'}  %></td>
     <td><%= item.description %></td>
-    <td><%= item.condition %></td>
+    <td><%if item.condition?%>
+            New
+        <%else%>
+            Used
+        <%end%>
+    </td>
     <td><%= item.starting_price %></td>
     <!--<td><%#= item.duration %></td>         -->
     <td><%= item.category_id %></td>
@@ -35,5 +46,3 @@
 </table>
 
 <br />
-
-<%= link_to 'New Item', new_item_path %>
