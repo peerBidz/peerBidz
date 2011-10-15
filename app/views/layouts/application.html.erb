@@ -34,12 +34,6 @@
         <li class="active"><%= link_to "Music", items_path(:browse=>Category.find_by_name("Music").id) %></a></li>
         <li class="active"><%= link_to "Movies", items_path(:browse=>Category.find_by_name("Movies").id) %></a></li>
       </ul>
-      <ul>
-        <li class="active"><%= link_to "All Items", items_path %></li>
-        <li class="active"><%= link_to "Books", items_path %></li>
-        <li><a href="#">Music</a></li>
-        <li><a href="#">Movies</a></li>
-      </ul>
       <h5>Electronics</h5>
       <ul>
         <li class="active"><%= link_to "Computers", items_path(:browse=>Category.find_by_name("Computers").id) %></a></li>
