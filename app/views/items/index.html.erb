@@ -1,9 +1,9 @@
 <!--<h1>Listing items</h1>-->
 
-<% if user_signed_in? %>
+<% if user_signed_in? && current_user.is_seller? %>
 <a class="btn primary large offer-item" href='<%=new_item_path%>'>Offer your item for bidding »</a>
 <% else %>
-<a class="btn primary large offer-item" href='/users/sign_in'>Login to offer your item »</a>
+<a class="btn primary large offer-item" href='/users/sign_in'>Register as a seller to offer your item »</a>
  <% end %>
 
 <table>
