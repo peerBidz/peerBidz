@@ -44,10 +44,13 @@
     <%= f.label "Subcategory" %><br />
     <%= f.select :category_id, Category.where("parentID NOT ?", nil).collect {|category| [ category.name, category.id ]} %>
   </div>
-  <div class="field">
-    <%= f.label :seller_id %><br />
-    <%= f.text_field :seller_id %>
-  </div>
+  <!-- div class="field">
+    <%#= f.label :seller_id %><br />
+    <%#= f.text_field :seller_id %>
+  </div -->
+
+  <% @item.seller_id = "100" %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
