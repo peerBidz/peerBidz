@@ -2,7 +2,14 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.xml
   def index
-    @items = Item.all
+    if params[:search]
+      @items = Item.find(:all, :conditions => ['title LIKE ?', "%#{params[:search]}%"])
+    elsif params[:browse]
+      @items = Item.find(:all, :conditions => ['category_id LIKE ?', "%#{params[:browse]}%"])
+      #@items = Item.where(:category_id => "%#{params[:browse]}%")
+    else    
+      @items = Item.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

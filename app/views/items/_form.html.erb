@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :condition %><br />
-    <%= f.select :condition, [['New','new'] , ['Used', 'used']]%>
+    <%= f.select :condition, [['New','1'] , ['Used', '0']]%>
   </div>
 
   <div class="field">
@@ -34,9 +34,15 @@
     <%= f.label :starting_price %><br />
     <%= f.text_field :starting_price %>
   </div>
+
+    <!-- div class="field">
+    <%#= f.label "Main Category" %><br />
+    <%#= f.select :category_id, Category.where(:parentID => nil).collect {|category| [ category.name, category.id ]} %>
+  </div -->
+  
   <div class="field">
-    <%= f.label :category_id %><br />
-    <%= f.select :category_id, [['Currently Listed','current']]%>
+    <%= f.label "Subcategory" %><br />
+    <%= f.select :category_id, Category.where("parentID NOT ?", nil).collect {|category| [ category.name, category.id ]} %>
   </div>
   <div class="field">
     <%= f.label :seller_id %><br />
