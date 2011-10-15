@@ -1,3 +1,11 @@
+<!--  <%# form_tag items_path, :method => 'get' do %>
+          <p>
+            <%#= text_field_tag :search, params[:search] %>
+            <%#= submit_tag "Search", :name => nil %>
+          </p>
+
+          <#% end %>
+    for the later iteration (search fn)-->
 <% if user_signed_in? %>
     <div class="container">
       <div class="hero-unit1">
@@ -6,15 +14,6 @@
         <a class="btn primary large" href='<%=new_item_path%>'>Offer Your Item »</a>
         <a class="btn primary large" href='<%=items_path%>'>Hot Items »</a>
       </div>
-
-    <!--  <%# form_tag items_path, :method => 'get' do %>
-          <p>
-            <%#= text_field_tag :search, params[:search] %>
-            <%#= submit_tag "Search", :name => nil %>
-          </p>
-
-          <#% end %>
-    for the later iteration (search fn)-->
     </div>
 <% else %>
     <div class="container">

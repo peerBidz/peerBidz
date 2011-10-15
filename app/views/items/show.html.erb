@@ -30,17 +30,16 @@
   <b>Duration:</b>
   <%#= @item.duration %>
 </p> -->
-   <!--
+
 <p>
   <b>Category:</b>
-  <%#= Category.find(@item.category_id).name %>
+  <%= Category.find(@item.category_id).name %>
 </p>
 
 <p>
   <b>Seller:</b>
-  <%#= User.find(@item.seller_id).email %>
+  <%= User.find(@item.seller_id).email %>
 </p>
-      -->
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
