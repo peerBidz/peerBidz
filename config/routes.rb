@@ -1,7 +1,8 @@
 BestBay::Application.routes.draw do
 
+  #ActiveAdmin.routes(self)
 
-  devise_for :admins
+  #devise_for :admin_users, ActiveAdmin::Devise.config
 
   resources :categories
 
@@ -10,18 +11,14 @@ BestBay::Application.routes.draw do
   resources :items
   resources :users
 
-  #match '/register',  :to => 'users#new'
-  match '/allusers',  :to => 'users#index'
   match '/contact', :to => 'pages#contact'
   match '/items',   :to => 'pages#items'
   match '/help',    :to => 'pages#help'
   match '/about',   :to => 'pages#about'
 
-  match '/welcome',   :to => 'pages#adminHome'
-
   root :to => 'pages#home'
 
-  match '/admin' => "welcome#index", :as => :admin_root
+
 
 
 

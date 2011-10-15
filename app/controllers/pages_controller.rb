@@ -13,9 +13,4 @@ class PagesController < ApplicationController
     @title = "Items"
   end
 
-  def adminHome
-      @items = Item.all
-      @users = User.all
-  end
-
 end

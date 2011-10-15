@@ -28,6 +28,11 @@ BestBay::Application.configure do
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   #paperclip stuff
-  Paperclip.options[:command_path] = "/usr/local.bin"
+
+  Paperclip.options[:command_path] = "'C:/Progra~1/IMAGEM~1.3-Q"
+
+  #activeadmin stuff
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
 end
 
