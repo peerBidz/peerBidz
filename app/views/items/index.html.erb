@@ -26,8 +26,10 @@ for the later usage (search fn)-->
     <th>Category</th>
     <th>Seller</th>
     <th></th>
+    <% if user_signed_in? %>
     <th></th>
     <th></th>
+    <%end%>
   </tr>
 
 <% @items.each do |item| %>
@@ -46,10 +48,11 @@ for the later usage (search fn)-->
     <td><%= Category.find(item.category_id).name %></td>
     <td><%= User.find(item.seller_id).email %></td>
     <td><%= link_to 'Show', item %></td>
-    <td><%= link_to 'Edit', edit_item_path(item) %></td>
-
-    <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
-
+    <% if user_signed_in? %>
+        <%= User.find(item.seller_id).email %> <!-- test purpose -->
+        <td><%= link_to 'Edit', edit_item_path(item) %></td>
+        <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
