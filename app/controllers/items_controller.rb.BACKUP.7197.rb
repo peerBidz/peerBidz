@@ -5,8 +5,12 @@ class ItemsController < ApplicationController
     if params[:search]
       @items = Item.find(:all, :conditions => ['title LIKE ?', "%#{params[:search]}%"])
     elsif params[:browse]
+<<<<<<< HEAD
       @items = Item.find(:all, :conditions => ['category_id LIKE ?', "#{params[:browse]}"])
       #@values = "%#{params[:browse]}%"
+=======
+      @items = Item.find(:all, :conditions => ['category_id = ?', "%#{params[:browse]}%"])
+>>>>>>> 7c84576e49ee5afe8da43825f8ef3a51836a8137
       #@items = Item.where(:category_id => "%#{params[:browse]}%")
     else    
       @items = Item.all

@@ -33,12 +33,12 @@
 
 <p>
   <b>Category:</b>
-  <%= @item.category_id %>
+  <%= Category.find(@item.category_id).name %>
 </p>
 
 <p>
   <b>Seller:</b>
-  <%= @item.seller_id %>
+  <%= User.find(@item.seller_id).email %>
 </p>
 
 
