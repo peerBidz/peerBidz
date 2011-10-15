@@ -34,7 +34,7 @@ for the later usage (search fn)-->
     <% if user_signed_in? %>
         <%if current_user.is_seller? %>
 
-            <%#if current_user.id == items.seller_id %>
+            <%#if current_user.id == @item_par_for_table.seller_id %>
                 <th></th>
                 <th></th>
             <%# end %>
