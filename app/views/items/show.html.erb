@@ -38,11 +38,17 @@
 
 <p>
   <b>Seller:</b>
+  <!-- WJ need find out the way to assign seller_id when creating item -->
   <%= User.find(@item.seller_id).email %>
+  <%#= current_user.email %>
 </p>
 
+<% if user_signed_in? %>
+<% if current_user.is_seller? %>
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
+<% end %>
+<% end %>
 
 <%= form_for @item, :html => { :multipart => true } do |f| %>
 <div class="field">
