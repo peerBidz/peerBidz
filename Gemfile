@@ -48,3 +48,6 @@ gem 'webrat'
 
 #Paperclip
 gem "paperclip", "~> 2.4"
+
+#active admin
+gem 'activeadmin'
