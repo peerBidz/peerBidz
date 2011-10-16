@@ -70,7 +70,7 @@ class ItemsController < ApplicationController
       if @item.update_attributes(params[:item])
         format.html { redirect_to(@item, :notice => 'Successfully updated.') }
         format.xml  { head :ok }
-      elsif current_user.id != @item.seller_id
+      elsif current_user.id != @item.seller_id       #to not see scaffolding
         format.html { redirect_to(@item, :notice => 'Bidding was not successful.') }
         format.xml  { render :xml => @item.errors, :status => :unprocessable_entity }
       else
