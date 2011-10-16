@@ -50,12 +50,10 @@ for the later usage (search fn)-->
     </td>
     <td><%= item.starting_price %></td>
     <!--<td><%#= item.duration %></td>         -->
-
     <td><%= Category.find(item.category_id).name %></td>
     <td><%= User.find(item.seller_id).email %></td>
     <td><%= link_to 'Show', item %></td>
     <% if user_signed_in? %>
-        <%= User.find(item.seller_id).email %> <!-- test purpose -->
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
     <% end %>

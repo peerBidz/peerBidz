@@ -9,5 +9,10 @@ module ApplicationHelper
       "#{base_title} | #{@title}"
     end
   end
+
+def layout_for_my_categories
+
+end
+
 end
 

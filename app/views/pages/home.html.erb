@@ -1,3 +1,4 @@
+
 <!--  <%# form_tag items_path, :method => 'get' do %>
           <p>
             <%#= text_field_tag :search, params[:search] %>
@@ -6,14 +7,21 @@
 
           <#% end %>
     for the later iteration (search fn)-->
+
+
 <% if user_signed_in? %>
-    <div class="container">
-      <div class="hero-unit1">
-        <h2>Welcome back!</h2>
-        <p>Check out the today's hot deals below or Put your item up for sale</p>
-        <a class="btn primary large" href='<%=new_item_path%>'>Offer Your Item »</a>
-        <a class="btn primary large" href='<%=items_path%>'>Hot Items »</a>
-      </div>
+
+  <div class="hero-unit1">
+   <% if current_user.is_seller? %>
+    <h2>Welcome, Seller!</h2>
+    <p>Browse Items, Offer Item and Earn money in minutes </p>
+    <a class="btn primary large" href='<%=new_item_path%>'>Offer Your Item »</a>
+    <a class="btn primary large" href='<%=items_path%>'>All Items »</a>
+   <% else %>
+    <h2>Welcome, Buyer!</h2>
+    <p>Shop, Bid and Celebrate!!</p>
+    <a class="btn primary large" href='<%=items_path%>'>Hot Items »</a>
+   <%end%>
     </div>
 <% else %>
     <div class="container">
