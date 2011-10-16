@@ -67,8 +67,11 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.update_attributes(params[:item])
-        format.html { redirect_to(@item, :notice => 'Item was successfully updated.') }
+        format.html { redirect_to(@item, :notice => 'Successfully updated.') }
         format.xml  { head :ok }
+      elsif current_user.id != @item.seller_id
+        format.html { redirect_to(@item, :notice => 'Bidding was not successful.') }
+        format.xml  { render :xml => @item.errors, :status => :unprocessable_entity }
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @item.errors, :status => :unprocessable_entity }

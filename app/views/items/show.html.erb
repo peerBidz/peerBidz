@@ -26,6 +26,12 @@
   <%= @item.starting_price %>
 </p>
 
+<p>
+  <b>Current price:</b>
+  <%= @item.bidvalue %>
+</p>
+
+
 <!-- <p>
   <b>Duration:</b>
   <%#= @item.duration %>
@@ -43,14 +49,13 @@
   <%#= current_user.email %>
 </p>
 
-<% if user_signed_in? %>
-<% if current_user.is_seller? %>
-<% if current_user.id == @item.seller_id%>
+<% if user_signed_in? && current_user.is_seller? && current_user.id == @item.seller_id%>
 <%= link_to 'Edit', edit_item_path(@item) %> |
+<% end %>
+
 <%= link_to 'Back', items_path %>
-<% end %>
-<% end %>
-<% end %>
+
+
 
 <%= form_for @item, :html => { :multipart => true } do |f| %>
 <div class="field">
@@ -62,4 +67,7 @@
     <%= f.submit "Place Bid"%>
   </div>
 <% end %>
+
+
+
 <!--<a class="btn primary large offer-item" href='<%#= item_path %>'>Place Bid »</a>-->
