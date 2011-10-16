@@ -33,12 +33,8 @@ for the later usage (search fn)-->
     <th></th>
     <% if user_signed_in? %>
         <%if current_user.is_seller? %>
-
-            <%#if current_user.id == @item_par_for_table.seller_id %>
                 <th></th>
                 <th></th>
-            <%# end %>
-
         <% end %>
     <%end%>
   </tr>
@@ -46,7 +42,7 @@ for the later usage (search fn)-->
 <% @items.each do |item| %>
   <tr>
     <td><%= item.title %></td>
-    <td><%= link_to image_tag (item.photo.url(:small)), {:action => 'show', :controller => 'items'}  %></td>
+    <td><%= link_to (image_tag (item.photo.url(:small)), :action => 'show', :controller => 'items'), item %></td>
     <td><%= item.description %></td>
     <td><%if item.condition?%>
             New
@@ -56,20 +52,25 @@ for the later usage (search fn)-->
     </td>
     <td><%= item.starting_price %></td>
     <!--<td><%#= item.duration %></td>         -->
+
     <td><%= Category.find(item.category_id).name %></td>
     <td><%= User.find(item.seller_id).email %></td>
-    <td><%= link_to 'Show', item %></td>
+
     <% if user_signed_in? %>
-    <!-- WJ need admin role -->
+        <td><%= link_to 'Show & Start Bid', item %></td>
+        <!-- WJ need admin role -->
         <%if current_user.is_seller? %>
             <%if current_user== User.find(item.seller_id) %>
                 <td><%= link_to 'Edit', edit_item_path(item) %></td>
                 <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
             <% end%>
         <% end %>
+    <%else%>
+    <td><%= link_to 'Show', item %></td>
     <% end %>
   </tr>
 <% end %>
 </table>
 
-<br />
+
+
