@@ -56,18 +56,16 @@ for the later usage (search fn)-->
     <td><%= Category.find(item.category_id).name %></td>
     <td><%= User.find(item.seller_id).email %></td>
 
-    <% if user_signed_in? %>
-        <td><%= link_to 'Show & Start Bid', item %></td>
+
+        <td><%= link_to 'Show', item %></td>
         <!-- WJ need admin role -->
-        <%if current_user.is_seller? %>
+        <%if user_signed_in? && current_user.is_seller? %>
             <%if current_user== User.find(item.seller_id) %>
                 <td><%= link_to 'Edit', edit_item_path(item) %></td>
-                <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
+                <td><%= link_to 'Delete', item, :confirm => 'Are you sure?', :method => :delete %></td>
             <% end%>
         <% end %>
-    <%else%>
-    <td><%= link_to 'Show', item %></td>
-    <% end %>
+
   </tr>
 <% end %>
 </table>
