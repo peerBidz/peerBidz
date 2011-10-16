@@ -45,10 +45,10 @@
     <%= f.select :category_id, Category.where("parentID NOT ?", nil).collect {|category| [ category.name, category.id ]} %>
   </div>
 
-   <div class="field">
-    <%= f.label :seller_id %><br />
-    <%= f.text_field :seller_id, :value => current_user.id, :readonly => true%>
-  </div>
+  <%= f.hidden_field :seller_id, :value => current_user.id %>
+    <%= f.hidden_field :bidvalue, :value => 10 %>
+
+
 
   <%#= @item.seller_id = current_user.id %>
 
