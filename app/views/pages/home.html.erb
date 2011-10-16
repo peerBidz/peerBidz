@@ -39,6 +39,8 @@
    <div class="home-item-desc span6">
     <h2 class ="heading"><%= item.title %></h2>
 
+    <%= image_tag item.photo.url(:small)  %>
+
     <p><%= item.description %></p>
     <%= link_to 'View Details', item ,:class=> 'btn' %>
    </div>

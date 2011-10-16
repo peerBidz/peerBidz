@@ -32,8 +32,14 @@ for the later usage (search fn)-->
     <th>Seller</th>
     <th></th>
     <% if user_signed_in? %>
-    <th></th>
-    <th></th>
+        <%if current_user.is_seller? %>
+
+            <%#if current_user.id == @item_par_for_table.seller_id %>
+                <th></th>
+                <th></th>
+            <%# end %>
+
+        <% end %>
     <%end%>
   </tr>
 
@@ -54,8 +60,13 @@ for the later usage (search fn)-->
     <td><%= User.find(item.seller_id).email %></td>
     <td><%= link_to 'Show', item %></td>
     <% if user_signed_in? %>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
+    <!-- WJ need admin role -->
+        <%if current_user.is_seller? %>
+            <%if current_user== User.find(item.seller_id) %>
+                <td><%= link_to 'Edit', edit_item_path(item) %></td>
+                <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
+            <% end%>
+        <% end %>
     <% end %>
   </tr>
 <% end %>
