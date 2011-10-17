@@ -51,3 +51,7 @@ gem "paperclip", "~> 2.4"
 
 #active admin
 gem 'activeadmin'
+#gem 'iso-3166-country-select'
+ gem 'country-select'
+#gem 'iso-3166-country-select', :git => 'git://github.com/rails/iso-3166-country-select.git'
+#gem 'country_select.git', :git => 'git://github.com/jodosha/country_select.git'

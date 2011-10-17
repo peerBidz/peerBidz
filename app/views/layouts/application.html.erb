@@ -26,17 +26,17 @@
 
 <div class="container-fluid">
   <div class="sidebar">
-     <% if params[:action] == 'home' || params[:action] == 'index' || params[:action] == 'show'%>
-    <div class="well">
-         <%= render :template => 'pages/categories', :layout => layout_for_my_categories%>
-      <% end %>
+    <% if params[:action] == 'home' || params[:action] == 'index' || params[:action] == 'show' %>
+        <div class="well">
+          <%= render :template => 'pages/categories', :layout => layout_for_my_categories %>
+    <% end %>
 
     </div>
 
   </div>
 
   <div class="content">
-    <!-- Main hero unit for a primary marketing message or call to action -->
+    <!-- Main hero unit for the home page -->
 
     <% if notice.present? -%>
         <p class="notice"><%= notice %></p>

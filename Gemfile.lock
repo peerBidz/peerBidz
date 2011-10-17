@@ -44,6 +44,7 @@ GEM
     builder (2.1.2)
     cocaine (0.2.0)
     columnize (0.3.4)
+    country-select (1.0.5)
     devise (1.4.7)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
@@ -168,6 +169,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  country-select
   devise
   factory_girl_rails
   jquery-rails (>= 1.0.3)
