@@ -13,11 +13,11 @@
 </p>
 
 <p>
-  <b>Condition:</b>
+  <b>Condition: </b>
   <%if @item.condition?%>
-    <p>New</p>
+    New
   <%else%>
-    <p>Used</p>
+    Used
   <%end%>
 </p>
 
@@ -27,8 +27,13 @@
 </p>
 
 <p>
-  <b>Current price:</b>
+  <b>Current price: </b>
   <%= @item.bidvalue %>
+</p>
+
+<p>
+  <b>Highest bidder: </b>
+  <%= User.find(@item.biduser).email %>
 </p>
 
 
@@ -66,6 +71,9 @@
              <%= f.label "BidValue" %><br />
             <%= f.text_field :bidvalue %>
           </div>
+         
+          <%= f.hidden_field :biduser, :value => current_user.id %>
+
           <div class="actions">
             <%= f.submit "Place Bid"%>
           </div>
