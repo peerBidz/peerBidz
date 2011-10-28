@@ -11,15 +11,15 @@
     <a class="btn primary large offer-item" href='/users/sign_in'>Login to offer your item »</a>
  <% end %>
 
-<%#= @values %>
-<!--
-<%# form_tag items_path, :method => 'get' do %>
+<!--SEARCH BAR -->
+<%= @values %>
+<% form_tag items_path, :method => 'get' do %>
   <p>
-    <%#= text_field_tag :search, params[:search] %>
-    <%#= submit_tag "Search", :name => nil %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
   </p>
-<%# end %>
-for the later usage (search fn)-->
+<% end %>
+
 <table>
   <tr>
     <th>Title</th>
