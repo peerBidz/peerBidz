@@ -1,28 +1,28 @@
 class Search < ActiveRecord::Base
-  def products
-    @products ||= find_products
+  def items
+    @items ||= find_items
   end
 
 private
 
-def find_products
+def find_items
   Item.find(:all, :conditions => conditions)
 end
 
 def keyword_conditions
-  ["Items.title LIKE ?", "%#{keywords}%"] unless keywords.blank?
+  ["items.title LIKE ?", "%#{keywords}%"] unless keywords.blank?
 end
 
 def minimum_price_conditions
-  ["Items.bidvalue >= ?", minimum_price] unless minimum_price.blank?
+  ["items.bidvalue >= ?", minimum_price] unless minimum_price.blank?
 end
 
 def maximum_price_conditions
-  ["Items.bidvalue <= ?", maximum_price] unless maximum_price.blank?
+  ["items.bidvalue <= ?", maximum_price] unless maximum_price.blank?
 end
 
 def category_conditions
-  ["Items.category_id = ?", category_id] unless category_id.blank?
+  ["items.category_id = ?", category_id] unless category_id.blank?
 end
 
 def conditions
