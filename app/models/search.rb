@@ -44,6 +44,10 @@ def seller_conditions
   ["items.seller_id = ?", @seller_id] unless seller_email.blank?
 end
 
+def item_conditions
+  ["items.condition = ?", condition]
+end
+
 def conditions
   [conditions_clauses.join(' AND '), *conditions_options]
 end

@@ -16,7 +16,7 @@ BestBay::Application.routes.draw do
   match '/items',   :to => 'pages#items'
   match '/help',    :to => 'pages#help'
   match '/about',   :to => 'pages#about'
-  match '/search', :to => 'pages#search'
+  match '/advsearch',  :to => 'searches#new'
 
   root :to => 'pages#home'
 
