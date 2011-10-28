@@ -22,7 +22,11 @@
     <td><%= search.maximum_price %></td>
     <td><%= search.seller_id %></td>
     <td><%= search.ending_time %></td>
-    <td><%= search.condition %></td>
+    <td><%if search.condition?%>
+            New
+        <%else%>
+            Used
+        <%end%></td>
     <td><%= link_to 'Show', search %></td>
     <td><%= link_to 'Edit', edit_search_path(search) %></td>
     <td><%= link_to 'Destroy', search, :confirm => 'Are you sure?', :method => :delete %></td>

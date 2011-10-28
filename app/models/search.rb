@@ -25,6 +25,10 @@ def category_conditions
   ["items.category_id = ?", category_id] unless category_id.blank?
 end
 
+def item_conditions
+  ["items.condition = ?", condition]
+end
+
 def conditions
   [conditions_clauses.join(' AND '), *conditions_options]
 end
