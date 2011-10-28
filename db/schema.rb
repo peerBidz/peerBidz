@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111015055045) do
+ActiveRecord::Schema.define(:version => 20111028212144) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -68,6 +68,18 @@ ActiveRecord::Schema.define(:version => 20111015055045) do
     t.datetime "photo_updated_at"
     t.float    "bidvalue"
     t.integer  "biduser"
+  end
+
+  create_table "searches", :force => true do |t|
+    t.string   "keywords"
+    t.integer  "category_id"
+    t.float    "minimum_price"
+    t.float    "maximum_price"
+    t.integer  "seller_id"
+    t.datetime "ending_time"
+    t.boolean  "condition"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
