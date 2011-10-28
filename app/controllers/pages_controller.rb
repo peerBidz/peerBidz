@@ -13,4 +13,8 @@ class PagesController < ApplicationController
     @title = "Items"
   end
 
+  def categories
+
+  end
+
 end
