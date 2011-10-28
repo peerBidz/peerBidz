@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label "Category" %><br />
-    <%= f.select :category_id, Category.where("parentID NOT ?", nil).collect {|category| [ category.name, category.id ]} %>
+    <%= f.select :category_id, Category.where("parentID NOT ?", nil).collect {|category| [ category.name, category.id ]}, :include_blank => true %>
   </div>
   <div class="field">
     <%= f.label :minimum_price %><br />
@@ -28,8 +28,8 @@
     <%= f.text_field :maximum_price %>
   </div>
   <div class="field">
-    <%= f.label :seller_id %><br />
-    <%= f.text_field :seller_id %>
+    <%= f.label :seller_email %><br />
+    <%= f.text_field :seller_email %>
   </div>
   <div class="field">
     <%= f.label :ending_time %><br />
