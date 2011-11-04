@@ -1,0 +1,45 @@
+<%= form_for(@search) do |f| %>
+  <% if @search.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@search.errors.count, "error") %> prohibited this search from being saved:</h2>
+
+      <ul>
+      <% @search.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :keywords %><br />
+    <%= f.text_field :keywords %>
+  </div>
+  <div class="field">
+    <%= f.label "Category" %><br />
+    <%= f.select :category_id, Category.where("parentID NOT ?", nil).collect {|category| [ category.name, category.id ]},:include_blank => true %>
+  </div>
+  <div class="field">
+    <%= f.label :minimum_price %><br />
+    <%= f.text_field :minimum_price %>
+  </div>
+  <div class="field">
+    <%= f.label :maximum_price %><br />
+    <%= f.text_field :maximum_price %>
+  </div>
+  <div class="field">
+    <%= f.label :seller_email %><br />
+    <%= f.text_field :seller_email %>
+  </div>
+  <div class="field">
+    <%= f.label :ending_time %><br />
+    <%= f.datetime_select :ending_time %>
+  </div>
+  <div class="field">
+    <%= f.label :condition %><br />
+    <%= f.select :condition, [['New','1'] , ['Used', '0']]%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

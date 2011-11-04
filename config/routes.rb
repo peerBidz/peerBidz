@@ -6,8 +6,17 @@ BestBay::Application.routes.draw do
 
   resources :categories
 
+
+  resources :searches
+
+  #ActiveAdmin.routes(self)
+
+  #devise_for :admin_users, ActiveAdmin::Devise.config
+
   devise_for :users
 
+  #commenting out categories so no one edits/deletes them - CD
+  #resources :categories
   resources :items
   resources :users
 
@@ -15,11 +24,8 @@ BestBay::Application.routes.draw do
   match '/items',   :to => 'pages#items'
   match '/help',    :to => 'pages#help'
   match '/about',   :to => 'pages#about'
+  match '/advsearch',  :to => 'searches#new'
 
   root :to => 'pages#home'
-
-
-
-
 
 end

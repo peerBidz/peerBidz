@@ -1,11 +1,12 @@
-<!--  <%# form_tag items_path, :method => 'get' do %>
+<% form_tag items_path, :method => 'get' do %>
           <p>
-            <%#= text_field_tag :search, params[:search] %>
-<%#= submit_tag "Search", :name => nil %>
+            <%= text_field_tag :search, params[:search] %>
+            <%= submit_tag "Search", :name => nil %>
+            <%= link_to "Advanced Search", advsearch_path %>
           </p>
 
-          <#% end %>
-    for the later iteration (search fn)-->
+<% end %>
+
 
 <!-- This page is the home page of the site. It displays some of the items present in the system and categories-->
 

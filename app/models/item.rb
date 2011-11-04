@@ -31,4 +31,6 @@ end
 
 
   belongs_to :category
+  has_many :bidding
+  has_many :items, :through => :bidding
 end

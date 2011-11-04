@@ -48,7 +48,10 @@
   </div>
 
   <%= f.hidden_field :seller_id, :value => current_user.id %>
-
+  <!-- In case, when seller create an new item and want to see his item on the item list
+       Since he hasn't assigned :biduser, it resulted "without ID error" since it provided only from buyer's bidding page.
+       temporary assign current_user.id but it will be automatically overwrite when buyer tries to bid on an item-->
+  <%= f.text_field :biduser, :value => current_user.id %>
 
   <div class="actions">
     <%= f.submit %>
