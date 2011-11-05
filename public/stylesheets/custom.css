@@ -159,3 +159,9 @@ nav ul li a:hover {
    text-align: left; /* depends on element width */
    height: 99%;
    }
+
+#current-price-value {
+ font-size: 30px;
+ color: #3366ff;
+    font-weight: bold;
+}

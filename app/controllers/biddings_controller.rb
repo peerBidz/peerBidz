@@ -2,9 +2,9 @@ class BiddingsController < ApplicationController
   def create
     @bidding = Bidding.new(params[:bidding])
     if @bidding.save
-    @notice = "You have successfully placed the bid"
+   @bid_notification_msg = "Congrats! You have successfully placed the bid"
     elsif(!@bidding.errors.empty?)
-    @notice = @bidding.errors
+      @bid_notification_msg = "Sorry, your bid was not successful. Please bid higher than the current price"
     end
     respond_to do |format|
       format.xml  { render :xml => @bidding }
