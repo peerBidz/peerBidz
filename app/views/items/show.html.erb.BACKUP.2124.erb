@@ -35,13 +35,16 @@
 
 <p id="current-price">
   <b>Current price:</b>
-  <span id ="current-price-value">
-  <% if @highest_bid != nil %>
-    <%= number_to_currency(@highest_bid.bid_amount,:unit=>"$") %>
+  <span id ="current-price-value"><% if @highest_bid != nil %>
+  <%= number_to_currency(@highest_bid.bid_amount,:unit=>"$") %>
   <% else %>
-    <%= number_to_currency(@item.starting_price, :unit=>"$") %>
+<<<<<<< HEAD
+  <%= number_to_currency(@item.starting_price, :unit=>"$") %>
   <% end %>
-  </span>
+=======
+  <%= @item.starting_price %>
+  <% end %></span>
+>>>>>>> d9d59e33fcc82776e0e040724efe74fb7d144334
 </p>
 
 <!-- <p>

@@ -35,13 +35,11 @@
 
 <p id="current-price">
   <b>Current price:</b>
-  <span id ="current-price-value">
-  <% if @highest_bid != nil %>
-    <%= number_to_currency(@highest_bid.bid_amount,:unit=>"$") %>
+  <span id ="current-price-value"><% if @highest_bid != nil %>
+  <%= number_to_currency(@highest_bid.bid_amount,:unit=>"$") %>
   <% else %>
-    <%= number_to_currency(@item.starting_price, :unit=>"$") %>
-  <% end %>
-  </span>
+  <%= @item.starting_price %>
+  <% end %></span>
 </p>
 
 <!-- <p>
@@ -57,9 +55,13 @@
   <%= User.find(@item.seller_id).email %>
 </p>
 
+</div>
+</div>
+
+
 
 <% if user_signed_in? && current_user.is_seller? && current_user.id == @item.seller_id%>
-<%= link_to 'Edit', edit_item_path(@item) %> 
+<%= link_to 'Edit', edit_item_path(@item) %> |
 <% end %>
 
 <% if user_signed_in? %>
@@ -71,10 +73,6 @@
     <% end %>
 <% end %>
 
-
-</div>
-</div>
-
-
+<%= link_to 'Back', items_path %>
 
 <!--<a class="btn primary large offer-item" href='<%#= item_path %>'>Place Bid »</a>-->
