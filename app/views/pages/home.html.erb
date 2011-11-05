@@ -25,7 +25,8 @@ var data = [
         image: '<%= item.photo.url(:large) %>',
         //description: 'item',
         //link: '/items/<%#=item.id%>',
-        layer: '<div><h2><%= item.title%></h2><a href="/items/<%=item.id%>"><p>Click Here To See More Information</p></a>'
+        layer: '<div><a href="/items/<%=item.id%>"><h2><%= item.title%></h2></a><p>LATEST BID</p></div>'
+
     },
         <%end%>
 ];

@@ -3,7 +3,7 @@
 #ajax_group {}
 </style>
 
-<p id="top"></p>
+<p id="notice"><%= notice %></p>
 
 <h3><%= @item.title %></h3>
 
@@ -13,7 +13,7 @@
 <%= image_tag @item.photo.url(:medium)  %>
 </div>
 
-<div class ="item-details" id="ajax_group">
+<div class ="item-details" ,id="ajax_group">
 <p>
   <b>Description:</b>
   <%= @item.description %>
@@ -34,14 +34,12 @@
 
 
 <p id="current-price">
-  <b>Current price:</b>
-
-  <span id ="current-price-value"><% if @highest_bid != nil %>
-  <%= number_to_currency(@highest_bid.bid_amount,:unit=>"$")%>
+  <b>Current price: </b>
+  <% if @highest_bid != nil %>
+  <%= number_to_currency(@highest_bid.bid_amount,:unit=>"$") %>
   <% else %>
-  <%= number_to_currency(@item.starting_price,:unit=>"$")%>
-  <% end %></span>
-
+  <%= number_to_currency(@item.starting_price, :unit=>"$") %>
+  <% end %>
 </p>
 
 <!-- <p>
