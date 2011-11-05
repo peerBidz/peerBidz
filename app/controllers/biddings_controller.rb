@@ -3,6 +3,9 @@ class BiddingsController < ApplicationController
     @bidding = Bidding.new(params[:bidding])
     if @bidding.save
     @notice = "You have successfully placed the bid"
+    Notification.create(:user_id=>@bidding.user_id, :item_id=>@bidding.item_id, :message=>"outbid", :delivered=>"false")
+    Notification.create(:user_id=>Item.find(@bidding.item_id).seller_id, :item_id=>@bidding.item_id, :message=>"new_bid", :delivered=>"false")
+
     elsif(!@bidding.errors.empty?)
     @notice = @bidding.errors
     end

@@ -38,7 +38,7 @@
   <% if @highest_bid != nil %>
   <%= number_to_currency(@highest_bid.bid_amount,:unit=>"$") %>
   <% else %>
-  <%= @item.starting_price %>
+  <%= number_to_currency(@item.starting_price, :unit=>"$") %>
   <% end %>
 </p>
 
@@ -55,13 +55,9 @@
   <%= User.find(@item.seller_id).email %>
 </p>
 
-</div>
-</div>
-
-
 
 <% if user_signed_in? && current_user.is_seller? && current_user.id == @item.seller_id%>
-<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Edit', edit_item_path(@item) %> 
 <% end %>
 
 <% if user_signed_in? %>
@@ -73,6 +69,10 @@
     <% end %>
 <% end %>
 
-<%= link_to 'Back', items_path %>
+
+</div>
+</div>
+
+
 
 <!--<a class="btn primary large offer-item" href='<%#= item_path %>'>Place Bid »</a>-->
