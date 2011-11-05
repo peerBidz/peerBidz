@@ -6,6 +6,7 @@
   </div>
     <%= f.hidden_field :bid_time, :value => DateTime.current() %>
     <%= f.hidden_field :item_id, :value => @item.id %>
+    <%= f.hidden_field :item, :value => @item %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
 
  <div class="actions">
