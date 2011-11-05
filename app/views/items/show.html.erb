@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<%= image_tag @item.photo.url(:large)  %>
+<%= image_tag @item.photo.url(:small)  %>
 
 <p>
   <b>Title:</b>
@@ -26,9 +24,14 @@
   <%= @item.starting_price %>
 </p>
 
-<p>
+
+<p id="current-price">
   <b>Current price: </b>
-  <%= @item.bidvalue %>
+  <% if @highest_bid != nil %>
+  <%= @highest_bid.bid_amount %>
+  <% else %>
+  <%= @item.starting_price %>
+  <% end %>
 </p>
 
 <!-- <p>
@@ -50,27 +53,13 @@
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <% end %>
 
-<%= link_to 'Back', items_path %>
-
-
 <% if user_signed_in? %>
-    <% if current_user.is_seller? %>
+    <% if @item.seller_id != current_user %>
 
-    <%else%>
-        <%= form_for @item, :html => { :multipart => true } do |f| %>
-        <div class="field">
-            <br />
-             <%= f.label "BidValue" %><br />
-            <%= f.text_field :bidvalue %>
-          </div>
-         
-          <%#= f.hidden_field :biduser, :value => current_user.id %>
-
-          <div class="actions">
-            <%= f.submit "Place Bid"%>
-          </div>
-        <% end %>
+<%= render :template => 'biddings/new', :locals => {:bidding => @bidding, :item => @item } %>
     <% end %>
 <% end %>
+
+<%= link_to 'Back', items_path %>
 
 <!--<a class="btn primary large offer-item" href='<%#= item_path %>'>Place Bid »</a>-->

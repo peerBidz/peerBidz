@@ -20,7 +20,7 @@ require 'spec_helper'
 
 describe ItemsController do
 
-  # This should return the minimal set of attributes required to create a valid
+  # This should return the minimal set of attributes required to createbidding a valid
   # Item. As you add validations to Item, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
@@ -58,22 +58,22 @@ describe ItemsController do
     end
   end
 
-  describe "POST create" do
+  describe "POST createbidding" do
     describe "with valid params" do
       it "creates a new Item" do
         expect {
-          post :create, :item => valid_attributes
+          post :createbidding, :item => valid_attributes
         }.to change(Item, :count).by(1)
       end
 
       it "assigns a newly created item as @item" do
-        post :create, :item => valid_attributes
+        post :createbidding, :item => valid_attributes
         assigns(:item).should be_a(Item)
         assigns(:item).should be_persisted
       end
 
       it "redirects to the created item" do
-        post :create, :item => valid_attributes
+        post :createbidding, :item => valid_attributes
         response.should redirect_to(Item.last)
       end
     end
@@ -82,14 +82,14 @@ describe ItemsController do
       it "assigns a newly created but unsaved item as @item" do
         # Trigger the behavior that occurs when invalid params are submitted
         Item.any_instance.stub(:save).and_return(false)
-        post :create, :item => {}
+        post :createbidding, :item => {}
         assigns(:item).should be_a_new(Item)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Item.any_instance.stub(:save).and_return(false)
-        post :create, :item => {}
+        post :createbidding, :item => {}
         response.should render_template("new")
       end
     end

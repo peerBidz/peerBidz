@@ -19,8 +19,8 @@ describe ItemsController do
       get("/items/1/edit").should route_to("items#edit", :id => "1")
     end
 
-    it "routes to #create" do
-      post("/items").should route_to("items#create")
+    it "routes to #createbidding" do
+      post("/items").should route_to("items#createbidding")
     end
 
     it "routes to #update" do

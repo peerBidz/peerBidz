@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+
+  has_many :bidding
+  has_many :items, :through => :bidding
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -8,7 +12,5 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me,
                   :first_name, :last_name, :dob, :phone, :street, :city, :zip, :state, :country, :is_seller
 
-  has_many :bidding
-  has_many :users, :through => :bidding
 
 end

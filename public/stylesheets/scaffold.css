@@ -54,3 +54,10 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+
+input[type="submit"]
+{
+  /*background:url(mybutton.png);*/
+    background-color: #3333ff;
+}
+

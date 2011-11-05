@@ -3,5 +3,5 @@
 #
 # Examples:
 #
-#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Mayor.create(:name => 'Daley', :city => cities.first)
+#   cities = City.createbidding([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
+#   Mayor.createbidding(:name => 'Daley', :city => cities.first)

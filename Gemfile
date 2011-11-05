@@ -38,7 +38,7 @@ gem 'rspec-rails'
 gem 'devise' 
 gem 'ruby-debug19' 
 gem 'ruby-debug-base19x' 
-gem 'ruby-debug-ide' #'0.4.6'
+gem 'ruby-debug-ide'
 
 #Added for Heroku
 gem 'pg'
@@ -52,6 +52,8 @@ gem "paperclip", "~> 2.4"
 #active admin
 gem 'activeadmin'
 #gem 'iso-3166-country-select'
- gem 'country-select'
+gem 'country-select'
+
+gem "dynamic_form"
 #gem 'iso-3166-country-select', :git => 'git://github.com/rails/iso-3166-country-select.git'
 #gem 'country_select.git', :git => 'git://github.com/jodosha/country_select.git'
