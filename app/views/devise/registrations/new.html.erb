@@ -54,9 +54,15 @@
       <br/>
       <%= f.text_field :state %></div>
 
+
     <div><%= f.label :country %>
       <br/>
       <%= f.text_field :country %></div>
+
+    <!--
+      <%#= country_select :user, :country, nil, {:include_blank=> true},
+{:class=>"topicField"} %>
+-->
 
     <div><%= f.submit "Sign up" %></div>
 <% end %>

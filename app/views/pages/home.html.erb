@@ -31,7 +31,11 @@ var data = [
         <%end%>
 ];
 
+
+<!-- This page is the home page of the site. It displays some of the items present in the system and categories-->
+
         Galleria.loadTheme('galleria/themes/classic/galleria.classic.min.js');
+
 
         $("#galleria").galleria({
           width: 500,
@@ -61,16 +65,16 @@ var data = [
 <div id ="user_notification">
 <% if user_signed_in? %>
 
-  <div class="hero-unit1">
-     <h2>Welcome, <%= current_user.first_name%> !</h2>
-   <% if current_user.is_seller? %>
-    <p>Browse Items, Offer Item and mint money in minutes </p>
-    <a class="btn primary large" href='<%=new_item_path%>'>Offer Your Item »</a>
-    <a class="btn primary large" href='<%=items_path%>'>All Items »</a>
-   <% else %>
-    <p>Shop, Bid and Celebrate!!</p>
-    <a class="btn primary large" href='<%=items_path%>'>Hot Items »</a>
-   <%end%>
+    <div class="hero-unit1">
+      <h2>Welcome, <%= current_user.first_name %> !</h2>
+      <% if current_user.is_seller? %>
+          <p>Browse Items, Offer Item and mint money in minutes </p>
+          <a class="btn primary large" href='<%= new_item_path %>'>Offer Your Item »</a>
+          <a class="btn primary large" href='<%= items_path %>'>All Items »</a>
+      <% else %>
+          <p>Shop, Bid and Celebrate!!</p>
+          <a class="btn primary large" href='<%= items_path %>'>Hot Items »</a>
+      <% end %>
     </div>
 
   <!-- show user his/her notifications -->
@@ -88,18 +92,19 @@ var data = [
 </div>
 
 
-<!-- Example row of columns -->
-  <hr>
+<!-- row of items -->
+<hr>
 <div class="row">
- <% @items.each_with_index do |item,i| %>
+  <% @items.each_with_index do |item, i| %>
+      <div class="home-item-desc span6">
+        <h2 class="heading"><%= item.title %></h2>
 
-   <div class="home-item-desc span6">
-    <h2 class ="heading"><%= item.title %></h2>
-    <%= image_tag item.photo.url(:small)  %>
-    <p><%= item.description %></p>
-    <%= link_to 'View Details', item ,:class=> 'btn' %>
-   </div>
- <% end %>
+        <%= image_tag item.photo.url(:small) %>
+
+        <p><%= item.description %></p>
+        <%= link_to 'View Details', item, :class=> 'btn' %>
+      </div>
+  <% end %>
 </div>
 
 

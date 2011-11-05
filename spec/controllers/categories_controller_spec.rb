@@ -20,7 +20,7 @@ require 'spec_helper'
 
 describe CategoriesController do
 
-  # This should return the minimal set of attributes required to create a valid
+  # This should return the minimal set of attributes required to createbidding a valid
   # Category. As you add validations to Category, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
@@ -58,22 +58,22 @@ describe CategoriesController do
     end
   end
 
-  describe "POST create" do
+  describe "POST createbidding" do
     describe "with valid params" do
       it "creates a new Category" do
         expect {
-          post :create, :category => valid_attributes
+          post :createbidding, :category => valid_attributes
         }.to change(Category, :count).by(1)
       end
 
       it "assigns a newly created category as @category" do
-        post :create, :category => valid_attributes
+        post :createbidding, :category => valid_attributes
         assigns(:category).should be_a(Category)
         assigns(:category).should be_persisted
       end
 
       it "redirects to the created category" do
-        post :create, :category => valid_attributes
+        post :createbidding, :category => valid_attributes
         response.should redirect_to(Category.last)
       end
     end
@@ -82,14 +82,14 @@ describe CategoriesController do
       it "assigns a newly created but unsaved category as @category" do
         # Trigger the behavior that occurs when invalid params are submitted
         Category.any_instance.stub(:save).and_return(false)
-        post :create, :category => {}
+        post :createbidding, :category => {}
         assigns(:category).should be_a_new(Category)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Category.any_instance.stub(:save).and_return(false)
-        post :create, :category => {}
+        post :createbidding, :category => {}
         response.should render_template("new")
       end
     end

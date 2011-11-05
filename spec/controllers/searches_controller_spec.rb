@@ -20,7 +20,7 @@ require 'spec_helper'
 
 describe SearchesController do
 
-  # This should return the minimal set of attributes required to create a valid
+  # This should return the minimal set of attributes required to createbidding a valid
   # Search. As you add validations to Search, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
@@ -58,22 +58,22 @@ describe SearchesController do
     end
   end
 
-  describe "POST create" do
+  describe "POST createbidding" do
     describe "with valid params" do
       it "creates a new Search" do
         expect {
-          post :create, :search => valid_attributes
+          post :createbidding, :search => valid_attributes
         }.to change(Search, :count).by(1)
       end
 
       it "assigns a newly created search as @search" do
-        post :create, :search => valid_attributes
+        post :createbidding, :search => valid_attributes
         assigns(:search).should be_a(Search)
         assigns(:search).should be_persisted
       end
 
       it "redirects to the created search" do
-        post :create, :search => valid_attributes
+        post :createbidding, :search => valid_attributes
         response.should redirect_to(Search.last)
       end
     end
@@ -82,14 +82,14 @@ describe SearchesController do
       it "assigns a newly created but unsaved search as @search" do
         # Trigger the behavior that occurs when invalid params are submitted
         Search.any_instance.stub(:save).and_return(false)
-        post :create, :search => {}
+        post :createbidding, :search => {}
         assigns(:search).should be_a_new(Search)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Search.any_instance.stub(:save).and_return(false)
-        post :create, :search => {}
+        post :createbidding, :search => {}
         response.should render_template("new")
       end
     end

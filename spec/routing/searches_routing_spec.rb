@@ -19,8 +19,8 @@ describe SearchesController do
       get("/searches/1/edit").should route_to("searches#edit", :id => "1")
     end
 
-    it "routes to #create" do
-      post("/searches").should route_to("searches#create")
+    it "routes to #createbidding" do
+      post("/searches").should route_to("searches#createbidding")
     end
 
     it "routes to #update" do

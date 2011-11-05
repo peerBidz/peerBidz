@@ -1,18 +1,10 @@
 class Item < ActiveRecord::Base
 
+  belongs_to :category
+  has_many :bidding
+  has_many :users, :through => :bidding
   #before_save :default_values
   #before_validation :before_val
-
-validate :bid_value_check
-
-def bid_value_check
-  if self.bidvalue && (self.bidvalue <= self.bidvalue_was)
-    self.errors.add_to_base("Bid is not successful")
-  elsif !self.bidvalue
-     self.bidvalue = self.starting_price
-  end
-end
-
 
   #def before_val
    #if self.bidvalue_was.to_f.to_s == 0
@@ -28,7 +20,4 @@ end
 
   #validates_numericality_of :bidvalue,
   #validates_numericality_of :starting_price
-
-
-  belongs_to :category
 end

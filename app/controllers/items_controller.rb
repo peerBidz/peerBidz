@@ -21,6 +21,8 @@ class ItemsController < ApplicationController
   # GET /items/1.xml
   def show
     @item = Item.find(params[:id])
+    @bidding = Bidding.new(:item_id => @item.id, :user_id => current_user.id)
+    @highest_bid = @item.bidding.find(:first, :order => 'bid_amount DESC')
 
     respond_to do |format|
       format.html # show.html.erb
@@ -51,13 +53,14 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to(@item, :notice => 'Item was successfully created.') }
+        format.html { redirect_to(@item, :notice => 'Item successfully created.') }
         format.xml  { render :xml => @item, :status => :created, :location => @item }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @item.errors, :status => :unprocessable_entity }
       end
     end
+
   end
 
   # PUT /items/1
@@ -67,11 +70,8 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.update_attributes(params[:item])
-        format.html { redirect_to(@item, :notice => 'Successfully updated.') }
+        format.html { redirect_to(@item, :notice => 'Item Successfully updated.') }
         format.xml  { head :ok }
-      elsif current_user.id != @item.seller_id       #to not see scaffolding
-        format.html { redirect_to(@item, :notice => 'Bidding was not successful.') }
-        format.xml  { render :xml => @item.errors, :status => :unprocessable_entity }
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @item.errors, :status => :unprocessable_entity }

@@ -1,25 +1,27 @@
-
+<!-- This page display all the items present in the system -->
 
 <% if user_signed_in? %>
- <%if current_user.is_seller? %>
-  <a class="btn primary large offer-item" href='<%=new_item_path%>'>Offer your item for bidding »</a>
- <% else %>
-  <a class="btn primary large offer-item" href='/users/sign_out'>Register as a seller to offer your item »</a>
+    <% if current_user.is_seller? %>
+        <a class="btn primary large offer-item" href='<%= new_item_path %>'>Offer your item for bidding »</a>
+    <% else %>
+        <a class="btn primary large offer-item" href='/users/sign_out'>Register as a seller to offer your item »</a>
         <!--ACTION ITEM: user should be redirected to seller register with is_seller already checked-in-->
-  <% end %>
+    <% end %>
 <% else %>
     <a class="btn primary large offer-item" href='/users/sign_in'>Login to offer your item »</a>
- <% end %>
+<% end %>
 
-<!-- for debugging purpose WJ-->
-<%#= @values %>
 
 <!-- SEARCH BAR -->
 <% form_tag items_path, :method => 'get' do %>
   <p>
+  <%#= text_field_tag :search, params[:search] %>
+<%#= submit_tag "Search", :name => nil %>
+
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", :name => nil %>
     <%= link_to "Advanced Search", advsearch_path %>
+
   </p>
 <% end %>
 
@@ -35,11 +37,11 @@
     <th>Seller</th>
     <th></th>
     <% if user_signed_in? %>
-        <%if current_user.is_seller? %>
-                <th></th>
-                <th></th>
+        <% if current_user.is_seller? %>
+            <th></th>
+            <th></th>
         <% end %>
-    <%end%>
+    <% end %>
   </tr>
 
 <% @items.each do |item| %>
@@ -56,21 +58,21 @@
     <td><%= number_to_currency(item.starting_price, :unit=>"$") %></td>
     <!--<td><%#= item.duration %></td>         -->
 
-    <td><%= Category.find(item.category_id).name %></td>
-    <td><%= User.find(item.seller_id).email %></td>
+        <td><%= Category.find(item.category_id).name %></td>
+        <td><%= User.find(item.seller_id).email %></td>
 
 
         <td><%= link_to 'Show', item %></td>
         <!-- WJ need admin role -->
-        <%if user_signed_in? && current_user.is_seller? %>
-            <%if current_user== User.find(item.seller_id) %>
+        <% if user_signed_in? && current_user.is_seller? %>
+            <% if current_user== User.find(item.seller_id) %>
                 <td><%= link_to 'Edit', edit_item_path(item) %></td>
                 <td><%= link_to 'Delete', item, :confirm => 'Are you sure?', :method => :delete %></td>
-            <% end%>
+            <% end %>
         <% end %>
 
-  </tr>
-<% end %>
+      </tr>
+  <% end %>
 </table>
 
 

@@ -8,8 +8,8 @@ namespace :bootstrap do
 	#----------
 	# This is used to generate the default category entries for the database.
 	#
-	# To create a new top level category (ex. "Electronics", add an entry below without a parent ID value)
-	# To create a new child category (ex. "Computers", add an entry below with the lookup for 
+	# To createbidding a new top level category (ex. "Electronics", add an entry below without a parent ID value)
+	# To createbidding a new child category (ex. "Computers", add an entry below with the lookup for
 	#   the parent (ex. "Electronics") category).
 	# (See below for examples)
 	#

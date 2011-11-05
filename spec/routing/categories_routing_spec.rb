@@ -19,8 +19,8 @@ describe CategoriesController do
       get("/categories/1/edit").should route_to("categories#edit", :id => "1")
     end
 
-    it "routes to #create" do
-      post("/categories").should route_to("categories#create")
+    it "routes to #createbidding" do
+      post("/categories").should route_to("categories#createbidding")
     end
 
     it "routes to #update" do

@@ -20,7 +20,7 @@ ActiveAdmin.setup do |config|
   # eg: 
   #   config.default_namespace = :hello_world
   #
-  # This will create resources in the HelloWorld module and
+  # This will createbidding resources in the HelloWorld module and
   # will namespace routes to /hello_world/*
   #
   # To set no namespace by default, use:
