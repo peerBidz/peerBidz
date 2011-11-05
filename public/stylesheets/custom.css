@@ -141,3 +141,21 @@ nav ul li a:hover {
     color: #0099ff;
     text-align: center;
 }
+
+/* Item View(show) Page */
+.item-show-container {
+   height: 300px;
+}
+
+.item-image {
+   float: left;
+   width: 49%;
+   height: 99%; 
+   }
+
+.item-details {
+   float: right;
+   width: 49%;
+   text-align: left; /* depends on element width */
+   height: 99%;
+   }

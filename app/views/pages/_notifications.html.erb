@@ -1,0 +1,28 @@
+    <h3>Notifictions:</h3>
+  
+  <ul>  
+
+  <%  @notifications = Notification.find_all_by_user_id( current_user.id ).sort_by{|n| n.created_at}.reverse
+
+      @notifications.each do |notification| %>
+
+      
+
+      <%
+      if notification.message == "win"
+        @alert_message = "You have been outbid on: " + Item.find(notification.item_id).title
+      elsif notification.message == "outbid"
+        @alert_message = "You have won: " + Item.find(notification.item_id).title + " !"
+      elsif notification.message == "item_sold"
+        @alert_message = "Your item (" + Item.find(notification.item_id).title + ") has sold for $" + "[fill in once bid table is complete]" + " !"
+      elsif notification.message == "new_bid"
+        @alert_message = "There is a new bid on your item (" + Item.find(notification.item_id).title + ") for $" + "[fill in once bid table is complete]" + " !"
+      else
+        @alert_message == "Unrecognized alert on:" + Item.find(notification.item_id).title
+      end 
+      %>
+
+      <li>  <%=  @alert_message %> </li>
+
+  <% end %>    
+  </ul>
