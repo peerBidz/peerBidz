@@ -1,3 +1,10 @@
+<style type="text/css">
+#galleria			{float:left;}
+#user_notification   {float:left; margin-left: 50px; }
+#ajax_description   {float:left; margin-left: 70px; }
+</style>
+<script src="galleria/galleria-1.2.5.min.js"></script>
+
 <% form_tag items_path, :method => 'get' do %>
           <p>
             <%= text_field_tag :search, params[:search] %>
@@ -6,10 +13,55 @@
           </p>
 
 <% end %>
+<!-- Lively Homepage images-->
+<div id="galleria"></div>
+<div id ="ajax_description"><a href="#"></a></div>
+
+<script>
+var data = [
+        <% @items.each do |item| %>
+    {
+        thumb: '<%= item.photo.url(:small) %>',
+        image: '<%= item.photo.url(:large) %>',
+        //description: 'item',
+        //link: '/items/<%#=item.id%>',
+        layer: '<div><h2><%= item.title%></h2><a href="/items/<%=item.id%>"><p>Click Here To See More Information</p></a>'
+    },
+        <%end%>
+];
 
 
 <!-- This page is the home page of the site. It displays some of the items present in the system and categories-->
 
+        Galleria.loadTheme('galleria/themes/classic/galleria.classic.min.js');
+
+
+        $("#galleria").galleria({
+          width: 500,
+          height: 500,
+          autoplay: 3000,
+          showInfo: false,
+          dataSource: data
+        });
+
+
+<!-- for the next iteration WJ : making ajax page-->
+//        $("#galleria").mouseover(function(){
+//           var item_image = this.getElementsByClassName('active')[0].getElementsByTagName('img')[0];
+//            var file = item_image.src.substr(item_image.src.lastIndexOf('/')+1);
+//            var filename = file.substr(0,file.indexOf('?')) ;
+            //alert(filename);
+            //var item_clicked = select * from items where photo_file_name='filename'
+
+            //alert(item_clicked.id);
+//            $('#ajax_description').load('./items/1 #ajax_group');
+//           return false;
+//        });
+
+
+</script>
+<!-- Lively Homepage images-->
+<div id ="user_notification">
 <% if user_signed_in? %>
 
     <div class="hero-unit1">
@@ -23,19 +75,26 @@
           <a class="btn primary large" href='<%= items_path %>'>Hot Items »</a>
       <% end %>
     </div>
+
+  <!-- show user his/her notifications -->
+  <%= render 'notifications' %>
+
 <% else %>
-    <div class="container">
-      <div class="hero-unit">
-        <!--<h1>BestBay!</h1>-->
-      </div>
-    </div>
+  <!--    <div class="container">    -->
+  <!--      <div class="hero-unit">   -->
+        <div class="">
+          <!--<h1>BestBay!</h1>-->
+        </div>
+  <!--      </div>                   -->
+  <!--    </div>                     -->
 <% end %>
+</div>
+
 
 <!-- row of items -->
 <hr>
 <div class="row">
   <% @items.each_with_index do |item, i| %>
-
       <div class="home-item-desc span6">
         <h2 class="heading"><%= item.title %></h2>
 
@@ -46,4 +105,6 @@
       </div>
   <% end %>
 </div>
+
+
 <hr>

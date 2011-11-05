@@ -44,20 +44,19 @@
     <% end %>
   </tr>
 
-  <% @items.each do |item| %>
-      <tr>
-        <td><%= item.title %></td>
-        <td><%= link_to (image_tag (item.photo.url(:small)), :action => 'show', :controller => 'items'), item %></td>
-        <td><%= item.description %></td>
-        <td>
-          <% if item.condition? %>
-              New
-          <% else %>
-              Used
-          <% end %>
-        </td>
-        <td><%= item.starting_price %></td>
-        <!--<td><%#= item.duration %></td>         -->
+<% @items.each do |item| %>
+  <tr>
+    <td><%= item.title %></td>
+    <td><%= link_to (image_tag (item.photo.url(:small)), :action => 'show', :controller => 'items'), item %></td>
+    <td><%= item.description %></td>
+    <td><%if item.condition?%>
+            New
+        <%else%>
+            Used
+        <%end%>
+    </td>
+    <td><%= number_to_currency(item.starting_price, :unit=>"$") %></td>
+    <!--<td><%#= item.duration %></td>         -->
 
         <td><%= Category.find(item.category_id).name %></td>
         <td><%= User.find(item.seller_id).email %></td>

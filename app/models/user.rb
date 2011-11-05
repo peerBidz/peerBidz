@@ -1,7 +1,10 @@
 class User < ActiveRecord::Base
 
+
   has_many :bidding
   has_many :items, :through => :bidding
+
+	has_many :notifications
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
