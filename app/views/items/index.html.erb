@@ -53,7 +53,7 @@
             Used
         <%end%>
     </td>
-    <td><%= item.starting_price %></td>
+    <td><%= number_to_currency(item.starting_price, :unit=>"$") %></td>
     <!--<td><%#= item.duration %></td>         -->
 
     <td><%= Category.find(item.category_id).name %></td>

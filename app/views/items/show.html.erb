@@ -29,12 +29,12 @@
 </div>
 <p>
   <b>Starting price:</b>
-  <%= @item.starting_price %>
+  <%= number_to_currency(@item.starting_price, :unit=>"$") %>
 </p>
 
 <p>
   <b>Current price: </b>
-  <%= @item.bidvalue %>
+  <%= number_to_currency(@item.bidvalue, :unit=>"$") %>
 </p>
 
 <p>
@@ -73,7 +73,7 @@
         <div class="field">
             <br />
              <%= f.label "BidValue" %><br />
-            <%= f.text_field :bidvalue %>
+            <%= number_to_currency(f.text_field :bidvalue, :unit=>"$") %>
           </div>
          
           <%= f.hidden_field :biduser, :value => current_user.id %>
