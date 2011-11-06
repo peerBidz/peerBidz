@@ -4,7 +4,9 @@ $("#top").html('<div class="notice"> <%= @bid_notification_msg %> </div>');
 
 /*$("#current-price-value").replaceWith($('#current-price-value').html);*/
 
- $("#current-price-value").html("<%= number_to_currency(Bidding.find(:first, :conditions => ["item_id IN (?)", @bidding.item_id] , :order => 'bid_amount DESC').bid_amount,:unit=>"$")%>");
+if("<%= (defined?(@current_highest_bid)).nil? %>" == "false"){
+$("#current-price-value").html("<%= escape_javascript(number_to_currency(@current_highest_bid, :unit=>"$"))%>");
+}
 
 /* Replace the count of comments
 $("#bids_count").html("<%#= pluralize(Comment.count, 'Subscription') %>");

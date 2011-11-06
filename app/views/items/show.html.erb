@@ -5,6 +5,8 @@
 
 <p id="top"></p>
 
+<p id="worst"></p>
+
 <h3><%= @item.title %></h3>
 
 
@@ -35,13 +37,11 @@
 
 <p id="current-price">
   <b>Current price:</b>
-
   <span id ="current-price-value"><% if @highest_bid != nil %>
   <%= number_to_currency(@highest_bid.bid_amount,:unit=>"$")%>
   <% else %>
   <%= number_to_currency(@item.starting_price,:unit=>"$")%>
   <% end %></span>
-
 </p>
 
 <!-- <p>
