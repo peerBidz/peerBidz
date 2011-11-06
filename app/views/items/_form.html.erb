@@ -47,6 +47,11 @@
     <%= f.select :category_id, Category.where("parentID NOT ?", nil).collect {|category| [ category.name, category.id ]} %>
   </div>
 
+  <div class="field">
+    <%= f.label "End time" %>
+    <%= f.datetime_select :expires_at %>
+  </div>
+
   <%= f.hidden_field :seller_id, :value => current_user.id %>
 
   <div class="actions">
