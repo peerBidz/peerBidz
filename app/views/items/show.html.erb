@@ -63,7 +63,7 @@
 <% end %>
 
 <% if user_signed_in? %>
-    <% if @item.seller_id != current_user %>
+    <% unless current_user.is_seller? %>        <!-- seller cannot bid on an item -->
 
 
 <%= render :template => 'biddings/new', :locals => {:bidding => @bidding, :item => @item } %>

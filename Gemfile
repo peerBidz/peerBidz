@@ -57,3 +57,6 @@ gem 'country-select'
 gem "dynamic_form"
 #gem 'iso-3166-country-select', :git => 'git://github.com/rails/iso-3166-country-select.git'
 #gem 'country_select.git', :git => 'git://github.com/jodosha/country_select.git'
+
+#gem for credit card validation
+gem 'activemerchant'
