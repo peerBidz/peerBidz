@@ -17,7 +17,7 @@ class Bidding < ActiveRecord::Base
     errors.add(:bid_amount, "Sorry, your bid was not successful. Please bid higher than the current price")
 
     elsif !self.bid_amount
-    self.bid_amount = Items.find(id => :item_id).starting_price
+    self.bid_amount = Item.find(self.item_id).starting_price
     end
   end
 

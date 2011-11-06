@@ -78,7 +78,9 @@ var data = [
     </div>
 
   <!-- show user his/her notifications -->
-  <%= render 'notifications' %>
+  <div class="notifications" id="notifications">
+  <%= render current_user.notifications %>
+  </div>
 
 <% else %>
   <!--    <div class="container">    -->
