@@ -6,9 +6,7 @@
 
       @notifications.each do |notification| %>
 
-      
-
-      <%
+                <%
       if notification.message == "win"
         @alert_message = "You have been outbid on: " + Item.find(notification.item_id).title
       elsif notification.message == "outbid"
@@ -19,10 +17,10 @@
         @alert_message = "There is a new bid on your item (" + Item.find(notification.item_id).title + ") for $" + "[fill in once bid table is complete]" + " !"
       else
         @alert_message == "Unrecognized alert on:" + Item.find(notification.item_id).title
-      end 
+      end
       %>
 
       <li>  <%=  @alert_message %> </li>
 
-  <% end %>    
+  <% end %>
   </ul>

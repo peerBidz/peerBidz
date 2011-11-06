@@ -21,8 +21,9 @@ class ItemsController < ApplicationController
   # GET /items/1.xml
   def show
     @item = Item.find(params[:id])
-    @bidding = Bidding.new(:item_id => @item.id, :user_id => current_user.id)
-    @highest_bid = @item.bidding.find(:first, :order => 'bid_amount DESC')
+   @bidding = Bidding.new
+   @highest_bid = @item.bidding.find(:first, :order => 'bid_amount DESC')
+
 
     respond_to do |format|
       format.html # show.html.erb
