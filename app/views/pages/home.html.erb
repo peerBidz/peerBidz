@@ -82,7 +82,7 @@ var data = [
   <!-- show user his/her notifications -->
   
 	 	<h2>Your notifications</h2>
-		<div class="notifications" id="notifications">
+		<div class="notifications" id="notifications" data-user-id="<%= current_user.id %>" >
   			<%= render current_user.notifications.find(:all, :conditions=>["delivered=?", true]) %>
  		</div>
 
