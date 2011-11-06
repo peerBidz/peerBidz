@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111105000729) do
+ActiveRecord::Schema.define(:version => 20111106041819) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -87,6 +87,8 @@ ActiveRecord::Schema.define(:version => 20111105000729) do
     t.datetime "photo_updated_at"
     t.float    "bidvalue"
     t.integer  "biduser"
+    t.datetime "expires_at"
+    t.boolean  "bidding_closed"
   end
 
   create_table "notifications", :force => true do |t|

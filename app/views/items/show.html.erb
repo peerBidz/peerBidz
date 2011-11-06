@@ -5,10 +5,7 @@
 
 <p id="top"></p>
 
-<p id="worst"></p>
-
 <h3><%= @item.title %></h3>
-
 
 <div class="item-show-container">
 <div class="item-image">
@@ -62,13 +59,8 @@
 <%= link_to 'Edit', edit_item_path(@item) %> 
 <% end %>
 
-<% if user_signed_in? %>
-    <% if @item.seller_id != current_user %>
-
-
-<%= render :template => 'biddings/new', :locals => {:bidding => @bidding, :item => @item } %>
-
-    <% end %>
+<% if user_signed_in? && @item.seller_id != current_user.id%>
+  <%= render :template => 'biddings/new', :locals => {:bidding => @bidding, :item => @item } %>
 <% end %>
 
 
