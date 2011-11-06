@@ -14,6 +14,56 @@
 
 <% end %>
 
+<!-- Lively Homepage images-->
+
+<div id="galleria"></div>
+<div id ="ajax_description"><a href="#"></a></div>
+
+<script>
+var data = [
+        <% @items.each do |item| %>
+    {
+        thumb: '<%= item.photo.url(:small) %>',
+        image: '<%= item.photo.url(:large) %>',
+        //description: 'item',
+        //link: '/items/<%#=item.id%>',
+        layer: '<div><a href="/items/<%=item.id%>"><h2><%= item.title%></h2></a><p>LATEST BID</p></div>'
+
+    },
+        <%end%>
+];
+
+
+<!-- This page is the home page of the site. It displays some of the items present in the system and categories-->
+
+        Galleria.loadTheme('galleria/themes/classic/galleria.classic.min.js');
+
+
+        $("#galleria").galleria({
+          width: 500,
+          height: 500,
+          autoplay: 3000,
+          showInfo: false,
+          dataSource: data
+        });
+
+
+<!-- for the next iteration WJ : making ajax page-->
+//        $("#galleria").mouseover(function(){
+//           var item_image = this.getElementsByClassName('active')[0].getElementsByTagName('img')[0];
+//            var file = item_image.src.substr(item_image.src.lastIndexOf('/')+1);
+//            var filename = file.substr(0,file.indexOf('?')) ;
+            //alert(filename);
+            //var item_clicked = select * from items where photo_file_name='filename'
+
+            //alert(item_clicked.id);
+//            $('#ajax_description').load('./items/1 #ajax_group');
+//           return false;
+//        });
+
+
+</script>
+
 <div id ="user_notification">
 <% if user_signed_in? %>
 
