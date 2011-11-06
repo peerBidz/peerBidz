@@ -1,6 +1,8 @@
 class NotificationsController < ActionController::Base
-	def index
-		@notifications = Notification.where( "user_id = ? and created_at > ?", params[:user_id], Time.at(params[:after].to_i + 1) )
-	end
-
+  def index
+    @notifications = Notification.where( "user_id = ? and delivered = ?", params[:user_id], false )
+    @notifications.each do |n|
+      Notification.update(n.id, :delivered=>true)
+    end
+  end
 end
