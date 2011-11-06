@@ -11,7 +11,7 @@ class BiddingsController < ApplicationController
       @bid_notification_msg = "Congrats! You have successfully placed the bid"
 
       #notify older leader he has been outbid.
-      if (!@old_highest_bid.nil? && @old_highest_bid.user_id != @old_highest_bid.user_id)
+      if (!@old_highest_bid.nil? && @old_highest_bid.user_id != @bidding.user_id)
       #Notification for the user who was outbid
       @msg = "You have been outbid on: " + Item.find(@bidding.item_id).title
       Notification.create(:user_id=>@old_highest_bid.user_id, :item_id=>@bidding.item_id, :message=>@msg, :delivered=>"false")
