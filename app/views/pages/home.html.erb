@@ -5,7 +5,7 @@
 </style>
 <script src="galleria/galleria-1.2.5.min.js"></script>
 
-<% form_tag items_path, :method => 'get' do %>
+<%= form_tag items_path, :method => 'get' do %>
           <p>
             <%= text_field_tag :search, params[:search] %>
             <%= submit_tag "Search", :name => nil %>
@@ -25,7 +25,7 @@ var data = [
         image: '<%= item.photo.url(:large) %>',
         //description: 'item',
         //link: '/items/<%#=item.id%>',
-        layer: '<div><a href="/items/<%=item.id%>"><h2><%= item.title%></h2></a><p>LATEST BID</p></div>'
+        layer: '<div><a href="/items/<%=item.id%>"><h2><u><%= item.title%></u></h2></a><p>Expires at: <%= item.expires_at %></p></div>'
 
     },
         <%end%>
