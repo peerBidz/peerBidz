@@ -13,19 +13,34 @@
           </p>
 
 <% end %>
+
 <!-- Lively Homepage images-->
+
 <div id="galleria"></div>
 <div id ="ajax_description"><a href="#"></a></div>
 
 <script>
 var data = [
         <% @items.each do |item| %>
+
+        <%
+         @currentBid = Bidding.find(:first, :conditions => ["item_id IN (?)", item.id] , :order => 'bid_amount DESC')
+
+        if ( @currentBid != nil )
+          @currentPrice = number_to_currency(@currentBid.bid_amount,:unit=>"$")
+        else
+          @currentPrice = number_to_currency(item.starting_price,:unit=>"$")
+        end
+        %>
+
+
     {
         thumb: '<%= item.photo.url(:small) %>',
         image: '<%= item.photo.url(:large) %>',
         //description: 'item',
         //link: '/items/<%#=item.id%>',
-        layer: '<div><a href="/items/<%=item.id%>"><h2><u><%= item.title%></u></h2></a><p>Expires at: <%= item.expires_at %></p></div>'
+
+        layer: '<div><a href="/items/<%=item.id%>"><h2><%= item.title%></h2></a><p><%= @currentPrice %></p></div>'
 
     },
         <%end%>
@@ -61,7 +76,7 @@ var data = [
 
 
 </script>
-<!-- Lively Homepage images-->
+
 <div id ="user_notification">
 <% if user_signed_in? %>
 
@@ -78,9 +93,12 @@ var data = [
     </div>
 
   <!-- show user his/her notifications -->
-  <div class="notifications" id="notifications">
-  <%= render current_user.notifications %>
-  </div>
+  
+	 	<h2>Your notifications</h2>
+		<div class="notifications" id="notifications" data-user-id="<%= current_user.id %>" >
+  			<%= render current_user.notifications.find(:all, :conditions=>["delivered=?", true]) %>
+ 		</div>
+
 
 <% else %>
   <!--    <div class="container">    -->

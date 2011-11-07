@@ -1,5 +1,4 @@
 require File.expand_path('../boot', __FILE__)
-
 require 'rails/all'
 
 # If you have a Gemfile, require the gems listed there, including any gems
@@ -31,11 +30,10 @@ module BestBay
     # config.i18n.default_locale = :de
 
     # JavaScript files you want as :defaults (application.js is always included).
-   # config.action_view.javascript_expansions[:defaults] = %w()
+    # config.action_view.javascript_expansions[:defaults] = %w()
     config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
-   # config.action_view.javascript_expansions[:defaults] = %w(jquery rails application)
-   # config.action_view.javascript_expansions[:defaults] = ['jquery', 'jquery-ujs/src/rails']
-
+    # config.action_view.javascript_expansions[:defaults] = %w(jquery rails application)
+    # config.action_view.javascript_expansions[:defaults] = ['jquery', 'jquery-ujs/src/rails']
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
@@ -45,6 +43,5 @@ module BestBay
     config.time_zone = 'Eastern Time (US & Canada)'
     config.active_record.default_timezone = 'Eastern Time (US & Canada)'
     config.gem "rufus-scheduler", :lib => "rufus/scheduler"
-
   end
 end

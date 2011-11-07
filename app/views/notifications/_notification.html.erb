@@ -1,3 +1,6 @@
-<div class="notification" data-time="<%= notification.created_at.to_i %>" data-user-id="<%= current_user.id %>">
-<li>  <%=  notification.message %> </li>
+<div class="notification">
+	<!-- Print the notification message -->
+	<li>
+		<%= notification.message %>
+	</li>
 </div>
