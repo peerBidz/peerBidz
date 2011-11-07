@@ -52,7 +52,7 @@ class Item < ActiveRecord::Base
     Bidding.destroy(deleteme)
 
     #delete the item
-    self.delete
+    super
   end
 
 end
