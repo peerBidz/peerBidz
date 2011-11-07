@@ -5,7 +5,13 @@
 
 <p id="top"></p>
 
+<% if (DateTime.now.to_i >= @item.expires_at.to_i) %>
+<h3><%= @item.title %></h3> <span class="label important">Expired</span>
+<% else %>
 <h3><%= @item.title %></h3>
+<% end %>
+
+
 
 <div class="item-show-container">
 <div class="item-image">
@@ -17,7 +23,6 @@
   <b>Description:</b>
   <%= @item.description %>
 </p>
-
 <p>
   <b>Condition: </b>
   <%if @item.condition?%>
@@ -39,6 +44,10 @@
   <% else %>
   <%= number_to_currency(@item.starting_price,:unit=>"$")%>
   <% end %></span>
+</p>
+
+<p id="expires-at">
+  <b>Expires on:</b> <%=  @item.expires_at.to_formatted_s(:long_ordinal) %>
 </p>
 
 <!-- <p>
