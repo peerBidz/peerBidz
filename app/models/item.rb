@@ -23,6 +23,30 @@ class Item < ActiveRecord::Base
 
 
   def destroy
+    #-----Notify any bidders of the item before destroying
+    @allBidsForItem = Bidding.find_all_by_item_id(self.id)
+
+    #get all users that had bids on the item to be deleted
+    @usersThatBid = Array.new
+    @allBidsForItem.each do |bid|
+      @usersThatBid.push( bid.user_id )
+    end
+
+    #remove duplicates from users array
+    @usersThatBid.uniq
+
+    #generate notifications for all users that had bid on that item
+    @msg = "The following item that you have bid on has been removed: " + self.title
+    @usersThatBid.each do |user|
+      Notification.create(:user_id=>user, :item_id=>self.id, :delivered=>false, :message=>@msg)
+    end
+
+    #notify the seller that his item has been deleted
+    @msg = "Your item (" + self.title + ") has been deleted by an admin"
+    Notification.create(:user_id=>self.seller_id, :item_id=>self.id, :delivered=>false, :message=>@msg)
+    #--------------------------------
+
+
     #remove all bidding entries belonging to item
     deleteme = Bidding.find_all_by_item_id(self.id)
     Bidding.destroy(deleteme)
