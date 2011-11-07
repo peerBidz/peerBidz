@@ -5,7 +5,7 @@
 </style>
 <script src="galleria/galleria-1.2.5.min.js"></script>
 
-<% form_tag items_path, :method => 'get' do %>
+<%= form_tag items_path, :method => 'get' do %>
           <p>
             <%= text_field_tag :search, params[:search] %>
             <%= submit_tag "Search", :name => nil %>
@@ -22,12 +22,25 @@
 <script>
 var data = [
         <% @items.each do |item| %>
+
+        <%
+         @currentBid = Bidding.find(:first, :conditions => ["item_id IN (?)", item.id] , :order => 'bid_amount DESC')
+
+        if ( @currentBid != nil )
+          @currentPrice = number_to_currency(@currentBid.bid_amount,:unit=>"$")
+        else
+          @currentPrice = number_to_currency(item.starting_price,:unit=>"$")
+        end
+        %>
+
+
     {
         thumb: '<%= item.photo.url(:small) %>',
         image: '<%= item.photo.url(:large) %>',
         //description: 'item',
         //link: '/items/<%#=item.id%>',
-        layer: '<div><a href="/items/<%=item.id%>"><h2><%= item.title%></h2></a><p>LATEST BID</p></div>'
+
+        layer: '<div><a href="/items/<%=item.id%>"><h2><%= item.title%></h2></a><p><%= @currentPrice %></p></div>'
 
     },
         <%end%>
