@@ -7,7 +7,6 @@
 
 <h3><%= @item.title %></h3>
 
-
 <div class="item-show-container">
 <div class="item-image">
 <%= image_tag @item.photo.url(:medium)  %>
@@ -35,13 +34,11 @@
 
 <p id="current-price">
   <b>Current price:</b>
-
   <span id ="current-price-value"><% if @highest_bid != nil %>
   <%= number_to_currency(@highest_bid.bid_amount,:unit=>"$")%>
   <% else %>
   <%= number_to_currency(@item.starting_price,:unit=>"$")%>
   <% end %></span>
-
 </p>
 
 <!-- <p>
@@ -62,13 +59,8 @@
 <%= link_to 'Edit', edit_item_path(@item) %> 
 <% end %>
 
-<% if user_signed_in? %>
-    <% unless current_user.is_seller? %>        <!-- seller cannot bid on an item -->
-
-
-<%= render :template => 'biddings/new', :locals => {:bidding => @bidding, :item => @item } %>
-
-    <% end %>
+<% if user_signed_in? && @item.seller_id != current_user.id%>
+  <%= render :template => 'biddings/new', :locals => {:bidding => @bidding, :item => @item } %>
 <% end %>
 
 

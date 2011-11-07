@@ -59,4 +59,7 @@ gem "dynamic_form"
 #gem 'country_select.git', :git => 'git://github.com/jodosha/country_select.git'
 
 #gem for credit card validation
-gem 'activemerchant'
+gem 'activemerchant', :require => 'active_merchant'
+
+#gem for cron job in Ruby
+gem 'whenever', :require => false

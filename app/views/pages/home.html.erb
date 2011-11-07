@@ -5,7 +5,7 @@
 </style>
 <script src="galleria/galleria-1.2.5.min.js"></script>
 
-<% form_tag items_path, :method => 'get' do %>
+<%= form_tag items_path, :method => 'get' do %>
           <p>
             <%= text_field_tag :search, params[:search] %>
             <%= submit_tag "Search", :name => nil %>
@@ -78,7 +78,12 @@ var data = [
     </div>
 
   <!-- show user his/her notifications -->
-  <%= render 'notifications' %>
+  
+	 	<h2>Your notifications</h2>
+		<div class="notifications" id="notifications">
+  			<%= render current_user.notifications.find(:all, :conditions=>["delivered=?", true]) %>
+ 		</div>
+
 
 <% else %>
   <!--    <div class="container">    -->
