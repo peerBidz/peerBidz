@@ -31,8 +31,8 @@ class User < ActiveRecord::Base
         Bidding.destroy(deleteme)
       end    
 
-    #delete the user
-    self.delete
+      #delete the user
+      super
   end
 
 end
