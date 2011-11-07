@@ -20,4 +20,15 @@ class Item < ActiveRecord::Base
 
   #validates_numericality_of :bidvalue,
   #validates_numericality_of :starting_price
+
+
+  def destroy
+    #remove all bidding entries belonging to item
+    deleteme = Bidding.find_all_by_item_id(self.id)
+    Bidding.destroy(deleteme)
+
+    #delete the item
+    self.delete
+  end
+
 end
