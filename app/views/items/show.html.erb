@@ -5,8 +5,7 @@
 
 <p id="top"></p>
 
-
-<% if (DateTime.now.to_i >= @item.expires_at.to_i+18000) %>
+<% if DateTime.now.to_formatted_s(:db) >= @item.expires_at.to_formatted_s(:db) %>
 <h3><%= @item.title %></h3> <span class="label important">Expired</span>
 <% else %>
 <h3><%= @item.title %></h3>
@@ -70,7 +69,8 @@
 <% end %>
 
 <% if user_signed_in? && @item.seller_id != current_user.id%>
-  <% if (DateTime.now.to_i >= @item.expires_at.to_i+18000) %>
+  <% if DateTime.now.to_formatted_s(:db) >= @item.expires_at.to_formatted_s(:db) %>
+
   <%else%>
   <%= render :template => 'biddings/new', :locals => {:bidding => @bidding, :item => @item } %>
   <% end %>
