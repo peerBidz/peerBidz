@@ -40,8 +40,9 @@ module BestBay
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    config.gem "rufus-scheduler", :lib => "rufus/scheduler"
+
     config.time_zone = 'Eastern Time (US & Canada)'
     config.active_record.default_timezone = 'Eastern Time (US & Canada)'
-    config.gem "rufus-scheduler", :lib => "rufus/scheduler"
   end
 end

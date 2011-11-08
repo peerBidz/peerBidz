@@ -10,7 +10,8 @@ namespace :biddingTasks do
   @items = Item.find(:all, :conditions => ["bidding_closed = ?", false])
 
     @items.each do |item|
-      if DateTime.now.to_i >= item.expires_at.to_i
+      if DateTime.now.to_formatted_s(:db) >= item.expires_at.to_formatted_s(:db)
+        puts("entered to item loop")
         Item.update(item.id, :bidding_closed => true)
         item.save
         @highest_bid_row = Bidding.find(:first, :conditions => ["item_id IN (?)", item.id] , :order => 'bid_amount DESC')

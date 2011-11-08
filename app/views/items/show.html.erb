@@ -5,17 +5,8 @@
 
 <p id="top"></p>
 
------
-<%= DateTime.now %>
-<%= DateTime.now.in_time_zone("Eastern Time (US & Canada)")%>
-<%= DateTime.now.in_time_zone("Eastern Time (US & Canada)").to_i %>
-     ------
-<%= @item.expires_at %>
-<%= @item.expires_at.in_time_zone("Eastern Time (US & Canada)") %>
-<%= @item.expires_at.in_time_zone("Eastern Time (US & Canada)").to_i %>
--------
 
-<% if (DateTime.now >= Item.find(@item.id).expires_at) %>
+<% if DateTime.now.to_formatted_s(:db) >= @item.expires_at.to_formatted_s(:db) %>
 <h3><%= @item.title %></h3> <span class="label important">Expired</span>
 <% else %>
 <h3><%= @item.title %></h3>
@@ -57,7 +48,7 @@
 </p>
 
 <p id="expires-at">
-  <b>Expires on:</b> <%=  @item.expires_at.to_formatted_s(:long_ordinal) %>
+  <b>Expires on:</b> <%=  @item.expires_at.to_formatted_s(:db) %>
 </p>
 
 <!-- <p>

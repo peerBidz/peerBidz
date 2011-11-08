@@ -7,9 +7,9 @@ class Item < ActiveRecord::Base
   #before_validation :before_val
 
   #def before_val
-   #if self.bidvalue_was.to_f.to_s == 0
-    # self.bidvalue = 1
-   #end
+  #if self.bidvalue_was.to_f.to_s == 0
+  # self.bidvalue = 1
+  #end
   #end
   has_attached_file :photo, :styles => { :small => "150x150", :medium => "450x450>", :large => "650x650>" }
 
@@ -17,10 +17,8 @@ class Item < ActiveRecord::Base
   validates_attachment_size :photo, :less_than => 5.megabytes
   validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'images/png']
 
-
   #validates_numericality_of :bidvalue,
   #validates_numericality_of :starting_price
-
 
   def destroy
     #-----Notify any bidders of the item before destroying
@@ -45,7 +43,6 @@ class Item < ActiveRecord::Base
     @msg = "Your item (" + self.title + ") has been deleted by an admin"
     Notification.create(:user_id=>self.seller_id, :item_id=>self.id, :delivered=>false, :message=>@msg)
     #--------------------------------
-
 
     #remove all bidding entries belonging to item
     deleteme = Bidding.find_all_by_item_id(self.id)
