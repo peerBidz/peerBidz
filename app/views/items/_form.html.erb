@@ -53,6 +53,7 @@
   </div>
 
   <%= f.hidden_field :seller_id, :value => current_user.id %>
+  <%= f.hidden_field :bidding_closed, :value => false %>
 
   <div class="actions">
     <%= f.submit %>

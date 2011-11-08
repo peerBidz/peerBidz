@@ -48,6 +48,7 @@ class Item < ActiveRecord::Base
     deleteme = Bidding.find_all_by_item_id(self.id)
     Bidding.destroy(deleteme)
 
+
     #delete the item
     super
   end
