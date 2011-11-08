@@ -7,6 +7,8 @@ gem 'rails', '3.0.9'
 
 gem 'sqlite3'
 
+gem 'rake', '0.9.2.2'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -51,15 +53,14 @@ gem "paperclip", "~> 2.4"
 
 #active admin
 gem 'activeadmin'
-#gem 'iso-3166-country-select'
-gem 'country-select'
+
 
 gem "dynamic_form"
+
+gem "rufus-scheduler"
+
+#gem "whenever", :require => false
 #gem 'iso-3166-country-select', :git => 'git://github.com/rails/iso-3166-country-select.git'
-#gem 'country_select.git', :git => 'git://github.com/jodosha/country_select.git'
-
-#gem for credit card validation
-gem 'activemerchant', :require => 'active_merchant'
-
-#gem for cron job in Ruby
-gem 'whenever', :require => false
+#gem 'country_select', :git => 'git://github.com/jodosha/country_select.git'
+#gem 'iso-3166-country-select'
+#gem 'country-select'

@@ -13,7 +13,7 @@
 
 
 <!-- SEARCH BAR -->
-<% form_tag items_path, :method => 'get' do %>
+<%= form_tag items_path, :method => 'get' do %>
   <p>
   <%#= text_field_tag :search, params[:search] %>
 <%#= submit_tag "Search", :name => nil %>
@@ -31,7 +31,7 @@
     <th>Photo</th>
     <th>Description</th>
     <th>Condition</th>
-    <th>Starting price</th>
+    <th>Current price</th>
     <!--<th>Duration</th>-->
     <th>Category</th>
     <th>Seller</th>
@@ -55,7 +55,15 @@
             Used
         <%end%>
     </td>
-    <td><%= number_to_currency(item.starting_price, :unit=>"$") %></td>
+    
+    <td id="current-price">
+        <span id ="current-price-value"><% if @highest_bid != nil %>
+        <%= number_to_currency(@highest_bid.bid_amount,:unit=>"$")%>
+        <% else %>
+        <%= number_to_currency(item.starting_price,:unit=>"$")%>
+        <% end %></span>
+    </td>
+    
     <!--<td><%#= item.duration %></td>         -->
 
         <td><%= Category.find(item.category_id).name %></td>

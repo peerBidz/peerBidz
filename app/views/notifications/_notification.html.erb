@@ -1,26 +1,6 @@
-<div class="notification" data-time="<%= notification.created_at.to_i %>" data-user-id="<%= current_user.id %>">
-
-
-<!-- Generate notification (alert) message -->
-
-   <%
-
-   	  @highest_bid_str = Bidding.find(:first, :conditions => ["item_id IN (?)", notification.item_id] , :order => 'bid_amount DESC').bid_amount.to_s
-
-      if notification.message == "outbid"
-        @alert_message = "You have been outbid on: " + Item.find(notification.item_id).title
-      elsif notification.message == "win"
-        @alert_message = "You have won: " + Item.find(notification.item_id).title + " !"
-      elsif notification.message == "item_sold"
-        @alert_message = "Your item (" + Item.find(notification.item_id).title + ") has sold for $" + @highest_bid_str + " !"
-      elsif notification.message == "new_bid"
-        @alert_message = "There is a new bid on your item (" + Item.find(notification.item_id).title + ") for $" + @highest_bid_str + " !"
-      else
-        @alert_message == "Unrecognized alert on:" + Item.find(notification.item_id).title
-      end
-  %>
-
-  <!-- Print the notification message -->
-<li>  <%=  @alert_message %> </li>
-
+<div class="notification">
+	<!-- Print the notification message -->
+	<li>
+		<%= notification.message %>
+	</li>
 </div>

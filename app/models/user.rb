@@ -15,5 +15,24 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me,
                   :first_name, :last_name, :dob, :phone, :street, :city, :zip, :state, :country, :is_seller
 
+  def destroy
+    #SELLER - logical delete
+    #remove all items belonging to user if he is a seller
+      if( self.is_seller? )
+        #delete all of the seller's items
+        deleteme = Item.find_all_by_seller_id(self.id)
+        Item.destroy(deleteme)
+    
+    #BUYER - logical delete
+    #remove all bids belongs to a buyer
+      else
+        #delete all bidding entries for buyer    
+        deleteme = Bidding.find_all_by_user_id(self.id)
+        Bidding.destroy(deleteme)
+      end    
+
+      #delete the user
+      super
+  end
 
 end
