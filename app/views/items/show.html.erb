@@ -5,7 +5,7 @@
 
 <p id="top"></p>
 
-<% if (DateTime.now.to_i >= @item.expires_at.to_i) %>
+<% if DateTime.now.to_formatted_s(:db) >= @item.expires_at.to_formatted_s(:db) %>
 <h3><%= @item.title %></h3> <span class="label important">Expired</span>
 <% else %>
 <h3><%= @item.title %></h3>
@@ -47,7 +47,7 @@
 </p>
 
 <p id="expires-at">
-  <b>Expires on:</b> <%=  @item.expires_at.to_formatted_s(:long_ordinal) %>
+  <b>Expires on:</b> <%=  @item.expires_at.to_formatted_s(:db) %>
 </p>
 
 <!-- <p>
