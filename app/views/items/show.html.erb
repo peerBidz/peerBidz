@@ -12,8 +12,6 @@
 <h3><%= @item.title %></h3>
 <% end %>
 
-
-
 <div class="item-show-container">
 <div class="item-image">
 <%= image_tag @item.photo.url(:medium)  %>
@@ -70,7 +68,9 @@
 <% end %>
 
 <% if user_signed_in? && @item.seller_id != current_user.id%>
+     <% if DateTime.now.to_formatted_s(:db) < @item.expires_at.to_formatted_s(:db) %>
   <%= render :template => 'biddings/new', :locals => {:bidding => @bidding, :item => @item } %>
+     <% end %>
 <% end %>
 
 

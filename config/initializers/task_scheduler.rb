@@ -23,22 +23,25 @@ require 'rubygems'
 require 'rake'
 require 'rufus/scheduler'
 
-load File.join(Rails.root.to_s, 'lib', 'tasks', 'bidding_tasks.rake')
+#load File.join( Rails.root.to_s, 'lib', 'tasks', 'bidding_tasks.rake')
 
 scheduler = Rufus::Scheduler.start_new
 
-scheduler.every '20s' do
-  #puts "Inside scheduler"
-  @items = Item.find(:all, :conditions => ["bidding_closed = ?", false])
-  @items.each do |item|
-    if DateTime.now.to_formatted_s(:db) >= item.expires_at.to_formatted_s(:db)
-      #puts("entered to item loop")
-      Item.update(item.id, :bidding_closed => true)
-      item.save
-      @highest_bid_row = Bidding.find(:first, :conditions => ["item_id IN (?)", item.id] , :order => 'bid_amount DESC')
-      if @highest_bid_row
-      Notification.create!(:user_id => @highest_bid_row.user_id, :item_id => item.id , :message => "You have successfully won the bid on "+item.title, :delivered => false)
+scheduler.every("20s") do
+  #Rake::Task["biddingTasks:winner_notify"].invoke
+
+    @items = Item.find(:all, :conditions => ["bidding_closed = ?", false])
+
+    @items.each do |item|
+      if DateTime.now.to_formatted_s(:db) >= item.expires_at.to_formatted_s(:db)
+        #puts("entered to item loop")
+        Item.update(item.id, :bidding_closed => true)
+        item.save
+        @highest_bid_row = Bidding.find(:first, :conditions => ["item_id IN (?)", item.id] , :order => 'bid_amount DESC')
+        if @highest_bid_row
+        Notification.create!(:user_id => @highest_bid_row.user_id, :item_id => item.id , :message => "Congrats! You have won "+item.title, :delivered => false)
+        end
+        else
       end
     end
-  end
 end
