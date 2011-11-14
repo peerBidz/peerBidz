@@ -16,6 +16,7 @@ class DeviseCreateAdminUsers < ActiveRecord::Migration
     end
 
     # Create a default user
+    #--moved to bootstrap file since heroku doesn't like this --CD
     #AdminUser.create!(:email => 'admin@bestbay.com', :password => 'rockingonrails', :password_confirmation => 'rockingonrails')
 
     add_index :admin_users, :email,                :unique => true
