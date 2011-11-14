@@ -11,9 +11,10 @@ gem 'pg'
 
 #GEMS FOR Development and Testing
 #These WILL NOT be pushed to Heroku
-$heroku = ENV['USER'] ? !! ENV['USER'].match(/^repo\d+/) : ENV.any?{|key, _| key.match(/^HEROKU_/)} 
+#$heroku = ENV['USER'] ? !! ENV['USER'].match(/^repo\d+/) : ENV.any?{|key, _| key.match(/^HEROKU_/)} 
 
-unless $heroku
+
+#unless $heroku
   group :development, :test do
      gem 'webrat' #added for rspec
      gem 'rspec-rails'
@@ -21,7 +22,7 @@ unless $heroku
      gem 'ruby-debug-base19x' 
      gem 'ruby-debug-ide'
   end
-end
+#end
 
 #suggested gems by Todd
 gem 'jquery-rails', '>= 1.0.3'
