@@ -13,7 +13,7 @@ body {
 /* overridding default "container-fluid" in twitter CSS
  to remove issue where the content jumps down if the window is resized */
 .container-fluid {
-    width: 3000px;
+    width: 1400px;
 }
 
 
