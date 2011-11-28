@@ -40,6 +40,7 @@
         <% if current_user.is_seller? %>
             <th></th>
             <th></th>
+            <th></th>
         <% end %>
     <% end %>
   </tr>
@@ -57,7 +58,7 @@
     </td>
     
     <td id="current-price">
-        <span id ="current-price-value"><% if @highest_bid != nil %>
+        <span id ="current-price-value"><% if @highest_bid %>
         <%= number_to_currency(@highest_bid.bid_amount,:unit=>"$")%>
         <% else %>
         <%= number_to_currency(item.starting_price,:unit=>"$")%>
@@ -76,8 +77,10 @@
             <% if current_user== User.find(item.seller_id) %>
                 <td><%= link_to 'Edit', edit_item_path(item) %></td>
                 <td><%= link_to 'Delete', item, :confirm => 'Are you sure?', :method => :delete %></td>
+
             <% end %>
         <% end %>
+    <td><%= link_to 'Add to watch list', item, :class => "btn primary large" %></td>
 
       </tr>
   <% end %>

@@ -5,6 +5,9 @@
   <a class="brand" href="/">BestBay!</a>
   <ul class="nav">
     <li class="active"><%= link_to "Home", root_path %></li>
+    <% if user_signed_in? %>
+            <li class="active"><%= link_to "My BestBay", myaccount_path %></li>
+    <% end %>
     <%= render 'devise/menu/registration_items' %>
     <%= render 'devise/menu/login_items' %>
   </ul>

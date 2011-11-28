@@ -5,7 +5,7 @@ class PagesController < ApplicationController
     @items = Item.all
   end
 
-  def contact
+  def myaccount
     @title = "Contact"
   end
 
