@@ -10,6 +10,14 @@ body {
     background: #ffffff;
 }
 
+/* overridding default "container-fluid" in twitter CSS
+ to remove issue where the content jumps down if the window is resized */
+.container-fluid {
+    width: 1400px;
+}
+
+
+/* container used for item show page */
 .container {
     width: 850px;
     margin: auto;

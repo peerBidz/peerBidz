@@ -41,7 +41,12 @@ namespace :bootstrap do
 
 	end
 
+	desc "Create default admin account"
+	task :default_admin => :environment do
+		AdminUser.create(:email => 'admin@bestbay.com', :password => 'rockingonrails', :password_confirmation => 'rockingonrails')
+	end
+
 	desc "Run all tasks"
-	task :all => [:default_categories]	
+	task :all => [:default_categories, :default_admin]	
 	
 end

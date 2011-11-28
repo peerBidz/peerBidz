@@ -39,7 +39,10 @@ scheduler.every("20s") do
         item.save
         @highest_bid_row = Bidding.find(:first, :conditions => ["item_id IN (?)", item.id] , :order => 'bid_amount DESC')
         if @highest_bid_row
+        #notify buyer (winner of item)
         Notification.create!(:user_id => @highest_bid_row.user_id, :item_id => item.id , :message => "Congrats! You have won "+item.title, :delivered => false)
+        #notify seller
+        Notification.create!(:user_id => item.seller_id, :item_id => item.id , :message => "Congrats! You have sold "+ item.title, :delivered => false)
         end
         else
       end
