@@ -5,7 +5,8 @@ class ItemsController < ApplicationController
     if params[:search]
       @items = Item.find(:all, :conditions => ['title LIKE ?', "%#{params[:search]}%"])
     elsif params[:browse]
-      @items = Item.find(:all, :conditions => ['category_id LIKE ?', "#{params[:browse]}"])
+      #@items = Item.find(:all, :conditions => ['category_id LIKE ?', "#{params[:browse]}"])
+      @items = Item.find_all_by_category_id("#{params[:browse]}")
       #@values = "%#{params[:browse]}%"       for debugging purpose WJ
     else
       @items = Item.all
