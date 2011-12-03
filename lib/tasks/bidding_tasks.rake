@@ -1,3 +1,8 @@
+#THIS FILE IS NOT EXECUTED!! 
+# the code was moved to \config\initializers\task_scheduler.rb
+
+=begin
+
 task :environment do
 
 end
@@ -16,7 +21,10 @@ namespace :biddingTasks do
         item.save
         @highest_bid_row = Bidding.find(:first, :conditions => ["item_id IN (?)", item.id] , :order => 'bid_amount DESC')
         if @highest_bid_row
-        Notification.create!(:user_id => @highest_bid_row.user_id, :item_id => item.id , :message => "Congrats! You have won "+item.title, :delivered => false)
+          #notify buyer (winner of item)
+          Notification.create!(:user_id => @highest_bid_row.user_id, :item_id => item.id , :message => "Congrats! You have won "+ item.title, :delivered => false)
+          #notify seller
+          Notification.create!(:user_id => item.seller_id, :item_id => item.id , :message => "Congrats! You have sold "+ item.title, :delivered => false)
         end
         else
       end
@@ -27,3 +35,5 @@ namespace :biddingTasks do
 	task :all => [:winner_notify]
 
 end
+
+=end

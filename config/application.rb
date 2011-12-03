@@ -44,5 +44,6 @@ module BestBay
 
     config.time_zone = 'Eastern Time (US & Canada)'
     config.active_record.default_timezone = 'Eastern Time (US & Canada)'
+    config.action_mailer.default_url_options = { :host => 'localhost: 3000' } 
   end
 end

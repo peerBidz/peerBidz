@@ -1,13 +1,53 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
+gem 'sqlite3'
+gem 'rake', '0.9.2.2'
+
+#Heroku
+gem 'heroku'
+gem 'taps'
+gem 'pg'
+
+#GEMS FOR Development and Testing
+#These WILL NOT be pushed to Heroku
+group :development, :test do
+     gem 'webrat' #added for rspec
+     gem 'rspec-rails'
+     gem 'ruby-debug19' 
+     gem 'ruby-debug-base19x' 
+     gem 'ruby-debug-ide'
+end
+
+
+#suggested gems by Todd
+gem 'jquery-rails', '>= 1.0.3'
+#gem 'jquery-rails', '>= 1.0.12'
+gem 'factory_girl_rails' 
+gem 'devise' 
+
+#Paperclip
+gem "paperclip", "~> 2.4"
+
+#active admin
+gem 'activeadmin'
+
+gem "dynamic_form"
+
+#Scheduling ("cron job") for bid winning
+gem "rufus-scheduler"
+
+gem 'activemerchant'
+
+
+#----------------
+# Below gems were already in gem file when downloaded from GitHub
+# They are all commeted out, as they are just for reference.
+# If you would like to use one, please add it above.
+#-----------------
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
-
-gem 'rake', '0.9.2.2'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -24,42 +64,6 @@ gem 'rake', '0.9.2.2'
 # gem 'nokogiri'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
-
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
-
-#suggested gems by Todd
-gem 'jquery-rails', '>= 1.0.3'
-#gem 'jquery-rails', '>= 1.0.12'
-gem 'factory_girl_rails' 
-gem 'rspec-rails' 
-gem 'devise' 
-gem 'ruby-debug19' 
-gem 'ruby-debug-base19x' 
-gem 'ruby-debug-ide'
-
-#Added for Heroku
-gem 'pg'
-
-#Added for rspec
-gem 'webrat'
-
-#Paperclip
-gem "paperclip", "~> 2.4"
-
-#active admin
-gem 'activeadmin'
-
-
-gem "dynamic_form"
-
-gem "rufus-scheduler"
-
-gem 'activemerchant'
 
 #gem "whenever", :require => false
 #gem 'iso-3166-country-select', :git => 'git://github.com/rails/iso-3166-country-select.git'

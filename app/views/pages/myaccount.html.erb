@@ -1,0 +1,41 @@
+<!-- The contact us page of the system  -->
+
+<h1>My BestBay</h1>
+<h2>
+  My watchlist items
+</h2>
+
+
+ <% @watch_item_records = Watchlist.find_all_by_user_id(current_user.id) %>
+
+
+    <% @watch_item_records.each_with_index do |watch, i| %>
+         <% @item = Item.find(watch.item_id) %>
+         <% @item_biddings = @item.bidding.find(:all, :order => 'created_at')%>
+
+        <table>
+          <tr>
+            <td><%= image_tag @item.photo.url(:small) %></td>
+            <td>Item Name: <%= @item.title%></td>
+            <td>Starting Price: <%= @item.starting_price %></td>
+            <td>Current Price: <span class="current-price-value"><%= @item.bidding.find(:first, :order => 'bid_amount DESC').bid_amount%></span></td>
+          </tr>
+
+        <tr>
+          <th>Created At </th>
+          <th> Bid amount</th>
+        </tr>
+
+       <% @item_biddings.each_with_index do |bid, i|%>
+         <tr>
+            <td><%= bid.created_at%></td>
+            <td><%= bid.bid_amount%></td>
+         </tr>
+        <% end %>
+
+      </table>
+    <hr>
+    <% end %>
+
+
+

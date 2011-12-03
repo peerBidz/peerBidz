@@ -1,9 +1,9 @@
 BestBay::Application.configure do
-  # Settings specified here will take precedence over those in config/application.rb
+# Settings specified here will take precedence over those in config/application.rb
 
-  # In the development environment your application's code is reloaded on
-  # every request.  This slows down response time but is perfect for development
-  # since you don't have to restart the webserver when you make code changes.
+# In the development environment your application's code is reloaded on
+# every request.  This slows down response time but is perfect for development
+# since you don't have to restart the webserver when you make code changes.
   config.cache_classes = false
 
   # Log error messages when you accidentally call methods on nil.
@@ -31,8 +31,29 @@ BestBay::Application.configure do
 
   Paperclip.options[:command_path] = "'C:/Progra~1/IMAGEM~1.3-Q"
 
-  #activeadmin stuff
+
+  config.action_dispatch.best_standards_support = :builtin
+
+  config.active_support.deprecation = :notify
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.default :charset => "utf-8"
+
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.active_support.deprecation = :log
+
+  config.action_mailer.smtp_settings ={
+    :enable_starttls_auto => true,
+    :address            => 'smtp.gmail.com',
+    :port               => 587,
+    :tls                => true,
+    :domain             => 'gmail.com',
+    :authentication     => :plain,
+    :user_name          => "rockingonrails",
+    :password           => 'cmuinims23'
+  }
 
   #activemerchant
   config.after_initialize do

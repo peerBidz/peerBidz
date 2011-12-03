@@ -1,5 +1,11 @@
 BestBay::Application.routes.draw do |map|
 
+  resources :items do
+  member do
+    get 'add_to_watch_list'
+  end
+end
+
   get "line_items/create"
 
   get "carts/new"
@@ -34,12 +40,21 @@ BestBay::Application.routes.draw do |map|
 
 
   match '/contacts', :to => 'pages#contact'
+  match '/myaccount', :to => 'pages#myaccount'
   match '/items',   :to => 'pages#items'
   match '/help',    :to => 'pages#help'
   match '/about',   :to => 'pages#about'
   match '/advsearch',  :to => 'searches#new'
   match '/information',  :to => 'orders#new'
 
+  match '/items/:id/add_to_watch_list', :to => 'items#add_to_watch_list'
+
   root :to => 'pages#home'
+
+
+
+
+
+
 
 end

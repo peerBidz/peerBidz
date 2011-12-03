@@ -92,4 +92,15 @@ class ItemsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def add_to_watch_list
+    @item = Item.find(params[:id])
+    Watchlist.create!(:user_id => current_user.id , :item_id => @item.id)
+
+    respond_to do |format|
+      format.html { redirect_to(item_path, :notice => 'Item successfully added to your watch list.') }
+      format.xml  { render :xml => @item }
+    end
+  end
+
 end
