@@ -58,11 +58,19 @@
     </td>
     
     <td id="current-price">
-        <span class ="current-price-value"><% if @highest_bid %>
-        <%= number_to_currency(@highest_bid.bid_amount,:unit=>"$")%>
-        <% else %>
-        <%= number_to_currency(item.starting_price,:unit=>"$")%>
-        <% end %></span>
+        <span id ="current-price-value">
+        <%
+         @currentBid = Bidding.find(:first, :conditions => ["item_id IN (?)", item.id] , :order => 'bid_amount DESC')
+
+        if ( @currentBid != nil )
+          @currentPrice = number_to_currency(@currentBid.bid_amount,:unit=>"$")
+        else
+          @currentPrice = number_to_currency(item.starting_price,:unit=>"$")
+        end
+        %>
+
+        <%= @currentPrice %>
+        </span>
     </td>
     
         <td><%= Category.find(item.category_id).name %></td>
