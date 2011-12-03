@@ -1,4 +1,29 @@
-<h1>Check the Item Cart to Order</h1>
+<h4>Add items to your cart</h4>
+
+
+            <% @unpaid_items = Item.find(:all, :conditions => ["is_paid != ?", true]) %>
+
+
+          <% @unpaid_items.each do |item| %>
+             <% @itemNote = Notification.find(:first, :conditions => ["notification_type=? AND item_id=?" , "W",item.id ]) %>
+
+              <% if @itemNote && @itemNote.user_id == current_user.id %>
+
+                  <div class="row" style="height: 70px">
+                    <div class="span1">
+                           <%= item.title %>
+                    </div>
+                    <div class="span15">
+                           <%= button_to "Add", line_items_path(:item_id => @itemNote.item_id), :method => :post, :class => "btn primary small" %>
+                    </div>
+                  </div>
+
+             <% end %>
+          <% end %>
+
+
+  <h4>Your cart</h4>
+
 <table id="line_items">
   <tr>
     <th>Product</th>
@@ -11,7 +36,7 @@
       <td><%=h line_item.item.title %></td>
 
       <td class="price"><%= number_to_currency(line_item.full_price) %></td>
-      <td><%= button_to 'Remove from cart', line_item, :confirm => 'Are you sure?', :method => :delete, :class => "btn medium primary" %></td>
+      <td><%= button_to 'Remove from cart', line_item, :method => :delete, :class => "btn medium primary" %></td>
     </tr>
   <% end %>
   <tr>

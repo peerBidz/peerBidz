@@ -1,41 +1,72 @@
 <!-- The contact us page of the system  -->
 
-<h1>My BestBay</h1>
-<h2>
-  My watchlist items
-</h2>
+<h1 style="padding-left: 20px">My BestBay</h1>
+<script>
+	$(function() {
+		$( "#accordion" ).accordion();
+	});
+</script>
 
 
+<div class="demo">
+
+<div id="accordion">
+	<h3><a href="#">My watchlist items</a></h3>
+	<div>
  <% @watch_item_records = Watchlist.find_all_by_user_id(current_user.id) %>
 
-
+     <table>
+          <tr>
+            <th>Item image</th>
+            <th>Item Name</th>
+            <th>Starting price</th>
+            <th>Current Price</th>
+            <th>Number of Bids</th>
+            <th>Expires at</th>
+          </tr>
     <% @watch_item_records.each_with_index do |watch, i| %>
          <% @item = Item.find(watch.item_id) %>
-         <% @item_biddings = @item.bidding.find(:all, :order => 'created_at')%>
+         <%# @item_biddings = @item.bidding.find(:all, :order => 'created_at')%>
 
-        <table>
-          <tr>
-            <td><%= image_tag @item.photo.url(:small) %></td>
-            <td>Item Name: <%= @item.title%></td>
-            <td>Starting Price: <%= @item.starting_price %></td>
-            <td>Current Price: <span class="current-price-value"><%= @item.bidding.find(:first, :order => 'bid_amount DESC').bid_amount%></span></td>
-          </tr>
-
-        <tr>
-          <th>Created At </th>
-          <th> Bid amount</th>
-        </tr>
-
-       <% @item_biddings.each_with_index do |bid, i|%>
          <tr>
-            <td><%= bid.created_at%></td>
-            <td><%= bid.bid_amount%></td>
+            <td><%= image_tag @item.photo.url(:small) %></td>
+            <td><%= @item.title%></td>
+            <td><%= number_to_currency(@item.starting_price, :unit =>"$") %></td>
+            <td><span class="current-price-value"><%= number_to_currency(@item.bidding.find(:first, :order => 'bid_amount DESC').bid_amount, :unit=>"$")%></span></td>
+            <td><%= @item.bidding.count%></td>
+            <td><span class="current-price-value"><%= @item.expires_at.to_formatted_s(:db)%></span></td>
          </tr>
-        <% end %>
-
       </table>
     <hr>
-    <% end %>
+ <% end %>
+	</div>
+	<h3><a href="#">My notifications</a></h3>
+	<div>
+		<p>
+		Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+		purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+		velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+		suscipit faucibus urna.
+		</p>
+	</div>
+	<h3><a href="#">Items I have won</a></h3>
+	<div>
+		<p>
+		Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+		Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+		ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+		lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+		</p>
+		<ul>
+			<li>List item one</li>
+			<li>List item two</li>
+			<li>List item three</li>
+		</ul>
+	</div>
+</div>
+
+</div><!-- End demo -->
+
 
 
 

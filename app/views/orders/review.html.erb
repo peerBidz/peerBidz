@@ -31,12 +31,13 @@
   <%= @order.phone %>
 </p>
 
-<!-- make true for is_paid in the item talbe -->
+<!-- make true for is_paid in the item table -->
 <% @lineitems = LineItem.find(:all)%>
 
         <% @lineitems.each do |item| %>
           <% @unpaid_item = Item.find(item.item_id)%>
           <% @unpaid_item.toggle!(:is_paid) %>
+    <%  LineItem.delete(item.id) %>
         <% end %>
 
 

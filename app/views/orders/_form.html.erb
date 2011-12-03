@@ -39,7 +39,7 @@
         <%= f.text_field :card_verification %>
       </div>      </br>
 
-      <h1>Billing Information</h1>
+      <h1>Billing Address</h1>
       <div class="field">
         <%= f.label :street %><br />
         <%= f.text_field :street, :value => current_user.street%>
@@ -68,7 +68,7 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "Proceed to Checkout",:class => "btn primary medium", :item_id => params[:id]%>
+        <%= f.submit "Proceed to Checkout",:class => "btn primary medium", :cart_id => @cart.id %>
       </div>
 
 <% end %>

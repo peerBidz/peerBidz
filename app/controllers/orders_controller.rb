@@ -14,12 +14,12 @@ class OrdersController < ApplicationController
         render :action => "review"
       end
     else
-      render :action => 'new'
+      render :action => 'review'
     end
   end
 
   def index
-    @orders = Order.find(:all)
+     @orders = Order.find(:all)
   end
 
   def review

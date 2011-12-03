@@ -14,11 +14,11 @@ class BiddingsController < ApplicationController
       if (!@old_highest_bid.nil? && @old_highest_bid.user_id != @bidding.user_id)
       #Notification for the user who was outbid
       @msg = "You have been outbid on: " + Item.find(@bidding.item_id).title
-      Notification.create(:user_id=>@old_highest_bid.user_id, :item_id=>@bidding.item_id, :message=>@msg, :delivered=>"false")
+      Notification.create(:user_id=>@old_highest_bid.user_id, :item_id=>@bidding.item_id, :message=>@msg, :delivered=>"false", :notification_type => 'O')
       end
     #Notification for the seller
     @msg =  "There is a new bid on your item (" + Item.find(@bidding.item_id).title + ") for $" + @current_highest_bid.to_s + " !"
-    Notification.create(:user_id=>Item.find(@bidding.item_id).seller_id, :item_id=>@bidding.item_id, :message=>@msg, :delivered=>"false")
+    Notification.create(:user_id=>Item.find(@bidding.item_id).seller_id, :item_id=>@bidding.item_id, :message=>@msg, :delivered=>"false", :notification_type => 'N')
 
     elsif(!@bidding.errors.empty?)
 

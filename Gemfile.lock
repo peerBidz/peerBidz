@@ -18,7 +18,6 @@ GEM
     active_utils (1.0.1)
       activesupport (>= 2.3.11)
       i18n
-    activeadmin (0.3.2)
     activeadmin (0.3.4)
       devise (>= 1.1.2)
       fastercsv

@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   end
 
   def myaccount
-    @title = "Contact"
+    @title = "My BestBay"
   end
 
   def items

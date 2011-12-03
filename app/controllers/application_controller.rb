@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :card_number, :card_verification
 
   def current_cart
-#    session[:cart_id] = nil
 
     if session[:cart_id]
       @current_cart ||= Cart.find(session[:cart_id])
