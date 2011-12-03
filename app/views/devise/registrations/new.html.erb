@@ -62,8 +62,7 @@
       <%#= country_select :user, :country, nil, {:include_blank=> true},
 {:class=>"topicField"} %>
 -->
-
-    <div><%= f.submit "Sign up" %></div>
+    <div><%= f.submit "Sign up" ,:class => "btn primary small"%></div></br>
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>

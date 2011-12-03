@@ -8,13 +8,21 @@
 <%= form_tag items_path, :method => 'get' do %>
           <p>
             <%= text_field_tag :search, params[:search] %>
-            <%= submit_tag "Search", :name => nil %>
+            <%= submit_tag "Search", :name => nil , :class => "btn primary small"%>
             <%= link_to "Advanced Search", advsearch_path %>
           </p>
 
 <% end %>
 
 <!-- Lively Homepage images-->
+
+<% if user_signed_in? %>
+    <% if current_user.is_seller? %>
+        <p class="welcome-text">Offer Items and Mint Money in Minutes !! </p>
+    <% else %>
+        <p class="welcome-text">Shop, Bid and Celebrate !!</p>
+    <% end %>
+<% end %>
 
 <div id="galleria"></div>
 <div id ="ajax_description"><a href="#"></a></div>
@@ -83,11 +91,11 @@ var data = [
     <div class="hero-unit1">
       <h2>Welcome, <%= current_user.first_name %> !</h2>
       <% if current_user.is_seller? %>
-          <p>Browse Items, Offer Item and mint money in minutes </p>
+          <p> Why delay? Offer your items for bidding :-) </p>
           <a class="btn primary large" href='<%= new_item_path %>'>Offer Your Item »</a>
-          <a class="btn primary large" href='<%= items_path %>'>All Items »</a>
+          <a class="btn primary large" href='<%= items_path %>'>Hot Items »</a>
       <% else %>
-          <p>Shop, Bid and Celebrate!!</p>
+          <p>Check out the hot items and bid on them :-) </p>
           <a class="btn primary large" href='<%= items_path %>'>Hot Items »</a>
       <% end %>
     </div>
@@ -97,17 +105,28 @@ var data = [
 	 	<h2>Your notifications</h2>
 		<div class="notifications" id="notifications" data-user-id="<%= current_user.id %>" >
   			<%= render current_user.notifications.find(:all, :conditions=>["delivered=?", true]) %>
+
+          <% @unpaid_items = Item.find(:all, :conditions => ["is_paid=?", false]) %>
+
+          <% @unpaid_items.each do |item| %>
+             <% if current_user.id == Notification.find(:first, :conditions => ["notification_type=?", "W", "item_id=" , item.id ]).user_id %>
+
+                <% if  item.bidding_closed == true %>
+                          <%= item.title %>
+                    <%= link_to "Proceed to checkout", line_items_path(:item_id => item.id), :method => :post %> </br>
+                <%end%>
+             <% end %>
+          <% end %>
+
  		</div>
 
 
 <% else %>
-  <!--    <div class="container">    -->
-  <!--      <div class="hero-unit">   -->
         <div class="">
-          <!--<h1>BestBay!</h1>-->
+          <h1>Welcome to BestBay!</h1>
+          <p> Now, checkout the hot items. Register with us to participate in auctions </p>
+          <a class="btn primary large" href='<%= items_path %>'>Hot Items »</a>
         </div>
-  <!--      </div>                   -->
-  <!--    </div>                     -->
 <% end %>
 </div>
 

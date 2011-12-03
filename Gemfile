@@ -59,6 +59,8 @@ gem "dynamic_form"
 
 gem "rufus-scheduler"
 
+gem 'activemerchant'
+
 #gem "whenever", :require => false
 #gem 'iso-3166-country-select', :git => 'git://github.com/rails/iso-3166-country-select.git'
 #gem 'country_select', :git => 'git://github.com/jodosha/country_select.git'

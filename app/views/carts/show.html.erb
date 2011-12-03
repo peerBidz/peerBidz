@@ -1,0 +1,29 @@
+<h1>Check the Item Cart to Order</h1>
+<table id="line_items">
+  <tr>
+    <th>Product</th>
+
+    <th class="price">Final Price</th>
+  </tr>
+
+  <% for line_item in @cart.line_items %>
+    <tr class="">
+      <td><%=h line_item.item.title %></td>
+
+      <td class="price"><%= number_to_currency(line_item.full_price) %></td>
+      <td><%= button_to 'Remove from cart', line_item, :confirm => 'Are you sure?', :method => :delete, :class => "btn medium primary" %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td class="total price" colspan="4">
+      Total: <%= number_to_currency @cart.total_price %>
+    </td>
+  </tr>
+</table>
+
+<p>
+  <%= link_to "Back to Home Page", root_path %>
+  <% if @cart.total_price != 0 %>
+  | <%= link_to "Checkout", information_path %>
+  <% end %>
+</p>

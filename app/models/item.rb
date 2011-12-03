@@ -3,6 +3,7 @@ class Item < ActiveRecord::Base
   belongs_to :category
   has_many :bidding
   has_many :users, :through => :bidding
+
   #before_save :default_values
   #before_validation :before_val
 

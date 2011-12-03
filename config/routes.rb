@@ -1,4 +1,10 @@
-BestBay::Application.routes.draw do
+BestBay::Application.routes.draw do |map|
+
+  get "line_items/create"
+
+  get "carts/new"
+
+  resources :orders
 
   ActiveAdmin.routes(self)
 
@@ -20,12 +26,19 @@ BestBay::Application.routes.draw do
 
   #devise_for :admin_users, ActiveAdmin::Devise.config
 
+  #Cart and Order
+  map.current_cart 'cart', :controller => 'carts', :action => 'show', :id => 'current'
 
-  match '/contact', :to => 'pages#contact'
+  resources :line_items
+  resources :carts
+
+
+  match '/contacts', :to => 'pages#contact'
   match '/items',   :to => 'pages#items'
   match '/help',    :to => 'pages#help'
   match '/about',   :to => 'pages#about'
   match '/advsearch',  :to => 'searches#new'
+  match '/information',  :to => 'orders#new'
 
   root :to => 'pages#home'
 

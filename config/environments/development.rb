@@ -34,5 +34,11 @@ BestBay::Application.configure do
   #activeadmin stuff
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
+  #activemerchant
+  config.after_initialize do
+    ActiveMerchant::Billing::Base.mode = :test
+    ::GATEWAY = ActiveMerchant::Billing::BogusGateway.new
+  end
+
 end
 

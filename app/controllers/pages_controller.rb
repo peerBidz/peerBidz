@@ -5,8 +5,8 @@ class PagesController < ApplicationController
     @items = Item.all
   end
 
-  def contact
-    @title = "Contact"
+  def contacts
+    @title = "Order"
   end
 
   def items

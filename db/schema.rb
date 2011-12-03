@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111106041819) do
+ActiveRecord::Schema.define(:version => 20111202062344) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -54,6 +54,12 @@ ActiveRecord::Schema.define(:version => 20111106041819) do
     t.integer  "item_id"
   end
 
+  create_table "carts", :force => true do |t|
+    t.datetime "purchased_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.integer  "parentID"
@@ -77,6 +83,17 @@ ActiveRecord::Schema.define(:version => 20111106041819) do
     t.datetime "photo_updated_at"
     t.datetime "expires_at"
     t.boolean  "bidding_closed"
+    t.boolean  "is_paid"
+  end
+
+  create_table "line_items", :force => true do |t|
+    t.decimal  "unit_price"
+    t.integer  "item_id"
+    t.integer  "cart_id"
+    t.integer  "quantity"
+    t.boolean  "item_paid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "notifications", :force => true do |t|
@@ -86,6 +103,22 @@ ActiveRecord::Schema.define(:version => 20111106041819) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "message"
+  end
+
+  create_table "orders", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "card_type"
+    t.date     "card_expires_on"
+    t.string   "street"
+    t.string   "city"
+    t.string   "zip"
+    t.string   "state"
+    t.integer  "phone"
+    t.string   "country"
+    t.integer  "cart_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "searches", :force => true do |t|
