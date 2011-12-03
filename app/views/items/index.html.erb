@@ -58,15 +58,13 @@
     </td>
     
     <td id="current-price">
-        <span id ="current-price-value"><% if @highest_bid %>
+        <span class ="current-price-value"><% if @highest_bid %>
         <%= number_to_currency(@highest_bid.bid_amount,:unit=>"$")%>
         <% else %>
         <%= number_to_currency(item.starting_price,:unit=>"$")%>
         <% end %></span>
     </td>
     
-    <!--<td><%#= item.duration %></td>         -->
-
         <td><%= Category.find(item.category_id).name %></td>
         <td><%= User.find(item.seller_id).email %></td>
 

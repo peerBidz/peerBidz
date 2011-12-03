@@ -168,8 +168,8 @@ nav ul li a:hover {
    height: 99%;
    }
 
-#current-price-value {
- font-size: 30px;
+.current-price-value {
+ font-size: 24px;
  color: #3366ff;
     font-weight: bold;
 }
