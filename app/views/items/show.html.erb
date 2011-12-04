@@ -3,6 +3,8 @@
 #ajax_group {}
 </style>
 
+<!-- <div id="item-id" style="hidden"> <%= @item.id %> </div> -->
+
 <p id="top"></p>
 <h3><%= @item.title %></h3>
 <% if DateTime.now.to_formatted_s(:db) >= @item.expires_at.to_formatted_s(:db) %>
