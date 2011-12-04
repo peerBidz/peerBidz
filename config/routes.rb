@@ -3,6 +3,7 @@ BestBay::Application.routes.draw do |map|
   resources :items do
   member do
     get 'add_to_watch_list'
+    get 'remove_from_watch_list'
   end
 end
 
@@ -48,6 +49,7 @@ end
   match '/information',  :to => 'orders#new'
 
   match '/items/:id/add_to_watch_list', :to => 'items#add_to_watch_list'
+  match '/items/:id/remove_from_watch_list', :to => 'items#remove_from_watch_list'
 
   root :to => 'pages#home'
 

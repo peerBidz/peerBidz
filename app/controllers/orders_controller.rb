@@ -6,6 +6,7 @@ class OrdersController < ApplicationController
 
   def create
     @order = current_cart.build_order(params[:order])
+    flash[:notice] = "Thank you for your payment. We will process it in one business day! Have a great day :-)"
 
     if @order.save
       if @order.purchase

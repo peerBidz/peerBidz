@@ -1,6 +1,7 @@
 <!-- The contact us page of the system  -->
 
-<h1 style="padding-left: 20px">My BestBay</h1>
+<h2 style="padding-left: 20px">My BestBay</h2>
+<h4 style="padding-left: 34px"> This is YOUR page. You can monitor all your favorite items here :-)</h4>
 <script>
 	$(function() {
 		$( "#accordion" ).accordion();
@@ -26,47 +27,53 @@
           </tr>
     <% @watch_item_records.each_with_index do |watch, i| %>
          <% @item = Item.find(watch.item_id) %>
-         <%# @item_biddings = @item.bidding.find(:all, :order => 'created_at')%>
-
          <tr>
             <td><%= image_tag @item.photo.url(:small) %></td>
             <td><%= @item.title%></td>
             <td><%= number_to_currency(@item.starting_price, :unit =>"$") %></td>
-            <td><span class="current-price-value"><%= number_to_currency(@item.bidding.find(:first, :order => 'bid_amount DESC').bid_amount, :unit=>"$")%></span></td>
+            <% @highest_bid_row = @item.bidding.find(:first, :order => 'bid_amount DESC') %>
+           <td>
+             <span class="current-price-value">
+             <% if @highest_bid_row %>
+                  <%= number_to_currency(@highest_bid_row.bid_amount, :unit=>"$")%>
+             <% else %>
+                 <%= number_to_currency(@item.starting_price, :unit=>"$")%>
+             <% end %>
+              </span>
+           </td>
             <td><%= @item.bidding.count%></td>
             <td><span class="current-price-value"><%= @item.expires_at.to_formatted_s(:db)%></span></td>
          </tr>
-      </table>
-    <hr>
  <% end %>
+         </table>
 	</div>
-	<h3><a href="#">My notifications</a></h3>
-	<div>
-		<p>
-		Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-		purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-		velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-		suscipit faucibus urna.
-		</p>
-	</div>
-	<h3><a href="#">Items I have won</a></h3>
-	<div>
-		<p>
-		Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-		Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-		ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-		lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-		</p>
-		<ul>
-			<li>List item one</li>
-			<li>List item two</li>
-			<li>List item three</li>
-		</ul>
-	</div>
+
+    <% if current_user.is_seller != true %>
+        <h3><a href="#">Items I have won</a></h3>
+        <div>
+            <p>
+              Congratulations !! You have won the following items.
+            </p>
+
+        <% @unpaid_items = Item.find(:all, :conditions => ["is_paid != ?", true]) %>
+        <% @unpaid_items.each do |item| %>
+         <% @itemNote = Notification.find(:first, :conditions => ["notification_type=? AND item_id=?" , "W",item.id ]) %>
+
+              <% if @itemNote && @itemNote.user_id == current_user.id %>
+            <ul>
+               <li><%= item.title%> for <%= number_to_currency(item.bidding.find(:first, :order => 'bid_amount DESC').bid_amount, :unit=>"$") %></li>
+             </ul>
+          <% end %>
+        <% end %>
+        <p>
+          Now, You can pay for multiple items together :-)
+        </p>
+      <a class="btn primary large" href='<%= current_cart_url %>'>Pay Now »</a>
+        </div>
+
+  <%end%>
+
+
 </div>
 
-</div><!-- End demo -->
-
-
-
-
+</div>

@@ -106,4 +106,15 @@ class ItemsController < ApplicationController
     end
   end
 
+  def remove_from_watch_list
+    @item = Item.find(params[:id])
+    @watch = Watchlist.find_by_user_id_and_item_id(current_user.id, @item.id)
+    @watch.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(item_path, :notice => 'Item successfully removed from your watch list.') }
+      format.xml  { render :xml => @item }
+    end
+  end
+
 end
