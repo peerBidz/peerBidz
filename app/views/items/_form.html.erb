@@ -50,12 +50,13 @@
   </div>
 
   <div class="field">
-    <%= f.label "End time" %>
+    <%= f.label "End time" %><br />
     <%= f.datetime_select :expires_at %>
   </div>
 
   <%= f.hidden_field :seller_id, :value => current_user.id %>
   <%= f.hidden_field :bidding_closed, :value => false %>
+  <%= f.hidden_field :is_paid, :value => false %>
 
   <div class="actions">
     <%= f.submit "Upload Item",:class => "btn primary medium"%>

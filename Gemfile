@@ -37,6 +37,8 @@ gem "dynamic_form"
 #Scheduling ("cron job") for bid winning
 gem "rufus-scheduler"
 
+gem 'activemerchant'
+
 
 #----------------
 # Below gems were already in gem file when downloaded from GitHub

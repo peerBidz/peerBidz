@@ -1,0 +1,44 @@
+<h1>Purchase Successful</h1>
+
+<p><strong>Thank you for your order!</strong> We will process it within one business day.</p>
+<p> This order will be shipped to below address</p>
+<p>
+  <b>Street:</b>
+  <%= @order.street %>
+</p>
+<p>
+  <b>City:</b>
+  <%= @order.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @order.state %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @order.zip %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @order.country %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @order.phone %>
+</p>
+
+<!-- make true for is_paid in the item table -->
+<% @lineitems = LineItem.find(:all)%>
+
+        <% @lineitems.each do |item| %>
+          <% @unpaid_item = Item.find(item.item_id)%>
+          <% @unpaid_item.toggle!(:is_paid) %>
+    <%  LineItem.delete(item.id) %>
+        <% end %>
+
+
+<p><%= link_to "Back to Main Page", root_path %></p>

@@ -55,5 +55,11 @@ BestBay::Application.configure do
     :password           => 'cmuinims23'
   }
 
+  #activemerchant
+  config.after_initialize do
+    ActiveMerchant::Billing::Base.mode = :test
+    ::GATEWAY = ActiveMerchant::Billing::BogusGateway.new
+  end
+
 end
 

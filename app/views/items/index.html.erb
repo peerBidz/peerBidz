@@ -59,7 +59,6 @@
     
     <td id="current-price">
         <span id ="current-price-value">
-
         <%
          @currentBid = Bidding.find(:first, :conditions => ["item_id IN (?)", item.id] , :order => 'bid_amount DESC')
 
@@ -71,12 +70,9 @@
         %>
 
         <%= @currentPrice %>
-
         </span>
     </td>
     
-    <!--<td><%#= item.duration %></td>         -->
-
         <td><%= Category.find(item.category_id).name %></td>
         <td><%= User.find(item.seller_id).email %></td>
 

@@ -1,0 +1,19 @@
+<h1>Review your order</h1>
+
+<p>
+  <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Amount you have to Pay:</b>
+  &nbsp;&nbsp;<%=number_to_currency(@cart.total_price,:unit=>"$")%>
+</p>
+
+<p>
+  <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Quantity you will Order:</b>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=@cart.total_quantity%>
+</p> </br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<%= link_to 'Modify this Order', session[:last_product_page], :class => "btn primary medium" %>
+
+<%= render 'form' , :locals => {:cart => @cart} %>
+
+

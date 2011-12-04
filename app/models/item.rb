@@ -3,6 +3,7 @@ class Item < ActiveRecord::Base
   belongs_to :category
   has_many :bidding
   has_many :users, :through => :bidding
+
   #before_save :default_values
   #before_validation :before_val
 
@@ -36,12 +37,12 @@ class Item < ActiveRecord::Base
     #generate notifications for all users that had bid on that item
     @msg = "The following item that you have bid on has been removed: " + self.title
     @usersThatBid.each do |user|
-      Notification.create(:user_id=>user, :item_id=>self.id, :delivered=>false, :message=>@msg)
+      Notification.create(:user_id=>user, :item_id=>self.id, :delivered=>false, :message=>@msg, :notification_type => 'D')
     end
 
     #notify the seller that his item has been deleted
     @msg = "Your item (" + self.title + ") has been deleted by an admin"
-    Notification.create(:user_id=>self.seller_id, :item_id=>self.id, :delivered=>false, :message=>@msg)
+    Notification.create(:user_id=>self.seller_id, :item_id=>self.id, :delivered=>false, :message=>@msg, :notification_type => 'D')
     #--------------------------------
 
     #remove all bidding entries belonging to item
