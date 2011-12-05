@@ -1,10 +1,7 @@
-<div class="row" style="height: 100px">
 	
-<div class="span2">
-<h1><%= @item.title %></h1>
-</div>
+<p id="top"></p>
+<h3><%= @item.title %></h3>
 
-<div class="span14">
   <% if DateTime.now.to_formatted_s(:db) >= @item.expires_at.to_formatted_s(:db) %>
         <span class="label important">Expired</span>
   <% elsif user_signed_in? && Watchlist.find_by_user_id_and_item_id(current_user.id, @item.id) != nil %>
@@ -12,14 +9,24 @@
   <% elsif user_signed_in? %>
     <%= button_to "Add to watchlist" , add_to_watch_list_item_path(@item), :class => "btn primary medium" %>
   <% end %>
-</div>
-</div>
-
 
 <div class="item-show-container">
 	<div class="item-image">
 		<%= image_tag @item.photo.url(:medium)  %>
-	</div>
+
+
+      <% if user_signed_in? && @item.seller_id != current_user.id%>
+        <% if DateTime.now.to_formatted_s(:db) < @item.expires_at.to_formatted_s(:db) %>
+           <%if @item.for_sale? %>
+            <p><span class="label success">New</span>
+            <span><b> This product is available for direct purchase for <span class="current-price-value"><%= number_to_currency(@item.buy_price, :unit=>"$")%></span> only!!</b></span></p>
+            <%= link_to "Buy Now" ,  payment_path, :class => "btn primary medium" %>
+           <% end %>
+        <% end %>
+      <% end %>
+
+     </div>
+
 	<div class ="item-details">
 		<p>
 			<b>Description:</b>
@@ -39,7 +46,7 @@
 		</p>
 		<p id="current-price">
 			<b>Current price:</b>
-			<span class ="current-price-value"><% if @highest_bid != nil %>
+			<span id ="current-price-value" class ="current-price-value"><% if @highest_bid != nil %>
 				<%= number_to_currency(@highest_bid.bid_amount,:unit=>"$")%>
 				<% else %>
 				<%= number_to_currency(@item.starting_price,:unit=>"$")%>
@@ -48,10 +55,6 @@
 		<p id="expires-at">
 			<b>Expires at:</b> <%= @item.expires_at.to_formatted_s(:db) %>
 		</p>
-		<!-- <p>
-		<b>Duration:</b>
-		<%#= @item.duration %>
-		</p> -->
 		<p>
 			<b>Category:</b>
 			<%= Category.find(@item.category_id).name %>
@@ -65,9 +68,13 @@
 		<% end %>
 
 		<% if user_signed_in? && @item.seller_id != current_user.id%>
-		<% if DateTime.now.to_formatted_s(:db) < @item.expires_at.to_formatted_s(:db) %>
-		<%= render :template => 'biddings/new', :locals => {:bidding => @bidding, :item => @item } %>
+		    <% if DateTime.now.to_formatted_s(:db) < @item.expires_at.to_formatted_s(:db) %>
+		        <%= render :template => 'biddings/new', :locals => {:bidding => @bidding, :item => @item } %>
+		    <% end %>
 		<% end %>
-		<% end %>
-	</div>
-</div>
+
+
+        </div>
+    </div>
+
+

@@ -39,7 +39,7 @@ end
   resources :line_items
   resources :carts
 
-
+  match '/payment', :to => 'pages#payment'
   match '/contacts', :to => 'pages#contact'
   match '/myaccount', :to => 'pages#myaccount'
   match '/items',   :to => 'pages#items'

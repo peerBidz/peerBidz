@@ -56,6 +56,15 @@
     <%= f.datetime_select :expires_at %>
   </div>
 
+  <div class="field">
+    <%= f.label "Offer for direct purchase?" %><br />
+    <%= f.check_box :for_sale %>
+  </div>
+  <div class="field">
+    <%= f.label "Purchase Price" %><br />
+    <%= f.text_field :buy_price %>
+  </div>
+
   <%= f.hidden_field :seller_id, :value => current_user.id %>
   <%= f.hidden_field :bidding_closed, :value => false %>
   <%= f.hidden_field :is_paid, :value => false %>
