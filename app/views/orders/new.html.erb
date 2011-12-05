@@ -1,18 +1,20 @@
-<h1>Review your order</h1>
+<div style="padding-left: 30px">
+<h2>Pay for your item</h2>
+
+<div style="padding-top: 10px">
+  <b>Total Amount you have to Pay =</b>
+<%=number_to_currency(@cart.total_price,:unit=>"$")%>
+</div><br/>
 
 <p>
-  <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Amount you have to Pay:</b>
-  &nbsp;&nbsp;<%=number_to_currency(@cart.total_price,:unit=>"$")%>
-</p>
+  <b>Total Number of items you've ordered = </b>
+<%=@cart.total_quantity%>
+</p> <br/>
 
-<p>
-  <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Quantity you will Order:</b>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=@cart.total_quantity%>
-</p> </br>
+</div>
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<%= link_to 'Modify this Order', session[:last_product_page], :class => "btn primary medium" %>
+<%= button_to 'Modify your Order', session[:last_product_page], :class => "btn primary medium", :style => "margin-left:60px" %>
 
 <%= render 'form' , :locals => {:cart => @cart} %>
 

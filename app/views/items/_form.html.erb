@@ -44,7 +44,9 @@
   
   <div class="field">
     <%= f.label "Subcategory" %><br />
-    <%= f.select :category_id, Category.where("parentID NOT ?", nil).collect {|category| [ category.name, category.id ]} %>
+    <!-- %= f.select :category_id, Category.where("parentID NOT ?", nil).collect {|category| [ category.name, category.id ]} % -->
+    <%= f.select :category_id, Category.find_all_by_parentID(!nil).collect {|category| [ category.name, category.id ]} %>
+  
   </div>
 
   <div class="field">

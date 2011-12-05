@@ -10,7 +10,7 @@
 <%= form_tag items_path, :method => 'get' do %>
           <p>
             <%= text_field_tag :search, params[:search] %>
-            <%= submit_tag "Search", :name => nil , :class => "btn primary small"%>
+            <%= submit_tag "Search", :name => nil , :class => "btn primary small"%>&nbsp;&nbsp;&nbsp;
             <%= link_to "Advanced Search", advsearch_path %>
           </p>
 
@@ -104,7 +104,6 @@ var data = [
 	 	<h2>Your notifications</h2>
 		<div class="notifications" id="notifications" data-user-id="<%= current_user.id %>" >
   			<%= render current_user.notifications.find(:all, :conditions=>["delivered=?", true]) %>
-             <a class="btn primary large" href='<%= current_cart_url %>'>Pay Now »</a>
  		</div>
 
 

@@ -1,25 +1,23 @@
 <h4>Add items to your cart</h4>
 
 
-            <% @unpaid_items = Item.find(:all, :conditions => ["is_paid != ?", true]) %>
+<% @unpaid_items = Item.find(:all, :conditions => ["is_paid != ?", true]) %>
+<% @unpaid_items.each do |item| %>
+ <% @itemNote = Notification.find(:first, :conditions => ["notification_type=? AND item_id=?" , "W",item.id ]) %>
 
+  <% if @itemNote && @itemNote.user_id == current_user.id %>
 
-          <% @unpaid_items.each do |item| %>
-             <% @itemNote = Notification.find(:first, :conditions => ["notification_type=? AND item_id=?" , "W",item.id ]) %>
+      <div class="row" style="height: 70px;">
+        <div class="span1">
+               <%= item.title %>
+        </div>
+        <div class="span15">
+               <%= link_to "Add", line_items_path(:item_id => @itemNote.item_id), :method => :post, :class => "btn primary medium" %>
+        </div>
+      </div>
 
-              <% if @itemNote && @itemNote.user_id == current_user.id %>
-
-                  <div class="row" style="height: 70px">
-                    <div class="span1">
-                           <%= item.title %>
-                    </div>
-                    <div class="span15">
-                           <%= button_to "Add", line_items_path(:item_id => @itemNote.item_id), :method => :post, :class => "btn primary small" %>
-                    </div>
-                  </div>
-
-             <% end %>
-          <% end %>
+ <% end %>
+<% end %>
 
 
   <h4>Your cart</h4>
@@ -47,8 +45,7 @@
 </table>
 
 <p>
-  <%= link_to "Back to Home Page", root_path %>
   <% if @cart.total_price != 0 %>
-  | <%= link_to "Checkout", information_path %>
+    <%= link_to "Pay Now", information_path, :class => "btn primary medium" %>
   <% end %>
 </p>

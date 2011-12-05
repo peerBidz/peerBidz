@@ -58,7 +58,7 @@
     </td>
     
     <td id="current-price">
-        <span id ="current-price-value">
+        <span class ="current-price-value">
         <%
          @currentBid = Bidding.find(:first, :conditions => ["item_id IN (?)", item.id] , :order => 'bid_amount DESC')
 
@@ -86,8 +86,6 @@
 
             <% end %>
         <% end %>
-    <td><%= link_to 'Add to watch list', item, :class => "btn primary large" %></td>
-
       </tr>
   <% end %>
 </table>
