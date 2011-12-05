@@ -1,5 +1,5 @@
 require 'time_diff'
-
+require 'date'
 
 
 class ItemsController < ApplicationController
@@ -30,9 +30,10 @@ class ItemsController < ApplicationController
     @bidding = Bidding.new
     @highest_bid = @item.bidding.find(:first, :order => 'bid_amount DESC')
 
-    @time_diff_components = Time.diff(@item.expires_at , Time.now)
-    @days = @time_diff_components[:week].to_i * 7  + @time_diff_components[:day]
-
+    @time_diff_components = Time.diff(Time.now.utc, @item.expires_at.utc)
+    #@days = @time_diff_components[:week].to_i * 7  + @time_diff_components[:day]
+    
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @item }
