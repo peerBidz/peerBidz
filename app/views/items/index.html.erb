@@ -58,7 +58,7 @@
     </td>
     
     <td id="current-price">
-        <span id ="current-price-value">
+        <span class ="current-price-value">
         <%
          @currentBid = Bidding.find(:first, :conditions => ["item_id IN (?)", item.id] , :order => 'bid_amount DESC')
 
