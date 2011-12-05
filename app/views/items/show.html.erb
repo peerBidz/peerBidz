@@ -1,15 +1,16 @@
 <div class="row" style="height: 200px">
 <div class="span4">
 <h1><%= @item.title %></h1>
-<% if user_signed_in? %>
-<% if DateTime.now.to_formatted_s(:db) >= @item.expires_at.to_formatted_s(:db) %> 
-<span class="label important">Expired</span>
-<% elsif Watchlist.find_by_user_id_and_item_id(current_user.id, @item.id) != nil %>
-<%= button_to "Remove from watchlist" , remove_from_watch_list_item_path(@item), :class => "btn primary medium" %>
-<% else %>
-<%= button_to "Add to watchlist" , add_to_watch_list_item_path(@item), :class => "btn primary medium" %>
-<% end %>
-<%end%>
+
+
+  <% if DateTime.now.to_formatted_s(:db) >= @item.expires_at.to_formatted_s(:db) %>
+        <span class="label important">Expired</span>
+  <% elsif user_signed_in? && Watchlist.find_by_user_id_and_item_id(current_user.id, @item.id) != nil %>
+        <%= button_to "Remove from watchlist" , remove_from_watch_list_item_path(@item), :class => "btn primary medium" %>
+  <% elsif user_signed_in? %>
+    <%= button_to "Add to watchlist" , add_to_watch_list_item_path(@item), :class => "btn primary medium" %>
+  <% end %>
+
 </div>
 <% if user_signed_in? %>
 <% if DateTime.now.to_formatted_s(:db) < @item.expires_at.to_formatted_s(:db) %>
@@ -62,7 +63,7 @@
 		</p>
 		<p id="current-price">
 			<b>Current price:</b>
-			<span id ="current-price-value"><% if @highest_bid != nil %>
+			<span class ="current-price-value"><% if @highest_bid != nil %>
 				<%= number_to_currency(@highest_bid.bid_amount,:unit=>"$")%>
 				<% else %>
 				<%= number_to_currency(@item.starting_price,:unit=>"$")%>
