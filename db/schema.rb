@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111203051724) do
+ActiveRecord::Schema.define(:version => 20111205163847) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -84,6 +84,8 @@ ActiveRecord::Schema.define(:version => 20111203051724) do
     t.datetime "expires_at"
     t.boolean  "bidding_closed"
     t.boolean  "is_paid"
+    t.boolean  "for_sale"
+    t.decimal  "buy_price"
   end
 
   create_table "line_items", :force => true do |t|

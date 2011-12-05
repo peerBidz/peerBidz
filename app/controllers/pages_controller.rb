@@ -14,7 +14,10 @@ class PagesController < ApplicationController
   end
 
   def categories
+  end
 
+  def payment
+    @title = "Payment Page"
   end
 
 end

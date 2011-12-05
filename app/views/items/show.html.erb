@@ -43,7 +43,20 @@
 <div class="item-show-container">
 	<div class="item-image">
 		<%= image_tag @item.photo.url(:medium)  %>
-	</div>
+
+
+      <% if user_signed_in? && @item.seller_id != current_user.id%>
+        <% if DateTime.now.to_formatted_s(:db) < @item.expires_at.to_formatted_s(:db) %>
+           <%if @item.for_sale? %>
+            <p><span class="label success">New</span>
+            <span><b> Hey, this product is available for direct purchase for <span class="current-price-value"><%= number_to_currency(@item.buy_price, :unit=>"$")%></span> only!!</b></span></p>
+            <%= link_to "Buy Now" ,  payment_path, :class => "btn primary medium" %>
+           <% end %>
+        <% end %>
+      <% end %>
+
+     </div>
+
 	<div class ="item-details">
 		<p>
 			<b>Description:</b>
@@ -89,12 +102,14 @@
 		<% end %>
 
 		<% if user_signed_in? && @item.seller_id != current_user.id%>
-		<% if DateTime.now.to_formatted_s(:db) < @item.expires_at.to_formatted_s(:db) %>
-		<%= render :template => 'biddings/new', :locals => {:bidding => @bidding, :item => @item } %>
+		    <% if DateTime.now.to_formatted_s(:db) < @item.expires_at.to_formatted_s(:db) %>
+		        <%= render :template => 'biddings/new', :locals => {:bidding => @bidding, :item => @item } %>
+		    <% end %>
 		<% end %>
-		<% end %>
-	</div>
-</div>
+
+        </div>
+    </div>
+
 <script type="text/javascript">
 	$(function(){
 $('#counter').countdown({
@@ -122,3 +137,4 @@ font-weight: bold;
 color: #000;
 }
 </style>
+
