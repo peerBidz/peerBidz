@@ -193,6 +193,9 @@ GEM
       sqlite3-ruby (~> 1.2)
     term-ansicolor (1.0.7)
     thor (0.14.6)
+    time_diff (0.2.2)
+      activesupport
+      i18n
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
@@ -227,4 +230,5 @@ DEPENDENCIES
   rufus-scheduler
   sqlite3
   taps
+  time_diff (~> 0.2.2)
   webrat

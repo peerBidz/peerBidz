@@ -1,3 +1,7 @@
+require 'time_diff'
+
+
+
 class ItemsController < ApplicationController
   # GET /items
   # GET /items.xml
@@ -5,17 +9,17 @@ class ItemsController < ApplicationController
     if params[:search]
       @items = Item.find(:all, :conditions => ['title LIKE ?', "%#{params[:search]}%"])
     elsif params[:browse]
-      #@items = Item.find(:all, :conditions => ['category_id LIKE ?', "#{params[:browse]}"])
-      @items = Item.find_all_by_category_id("#{params[:browse]}")
-      #@values = "%#{params[:browse]}%"       for debugging purpose WJ
+    #@items = Item.find(:all, :conditions => ['category_id LIKE ?', "#{params[:browse]}"])
+    @items = Item.find_all_by_category_id("#{params[:browse]}")
+    #@values = "%#{params[:browse]}%"       for debugging purpose WJ
     else
-      @items = Item.all
+    @items = Item.all
     end
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @items }
-      format.js 
+      format.js
     end
   end
 
@@ -23,9 +27,11 @@ class ItemsController < ApplicationController
   # GET /items/1.xml
   def show
     @item = Item.find(params[:id])
-   @bidding = Bidding.new
-   @highest_bid = @item.bidding.find(:first, :order => 'bid_amount DESC')
+    @bidding = Bidding.new
+    @highest_bid = @item.bidding.find(:first, :order => 'bid_amount DESC')
 
+    @time_diff_components = Time.diff(@item.expires_at , Time.now)
+    @days = @time_diff_components[:week].to_i * 7  + @time_diff_components[:day]
 
     respond_to do |format|
       format.html # show.html.erb
