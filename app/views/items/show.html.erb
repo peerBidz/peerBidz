@@ -1,6 +1,10 @@
-<div class="row" style="height: 200px">
-<div class="span4">
+<div class="row" style="height: 100px">
+	
+<div class="span2">
 <h1><%= @item.title %></h1>
+</div>
+
+<div class="span14">
 <% if user_signed_in? %>
 <% if DateTime.now.to_formatted_s(:db) >= @item.expires_at.to_formatted_s(:db) %> 
 <span class="label important">Expired</span>
@@ -10,31 +14,6 @@
 <%= button_to "Add to watchlist" , add_to_watch_list_item_path(@item), :class => "btn primary medium" %>
 <% end %>
 <%end%>
-</div>
-<% if user_signed_in? %>
-<% if DateTime.now.to_formatted_s(:db) < @item.expires_at.to_formatted_s(:db) %>
-<div class="span12">
-	<h4>Expires in:</h4>
-<div id="counter"></div>
-<div class="desc">
-	<div>
-		Days
-	</div>
-	<div>
-		Hours
-	</div>
-	<div>
-		Minutes
-	</div>
-	<div>
-		Seconds
-	</div>
-</div>
-<br/>
-<%else%>
-<br/>
-<% end %>
-<% end %>
 </div>
 </div>
 
@@ -99,7 +78,7 @@
 $('#counter').countdown({
 image: '/img/digits.png',
 //<%#expiry = DateTime.now - @item.expires_at%>
-startTime: '<%= @days %>:<%=@time_diff_components[:hour]%>:<%=@time_diff_components[:minute]%>:<%=@time_diff_components[:second]%>'
+startTime: '<%= @time_diff_components[:week] %>:<%=@time_diff_components[:hour]%>:<%=@time_diff_components[:minute]%>:<%=@time_diff_components[:second]%>'
 });
 });
 </script>
