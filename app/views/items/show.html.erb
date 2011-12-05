@@ -1,7 +1,6 @@
-<div class="row" style="height: 200px">
-<div class="span4">
-<h1><%= @item.title %></h1>
-
+	
+<p id="top"></p>
+<h3><%= @item.title %></h3>
 
   <% if DateTime.now.to_formatted_s(:db) >= @item.expires_at.to_formatted_s(:db) %>
         <span class="label important">Expired</span>
@@ -10,35 +9,6 @@
   <% elsif user_signed_in? %>
     <%= button_to "Add to watchlist" , add_to_watch_list_item_path(@item), :class => "btn primary medium" %>
   <% end %>
-
-</div>
-<% if user_signed_in? %>
-<% if DateTime.now.to_formatted_s(:db) < @item.expires_at.to_formatted_s(:db) %>
-<div class="span12">
-	<h4>Expires in:</h4>
-<div id="counter"></div>
-<div class="desc">
-	<div>
-		Days
-	</div>
-	<div>
-		Hours
-	</div>
-	<div>
-		Minutes
-	</div>
-	<div>
-		Seconds
-	</div>
-</div>
-<br/>
-<%else%>
-<br/>
-<% end %>
-<% end %>
-</div>
-</div>
-
 
 <div class="item-show-container">
 	<div class="item-image">
@@ -49,7 +19,7 @@
         <% if DateTime.now.to_formatted_s(:db) < @item.expires_at.to_formatted_s(:db) %>
            <%if @item.for_sale? %>
             <p><span class="label success">New</span>
-            <span><b> Hey, this product is available for direct purchase for <span class="current-price-value"><%= number_to_currency(@item.buy_price, :unit=>"$")%></span> only!!</b></span></p>
+            <span><b> This product is available for direct purchase for <span class="current-price-value"><%= number_to_currency(@item.buy_price, :unit=>"$")%></span> only!!</b></span></p>
             <%= link_to "Buy Now" ,  payment_path, :class => "btn primary medium" %>
            <% end %>
         <% end %>
@@ -76,7 +46,7 @@
 		</p>
 		<p id="current-price">
 			<b>Current price:</b>
-			<span class ="current-price-value"><% if @highest_bid != nil %>
+			<span id ="current-price-value" class ="current-price-value"><% if @highest_bid != nil %>
 				<%= number_to_currency(@highest_bid.bid_amount,:unit=>"$")%>
 				<% else %>
 				<%= number_to_currency(@item.starting_price,:unit=>"$")%>
@@ -85,10 +55,6 @@
 		<p id="expires-at">
 			<b>Expires at:</b> <%= @item.expires_at.to_formatted_s(:db) %>
 		</p>
-		<!-- <p>
-		<b>Duration:</b>
-		<%#= @item.duration %>
-		</p> -->
 		<p>
 			<b>Category:</b>
 			<%= Category.find(@item.category_id).name %>
@@ -107,34 +73,8 @@
 		    <% end %>
 		<% end %>
 
+
         </div>
     </div>
 
-<script type="text/javascript">
-	$(function(){
-$('#counter').countdown({
-image: '/img/digits.png',
-//<%#expiry = DateTime.now - @item.expires_at%>
-startTime: '<%= @days %>:<%=@time_diff_components[:hour]%>:<%=@time_diff_components[:minute]%>:<%=@time_diff_components[:second]%>'
-});
-});
-</script>
-<style type="text/css">
-br { clear: both; }
-.cntSeparator {
-font-size: 54px;
-margin: 10px 7px;
-color: #000;
-}
-.desc { margin: 7px 3px; }
-.desc div {
-float: left;
-font-family: Arial;
-width: 70px;
-margin-right: 65px;
-font-size: 13px;
-font-weight: bold;
-color: #000;
-}
-</style>
 
