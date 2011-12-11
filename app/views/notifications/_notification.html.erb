@@ -15,5 +15,10 @@
           <span class="label default">New</span>
       <% end %>
     <%= notification.message %>
+      <%if notification.notification_type && notification.notification_type.include?('W') %>
+      	<% unless Item.find(notification.item_id).is_paid %>
+      		<%= link_to "(Pay here)", :controller => 'carts', :action => 'show', :id => 'current' %>
+      	<% end %>
+      <% end %>
 	</li>
 </div>
