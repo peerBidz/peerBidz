@@ -91,4 +91,16 @@
 </table>
 
 
+<script>
+    $(function() {
+        var availableTags = [
+        <%Item.all.each do |i|%>
+            "<%= i.title %>",
+        <%end%>
 
+        ];
+        $( "#search" ).autocomplete({
+            source: availableTags
+        });
+    });
+</script>
