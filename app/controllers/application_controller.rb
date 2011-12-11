@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
 
   def current_cart
 
+    #session[:cart_id] = nil
+
     if session[:cart_id]
       @current_cart ||= Cart.find(session[:cart_id])
       session[:cart_id] = nil if @current_cart.purchased_at

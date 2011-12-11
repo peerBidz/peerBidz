@@ -3,20 +3,20 @@
 
 <% @unpaid_items = Item.find(:all, :conditions => ["is_paid != ?", true]) %>
 <% @unpaid_items.each do |item| %>
- <% @itemNote = Notification.find(:first, :conditions => ["notification_type=? AND item_id=?" , "W",item.id ]) %>
+    <% @itemNote = Notification.find(:first, :conditions => ["notification_type=? AND item_id=?" , "W",item.id ]) %>
 
-  <% if @itemNote && @itemNote.user_id == current_user.id %>
+      <% if @itemNote && @itemNote.user_id == current_user.id %>
 
-      <div class="row" style="height: 70px;">
-        <div class="span1">
-               <%= item.title %>
-        </div>
-        <div class="span15">
-               <%= link_to "Add", line_items_path(:item_id => @itemNote.item_id), :method => :post, :class => "btn primary medium" %>
-        </div>
-      </div>
+          <div class="row" style="height: 70px;">
+            <div class="span1">
+                   <%= item.title %>
+            </div>
+            <div class="span15">
+                   <%= link_to "Add", line_items_path(:item_id => @itemNote.item_id), :method => :post, :class => "btn primary medium" %>
+            </div>
+          </div>
 
- <% end %>
+      <% end %>
 <% end %>
 
 

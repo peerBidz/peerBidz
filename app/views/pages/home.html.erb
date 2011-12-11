@@ -33,6 +33,7 @@
 var data = [
         <% @items.each do |item| %>
 
+        <% if item.is_paid == false %>
         <%
          @currentBid = Bidding.find(:first, :conditions => ["item_id IN (?)", item.id] , :order => 'bid_amount DESC')
 
@@ -53,6 +54,7 @@ var data = [
         layer: '<div><a href="/items/<%=item.id%>"><h2><%= item.title%></h2></a><p><%= @currentPrice %></p></div>'
 
     },
+        <%end%>
         <%end%>
 ];
 
@@ -121,14 +123,19 @@ var data = [
 <hr>
 <div class="row">
   <% @items.each_with_index do |item, i| %>
+      <% if item.is_paid == false %>
       <div class="home-item-desc span6">
+
         <h2 class="heading"><%= item.title %></h2>
 
         <%= image_tag item.photo.url(:small) %>
 
         <p><%= item.description %></p>
+
+
         <%= link_to 'View Details', item, :class=> 'btn' %>
       </div>
+      <% end %>
   <% end %>
 </div>
 
