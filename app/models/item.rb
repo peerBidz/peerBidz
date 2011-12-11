@@ -49,6 +49,9 @@ class Item < ActiveRecord::Base
     deleteme = Bidding.find_all_by_item_id(self.id)
     Bidding.destroy(deleteme)
 
+    #remove from watchlist of all user
+    watchlist_items = Watchlist.find(:all, :conditions => {:item_id => self.id})
+    Watchlist.destroy(watchlist_items)
 
     #delete the item
     super
