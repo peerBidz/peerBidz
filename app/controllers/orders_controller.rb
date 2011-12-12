@@ -8,6 +8,17 @@ class OrdersController < ApplicationController
     @order = current_cart.build_order(params[:order])
     flash[:notice] = "Thank you for your payment. We will process it in one business day! Have a great day :-)"
 
+    @cart = current_cart
+
+    #Create notification for seller to ship item
+    @itemsPaid = LineItem.find_all_by_cart_id( @cart.id )
+
+    @itemsPaid.each do |item|
+      @msg = "The following item has received payment and requires shipping: " + Item.find(item.item_id).title
+      Notification.create(:user_id=>Item.find(item.item_id).seller_id, :item_id=>item.item_id, :message=>@msg, :delivered=>"false", :notification_type => 'P')  
+    end
+    #------
+
     if @order.save
       if @order.purchase
         render :action => "success"

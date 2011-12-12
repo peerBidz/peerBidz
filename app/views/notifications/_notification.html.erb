@@ -11,6 +11,8 @@
           <span class="label warning">OutBid</span>
       <% elsif notification.notification_type && notification.notification_type.include?('D')%>
           <span class="label important">Delete</span>
+      <% elsif notification.notification_type && notification.notification_type.include?('P')%>
+          <span class="label important">Paid</span>
       <% else %>
           <span class="label default">New</span>
       <% end %>

@@ -19,7 +19,7 @@
 
 # Learn more: http://github.com/javan/whenever
 
-
-every 1.min do
-   rake "bidding_tasks:all"
-end
+#not used - moved to /config/initializers/task_scheduler.rb
+#every 1.min do
+#   rake "bidding_tasks:all"
+#end
