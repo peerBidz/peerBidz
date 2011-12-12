@@ -16,7 +16,7 @@
 		<% end %>
 		<% elsif notification.notification_type && notification.notification_type.include?('P')%>
 			<!-- To show the shipping address of the buyer -->
-			<a href="#" id="dialog_link<%=notification.id%>" class="ui-state-default ui-corner-all">Shipping address</a>
+			<a href="#" id="dialog_link<%=notification.id%>">(Ship here)</a>
 			
 <!-- ui-dialog -->
 <div id="dialog<%=notification.id%>" title="Shipping Details">

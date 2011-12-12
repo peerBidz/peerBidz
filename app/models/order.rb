@@ -2,7 +2,7 @@ class Order < ActiveRecord::Base
   belongs_to :cart
   attr_accessor :card_number, :card_verification
 
-  validate_on_create :validate_card
+ # validate_on_create :validate_card
 
   def purchase
 #    response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)
@@ -30,13 +30,13 @@ class Order < ActiveRecord::Base
     }
   end
 
-  def validate_card
-    unless credit_card.valid?
-      credit_card.errors.full_messages.each do |message|
-        errors.add_to_base message
-      end
-    end
-  end
+ # def validate_card
+  #  unless credit_card.valid?
+  #    credit_card.errors.full_messages.each do |message|
+  #     errors.add(:base, message)
+  #    end
+  #  end
+  # end
 
   def credit_card
     @credit_card ||= ActiveMerchant::Billing::CreditCard.new(
