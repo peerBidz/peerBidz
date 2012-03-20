@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(:version => 20120320173805) do
     t.string   "title"
     t.string   "description"
     t.boolean  "condition"
-    t.decimal  "starting_price"
+    t.decimal  "starting_price",     :precision => 10, :scale => 0
     t.integer  "duration"
     t.integer  "category_id"
     t.integer  "seller_id"
@@ -91,11 +91,11 @@ ActiveRecord::Schema.define(:version => 20120320173805) do
     t.boolean  "bidding_closed"
     t.boolean  "is_paid"
     t.boolean  "for_sale"
-    t.decimal  "buy_price"
+    t.decimal  "buy_price",          :precision => 10, :scale => 0
   end
 
   create_table "line_items", :force => true do |t|
-    t.decimal  "unit_price"
+    t.decimal  "unit_price", :precision => 10, :scale => 0
     t.integer  "item_id"
     t.integer  "cart_id"
     t.integer  "quantity"
@@ -140,9 +140,6 @@ ActiveRecord::Schema.define(:version => 20120320173805) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "seller_email"
-  end
-
-  create_table "tags", :primary_key => "tid", :force => true do |t|
   end
 
   create_table "users", :force => true do |t|
