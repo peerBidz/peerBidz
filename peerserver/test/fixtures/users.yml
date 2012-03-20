@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  uid: 1
+  uname: MyString
+  password: MyString
+  seller: 1
+  keyurl: MyText
+
+two:
+  uid: 1
+  uname: MyString
+  password: MyString
+  seller: 1
+  keyurl: MyText
