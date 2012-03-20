@@ -1,0 +1,65 @@
+<div class="notification">
+	<!-- Print the notification message -->
+	<li class="notification-message">
+		<%if notification.notification_type && notification.notification_type.include?('W') %> <span class="label success">Win</span>
+		<% elsif notification.notification_type && notification.notification_type.include?('N')%> <span class="label important">NewBid</span>
+		<% elsif notification.notification_type && notification.notification_type.include?('S')%> <span class="label success">Sold</span>
+		<% elsif notification.notification_type && notification.notification_type.include?('O')%> <span class="label warning">OutBid</span>
+		<% elsif notification.notification_type && notification.notification_type.include?('D')%> <span class="label important">Delete</span>
+		<% elsif notification.notification_type && notification.notification_type.include?('P')%> <span class="label important">Paid</span>
+		<% else %> <span class="label default">New</span>
+		<% end %>
+		<%= notification.message %> 
+		<%if notification.notification_type && notification.notification_type.include?('W') %>
+		<% unless Item.find(notification.item_id).is_paid %>
+		<%= link_to "(Pay here)", :controller => 'carts', :action => 'show', :id => 'current' %>
+		<% end %>
+		<% elsif notification.notification_type && notification.notification_type.include?('P')%>
+			<!-- To show the shipping address of the buyer -->
+			<a href="#" id="dialog_link<%=notification.id%>">(Ship here)</a>
+			
+<!-- ui-dialog -->
+<div id="dialog<%=notification.id%>" title="Shipping Details">
+	<% highest_bid_row = Bidding.find(:first, :conditions => ["item_id IN (?)", notification.item_id] , :order => 'bid_amount DESC') %>
+	<% winner = User.find(highest_bid_row.user_id) %>
+	<p>
+		Name = <%= winner.last_name %>, <%= winner.first_name %> 
+		<br />
+		Address = <%= winner.street %> <%= winner.city %> <%= winner.state %>
+		<br />
+		Phone =  <%= winner.phone %>
+		<br />
+		Email =  <%= winner.email %>
+	</p>
+</div>
+<script type="text/javascript">
+	$(function() {
+		// Dialog
+		$('#dialog<%=notification.id%>').dialog({
+			autoOpen : false,
+			width : 600,
+			buttons : {
+				"Ok" : function() {
+					$(this).dialog("close");
+				}
+			}
+		});
+
+		// Dialog Link
+		$('#dialog_link<%=notification.id%>').click(function() {
+			$('#dialog<%=notification.id%>').dialog('open');
+			return false;
+		});
+
+		//hover states on the static widgets
+		$('#dialog_link<%=notification.id%>, ul#icons li').hover(function() {
+			$(this).addClass('ui-state-hover');
+		}, function() {
+			$(this).removeClass('ui-state-hover');
+		});
+	});
+</script>
+
+		<% end %>
+	</li>
+</div>

@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+<h1>Confirm your order</h1>
+
+<p>
+  <b>Item name:</b>
+  <%= @item.title %>
+</p>
+<p>
+  <b>Condition: </b>
+  <%if @item.condition?%>
+    New
+  <%else%>
+    Used
+  <%end%>
+</p>
+<p>
+  <b>Price:</b>
+  <%= number_to_currency(@highest_bid.bid_amount,:unit=>"$")%>
+</p>
+
+<p>
+  <b>Street:</b>
+  <%= @order.street %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @order.city %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @order.zip %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @order.state %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @order.phone %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @order.country %>
+</p>
+
+
+<%= link_to 'Back', information_path %> |
+<%= link_to 'Continue Shopping', root_path %>

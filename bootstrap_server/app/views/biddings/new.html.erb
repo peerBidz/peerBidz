@@ -1,0 +1,19 @@
+<%= form_for @bidding, :remote => true do |f| %>
+<div class="field" >
+    <br />
+     <%= f.label "BidValue" %><br />
+    <%= f.text_field :bid_amount %>
+  </div>
+    <%= f.hidden_field :bid_time, :value => DateTime.current() %>
+    <%= f.hidden_field :item_id, :value => @item.id %>
+    <%= f.hidden_field :item, :value => @item %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+
+ <div class="actions">
+    <%= f.submit "Place Bid" , :class => "btn primary medium" %>
+ </div><br />
+<% end %>
+
+
+
+
