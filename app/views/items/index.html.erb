@@ -1,5 +1,6 @@
 <!-- This page display all the items present in the system -->
 
+<%require "xmlrpc/client"%>
 <% if user_signed_in? %>
     <% if current_user.is_seller? %>
         <a class="btn primary large offer-item" href='<%= new_item_path %>'>Offer your item for bidding »</a>
@@ -24,74 +25,16 @@
 
   </p>
 <% end %>
+<% @tests.each do |test| %>
+You are now connected to <%= test.ipAddress %>
+<br>
+<% server = XMLRPC::Client.new("127.0.0.1","/RPC2",8080) %>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Photo</th>
-    <th>Description</th>
-    <th>Condition</th>
-    <th>Current price</th>
-    <!--<th>Duration</th>-->
-    <th>Category</th>
-    <th>Seller</th>
-    <th></th>
-    <% if user_signed_in? %>
-        <% if current_user.is_seller? %>
-            <th></th>
-            <th></th>
-            <th></th>
-        <% end %>
-    <% end %>
-  </tr>
-
-<% @items.each do |item| %>
-  <tr>
-    <% if item.is_paid == false %>
-    <td><%= item.title %></td>
-    <td><%= link_to (image_tag (item.photo.url(:small)), :action => 'show', :controller => 'items'), item %></td>
-    <td><%= item.description %></td>
-    <td><%if item.condition?%>
-            New
-        <%else%>
-            Used
-        <%end%>
-    </td>
-    
-    <td id="current-price">
-        <span class ="current-price-value">
-        <%
-         @currentBid = Bidding.find(:first, :conditions => ["item_id IN (?)", item.id] , :order => 'bid_amount DESC')
-
-        if ( @currentBid != nil )
-          @currentPrice = number_to_currency(@currentBid.bid_amount,:unit=>"$")
-        else
-          @currentPrice = number_to_currency(item.starting_price,:unit=>"$")
-        end
-        %>
-
-        <%= @currentPrice %>
-        </span>
-    </td>
-    
-        <td><%= Category.find(item.category_id).name %></td>
-        <td><%= User.find(item.seller_id).email %></td>
+<%result = server.call("sample.sendHi")%>
 
 
-        <td><%= link_to 'Show', item %></td>
-        <!-- WJ need admin role -->
-        <% if user_signed_in? && current_user.is_seller? %>
-            <% if current_user== User.find(item.seller_id) %>
-                <td><%= link_to 'Edit', edit_item_path(item) %></td>
-                <td><%= link_to 'Delete', item, :confirm => 'Are you sure?', :method => :delete %></td>
-
-            <% end %>
-        <% end %>
-      <% end %>
-      </tr>
-  <% end %>
-</table>
-
+<%= result["value"] %>
+<%end%>
 
 <script>
     $(function() {

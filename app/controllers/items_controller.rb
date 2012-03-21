@@ -1,5 +1,6 @@
 require 'time_diff'
 require 'date'
+require "xmlrpc/client"
 
 
 class ItemsController < ApplicationController
@@ -10,7 +11,9 @@ class ItemsController < ApplicationController
       @items = Item.find(:all, :conditions => ['title LIKE ?', "%#{params[:search]}%"])
     elsif params[:browse]
     #@items = Item.find(:all, :conditions => ['category_id LIKE ?', "#{params[:browse]}"])
-    @items = Item.find_all_by_category_id("#{params[:browse]}")
+    #@items = Item.find_all_by_category_id("#{params[:browse]}")
+    @tests = CategoryMembers.find_all_by_id("#{params[:browse]}")
+
     #@values = "%#{params[:browse]}%"       for debugging purpose WJ
     else
     @items = Item.all
