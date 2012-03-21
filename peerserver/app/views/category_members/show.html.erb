@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cname:</b>
+  <%= @category_member.cname %>
+</p>
+
+<p>
+  <b>Ipaddr:</b>
+  <%= @category_member.ipAddr %>
+</p>
+
+
+<%= link_to 'Edit', edit_category_member_path(@category_member) %> |
+<%= link_to 'Back', category_members_path %>
