@@ -1,19 +1,6 @@
-<p id="notice"><%= notice %></p>
+<% CategoryMembers.create(:ipAddress => 'request.env['REMOTE_ADDR']', :category => 'params[:browse]')%>
 
-<p>
-  <b>Name:</b>
-  <%= @category.name %>
-</p>
+<script>
+window.parent.postMessage(<%= params[:browse] %>, '*');
+<script>
 
-<p>
-  <b>ParentID:</b>
-  <%= @category.parentID %>
-</p>
-
-<p>
-  <b>ID:</b>
-  <%= @category.id %>
-</p>
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>

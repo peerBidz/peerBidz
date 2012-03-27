@@ -9,6 +9,13 @@ class CategoriesController < ApplicationController
       format.xml  { render :xml => @categories }
     end
   end
+  def doCategory
+    url = params[:url]
+    respond_to do |format|
+      format.html # doCategory.html.erb
+      format.xml  { render :xml => @categories }
+    end
+  end
 
   # GET /categories/1
   # GET /categories/1.xml

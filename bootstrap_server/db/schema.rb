@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20120320173805) do
     t.string   "ipAddress"
     t.datetime "updated_at"
     t.datetime "created_at"
+    t.string   "category"
   end
 
   create_table "items", :force => true do |t|

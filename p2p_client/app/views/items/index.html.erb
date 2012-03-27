@@ -28,12 +28,12 @@
 <% @tests.each do |test| %>
 You are now connected to <%= test.ipAddress %>
 <br>
-<% server = XMLRPC::Client.new("127.0.0.1","/RPC2",8080) %>
+<%# server = XMLRPC::Client.new("127.0.0.1","/RPC2",8080) %>
 
-<%result = server.call("sample.sendHi")%>
+<%#result = server.call("sample.sendHi")%>
 
 
-<%= result["value"] %>
+<%#= result["value"] %>
 <%end%>
 
 <script>

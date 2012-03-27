@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
     elsif params[:browse]
     #@items = Item.find(:all, :conditions => ['category_id LIKE ?', "#{params[:browse]}"])
     #@items = Item.find_all_by_category_id("#{params[:browse]}")
-    @tests = CategoryMembers.find_all_by_id("#{params[:browse]}")
+    @tests = CategoryMembers.where("category = ?", "#{params[:browse]}")
 
     #@values = "%#{params[:browse]}%"       for debugging purpose WJ
     else

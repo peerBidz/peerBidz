@@ -1,13 +1,15 @@
+
 <script type="text/javascript">
-function messageParent(url)
+function messageParent(url, ip)
 {
-	window.parent.postMessage(url, '*');
+	this.document.location.href = "http://127.0.0.1:3001/redirect?url=" +url;
+	<!--window.parent.postMessage(url, '*');-->
 }
 </script>
 <table>
 <% @categories.each do |category| %>
   <tr>
-    <td><a href='#' onclick="messageParent('<%= category.id %>')"><%= category.name %></a> </td>
+    <td><a href='#' onclick="messageParent('<%= category.name %>', '<% request.env['REMOTE_ADDR'] %>')"><%= category.name %></a> </td>
   </tr>
 <% end %>
 </table>

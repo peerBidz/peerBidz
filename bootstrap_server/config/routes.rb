@@ -48,6 +48,7 @@ end
   match '/advsearch',  :to => 'searches#new'
   match '/information',  :to => 'orders#new'
   match '/sidebar', :to => 'categories#display'
+  match '/redirect', :to => 'categories#doCategory'
 
   match '/items/:id/add_to_watch_list', :to => 'items#add_to_watch_list'
   match '/items/:id/remove_from_watch_list', :to => 'items#remove_from_watch_list'
