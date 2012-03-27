@@ -32,6 +32,17 @@ class CategoriesController < ApplicationController
     end
   end
 
+  # GET /categories/display
+  # GET /categories/display.xml
+  def display
+    @category = Category.display
+
+    #respond_to do |format|
+    #  format.html # display.html.erb
+    #  format.xml  { render :xml => @category }
+    #end
+  end
+
   # GET /categories/1/edit
   def edit
     @category = Category.find(params[:id])

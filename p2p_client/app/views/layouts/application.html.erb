@@ -26,18 +26,29 @@
 
 </head>
 <body>
+<script type="text/javascript">
+var src = 'http://127.0.0.1:3000/categories#' + encodeURIComponent(document.location.href);
 
+
+function listener(event)
+{
+	this.document.location.href = "http://127.0.0.1:3000/items?browse=" + event.data;
+}
+
+if(window.addEventListener){
+	window.addEventListener('message', listener, false);
+}
+else
+{
+	attachEvent("onmessage", listener);
+}
+</script>
 <div class="container-fluid">
-  <div class="sidebar">
-    <% if params[:action] == 'home' || params[:action] == 'index' || params[:action] == 'show' %>
-        <div class="well">
-          <%= render :template => 'pages/categories', :layout => layout_for_my_categories %>
-    <% end %>
-
-    </div>
-
-  </div>
-
+<div class="sidebar">
+<div id="iframe" class="well">
+<iframe  height=400 width=175 src="http://127.0.0.1:3001/categories" ></iframe>
+</div>
+</div>
   <div class="content">
     <!-- Main hero unit for the home page -->
 

@@ -1,5 +1,5 @@
 <div class="devise-layout" style="margin-left:40px">
-<h2>Edit User Registration <%= resource_name.to_s.humanize %></h2>
+<h2>Edit User Information</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:method => :put}) do |f| %>
     <%= devise_error_messages! %>
@@ -18,46 +18,6 @@
     <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br/>
       <%= f.password_field :current_password %></div>
 
-    <div><%= f.label :first_name %>
-      <br/>
-      <%= f.text_field :first_name %></div>
-
-    <div><%= f.label :last_name %>
-      <br/>
-      <%= f.text_field :last_name %></div>
-
-    <div>
-     <label>Date of birth</label>
-     <br/>
-      <%= date_select :resource, :dob,:start_year => 1900, :end_year => 2011 %></div>
-
-    <div><%= f.label :phone %>
-      <br/>
-      <%= f.text_field :phone %></div>
-
-    <div><%= f.label :street %>
-      <br/>
-      <%= f.text_field :street %></div>
-
-    <div><%= f.label :city %>
-      <br/>
-      <%= f.text_field :city %></div>
-
-    <div><%= f.label :zip %>
-      <br/>
-      <%= f.text_field :zip %></div>
-
-    <div><%= f.label :state %>
-      <br/>
-      <%= f.text_field :state %></div>
-
-
-    <div><%= f.label :country %>
-      <br/>
-      <%= f.text_field :country %></div>
-
-
-      <%#= f.country_select :country, [], {:selected => "United States"} %>
 
     <div><%= f.submit "Update" %></div>
 <% end %>
