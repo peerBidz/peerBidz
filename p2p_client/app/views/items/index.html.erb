@@ -12,7 +12,7 @@
     <a class="btn primary large offer-item" href='/users/sign_in'>Login to offer your item »</a>
 <% end %>
 
-
+<% ipaddresses.create(:ipaddress=>':params['parent']', :iptype='parent') %>
 <!-- SEARCH BAR -->
 <%= form_tag items_path, :method => 'get' do %>
   <p>

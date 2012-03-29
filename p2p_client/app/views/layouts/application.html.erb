@@ -33,7 +33,7 @@ var src = 'http://127.0.0.1:3000/categories#' + encodeURIComponent(document.loca
 function listener(event)
 {
 	var arr = event.data.split(" ");
-	this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" arr[1];
+	this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
 }
 
 if(window.addEventListener){

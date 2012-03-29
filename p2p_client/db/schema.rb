@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20120331175747) do
     t.string   "ipaddress"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "iptype",     :limit => 50
   end
 
   create_table "items", :force => true do |t|
