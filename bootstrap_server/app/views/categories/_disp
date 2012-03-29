@@ -1,0 +1,1 @@
+<%= render :template => 'pages/categories', :layout => layout_for_my_categories %>

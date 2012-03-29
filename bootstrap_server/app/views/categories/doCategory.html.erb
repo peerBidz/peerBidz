@@ -1,0 +1,11 @@
+<% CategoryMembers.create(:ipAddress => request.env['REMOTE_ADDR'], :category => params[:url])%>
+
+<!-- pick IP addresses round robin style by oldest updated_at -->
+<% myvar = CategoryMembers.where("category = ?", params[:url]).order("updated_at asc").first; %>
+<% myvar.updated_at = DateTime.now  %>
+<% myvar.save %>
+
+<script>
+	<!--alert('Round Robin:\nIP-<%= myvar.ipAddress %>\nUpadatedAt-<%= myvar.updated_at %>\nCreatedAt- <%= myvar.created_at %>');-->
+	window.parent.postMessage('<%= params[:url] %>', '*');
+</script>
