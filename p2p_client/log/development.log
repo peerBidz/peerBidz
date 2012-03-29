@@ -404,3 +404,140 @@ SyntaxError (/home/code/peer/p2p_client/app/controllers/items_controller.rb:13: 
                                     ^):
   
 
+
+SyntaxError (/home/code/peer/p2p_client/app/controllers/items_controller.rb:13: syntax error, unexpected '}', expecting tASSOC
+      @search_string = {params[:search]}
+                                        ^
+/home/code/peer/p2p_client/app/controllers/items_controller.rb:16: no .<digit> floating literal anymore; put 0 before dot
+        @sellerIPAddress = 127.0.0.1
+                                 ^
+/home/code/peer/p2p_client/app/controllers/items_controller.rb:16: syntax error, unexpected tFLOAT
+        @sellerIPAddress = 127.0.0.1
+                                    ^):
+  
+
+
+SyntaxError (/home/code/peer/p2p_client/app/controllers/items_controller.rb:13: syntax error, unexpected '}', expecting tASSOC
+      @search_string = {params[:search]}
+                                        ^
+/home/code/peer/p2p_client/app/controllers/items_controller.rb:16: no .<digit> floating literal anymore; put 0 before dot
+        @sellerIPAddress = 127.0.0.1
+                                 ^
+/home/code/peer/p2p_client/app/controllers/items_controller.rb:16: syntax error, unexpected tFLOAT
+        @sellerIPAddress = 127.0.0.1
+                                    ^):
+  
+
+
+ActionView::Template::Error (/home/code/peer/p2p_client/app/views/items/index.html.erb:15: syntax error, unexpected tSTRING_BEG, expecting tASSOC
+...>':params["parent"]', :iptype='parent') 
+...                               ^
+/home/code/peer/p2p_client/app/views/items/index.html.erb:15: syntax error, unexpected ')', expecting keyword_end
+...s["parent"]', :iptype='parent') 
+...                               ^):
+    12:     <a class="btn primary large offer-item" href='/users/sign_in'>Login to offer your item »</a>
+    13: <% end %>
+    14: 
+    15: <% ipaddresses.create(:ipaddress=>':params["parent"]', :iptype='parent') %>
+    16: <!-- SEARCH BAR -->
+    17: <%= form_tag items_path, :method => 'get' do %>
+    18:   <p>
+  app/controllers/items_controller.rb:34:in `index'
+
+
+ActionView::Template::Error (undefined local variable or method `ipaddresses' for #<#<Class:0xc4839b8>:0xc482478>):
+    12:     <a class="btn primary large offer-item" href='/users/sign_in'>Login to offer your item »</a>
+    13: <% end %>
+    14: 
+    15: <% ipaddresses.create(:ipaddress=>':params["parent"]', :iptype=>'parent') %>
+    16: <!-- SEARCH BAR -->
+    17: <%= form_tag items_path, :method => 'get' do %>
+    18:   <p>
+  app/views/items/index.html.erb:15:in `_app_views_items_index_html_erb___778080454_103025910_537235397'
+  app/controllers/items_controller.rb:34:in `index'
+
+
+ActionView::Template::Error (undefined local variable or method `ip_address' for #<#<Class:0xc969b30>:0xc968b2c>):
+    12:     <a class="btn primary large offer-item" href='/users/sign_in'>Login to offer your item »</a>
+    13: <% end %>
+    14: 
+    15: <% ip_address.create(:ipaddress=>':params["parent"]', :iptype=>'parent') %>
+    16: <!-- SEARCH BAR -->
+    17: <%= form_tag items_path, :method => 'get' do %>
+    18:   <p>
+  app/views/items/index.html.erb:15:in `_app_views_items_index_html_erb___778080454_105594940_537235397'
+  app/controllers/items_controller.rb:34:in `index'
+
+
+ActionView::Template::Error (undefined local variable or method `ipaddresses' for #<#<Class:0xcb372f0>:0xcb35950>):
+    13: <% end %>
+    14: 
+    15: <!-- Save parent IP in the database -->
+    16: <% mydb = ipaddresses.new %>
+    17: <% mydb.ipaddress = :params['parent']%>
+    18: <% mydb.iptype = 'parent' %>
+    19: <% mydb.save %>
+  app/views/items/index.html.erb:16:in `_app_views_items_index_html_erb___778080454_106538670_537235397'
+  app/controllers/items_controller.rb:34:in `index'
+
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Ipaddresses):
+    13: <% end %>
+    14: 
+    15: <!-- Save parent IP in the database -->
+    16: <% mydb = Ipaddresses.new %>
+    17: <% mydb.ipaddress = :params['parent']%>
+    18: <% mydb.iptype = 'parent' %>
+    19: <% mydb.save %>
+  app/views/items/index.html.erb:16:in `_app_views_items_index_html_erb___778080454_107514560_537235397'
+  app/controllers/items_controller.rb:34:in `index'
+
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::IpAddresses):
+    13: <% end %>
+    14: 
+    15: <!-- Save parent IP in the database -->
+    16: <% mydb = IpAddresses.new %>
+    17: <% mydb.ipaddress = :params['parent']%>
+    18: <% mydb.iptype = 'parent' %>
+    19: <% mydb.save %>
+  app/views/items/index.html.erb:16:in `_app_views_items_index_html_erb___778080454_107566620_537235397'
+  app/controllers/items_controller.rb:34:in `index'
+
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::IPAddresses):
+    13: <% end %>
+    14: 
+    15: <!-- Save parent IP in the database -->
+    16: <% mydb = IPAddresses.new %>
+    17: <% mydb.ipaddress = :params['parent']%>
+    18: <% mydb.iptype = 'parent' %>
+    19: <% mydb.save %>
+  app/views/items/index.html.erb:16:in `_app_views_items_index_html_erb___778080454_108010390_537235397'
+  app/controllers/items_controller.rb:34:in `index'
+
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::IpAddress):
+    13: <% end %>
+    14: 
+    15: <!-- Save parent IP in the database -->
+    16: <% mydb = IpAddress.new %>
+    17: <% mydb.ipaddress = :params['parent']%>
+    18: <% mydb.iptype = 'parent' %>
+    19: <% mydb.save %>
+  app/views/items/index.html.erb:16:in `_app_views_items_index_html_erb___778080454_98067850_537235397'
+  app/controllers/items_controller.rb:34:in `index'
+
+
+ActionView::Template::Error (/home/code/peer/p2p_client/app/views/items/index.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+ mydb.ipaddress = ':params['parent']'
+                                  ^):
+    14: 
+    15: <!-- Save parent IP in the database -->
+    16: <% mydb = Ipaddress.new %>
+    17: <% mydb.ipaddress = ':params['parent']'%>
+    18: <% mydb.iptype = 'parent' %>
+    19: <% mydb.save %>
+    20: 
+  app/controllers/items_controller.rb:34:in `index'
+

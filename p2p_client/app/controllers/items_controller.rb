@@ -10,10 +10,10 @@ class ItemsController < ApplicationController
   def index
     if params[:search]
       @items = Item.find(:all, :conditions => ['title LIKE ?', "%#{params[:search]}%"])
-      @search_string = {params[:search]}
+      @search_string = params[:search]
 
       if @items == nil
-        @sellerIPAddress = 127.0.0.1
+        @sellerIPAddress = '127.0.0.1'
 
         @server1 = XMLRPC::Client.new(successor_1, "/api/xmlrpc", 3001)
         @ip_address = server1.call("Container.get_sellerip", @search_string)
