@@ -5,7 +5,7 @@
 <% myvar.updated_at = DateTime.now  %>
 <% myvar.save %>
 
-<script>
-	<!--alert('Round Robin:\nIP-<%= myvar.ipAddress %>\nUpadatedAt-<%= myvar.updated_at %>\nCreatedAt- <%= myvar.created_at %>');-->
-	window.parent.postMessage('<%= params[:url] %>', '*');
+
+<script type="text/javascript">
+	window.parent.postMessage("<%= params[:url] %> <%= myvar.ipAddress %>", '*');
 </script>

@@ -317,3 +317,35 @@ ActionView::Template::Error (Mysql2::Error: You have an error in your SQL syntax
   app/views/searches/new.html.erb:3:in `_app_views_searches_new_html_erb__527747778_91893460_537235397'
   app/controllers/searches_controller.rb:29:in `new'
 
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+    25: 
+    26:   </p>
+    27: <% end %>
+    28: <% @tests.each do |test| %>
+    29: You are now connected to <%= test.ipAddress %>
+    30: <br>
+    31: <%# server = XMLRPC::Client.new("127.0.0.1","/RPC2",8080) %>
+  app/views/items/index.html.erb:28:in `_app_views_items_index_html_erb___778080454_107495340_537235397'
+  app/controllers/items_controller.rb:22:in `index'
+
+
+ActionController::RoutingError (No route matches "/redirect"):
+  
+
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+    25: 
+    26:   </p>
+    27: <% end %>
+    28: <% @tests.each do |test| %>
+    29: You are now connected to <%= test.ipAddress %>
+    30: <br>
+    31: <%# server = XMLRPC::Client.new("127.0.0.1","/RPC2",8080) %>
+  app/views/items/index.html.erb:28:in `_app_views_items_index_html_erb___778080454_104697720_537235397'
+  app/controllers/items_controller.rb:22:in `index'
+

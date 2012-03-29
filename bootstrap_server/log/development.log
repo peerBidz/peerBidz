@@ -402,3 +402,15 @@ ActionView::Template::Error (undefined method `query' for #<Class:0xa577074>):
   app/views/categories/doCategory.html.erb:4:in `_app_views_categories_do_ategory_html_erb___608894068_87784990_805671677'
   app/controllers/categories_controller.rb:14:in `doCategory'
 
+
+ActionView::Template::Error (undefined method `updated_at=' for nil:NilClass):
+    5: 
+    6: <!-- pick IP addresses round robin style by oldest updated_at -->
+    7: <% myvar = CategoryMembers.where("category = ?", params[:url]).order("updated_at asc").first; %>
+    8: <% myvar.updated_at = DateTime.now  %>
+    9: <% myvar.save %>
+    10: 
+    11: 
+  app/views/categories/doCategory.html.erb:8:in `_app_views_categories_do_ategory_html_erb___608894068_102630710_805671677'
+  app/controllers/categories_controller.rb:14:in `doCategory'
+

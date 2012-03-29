@@ -92,9 +92,10 @@ function retrieveBackupSucessor(category)
 	return window.localStorage["successor_bak_" + category];
 }
 
-function setParent(myparent, category)
+function storeParent(myparent, category)
 {
-	window.localStorage["parent_" + catory] = myparent
+	var s = "parent_" + category;
+	window.localStorage[s] = myparent;
 }
 
 /*Retrieves auction based on Auction ID from local storage

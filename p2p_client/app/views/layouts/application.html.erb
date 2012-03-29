@@ -26,13 +26,15 @@
 
 </head>
 <body>
+<script type="text/javascript" src="/javascripts/storageAPI.js"></script>
 <script type="text/javascript">
 var src = 'http://127.0.0.1:3000/categories#' + encodeURIComponent(document.location.href);
 
-
 function listener(event)
 {
-	this.document.location.href = "http://127.0.0.1:3000/items?browse=" + event.data;
+	var arr = event.data.split(" ");
+	storeParent(arr[1], arr[0]);
+	this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0];
 }
 
 if(window.addEventListener){
