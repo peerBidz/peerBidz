@@ -1,6 +1,7 @@
 require 'time_diff'
 require 'date'
 require "xmlrpc/client"
+require 'socket'
 
 
 class ItemsController < ApplicationController
@@ -9,6 +10,17 @@ class ItemsController < ApplicationController
   def index
     if params[:search]
       @items = Item.find(:all, :conditions => ['title LIKE ?', "%#{params[:search]}%"])
+      @search_string = {params[:search]}
+
+      if @items == nil
+        @sellerIPAddress = 127.0.0.1
+
+        @server1 = XMLRPC::Client.new(successor_1, "/api/xmlrpc", 3001)
+        @ip_address = server1.call("Container.get_sellerip", @search_string)
+      else
+        @ip_address = IPSocket.getaddress(Socket.gethostname)
+      end
+
     elsif params[:browse]
     #@items = Item.find(:all, :conditions => ['category_id LIKE ?', "#{params[:browse]}"])
     #@items = Item.find_all_by_category_id("#{params[:browse]}")

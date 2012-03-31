@@ -44,6 +44,7 @@ gem "rufus-scheduler"
 gem 'activemerchant'
 
 
+gem 'rails-xmlrpc'
 #----------------
 # Below gems were already in gem file when downloaded from GitHub
 # They are all commeted out, as they are just for reference.
