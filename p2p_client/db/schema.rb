@@ -71,21 +71,20 @@ ActiveRecord::Schema.define(:version => 20120331175747) do
     t.string   "ipAddress"
     t.datetime "updated_at"
     t.datetime "created_at"
-    t.string   "category"
   end
 
   create_table "ipaddresses", :force => true do |t|
     t.string   "ipaddress"
+    t.string   "iptype"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "iptype",     :limit => 50
   end
 
   create_table "items", :force => true do |t|
     t.string   "title"
     t.string   "description"
     t.boolean  "condition"
-    t.decimal  "starting_price",     :precision => 10, :scale => 0
+    t.decimal  "starting_price"
     t.integer  "duration"
     t.integer  "category_id"
     t.integer  "seller_id"
@@ -99,11 +98,11 @@ ActiveRecord::Schema.define(:version => 20120331175747) do
     t.boolean  "bidding_closed"
     t.boolean  "is_paid"
     t.boolean  "for_sale"
-    t.decimal  "buy_price",          :precision => 10, :scale => 0
+    t.decimal  "buy_price"
   end
 
   create_table "line_items", :force => true do |t|
-    t.decimal  "unit_price", :precision => 10, :scale => 0
+    t.decimal  "unit_price"
     t.integer  "item_id"
     t.integer  "cart_id"
     t.integer  "quantity"

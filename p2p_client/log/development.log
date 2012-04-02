@@ -541,3 +541,260 @@ ActionView::Template::Error (/home/code/peer/p2p_client/app/views/items/index.ht
     20: 
   app/controllers/items_controller.rb:34:in `index'
 
+
+ActionView::Template::Error (No route matches {:action=>"createobj", :controller=>"items"}):
+    1: <!-- form to display the item fields while oferring an item for auction -->
+    2: 
+    3: <%= form_for @item, :url=>{:action=>"createobj"}, :html => { :multipart => true } do |f| %>
+    4:   <% if @item.errors.any? %>
+    5:     <div id="error_explanation">
+    6:       <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+  app/views/items/_form.html.erb:3:in `_app_views_items__form_html_erb___57395590_108008400_97905646'
+  app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb___501303067_108016460_537235397'
+  app/controllers/items_controller.rb:64:in `new'
+
+
+ActionView::Template::Error (No route matches {:action=>"initauction", :controller=>"items"}):
+    1: <!-- form to display the item fields while oferring an item for auction -->
+    2: 
+    3: <%= form_for @item, :url=>{:action=>"initauction"}, :html => { :multipart => true } do |f| %>
+    4:   <% if @item.errors.any? %>
+    5:     <div id="error_explanation">
+    6:       <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+  app/views/items/_form.html.erb:3:in `_app_views_items__form_html_erb___57395590_108705100_97905646'
+  app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb___501303067_108709960_537235397'
+  app/controllers/items_controller.rb:64:in `new'
+
+
+ActionController::RoutingError (undefined method `match' for ItemsController:Class):
+  app/controllers/items_controller.rb:8:in `<class:ItemsController>'
+  app/controllers/items_controller.rb:7:in `<top (required)>'
+
+
+ActionController::RoutingError (undefined method `match' for main:Object):
+  app/controllers/items_controller.rb:7:in `<top (required)>'
+
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+
+ActionView::Template::Error (/home/code/peer/p2p_client/app/views/items/new.html.erb:5: syntax error, unexpected keyword_do, expecting ')'
+...nitauction", :method=>"post" do @output_buffer.safe_concat('
+...                               ^
+/home/code/peer/p2p_client/app/views/items/new.html.erb:12: syntax error, unexpected keyword_ensure, expecting $end):
+    2: 
+    3: <%#= render 'form' %>
+    4: 
+    5: <%= form_tag("/initauction", :method=>"post" do %>
+    6: 	<%= label_tag(:title, "Title:") %>
+    7: 	<%= text_field(:desc, "Description:") %>
+    8: <%end%>
+  app/controllers/items_controller.rb:65:in `new'
+
+
+ActionController::RoutingError (No route matches "/new"):
+  
+
+
+ActionView::Template::Error (/home/code/peer/p2p_client/app/views/items/new.html.erb:9: syntax error, unexpected tIVAR, expecting ')'
+@output_buffer.safe_concat('	');@output_buf...
+              ^):
+    6: 	<%= label_tag(:desc, "Description:") %>
+    7: 	<%= text_field_tag(:desc) %><br>
+    8: 	<% select_tag(:condition, options_for_select([['New', 1], ['Used', 0]]) %>
+    9: 	<%= submit_tag("Submit") %>
+    10: <%end%>
+    11: 
+    12: <%= link_to 'Back', items_path %>
+  app/controllers/items_controller.rb:65:in `new'
+
+
+ActionView::Template::Error (/home/code/peer/p2p_client/app/views/items/new.html.erb:9: syntax error, unexpected tIVAR, expecting ')'
+@output_buffer.safe_concat('	');@output_buf...
+              ^):
+    6: 	<%= label_tag(:desc, "Description:") %>
+    7: 	<%= text_field_tag(:desc) %><br>
+    8: 	<% select_tag(:condition, options_for_select([['New', 1], ['Used', 0]], 1) %>
+    9: 	<%= submit_tag("Submit") %>
+    10: <%end%>
+    11: 
+    12: <%= link_to 'Back', items_path %>
+  app/controllers/items_controller.rb:65:in `new'
+
+
+ActionView::Template::Error (/home/code/peer/p2p_client/app/views/items/new.html.erb:9: syntax error, unexpected tIVAR, expecting ')'
+@output_buffer.safe_concat('	');@output_buf...
+              ^):
+    6: 	<%= label_tag(:desc, "Description:") %>
+    7: 	<%= text_field_tag(:desc) %><br>
+    8: 	<% select_tag(:condition, options_for_select([['New', 1], ['Used', 0]], 1) %>
+    9: 	<%= submit_tag("Submit") %>
+    10: <%end%>
+    11: 
+    12: <%= link_to 'Back', items_path %>
+  app/controllers/items_controller.rb:65:in `new'
+
+DEPRECATION WARNING: Passing an array of option_tags to select_tag implicitly joins them without marking them as HTML-safe. Pass option_tags.join.html_safe instead. (called from block in _app_views_items_new_html_erb___501303067_109380150_537235397 at /home/code/peer/p2p_client/app/views/items/new.html.erb:18)
+
+ActionView::Template::Error (/home/code/peer/p2p_client/app/views/items/new.html.erb:16: syntax error, unexpected '<', expecting ')'
+	<%= submit_tag("Submit") );@output_buffer.safe_concat('
+	 ^
+/home/code/peer/p2p_client/app/views/items/new.html.erb:19: syntax error, unexpected '(', expecting ')'
+');@output_buffer.append= ( link_to 'Back', items_path )...
+                           ^
+/home/code/peer/p2p_client/app/views/items/new.html.erb:21: syntax error, unexpected keyword_ensure, expecting keyword_end
+/home/code/peer/p2p_client/app/views/items/new.html.erb:23: syntax error, unexpected $end, expecting keyword_end):
+    13: 	<%= text_field_tag(:buyprice) %><br>
+    14: 	<%= label_tag(:category, "Category") %>
+    15: 	<%= text_field_tag(:category);
+    16: 	<%= submit_tag("Submit") %>
+    17: <%end%>
+    18: 
+    19: <%= link_to 'Back', items_path %>
+  app/controllers/items_controller.rb:65:in `new'
+
+
+ActionView::Template::Error (undefined method `date_tag' for #<#<Class:0xce5d4e8>:0xce5c55c>):
+    14: 	<%= label_tag(:category, "Category") %>
+    15: 	<%= text_field_tag(:category) %> <br>
+    16: 	<%= label_tag(:endtime, "Auction End Time") %>
+    17: 	<%= date_tag(:endtime) %><br>
+    18: 	<%= submit_tag("Submit") %>
+    19: <%end%>
+    20: 
+  app/views/items/new.html.erb:17:in `block in _app_views_items_new_html_erb___501303067_108190860_537235397'
+  app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb___501303067_108190860_537235397'
+  app/controllers/items_controller.rb:65:in `new'
+
+
+ActionView::Template::Error (undefined method `select_date_tag' for #<#<Class:0xcf766f4>:0xcf75678>):
+    14: 	<%= label_tag(:category, "Category") %>
+    15: 	<%= text_field_tag(:category) %> <br>
+    16: 	<%= label_tag(:endtime, "Auction End Time") %>
+    17: 	<%= select_date_tag(:endtime) %><br>
+    18: 	<%= submit_tag("Submit") %>
+    19: <%end%>
+    20: 
+  app/views/items/new.html.erb:17:in `block in _app_views_items_new_html_erb___501303067_108766530_537235397'
+  app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb___501303067_108766530_537235397'
+  app/controllers/items_controller.rb:65:in `new'
+
+
+ActionView::Template::Error (undefined method `date_select_tag' for #<#<Class:0xc7c9140>:0xc7c7da4>):
+    14: 	<%= label_tag(:category, "Category") %>
+    15: 	<%= text_field_tag(:category) %> <br>
+    16: 	<%= label_tag(:endtime, "Auction End Time") %>
+    17: 	<%= date_select_tag(:endtime) %><br>
+    18: 	<%= submit_tag("Submit") %>
+    19: <%end%>
+    20: 
+  app/views/items/new.html.erb:17:in `block in _app_views_items_new_html_erb___501303067_104740860_537235397'
+  app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb___501303067_104740860_537235397'
+  app/controllers/items_controller.rb:65:in `new'
+
+
+ActionView::Template::Error (wrong number of arguments (1 for 2)):
+    14: 	<%= label_tag(:category, "Category") %>
+    15: 	<%= text_field_tag(:category) %> <br>
+    16: 	<%= label_tag(:endtime, "Auction End Time") %>
+    17: 	<%= date_select(:endtime) %><br>
+    18: 	<%= submit_tag("Submit") %>
+    19: <%end%>
+    20: 
+  app/views/items/new.html.erb:17:in `block in _app_views_items_new_html_erb___501303067_108019800_537235397'
+  app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb___501303067_108019800_537235397'
+  app/controllers/items_controller.rb:65:in `new'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+
+ArgumentError (No database file specified. Missing argument: database):
+  
+
+
+ArgumentError (No database file specified. Missing argument: database):
+  
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+
+ActionView::Template::Error (undefined method `iptype=' for #<Ipaddress:0xc32b6d8>):
+    16: <% myip = params['parent'] %>
+    17: <% mydb = Ipaddress.new %>
+    18: <% mydb.ipaddress = myip%>
+    19: <% mydb.iptype = 'parent' %>
+    20: <% mydb.save %>
+    21: 
+    22: <!-- SEARCH BAR -->
+  app/views/items/index.html.erb:19:in `_app_views_items_index_html_erb__142064618_100837300_602294448'
+  app/controllers/items_controller.rb:35:in `index'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+
+ActionView::Template::Error (undefined method `iptype=' for #<Ipaddress:0xc3234c4>):
+    16: <% myip = params['parent'] %>
+    17: <% mydb = Ipaddress.new %>
+    18: <% mydb.ipaddress = myip%>
+    19: <% mydb.iptype = 'parent' %>
+    20: <% mydb.save %>
+    21: 
+    22: <!-- SEARCH BAR -->
+  app/views/items/index.html.erb:19:in `_app_views_items_index_html_erb__142064618_95246590_602294448'
+  app/controllers/items_controller.rb:35:in `index'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+
+ActionView::Template::Error (undefined method `iptype=' for #<Ipaddress:0xc3369d4>):
+    16: <% myip = params['parent'] %>
+    17: <% mydb = Ipaddress.new %>
+    18: <% mydb.ipaddress = myip%>
+    19: <% mydb.iptype = 'parent' %>
+    20: <% mydb.save %>
+    21: 
+    22: <!-- SEARCH BAR -->
+  app/views/items/index.html.erb:19:in `_app_views_items_index_html_erb__142064618_96896810_602294448'
+  app/controllers/items_controller.rb:35:in `index'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+
+ActionView::Template::Error (undefined method `iptype=' for #<Ipaddress:0xc34f218>):
+    16: <% myip = params['parent'] %>
+    17: <% mydb = Ipaddress.new %>
+    18: <% mydb.ipaddress = myip%>
+    19: <% mydb.iptype = 'parent' %>
+    20: <% mydb.save %>
+    21: 
+    22: <!-- SEARCH BAR -->
+  app/views/items/index.html.erb:19:in `_app_views_items_index_html_erb__142064618_97337060_602294448'
+  app/controllers/items_controller.rb:35:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: category: SELECT "category_members".* FROM "category_members" WHERE (category = 'Cameras')):
+    31: 
+    32:   </p>
+    33: <% end %>
+    34: <% @tests.each do |test| %>
+    35: You are now connected to <%= test.ipAddress %>
+    36: <br>
+    37: <%# server = XMLRPC::Client.new("127.0.0.1","/RPC2",8080) %>
+  app/views/items/index.html.erb:34:in `_app_views_items_index_html_erb__142064618_100144330_602294448'
+  app/controllers/items_controller.rb:35:in `index'
+

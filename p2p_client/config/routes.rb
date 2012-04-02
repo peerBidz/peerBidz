@@ -39,6 +39,7 @@ end
   resources :line_items
   resources :carts
 
+  match '/initauction', :to => 'items#initauction'
   match '/payment', :to => 'pages#payment'
   match '/contacts', :to => 'pages#contact'
   match '/myaccount', :to => 'pages#myaccount'

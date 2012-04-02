@@ -2,6 +2,7 @@ class CreateIpaddresses < ActiveRecord::Migration
   def self.up
     create_table :ipaddresses do |t|
       t.string :ipaddress
+      t.string :iptype
 
       t.timestamps
     end

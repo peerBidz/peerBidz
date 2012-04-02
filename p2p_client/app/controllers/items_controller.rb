@@ -5,6 +5,7 @@ require 'socket'
 
 
 class ItemsController < ApplicationController
+
   # GET /items
   # GET /items.xml
   def index
@@ -67,6 +68,8 @@ class ItemsController < ApplicationController
     end
   end
 
+  def initauction
+  end
   # GET /items/1/edit
   def edit
     @item = Item.find(params[:id])

@@ -1,5 +1,21 @@
 <h1>&nbsp;&nbsp;&nbsp;Offer your item for auction here</h1>
 
-<%= render 'form' %>
+<%= form_tag("/initauction", :method=>"get") do %>
+	<%= label_tag(:title, "Title:") %>
+	<%= text_field_tag(:title) %><br>
+	<%= label_tag(:desc, "Description:") %>
+	<%= text_field_tag(:desc) %><br>
+	<%= label_tag(:condition, "Condition:") %>
+	<%= select_tag(:condition, options_for_select([['New', 1], ['Used', 0]], 1)) %> <br>
+	<%= label_tag(:startprice, "Start Price:") %>
+	<%= text_field_tag(:startprice) %><br>
+	<%= label_tag(:buyprice, "Buyout Price:") %>
+	<%= text_field_tag(:buyprice) %><br>
+	<%= label_tag(:category, "Category") %>
+	<%= text_field_tag(:category) %> <br>
+	<%= label_tag(:endtime, "Auction End Time") %>
+	<%= date_select(:endtime, :birthdate) %><br>
+	<%= submit_tag("Submit") %>
+<%end%>
 
 <%= link_to 'Back', items_path %>
