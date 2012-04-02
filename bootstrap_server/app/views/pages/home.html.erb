@@ -93,11 +93,8 @@ var data = [
       <h2>Welcome, <%= current_user.first_name %> !</h2>
       <% if current_user.is_seller? %>
           <p> Why delay? Offer your items for bidding :-) </p>
-          <a class="btn primary large" href='<%= new_item_path %>'>Offer Your Item »</a>
-          <a class="btn primary large" href='<%= items_path %>'>Hot Items »</a>
       <% else %>
           <p>Check out the hot items and bid on them :-) </p>
-          <a class="btn primary large" href='<%= items_path %>'>Hot Items »</a>
       <% end %>
     </div>
 
