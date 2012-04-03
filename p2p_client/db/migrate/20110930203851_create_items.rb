@@ -6,7 +6,7 @@ class CreateItems < ActiveRecord::Migration
       t.boolean :condition
       t.decimal :starting_price
       t.integer :duration
-      t.integer :category_id
+      t.string :category
       t.integer :seller_id
 
       t.timestamps

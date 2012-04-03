@@ -424,3 +424,44 @@ DEPRECATION WARNING: You are using the old router DSL which will be removed in R
 ActionController::RoutingError (No route matches "/confirmation"):
   
 
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+    25: 
+    26:   </p>
+    27: <% end %>
+    28: <% @tests.each do |test| %>
+    29: You are now connected to <%= test.ipAddress %>
+    30: <br>
+    31: <% server = XMLRPC::Client.new("127.0.0.1","/RPC2",8080) %>
+  app/views/items/index.html.erb:28:in `_app_views_items_index_html_erb___113530260_115791280__216518401'
+  app/controllers/items_controller.rb:22:in `index'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/bootstrap_server/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/bootstrap_server/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/bootstrap_server/config/routes.rb:1)
+
+ActionView::Template::Error (undefined method `updated_at=' for nil:NilClass):
+    6: 
+    7: <!-- pick IP addresses round robin style by oldest updated_at -->
+    8: <% myvar = CategoryMembers.where("category = ?", params[:url]).order("updated_at asc").first; %>
+    9: <% myvar.updated_at = DateTime.now  %>
+    10: <% myvar.save %>
+    11: 
+    12: 
+  app/views/categories/doCategory.html.erb:9:in `_app_views_categories_do_ategory_html_erb__248453209_88567760_922225451'
+  app/controllers/categories_controller.rb:14:in `doCategory'
+
+
+ActionView::Template::Error (undefined method `updated_at=' for nil:NilClass):
+    6: 
+    7: <!-- pick IP addresses round robin style by oldest updated_at -->
+    8: <% myvar = CategoryMembers.where("category = ?", params[:url]).order("updated_at asc").first; %>
+    9: <% myvar.updated_at = DateTime.now  %>
+    10: <% myvar.save %>
+    11: 
+    12: 
+  app/views/categories/doCategory.html.erb:9:in `_app_views_categories_do_ategory_html_erb__248453209_99760420_922225451'
+  app/controllers/categories_controller.rb:14:in `doCategory'
+

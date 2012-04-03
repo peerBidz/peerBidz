@@ -1,6 +1,6 @@
 <!-- form to display the item fields while oferring an item for auction -->
 
-<%= form_for @item, :method =>(:get), :url=>{:action=>"initauction"}, :html => { :multipart => true } do |f| %>
+<%= form_for @item, :html => { :multipart => true } do |f| %>
   <% if @item.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
@@ -26,15 +26,14 @@
     <%= f.select :condition, [['New','1'] , ['Used', '0']]%>
   </div>
 
-  <div class="field">
-    <%= f.label :photo %><br />
-    <%= f.file_field :photo %>
-
-  </div>
 
   <div class="field">
     <%= f.label :starting_price %><br />
     <%= f.text_field :starting_price %>
+  </div>
+  <div class="field">
+    <%= f.label :cname %><br />
+    <%= f.text_field :cname %>
   </div>
 
     <!-- div class="field">
@@ -42,14 +41,6 @@
     <%#= f.select :category_id, Category.where(:parentID => nil).collect {|category| [ category.name, category.id ]} %>
   </div -->
   
-  <div class="field">
-    <%= f.label "Subcategory" %><br />
-    <!-- %= f.select :category_id, Category.where("parentID NOT ?", nil).collect {|category| [ category.name, category.id ]} % -->
-    <% @categories = Category.all - Category.find_all_by_parentID(nil) %>
-
-    <%= f.select :category_id, @categories.collect {|category| [ category.name, category.id ]} %>
-  
-  </div>
 
   <div class="field">
     <%= f.label "End time" %><br />
@@ -65,7 +56,7 @@
     <%= f.text_field :buy_price %>
   </div>
 
-  <%= f.hidden_field :seller_id, :value => current_user.id %>
+  <%#= f.hidden_field :seller_id, :value => current_user.id %>
   <%= f.hidden_field :bidding_closed, :value => false %>
   <%= f.hidden_field :is_paid, :value => false %>
 
