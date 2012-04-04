@@ -17,15 +17,16 @@
     <% end %>
 <% end %>
 
+<!--
 <div id="galleria"></div>
 <div id ="ajax_description"><a href="#"></a></div>
 
 <script>
 var data = [
-        <% @items.each do |item| %>
+        <% #@items.each do |item| %>
 
-        <% if item.is_paid == false %>
-        <%
+        <% #if item.is_paid == false %>
+        <%#
          @currentBid = Bidding.find(:first, :conditions => ["item_id IN (?)", item.id] , :order => 'bid_amount DESC')
 
         if ( @currentBid != nil )
@@ -37,16 +38,16 @@ var data = [
 
 
     {
-        thumb: '<%= item.photo.url(:small) %>',
-        image: '<%= item.photo.url(:large) %>',
+        thumb: '<%#= item.photo.url(:small) %>',
+        image: '<%#= item.photo.url(:large) %>',
         //description: 'item',
         //link: '/items/<%#=item.id%>',
 
-        layer: '<div><a href="/items/<%=item.id%>"><h2><%= item.title%></h2></a><p><%= @currentPrice %></p></div>'
+        layer: '<div><a href="/items/<%#=item.id%>"><h2><%#= item.title%></h2></a><p><%#= @currentPrice %></p></div>'
 
     },
-        <%end%>
-        <%end%>
+        <%#end%>
+        <%#end%>
 ];
 
         Galleria.loadTheme('galleria/themes/classic/galleria.classic.min.js');
@@ -60,9 +61,9 @@ var data = [
           dataSource: data
         });
 
-
+-->
 <!-- for the next iteration WJ : making ajax page-->
-//        $("#galleria").mouseover(function(){
+<!--        $("#galleria").mouseover(function(){
 //           var item_image = this.getElementsByClassName('active')[0].getElementsByTagName('img')[0];
 //            var file = item_image.src.substr(item_image.src.lastIndexOf('/')+1);
 //            var filename = file.substr(0,file.indexOf('?')) ;
@@ -74,7 +75,7 @@ var data = [
 //           return false;
 //        });
 
-
+-->
 </script>
 
 <div id ="user_notification">
@@ -109,28 +110,27 @@ var data = [
 <% end %>
 
 <% cookies.delete :CURRCATEGORY %>
- Cookie is <%= cookies[:CURRCATEGORY] %>
 </div>
 
 
 <!-- row of items -->
 <hr>
 <div class="row">
-  <% @items.each_with_index do |item, i| %>
-      <% if item.is_paid == false %>
+  <%# @items.each_with_index do |item, i| %>
+      <%# if item.is_paid == false %>
       <div class="home-item-desc span6">
 
-        <h2 class="heading"><%= item.title %></h2>
+        <h2 class="heading"><%#= item.title %></h2>
 
-        <%= image_tag item.photo.url(:small) %>
+        <%#= image_tag item.photo.url(:small) %>
 
-        <p><%= item.description %></p>
+        <p><%#= item.description %></p>
 
 
-        <%= link_to 'View Details', item, :class=> 'btn' %>
+        <%#= link_to 'View Details', item, :class=> 'btn' %>
       </div>
-      <% end %>
-  <% end %>
+      <%# end %>
+  <%# end %>
 </div>
 
 
