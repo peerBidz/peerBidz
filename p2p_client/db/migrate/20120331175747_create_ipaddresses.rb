@@ -3,7 +3,7 @@ class CreateIpaddresses < ActiveRecord::Migration
     create_table :ipaddresses do |t|
       t.string :ipaddress
       t.string :iptype
-
+      t.string :category
       t.timestamps
     end
   end

@@ -10,22 +10,58 @@ class ItemsController < ApplicationController
   # GET /items.xml
   def index
     if params[:search]
-      @items = Item.find(:all, :conditions => ['title LIKE ?', "%#{params[:search]}%"])
+#      @items = Item.find(:all, :conditions => ['title LIKE ? AND category = ?', "%#{params[:search]}%", cookies[:CURRCATEGORY]])
       @search_string = params[:search]
+      @my_address = IPSocket.getaddress(Socket.gethostname)
 
-      if @items == nil
-        @sellerIPAddress = '127.0.0.1'
+      @sellerIPAddress = Ipadddress.where("category = :ct AND iptype = :it", {:ct => cookies[:CURRCATEGORY], :it => "parent"})
 
-        @server1 = XMLRPC::Client.new(successor_1, "/api/xmlrpc", 3001)
-        @ip_address = server1.call("Container.get_sellerip", @search_string)
-      else
-        @ip_address = IPSocket.getaddress(Socket.gethostname)
+      @sellerIPAddress.length.times do |i|
+        @server1 = XMLRPC::Client.new(@sellerIPAddress[i].ipaddress, "/api/xmlrpc", 3002)
+        @ip_address = server1.call("Container.get_sellerorigin", @search_string, cookies[:CURRCATEGORY], @my_address)
       end
 
     elsif params[:browse]
     #@items = Item.find(:all, :conditions => ['category_id LIKE ?', "#{params[:browse]}"])
     #@items = Item.find_all_by_category_id("#{params[:browse]}")
-    @tests = CategoryMembers.where("category = ?", "#{params[:browse]}")
+
+    cookies[:CURRCATEGORY] = {
+     :value => params[:browse],
+     :expires => 1.year.from_now
+    }
+
+    @checkcategory = Ipaddress.find_all_by_category(params[:browse]) 
+   
+    if (@checkcategory.length == 0)
+      @parentip = params['parent']
+      @category = params['browse'] 
+      @mydb = Ipaddress.new 
+      @mydb.ipaddress = @parentip
+      @mydb.category = @category
+      @mydb.iptype = 'parent' 
+      @mydb.save 
+    else
+      @checkcategory.each {|f| @parentip = f.ipaddress }
+    end
+
+#    if current_user.is_seller?
+       
+#    else
+      @is_parentbackuppresent = Ipaddress.where("category = :ct AND iptype = :it", {:ct => params[:browse], :it => "parentbackup"})
+      
+      if @is_parentbackuppresent.length == 0
+        @server1 = XMLRPC::Client.new(@parentip, "/api/xmlrpc", 3002)
+        @sellervalue = @server1.call("Container.method_name", params[:browse])
+    
+        if @sellervalue.length != 0
+          @newdata = Ipaddress.new
+          @newdata.ipaddress = @sellervalue["value"]
+          @newdata.iptype = 'parentbackup'
+          @newdata.category = params[:browse]
+          @newdata.save
+        end
+      end
+#    end
 
     #@values = "%#{params[:browse]}%"       for debugging purpose WJ
     else
@@ -120,26 +156,4 @@ class ItemsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-
-  def add_to_watch_list
-    @item = Item.find(params[:id])
-    Watchlist.create!(:user_id => current_user.id , :item_id => @item.id)
-
-    respond_to do |format|
-      format.html { redirect_to(item_path, :notice => 'Item successfully added to your watch list.') }
-      format.xml  { render :xml => @item }
-    end
-  end
-
-  def remove_from_watch_list
-    @item = Item.find(params[:id])
-    @watch = Watchlist.find_by_user_id_and_item_id(current_user.id, @item.id)
-    @watch.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(item_path, :notice => 'Item successfully removed from your watch list.') }
-      format.xml  { render :xml => @item }
-    end
-  end
-
 end

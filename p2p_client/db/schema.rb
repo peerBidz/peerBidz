@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120331175747) do
+ActiveRecord::Schema.define(:version => 20120404211205) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(:version => 20120331175747) do
   create_table "ipaddresses", :force => true do |t|
     t.string   "ipaddress"
     t.string   "iptype"
+    t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -137,6 +138,14 @@ ActiveRecord::Schema.define(:version => 20120331175747) do
     t.datetime "updated_at"
   end
 
+  create_table "searchdbs", :force => true do |t|
+    t.string   "buyeripaddress"
+    t.string   "searchquery"
+    t.string   "category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "searches", :force => true do |t|
     t.string   "keywords"
     t.integer  "category_id"
@@ -147,6 +156,14 @@ ActiveRecord::Schema.define(:version => 20120331175747) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "seller_email"
+  end
+
+  create_table "sellerrings", :force => true do |t|
+    t.string   "ipaddress"
+    t.string   "iptype"
+    t.string   "category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
