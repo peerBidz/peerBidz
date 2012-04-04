@@ -28,10 +28,29 @@
 <% end %>
 <h1> You are currently searching in the category : <%= cookies[:CURRCATEGORY] %> </h1>
 <% if @sellervalue != nil %>
-This is from seller <%= @sellervalue["value"] %>
-<%else%>
-Parent backup value already present
+This is from the immediate seller <%= @sellervalue["value"] %>
 <%end%>
+
+<% if @items != nil %>
+<h2> Here are your search results </h2>
+<table>
+  <tr>
+    <th>Search String</th>
+    <th>Category</th>
+    <th>Seller Ip address</th>
+  </tr>
+
+<% @items.each do |item| %>
+
+  <tr>
+    <td><%= item.search_string %></td>
+    <td><%= item.category %></td>
+    <td><%= item.ipaddress %></td>
+  </tr>
+<% end %>
+</table>
+<%end%>
+
 <script>
     $(function() {
         var availableTags = [

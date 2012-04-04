@@ -11,14 +11,24 @@ class ItemsController < ApplicationController
   def index
     if params[:search]
 #      @items = Item.find(:all, :conditions => ['title LIKE ? AND category = ?', "%#{params[:search]}%", cookies[:CURRCATEGORY]])
+      # Lets clear the Searchresults DB
+      Searchresults.delete_all
+
       @search_string = params[:search]
       @my_address = IPSocket.getaddress(Socket.gethostname)
 
-      @sellerIPAddress = Ipadddress.where("category = :ct AND iptype = :it", {:ct => cookies[:CURRCATEGORY], :it => "parent"})
+      @sellerIPAddress = Ipaddress.where("category = :ct AND iptype = :it", {:ct => cookies[:CURRCATEGORY], :it => "parent"})
 
       @sellerIPAddress.length.times do |i|
         @server1 = XMLRPC::Client.new(@sellerIPAddress[i].ipaddress, "/api/xmlrpc", 3002)
-        @ip_address = server1.call("Container.get_sellerorigin", @search_string, cookies[:CURRCATEGORY], @my_address)
+        @ip_address = @server1.call("Container.get_sellerorigin", @search_string, cookies[:CURRCATEGORY], @my_address)
+        if @ip_address["value"] != nil
+          @dbvalue = Searchresults.new
+          @dbvalue.search_string = @ip_address["search"]
+          @dbvalue.category = @ip_address["category"]
+          @dbvaulue.ipaddress = @ip_address["value"]
+          @dbvalue.save
+        end
       end
 
     elsif params[:browse]
@@ -33,8 +43,8 @@ class ItemsController < ApplicationController
     @checkcategory = Ipaddress.find_all_by_category(params[:browse]) 
    
     if (@checkcategory.length == 0)
-      @parentip = params['parent']
-      @category = params['browse'] 
+      @parentip = params[:parent]
+      @category = params[:browse] 
       @mydb = Ipaddress.new 
       @mydb.ipaddress = @parentip
       @mydb.category = @category
@@ -64,8 +74,22 @@ class ItemsController < ApplicationController
 #    end
 
     #@values = "%#{params[:browse]}%"       for debugging purpose WJ
+
+    elsif params[:results]
+      @ipaddress = params[:results]
+      @category = params[:category]
+      @searchstring = params[:searchstring]
+
+      @dbvalue = Searchresults.new
+      @dbvalue.search_string = @searchstring
+      @dbvalue.category = @category
+      @dbvaulue.ipaddress = @ipaddress
+      @dbvalue.save
+
+#    end
+
     else
-    @items = Item.all
+    @items = Searchresults.all
     end
 
     respond_to do |format|
@@ -104,9 +128,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  def initauction
-     
-  end
   # GET /items/1/edit
   def edit
     @item = Item.find(params[:id])
@@ -157,4 +178,5 @@ class ItemsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
 end
