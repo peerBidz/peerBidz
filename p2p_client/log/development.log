@@ -1449,3 +1449,58 @@ ActionView::Template::Error (undefined method `cname' for nil:NilClass):
   app/controllers/items_controller.rb:84:in `create'
 
 >>>>>>> 112a451dbdaf5b739ce15d69a7183b03b0e1b8b5
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__528185969_108708790_440211555 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__528185969_111982740_440211555 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__528185969_112109160_440211555 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__528185969_109864590_440211555 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (undefined method `cname' for #<Item:0xd315788>):
+    33:   </div>
+    34:   <div class="field">
+    35:     <%= f.label "Category" %><br />
+    36:     <%= f.text_field :cname %>
+    37:   </div>
+    38: 
+    39:     <!-- div class="field">
+  app/views/items/_form.html.erb:36:in `block in _app_views_items__form_html_erb___775105018_112006770_220599210'
+  app/views/items/_form.html.erb:3:in `_app_views_items__form_html_erb___775105018_112006770_220599210'
+  app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb___121476256_112011650_440211555'
+  app/controllers/items_controller.rb:101:in `new'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+
+ActionView::Template::Error (undefined method `cname' for #<Item:0xca1398c>):
+    33:   </div>
+    34:   <div class="field">
+    35:     <%= f.label "Category" %><br />
+    36:     <%= f.text_field :cname %>
+    37:   </div>
+    38: 
+    39:     <!-- div class="field">
+  app/views/items/_form.html.erb:36:in `block in _app_views_items__form_html_erb___775105018_105013840_220599210'
+  app/views/items/_form.html.erb:3:in `_app_views_items__form_html_erb___775105018_105013840_220599210'
+  app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb___121476256_105018680_440211555'
+  app/controllers/items_controller.rb:101:in `new'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+
+ActionView::Template::Error (undefined method `category' for #<Item:0xd2bf194>):
+    33:   </div>
+    34:   <div class="field">
+    35:     <%= f.label "Category" %><br />
+    36:     <%= f.text_field :category %>
+    37:   </div>
+    38: 
+    39:     <!-- div class="field">
+  app/views/items/_form.html.erb:36:in `block in _app_views_items__form_html_erb___775105018_109897480_220599210'
+  app/views/items/_form.html.erb:3:in `_app_views_items__form_html_erb___775105018_109897480_220599210'
+  app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb___121476256_109902320_440211555'
+  app/controllers/items_controller.rb:101:in `new'
+

@@ -5,10 +5,7 @@
   <a class="brand" href="/">PeerBidz!</a>
   <ul class="nav">
     <li class="active"><%= link_to "Home", root_path %></li>
-    <% require 'xmlrpc/client' %>
-    <%  server = XMLRPC::Client.new2("http://127.0.0.1:3001/api/xmlrpc") %>
-    <% if server.call("User.is_logged_in?") %>
-     <%# if cookies['_BestBay_session'] %>
+     <% if cookies['_BestBay_session'] %>
             <li class="active"><%= link_to "My PeerBidz", myaccount_path %></li>
             <li class="active"><%= link_to "Auction an Item", "/items/new" %></li>
     <% end %>
