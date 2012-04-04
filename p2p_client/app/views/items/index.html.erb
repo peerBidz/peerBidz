@@ -13,11 +13,6 @@
 <% end %>
 
 <!-- Save parent IP in the database -->
-<% myip = params['parent'] %>
-<% mydb = Ipaddress.new %>
-<% mydb.ipaddress = myip%>
-<% mydb.iptype = 'parent' %>
-<% mydb.save %>
 
 <!-- SEARCH BAR -->
 <%= form_tag items_path, :method => 'get' do %>
@@ -31,7 +26,12 @@
 
   </p>
 <% end %>
-
+<h1> You are currently searching in the category : <%= cookies[:CURRCATEGORY] %> </h1>
+<% if @sellervalue != nil %>
+This is from seller <%= @sellervalue["value"] %>
+<%else%>
+Parent backup value already present
+<%end%>
 <script>
     $(function() {
         var availableTags = [
