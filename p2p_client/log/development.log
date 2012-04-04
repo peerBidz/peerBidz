@@ -798,6 +798,7 @@ ActionView::Template::Error (SQLite3::SQLException: no such column: category: SE
   app/views/items/index.html.erb:34:in `_app_views_items_index_html_erb__142064618_100144330_602294448'
   app/controllers/items_controller.rb:35:in `index'
 
+<<<<<<< HEAD
 DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/bestbay/p2p_client/config/environment.rb:5)
 DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/bestbay/p2p_client/config/routes.rb:1)
 DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/bestbay/p2p_client/config/routes.rb:1)
@@ -1231,3 +1232,220 @@ DEPRECATION WARNING: You are using the old router DSL which will be removed in R
 DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/bestbay/p2p_client/config/environment.rb:5)
 DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/bestbay/p2p_client/config/routes.rb:1)
 DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/bestbay/p2p_client/config/routes.rb:1)
+=======
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Items):
+    1: <% mydb = Items.new %>
+    2: <% mydb.title = params[:title]%>
+    3: <%# mydb.description = params[:desc] %>
+    4: <%# mydb.condition = params[:condition]%>
+  app/views/items/initauction.html.erb:1:in `_app_views_items_initauction_html_erb__588843206_102253890_602294448'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Items):
+    1: <%= @mydb = Items.new %>
+    2: <%= @mydb.title = params[:title]%>
+    3: <%= @mydb.description = params[:desc] %>
+    4: <%= @mydb.condition = params[:condition]%>
+  app/views/items/initauction.html.erb:1:in `_app_views_items_initauction_html_erb__13509493_100289440_414451754'
+
+
+ActiveRecord::RecordNotFound (Couldn't find Item with ID=ew):
+  app/controllers/items_controller.rb:45:in `show'
+
+
+ActionView::Template::Error (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+    65:     <%= f.text_field :buy_price %>
+    66:   </div>
+    67: 
+    68:   <%= f.hidden_field :seller_id, :value => current_user.id %>
+    69:   <%= f.hidden_field :bidding_closed, :value => false %>
+    70:   <%= f.hidden_field :is_paid, :value => false %>
+    71: 
+  app/views/items/_form.html.erb:68:in `block in _app_views_items__form_html_erb__407240462_101672960_872399992'
+  app/views/items/_form.html.erb:3:in `_app_views_items__form_html_erb__407240462_101672960_872399992'
+  app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb__776569314_101935520_414451754'
+  app/controllers/items_controller.rb:65:in `new'
+
+
+ActionView::Template::Error (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+    65:     <%= f.text_field :buy_price %>
+    66:   </div>
+    67: 
+    68:   <%= f.hidden_field :seller_id, :value => current_user.id %>
+    69:   <%= f.hidden_field :bidding_closed, :value => false %>
+    70:   <%= f.hidden_field :is_paid, :value => false %>
+    71: 
+  app/views/items/_form.html.erb:68:in `block in _app_views_items__form_html_erb__407240462_102245090_872399992'
+  app/views/items/_form.html.erb:3:in `_app_views_items__form_html_erb__407240462_102245090_872399992'
+  app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb__776569314_102321920_414451754'
+  app/controllers/items_controller.rb:65:in `new'
+
+
+ActionView::Template::Error (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+    65:     <%= f.text_field :buy_price %>
+    66:   </div>
+    67: 
+    68:   <%= f.hidden_field :seller_id, :value => current_user.id %>
+    69:   <%= f.hidden_field :bidding_closed, :value => false %>
+    70:   <%= f.hidden_field :is_paid, :value => false %>
+    71: 
+  app/views/items/_form.html.erb:68:in `block in _app_views_items__form_html_erb__407240462_100650020_872399992'
+  app/views/items/_form.html.erb:3:in `_app_views_items__form_html_erb__407240462_100650020_872399992'
+  app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb__776569314_100698180_414451754'
+  app/controllers/items_controller.rb:65:in `new'
+
+
+ActionView::Template::Error (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+    65:     <%= f.text_field :buy_price %>
+    66:   </div>
+    67: 
+    68:   <%= f.hidden_field :seller_id, :value => current_user.id %>
+    69:   <%= f.hidden_field :bidding_closed, :value => false %>
+    70:   <%= f.hidden_field :is_paid, :value => false %>
+    71: 
+  app/views/items/_form.html.erb:68:in `block in _app_views_items__form_html_erb__407240462_100097230_872399992'
+  app/views/items/_form.html.erb:3:in `_app_views_items__form_html_erb__407240462_100097230_872399992'
+  app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb__776569314_100111860_414451754'
+  app/controllers/items_controller.rb:65:in `new'
+
+
+ActionView::Template::Error (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+    65:     <%= f.text_field :buy_price %>
+    66:   </div>
+    67: 
+    68:   <%= f.hidden_field :seller_id, :value => current_user.id %>
+    69:   <%= f.hidden_field :bidding_closed, :value => false %>
+    70:   <%= f.hidden_field :is_paid, :value => false %>
+    71: 
+  app/views/items/_form.html.erb:68:in `block in _app_views_items__form_html_erb__407240462_103241130_872399992'
+  app/views/items/_form.html.erb:3:in `_app_views_items__form_html_erb__407240462_103241130_872399992'
+  app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb__776569314_103246020_414451754'
+  app/controllers/items_controller.rb:65:in `new'
+
+
+ActionView::Template::Error (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+    65:     <%= f.text_field :buy_price %>
+    66:   </div>
+    67: 
+    68:   <%= f.hidden_field :seller_id, :value => current_user.id %>
+    69:   <%= f.hidden_field :bidding_closed, :value => false %>
+    70:   <%= f.hidden_field :is_paid, :value => false %>
+    71: 
+  app/views/items/_form.html.erb:68:in `block in _app_views_items__form_html_erb__407240462_101605410_872399992'
+  app/views/items/_form.html.erb:3:in `_app_views_items__form_html_erb__407240462_101605410_872399992'
+  app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb__776569314_101616870_414451754'
+  app/controllers/items_controller.rb:65:in `new'
+
+
+ActionView::Template::Error (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+    57:     <%= f.text_field :buy_price %>
+    58:   </div>
+    59: 
+    60:   <%= f.hidden_field :seller_id, :value => current_user.id %>
+    61:   <%= f.hidden_field :bidding_closed, :value => false %>
+    62:   <%= f.hidden_field :is_paid, :value => false %>
+    63: 
+  app/views/items/_form.html.erb:60:in `block in _app_views_items__form_html_erb__407240462_97440350_872399992'
+  app/views/items/_form.html.erb:3:in `_app_views_items__form_html_erb__407240462_97440350_872399992'
+  app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb__776569314_97453670_414451754'
+  app/controllers/items_controller.rb:65:in `new'
+
+
+ActionView::Template::Error (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+    57:     <%= f.text_field :buy_price %>
+    58:   </div>
+    59: 
+    60:   <%= f.hidden_field :seller_id, :value => current_user.id %>
+    61:   <%= f.hidden_field :bidding_closed, :value => false %>
+    62:   <%= f.hidden_field :is_paid, :value => false %>
+    63: 
+  app/views/items/_form.html.erb:60:in `block in _app_views_items__form_html_erb__407240462_103288230_872399992'
+  app/views/items/_form.html.erb:3:in `_app_views_items__form_html_erb__407240462_103288230_872399992'
+  app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb__776569314_103322400_414451754'
+  app/controllers/items_controller.rb:65:in `new'
+
+
+ActionView::Template::Error (/home/code/peer/p2p_client/app/views/items/_form.html.erb:3: syntax error, unexpected ':', expecting keyword_end
+...uffer.append=  form_for @item :html => { :multipart => true ...
+...                               ^
+/home/code/peer/p2p_client/app/views/items/_form.html.erb:3: syntax error, unexpected keyword_do_block, expecting keyword_end
+...ml => { :multipart => true } do |f| @output_buffer.safe_conc...
+...                               ^
+/home/code/peer/p2p_client/app/views/items/_form.html.erb:69: syntax error, unexpected keyword_ensure, expecting $end):
+    1: <!-- form to display the item fields while oferring an item for auction -->
+    2: 
+    3: <%= form_for @item :html => { :multipart => true } do |f| %>
+    4:   <% if @item.errors.any? %>
+    5:     <div id="error_explanation">
+    6:       <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+  app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb__776569314_103202780_414451754'
+  app/controllers/items_controller.rb:65:in `new'
+
+
+ActionView::Template::Error (undefined method `category' for nil:NilClass):
+    1: 
+    2: <iframe src="http://127.0.0.1:3001/redirect?url=<%= @items.category %>"></iframe>
+  app/views/items/initauction.html.erb:2:in `_app_views_items_initauction_html_erb__13509493_102143580_414451754'
+  app/controllers/items_controller.rb:86:in `block (2 levels) in create'
+  app/controllers/items_controller.rb:84:in `create'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+
+ActiveRecord::AssociationTypeMismatch (Category(#102065240) expected, got String(#71037010)):
+  app/controllers/items_controller.rb:82:in `new'
+  app/controllers/items_controller.rb:82:in `create'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+
+ActiveRecord::AssociationTypeMismatch (Category(#101941650) expected, got String(#71037010)):
+  app/controllers/items_controller.rb:82:in `new'
+  app/controllers/items_controller.rb:82:in `create'
+
+
+ActiveRecord::AssociationTypeMismatch (Category(#101974470) expected, got String(#71037010)):
+  app/controllers/items_controller.rb:82:in `new'
+  app/controllers/items_controller.rb:82:in `create'
+
+
+ActionView::Template::Error (undefined method `cname' for #<Item:0xafb4d5c>):
+    38:   </div>
+    39:   <div class="field">
+    40:     <%= f.label :cname %><br />
+    41:     <%= f.text_field :cname %>
+    42:   </div>
+    43: 
+    44:     <!-- div class="field">
+  app/views/items/_form.html.erb:41:in `block in _app_views_items__form_html_erb__407240462_103222270_872399992'
+  app/views/items/_form.html.erb:3:in `_app_views_items__form_html_erb__407240462_103222270_872399992'
+  app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb__776569314_103227730_414451754'
+  app/controllers/items_controller.rb:65:in `new'
+
+
+LoadError (Expected /home/code/peer/p2p_client/app/models/item.rb to define Item):
+  app/controllers/items_controller.rb:82:in `create'
+
+
+ActiveRecord::UnknownAttributeError (unknown attribute: photo):
+  app/controllers/items_controller.rb:82:in `new'
+  app/controllers/items_controller.rb:82:in `create'
+
+
+ActionView::Template::Error (undefined method `cname' for nil:NilClass):
+    1: 
+    2: <iframe src="http://127.0.0.1:3001/redirect?url=<%= @items.cname %>"></iframe>
+  app/views/items/initauction.html.erb:2:in `_app_views_items_initauction_html_erb__13509493_100086360_414451754'
+  app/controllers/items_controller.rb:86:in `block (2 levels) in create'
+  app/controllers/items_controller.rb:84:in `create'
+
+>>>>>>> 112a451dbdaf5b739ce15d69a7183b03b0e1b8b5

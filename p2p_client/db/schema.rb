@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(:version => 20120404211205) do
     t.boolean  "condition"
     t.decimal  "starting_price"
     t.integer  "duration"
-    t.integer  "category_id"
+    t.string   "category"
     t.integer  "seller_id"
     t.datetime "created_at"
     t.datetime "updated_at"

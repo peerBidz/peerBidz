@@ -105,6 +105,7 @@ class ItemsController < ApplicationController
   end
 
   def initauction
+     
   end
   # GET /items/1/edit
   def edit
@@ -118,7 +119,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to(@item, :notice => 'Item successfully created.') }
+        format.html { render :action => "initauction"}
         format.xml  { render :xml => @item, :status => :created, :location => @item }
       else
         format.html { render :action => "new" }
