@@ -176,3 +176,94 @@ DEPRECATION WARNING: You are using the old router DSL which will be removed in R
 DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/bootstrap_server/config/environment.rb:5)
 DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/bootstrap_server/config/routes.rb:1)
 DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/bootstrap_server/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
+
+ActionView::Template::Error (undefined method `updated_at=' for nil:NilClass):
+    8: <% myvar = CategoryMembers.new %>
+    9: <% if db != nil %>
+    10: 	<% myvar = CategoryMembers.where("category = ? and ipaddress <> ?", params[:url], request.env['REMOTE_ADDR']).order("updated_at asc").first %>
+    11: 	<% myvar.updated_at = DateTime.now  %>
+    12: 	<% myvar.save %>
+    13: <% else %>
+    14: 
+  app/views/categories/doCategory.html.erb:11:in `_app_views_categories_do_ategory_html_erb__2163380252634491435_63560700__671096270993673823'
+  app/controllers/categories_controller.rb:14:in `doCategory'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
+
+ActionView::Template::Error (undefined method `updated_at=' for nil:NilClass):
+    8: <% myvar = CategoryMembers.new %>
+    9: <% if db.count == 0 %>
+    10: 	<% myvar = CategoryMembers.where("category = ? and ipaddress <> ?", params[:url], request.env['REMOTE_ADDR']).order("updated_at asc").first %>
+    11: 	<% myvar.updated_at = DateTime.now  %>
+    12: 	<% myvar.save %>
+    13: <% else %>
+    14: 
+  app/views/categories/doCategory.html.erb:11:in `_app_views_categories_do_ategory_html_erb__716689994455814821_57231060_2772802330556940540'
+  app/controllers/categories_controller.rb:14:in `doCategory'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
+
+ActionView::Template::Error (Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=> { :ipaddress => request.env['REMOTE_ADDR']}) FROM `category_members`' at line 1: SELECT COUNT(conditions => { :ipaddress => request.env['REMOTE_ADDR']}) FROM `category_members`):
+    1: <% isPresent = CategoryMembers.count("conditions => { :ipaddress => request.env['REMOTE_ADDR']}") %>
+    2: <% if isPresent.count == 0 %>
+    3: 	<% CategoryMembers.create(:ipAddress => request.env['REMOTE_ADDR'], :category => params[:url])%>
+    4: <%end%>
+  app/views/categories/doCategory.html.erb:1:in `_app_views_categories_do_ategory_html_erb___2062103979136282114_70351332063920_3809243653646621804'
+  app/controllers/categories_controller.rb:14:in `doCategory'
+
+
+ActionView::Template::Error (Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== '128.237.231.156')' at line 1: SELECT COUNT(*) FROM `category_members` WHERE (category = 'Cameras' and ipaddress == '128.237.231.156')):
+    1: <% isPresent = CategoryMembers.where("category = ? and ipaddress == ?", params[:url], request.env['REMOTE_ADDR']).count  %>
+    2: <% if isPresent.count == 0 %>
+    3: 	<% CategoryMembers.create(:ipAddress => request.env['REMOTE_ADDR'], :category => params[:url])%>
+    4: <%end%>
+  app/views/categories/doCategory.html.erb:1:in `_app_views_categories_do_ategory_html_erb___2062103979136282114_52770060_3809243653646621804'
+  app/controllers/categories_controller.rb:14:in `doCategory'
+
+
+ActionView::Template::Error (undefined method `count' for 0:Fixnum):
+    1: <% isPresent = CategoryMembers.where("category = ? and ipaddress = ?", params[:url], request.env['REMOTE_ADDR']).count  %>
+    2: <% if isPresent.count == 0 %>
+    3: 	<% CategoryMembers.create(:ipAddress => request.env['REMOTE_ADDR'], :category => params[:url])%>
+    4: <%end%>
+    5: 
+  app/views/categories/doCategory.html.erb:2:in `_app_views_categories_do_ategory_html_erb___2062103979136282114_53534020_3809243653646621804'
+  app/controllers/categories_controller.rb:14:in `doCategory'
+
+
+ActionView::Template::Error (undefined method `ipadress=' for #<CategoryMembers:0x0000000694ba28>):
+    12: 	<% myvar.save %>
+    13: <% else %>
+    14: 
+    15: 	<% myvar.ipadress = "0" %>	
+    16: <% end %>
+    17: 
+    18: 
+  app/views/categories/doCategory.html.erb:15:in `_app_views_categories_do_ategory_html_erb___2062103979136282114_56081480_3809243653646621804'
+  app/controllers/categories_controller.rb:14:in `doCategory'
+
+
+ActionView::Template::Error (undefined method `ipaddress=' for #<CategoryMembers:0x007ff7e43375c8>):
+    11: 	<% myvar.updated_at = DateTime.now  %>
+    12: 	<% myvar.save %>
+    13: <% else %>
+    14: 	<% myvar.ipaddress = "0" %>	
+    15: <% end %>
+    16: 
+    17: 
+  app/views/categories/doCategory.html.erb:14:in `_app_views_categories_do_ategory_html_erb___2062103979136282114_70351331594940_3809243653646621804'
+  app/controllers/categories_controller.rb:14:in `doCategory'
+
