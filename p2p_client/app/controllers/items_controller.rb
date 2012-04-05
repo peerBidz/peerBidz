@@ -45,7 +45,38 @@ class ItemsController < ApplicationController
     @sellervalue = @btserver.call("Container.is_seller", cookies['email'])
 
    if @sellervalue["value"] == "1"
-      
+
+      @checkcategory = Sellerring.where("category = :ct AND iptype = :pt", {:ct => params[:browse], :pt => "successor"})
+  
+      if @checkcategory == nil
+        @successorip = params[:parent]
+        @category = params[:browse]
+        @mydb = Sellerring.new
+        @mydb.ipaddress = @successorip
+        @mydb.category = @category
+        @mydb.iptype = 'successor'
+        @mydb.save
+      else
+        @checkcategory.each {|f| @successorip = f.ipaddress }
+      end
+
+     @server = XMLRPC::Client.new(params[:parent], "/api/xmlrpc", 3001)
+     @sellervalue = @server.call("Container.", cookies['email'])
+
+     if @sellervalue["value"] != nil
+
+       @checkcategory = Sellerring.where("category = :ct AND iptype = :pt", {:ct => params[:browse], :pt => "predecessor"})
+
+      if @checkcategory == nil
+        @predecessorip = @sellervalue["value"]
+        @category = params[:browse]
+        @mydb = Sellerring.new
+        @mydb.ipaddress = @predecessorip
+        @mydb.category = @category
+        @mydb.iptype = 'predecessor'
+        @mydb.save
+      end     
+     end
        
    else
 
