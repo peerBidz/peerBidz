@@ -1504,3 +1504,7 @@ ActionView::Template::Error (undefined method `category' for #<Item:0xd2bf194>):
   app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb___121476256_109902320_440211555'
   app/controllers/items_controller.rb:101:in `new'
 
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__528185969_111827090_440211555 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__528185969_104778290_440211555 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__528185969_95126140_440211555 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__528185969_111050330_440211555 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)

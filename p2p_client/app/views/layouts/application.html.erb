@@ -26,18 +26,14 @@
 
 </head>
 <body>
-<iframe width=0 height =0 src="127.0.0.1:3001/isLoggedIn"></iframe>
 <script type="text/javascript" src="/javascripts/storageAPI.js"></script>
 <script type="text/javascript">
 var src = 'http://127.0.0.1:3000/categories#' + encodeURIComponent(document.location.href);
-function askLogIn()
-{
-	
-}
+
 function listener(event)
 {
 	var arr = event.data.split(" ");
-		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+	this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
 }
 
 if(window.addEventListener){
@@ -54,7 +50,7 @@ else
 <iframe  height=400 width=175 src="http://127.0.0.1:3001/categories" ></iframe>
 </div>
 </div>
-  <div class="content">
+  <div onload="getLogin()" class="content">
     <!-- Main hero unit for the home page -->
 
     <% if notice.present? -%>
