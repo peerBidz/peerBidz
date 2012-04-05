@@ -2135,3 +2135,39 @@ DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>
 Errno::ECONNREFUSED (Connection refused - connect(2)):
   app/controllers/items_controller.rb:101:in `index'
 
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__950387857_90949990__207849769 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (undefined method `file_field_label' for #<ActionView::Helpers::FormBuilder:0xb7864e0>):
+    27:   </div>
+    28:   <div class ="field">
+    29:     <%= f.label :photo %>
+    30:     <%= f.file_field_label :photo %>
+    31:   </div>
+    32: 
+    33:   <div class="field">
+  app/views/items/_form.html.erb:30:in `block in _app_views_items__form_html_erb___149354201_97383140_218077418'
+  app/views/items/_form.html.erb:3:in `_app_views_items__form_html_erb___149354201_97383140_218077418'
+  app/views/items/new.html.erb:3:in `_app_views_items_new_html_erb__191817170_97399140__207849769'
+  app/controllers/items_controller.rb:162:in `new'
+
+
+ActiveRecord::UnknownAttributeError (unknown attribute: photo):
+  app/controllers/items_controller.rb:176:in `new'
+  app/controllers/items_controller.rb:176:in `create'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__950387857_97464610__207849769 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActiveRecord::AssociationTypeMismatch (Category(#97519390) expected, got String(#67371090)):
+  app/controllers/items_controller.rb:176:in `new'
+  app/controllers/items_controller.rb:176:in `create'
+
+
+Errno::ECONNREFUSED (Connection refused - connect(2)):
+  app/controllers/items_controller.rb:101:in `index'
+
+
+Errno::ECONNREFUSED (Connection refused - connect(2)):
+  app/controllers/items_controller.rb:101:in `index'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__950387857_89737250__207849769 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__950387857_79842390__207849769 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
