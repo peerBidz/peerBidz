@@ -42,9 +42,13 @@ class ItemsController < ApplicationController
 
 
     @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001)
-    @sellervalue = @btserver.call("Container.is_seller", cookies['email'])
 
-   if @sellervalue["value"] == "1"
+    #if params[:us] != nil 
+    #@sellervalue = @btserver.call("Container.get_seller", params[:user])
+    #end
+
+    #if @sellervalue["value"] == "1"
+    if params[:isSeller] == "1"
 
       @checkcategory = Sellerring.where("category = :ct AND iptype = :pt", {:ct => params[:browse], :pt => "successor"})
   
@@ -60,10 +64,11 @@ class ItemsController < ApplicationController
         @checkcategory.each {|f| @successorip = f.ipaddress }
       end
 
-     @server = XMLRPC::Client.new(params[:parent], "/api/xmlrpc", 3001)
-     @sellervalue = @server.call("Container.", cookies['email'])
+     #@server = XMLRPC::Client.new(params[:parent], "/api/xmlrpc", 3001)
+     #@sellervalue = @server.call("Container.", params[:user])
 
-     if @sellervalue["value"] != nil
+     #if @sellervalue["value"] != nil
+     if params[:isSeller] != nil
 
        @checkcategory = Sellerring.where("category = :ct AND iptype = :pt", {:ct => params[:browse], :pt => "predecessor"})
 

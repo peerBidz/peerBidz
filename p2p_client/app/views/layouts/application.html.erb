@@ -52,17 +52,22 @@ function listener(event)
 	if(arr.length==1)
 	{
 		document.cookie = "email" + "=" + event.data
+		uname = event.data;
 	}
 	else
 	{
 	
 	if(isSeller == 0)
 	{
-		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+		this.document.location.href = "/items?browse=" + arr[0] +"&parent=" + arr[1] + "&isSeller=" + uname;
 	}
 	else
 	{
-		this.document.location.href = "http://127.0.0.1:3000/items/new?category=" + arr[0] +"&parent=" + arr[1];
+		if(uname == null)
+		{
+			uname = 0;
+		}
+		this.document.location.href = "/items/new?category=" + arr[0] +"&parent=" + arr[1]+ "&isSeller=" + uname;
 	}
 	}
 }
