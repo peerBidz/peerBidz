@@ -5,9 +5,17 @@
 <%#end%>
 
 <!-- pick IP addresses round robin style by oldest updated_at -->
-<% myvar = CategoryMembers.where("category = ?", params[:url]).order("updated_at asc").first; %>
-<% myvar.updated_at = DateTime.now  %>
-<% myvar.save %>
+<% db = CategoryMembers.where("category = ? and ipaddress <> ?", params[:url], request.env['REMOTE_ADDR']).order("updated_at asc") %>
+<% myvar = CategoryMembers.new %>
+<% if db != nil %>
+	<% myvar = CategoryMembers.where("category = ? and ipaddress <> ?", params[:url], request.env['REMOTE_ADDR']).order("updated_at asc").first %>
+	<% myvar.updated_at = DateTime.now  %>
+	<% myvar.save %>
+<% else %>
+
+	<% myvar.ipadress = "0" %>	
+<% end %>
+
 
 
 <script type="text/javascript">
