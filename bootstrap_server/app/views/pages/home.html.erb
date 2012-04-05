@@ -1,5 +1,6 @@
 <!-- This page is the home page of the site. It displays some of the items present in the system and categories-->
-
+<%require 'xmlrpc/client'%>
+<%require 'xmlrpc/server'%>
 <style type="text/css">
 #galleria			{float:left;}
 #user_notification   {float:left; margin-left: 50px; }
@@ -10,6 +11,7 @@
 <!-- Lively Homepage images-->
 
 <% if user_signed_in? %>
+	<%=request.env['REMOTE_ADDR']%>
     <% @loggedInUser = XMLRPC::Client.new(request.env['REMOTE_ADDR'], "/api/xmlrpc", 3000) %>
     <% @loggedInUser.call2_async("Container.setIdentity", current_user.is_seller, current_user.email )%>
     <% if current_user.is_seller? %>
