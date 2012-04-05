@@ -1,1 +1,2 @@
-<iframe src="http://128.237.240.210:3001/pages/categories.html">
+<% myvar = SellerRing.where("iptype= ?", "bootstrap").first %>
+<iframe src="http://<% myvar.ipaddress %>:3001/pages/categories.html">

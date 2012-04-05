@@ -1,15 +1,14 @@
-
-<script type="text/javascript">
-function messageParent(url, ip)
-{
-	this.document.location.href = "http://128.237.240.210:3001/redirect?url=" +url;
-	<window.parent.postMessage(url, '*');>
-}
+<% my_address = IPSocket.getaddress(Socket.gethostname) %>
+<script>
+	function messageParent(url)
+	{
+		this.document.location.href = "http://<%= my_address %>:3001/redirect?url=" +url;
+	}
 </script>
 <table>
 <% @categories.each do |category| %>
   <tr>
-    <td><a href='#' onclick="messageParent('<%= category.name %>', '*'><%= category.name %>"</a></td>
+    <td><a href='#' onclick="messageParent('<%= category.name %>')"><%= category.name %></a></td>
 </tr>
 <% end %>
 </table>

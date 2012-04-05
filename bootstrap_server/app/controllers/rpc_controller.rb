@@ -5,7 +5,7 @@ class RpcController < ApplicationController
 
   exposes_xmlrpc_methods
 
-  add_method 'Container.is_seller' do |emailaddress|
+  add_method 'Container.get_seller' do |emailaddress|
      emailaddress.sub("%40", "@");
      myvar = User.where("email = :et", {:et => emailaddress}).first 
      if myvar.is_seller?

@@ -27,9 +27,11 @@
 </head>
 
 <body>
+	<% myBoot = Sellerring.where("iptype= ?", "bootstrap").first %>
+	<% bootIP = myBoot.ipaddress %>
 	<% require 'xmlrpc/client'%>
 	<% if cookies[:email] != nil %>
-	<% @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001) %>
+	<% @btserver = XMLRPC::Client.new(bootIP, "/api/xmlrpc", 3001) %>
 	<%= cookies[:email]%>
 	<% sellervalue = @btserver.call("Container.get_seller", cookies[:email]) %>
 	<% end %>
@@ -38,7 +40,7 @@
 	<% if cookies[:email] != nil %>	
 	var isSeller = <%=sellervalue["value"]%>;
 	<% else %>
-	var isSeller = 0 ;
+	var isSeller = -1;
 	<% end %>
 </script>
 <script type="text/javascript" src="/javascripts/storageAPI.js"></script>
@@ -61,6 +63,10 @@ function listener(event)
 	{
 		this.document.location.href = "/items?browse=" + arr[0] +"&parent=" + arr[1] + "&isSeller=" + uname;
 	}
+	else if(isSeller == -1)
+	{
+		this.document.location.href = "/users/login";
+	}
 	else
 	{
 		if(uname == null)
@@ -82,9 +88,8 @@ else
 </script>
 <div class="container-fluid">
 <div class="sidebar">
-Here is 128.237.240.210
 <div id="iframe" class="well">
-<iframe  height=400 width=175 src="http://128.237.240.210:3001/categories" ></iframe>
+<iframe  height=400 width=175 src="http://<%= bootIP %>:3001/categories" ></iframe>
 </div>
 </div>
   <div class="content">

@@ -41,7 +41,10 @@ class ItemsController < ApplicationController
     }
 
 
-    @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001)
+    myBoot = Sellerring.where("iptype= ?", "bootstrap").first 
+    bootIP = myBoot.ipaddress
+
+    @btserver = XMLRPC::Client.new(bootIP, "/api/xmlrpc", 3001)
 
     #if params[:us] != nil 
     #@sellervalue = @btserver.call("Container.get_seller", params[:user])

@@ -560,3 +560,87 @@ DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3
 DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
 DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
 DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__7248701_96561120__998236178 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___4373491_111113790_831608082 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::SellerRing):
+    1: <% myvar = SellerRing.where("iptype= ?", "bootstrap").first %>
+    2: <iframe height=400 width=350 src="http://<%myvar.ipaddress%>:3001/users/sign_in"></iframe>
+  app/views/devise/sessions/new.html.erb:1:in `_app_views_devise_sessions_new_html_erb___204989944_111325580_831608082'
+
+
+ActionView::Template::Error (execution expired):
+    31: 	<% if cookies[:email] != nil %>
+    32: 	<% @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001) %>
+    33: 	<%= cookies[:email]%>
+    34: 	<% sellervalue = @btserver.call("Container.get_seller", cookies[:email]) %>
+    35: 	<% end %>
+    36: 
+    37: <script>
+  app/views/layouts/application.html.erb:34:in `_app_views_layouts_application_html_erb___976145534_110934350_831608082'
+
+
+ActionView::Template::Error (can't convert Sellerring into String):
+    32: 	<% if cookies[:email] != nil %>
+    33: 	<% @btserver = XMLRPC::Client.new(myBoot, "/api/xmlrpc", 3001) %>
+    34: 	<%= cookies[:email]%>
+    35: 	<% sellervalue = @btserver.call("Container.get_seller", cookies[:email]) %>
+    36: 	<% end %>
+    37: 
+    38: <script>
+  app/views/layouts/application.html.erb:35:in `_app_views_layouts_application_html_erb___976145534_110522540_831608082'
+
+
+ActionView::Template::Error (Method Container.get_seller missing or wrong number of parameters!):
+    33: 	<% if cookies[:email] != nil %>
+    34: 	<% @btserver = XMLRPC::Client.new(bootIP, "/api/xmlrpc", 3001) %>
+    35: 	<%= cookies[:email]%>
+    36: 	<% sellervalue = @btserver.call("Container.get_seller", cookies[:email]) %>
+    37: 	<% end %>
+    38: 
+    39: <script>
+  app/views/layouts/application.html.erb:36:in `_app_views_layouts_application_html_erb___976145534_109668890_831608082'
+
+
+ActionView::Template::Error (Uncaught exception undefined method `is_seller?' for nil:NilClass in method Container.get_seller):
+    33: 	<% if cookies[:email] != nil %>
+    34: 	<% @btserver = XMLRPC::Client.new(bootIP, "/api/xmlrpc", 3001) %>
+    35: 	<%= cookies[:email]%>
+    36: 	<% sellervalue = @btserver.call("Container.get_seller", cookies[:email]) %>
+    37: 	<% end %>
+    38: 
+    39: <script>
+  app/views/layouts/application.html.erb:36:in `_app_views_layouts_application_html_erb___976145534_111717950_831608082'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+
+ActionView::Template::Error (Uncaught exception undefined method `is_seller?' for nil:NilClass in method Container.get_seller):
+    33: 	<% if cookies[:email] != nil %>
+    34: 	<% @btserver = XMLRPC::Client.new(bootIP, "/api/xmlrpc", 3001) %>
+    35: 	<%= cookies[:email]%>
+    36: 	<% sellervalue = @btserver.call("Container.get_seller", cookies[:email]) %>
+    37: 	<% end %>
+    38: 
+    39: <script>
+  app/views/layouts/application.html.erb:36:in `_app_views_layouts_application_html_erb__58357201_97464990__113163328'
+
+
+ActionController::RoutingError (No route matches "/users/:3001/categories"):
+  
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__189122399_105139770__657135988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__189122399_103045200__657135988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__189122399_103828580__657135988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__189122399_104011980__657135988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__189122399_104174440__657135988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__189122399_104455360__657135988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__189122399_105003260__657135988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__189122399_104222470__657135988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__189122399_104462410__657135988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)

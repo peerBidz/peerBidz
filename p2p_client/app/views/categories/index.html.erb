@@ -1,1 +1,4 @@
-<iframe src="http://128.237.240.210:3001/categories">
+<% myBoot = Sellerring.where("iptype= ?", "bootstrap").first %>
+<% bootIP = myBoot.ipaddress %>
+
+<iframe src="http://<%= bootIP %>:3001/categories">
