@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
 
   def home
+#$BOOTSTRAPSERVER = "100.0.0.1"
+    session[:BOOTSTRAPSERVER] = "test"
     @title = "Home"
     @items = Item.all
   end

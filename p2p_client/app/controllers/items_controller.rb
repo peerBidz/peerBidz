@@ -41,7 +41,7 @@ class ItemsController < ApplicationController
     }
 
 
-    @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001)
+    @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001)
     @sellervalue = @btserver.call("Container.is_seller", cookies['email'])
 
    if @sellervalue["value"] == "1"
