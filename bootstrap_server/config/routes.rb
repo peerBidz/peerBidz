@@ -55,7 +55,7 @@ end
 
   root :to => 'pages#home'
 
-
+  match '/api/xmlrpc' => 'rpc#xe_index'
 
 
 
