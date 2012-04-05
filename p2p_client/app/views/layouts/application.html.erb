@@ -25,23 +25,37 @@
   </style>
 
 </head>
+
 <body>
-<% if cookies[:email] != nil %>
 	<% require 'xmlrpc/client'%>
+	<% if cookies[:email] != nil %>
 	<% @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001) %>
-    	<% sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+	<%= cookies[:email]%>
+	<% sellervalue = @btserver.call("Container.get_seller", cookies[:email]) %>
+	<% end %>
+
 <script>
-	var isSeller = <%= myval = sellervalue["value"] %>;
+	<% if cookies[:email] != nil %>	
+	var isSeller = <%=sellervalue["value"]%>;
+	<% else %>
+	var isSeller = 0 ;
+	<% end %>
 </script>
-<%end%>
 <script type="text/javascript" src="/javascripts/storageAPI.js"></script>
 <script type="text/javascript">
-var src = 'http://127.0.0.1:3000/categories#' + encodeURIComponent(document.location.href);
-
+var uname;
 function listener(event)
 {
+	alert(event.data);
 	var arr = event.data.split(" ");
-	<!-- <%myval%> -->
+
+	if(arr.length==1)
+	{
+		document.cookie = "email" + "=" + event.data
+	}
+	else
+	{
+	
 	if(isSeller == 0)
 	{
 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
@@ -49,6 +63,7 @@ function listener(event)
 	else
 	{
 		this.document.location.href = "http://127.0.0.1:3000/items/new?category=" + arr[0] +"&parent=" + arr[1];
+	}
 	}
 }
 

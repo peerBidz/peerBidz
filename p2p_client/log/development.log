@@ -1,0 +1,381 @@
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3853730231491885120_51861420__2799924271263701711 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___3507188198209199248_56083860_1038536299618515189 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___3507188198209199248_57613180_1038536299618515189 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___3507188198209199248_56682940_1038536299618515189 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___3507188198209199248_55199060_1038536299618515189 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___3808165709100727633_63733680_2355521609207271329 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__2899473557794054482_49544480__1152094702437650517 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___3808165709100727633_64281280_2355521609207271329 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__421073901081667041_54119480_1323578610392738557 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3433786961233485769_51668740__270662008828142108 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___4122199388913522862_48909440__3533771146077369325 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___4122199388913522862_5551920__3533771146077369325 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3433786961233485769_33221400__270662008828142108 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3433786961233485769_52035340__270662008828142108 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3433786961233485769_18867160__270662008828142108 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3433786961233485769_30720660__270662008828142108 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3433786961233485769_34475540__270662008828142108 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3433786961233485769_50338560__270662008828142108 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3433786961233485769_52571180__270662008828142108 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3433786961233485769_53097480__270662008828142108 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3433786961233485769_30898680__270662008828142108 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3433786961233485769_53011060__270662008828142108 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3433786961233485769_51098060__270662008828142108 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3433786961233485769_37218400__270662008828142108 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3433786961233485769_39743080__270662008828142108 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3433786961233485769_32767100__270662008828142108 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3433786961233485769_51975560__270662008828142108 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3433786961233485769_52115360__270662008828142108 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3433786961233485769_38968900__270662008828142108 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3433786961233485769_35477320__270662008828142108 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3433786961233485769_49360040__270662008828142108 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Uncaught exception Mysql2::Error: Unknown column 'ipaddress' in 'where clause': SELECT  `users`.* FROM `users` WHERE (ipaddress = '127.0.1.1') LIMIT 1 in method Container.is_seller):
+    29: 	<% require 'xmlrpc/client'%>
+    30: 	<% @my_address = IPSocket.getaddress(Socket.gethostname) %>
+    31: 	<% @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001) %>
+    32:    	<% sellervalue = @btserver.call("Container.is_seller", @my_address) %>
+    33: <script>
+    34: 	var isSeller = <%= myval = sellervalue["value"] %>;
+    35: </script>
+  app/views/layouts/application.html.erb:32:in `_app_views_layouts_application_html_erb___3398299851618669710_49357600__270662008828142108'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3433786961233485769_48749040__270662008828142108 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Uncaught exception undefined method `is_seller?' for nil:NilClass in method Container.is_seller):
+    29: 	<% require 'xmlrpc/client'%>
+    30: 	<% @my_address = IPSocket.getaddress(Socket.gethostname) %>
+    31: 	<% @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001) %>
+    32:    	<% sellervalue = @btserver.call("Container.is_seller", @my_address) %>
+    33: <script>
+    34: 	var isSeller = <%= myval = sellervalue["value"] %>;
+    35: </script>
+  app/views/layouts/application.html.erb:32:in `_app_views_layouts_application_html_erb___3398299851618669710_48746460__270662008828142108'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3089747903224423605_53052080_116288242451556528 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+
+ActionView::Template::Error (Uncaught exception undefined method `is_seller?' for nil:NilClass in method Container.is_seller):
+    29: 	<% require 'xmlrpc/client'%>
+    30: 	<% @my_address = IPSocket.getaddress(Socket.gethostname) %>
+    31: 	<% @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001) %>
+    32:    	<% sellervalue = @btserver.call("Container.is_seller", @my_address) %>
+    33: <script>
+    34: 	var isSeller = <%= myval = sellervalue["value"] %>;
+    35: </script>
+  app/views/layouts/application.html.erb:32:in `_app_views_layouts_application_html_erb___1706484545150827382_53049800_116288242451556528'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3089747903224423605_52671900_116288242451556528 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Uncaught exception undefined method `is_seller' for nil:NilClass in method Container.is_seller):
+    29: 	<% require 'xmlrpc/client'%>
+    30: 	<% @my_address = IPSocket.getaddress(Socket.gethostname) %>
+    31: 	<% @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001) %>
+    32:    	<% sellervalue = @btserver.call("Container.is_seller", @my_address) %>
+    33: <script>
+    34: 	var isSeller = <%= myval = sellervalue["value"] %>;
+    35: </script>
+  app/views/layouts/application.html.erb:32:in `_app_views_layouts_application_html_erb___1706484545150827382_52668820_116288242451556528'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3089747903224423605_70210269666520_116288242451556528 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (No route to host - connect(2)):
+    29: 	<% require 'xmlrpc/client'%>
+    30: 	<% @my_address = IPSocket.getaddress(Socket.gethostname) %>
+    31: 	<% @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001) %>
+    32:    	<% sellervalue = @btserver.call("Container.is_seller", @my_address) %>
+    33: <script>
+    34: 	var isSeller = <%= myval = sellervalue["value"] %>;
+    35: </script>
+  app/views/layouts/application.html.erb:32:in `_app_views_layouts_application_html_erb___1706484545150827382_70210269664240_116288242451556528'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3089747903224423605_50792040_116288242451556528 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (No route to host - connect(2)):
+    29: 	<% require 'xmlrpc/client'%>
+    30: 	<% @my_address = IPSocket.getaddress(Socket.gethostname) %>
+    31: 	<% @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001) %>
+    32:    	<% sellervalue = @btserver.call("Container.is_seller", @my_address) %>
+    33: <script>
+    34: 	var isSeller = <%= myval = sellervalue["value"] %>;
+    35: </script>
+  app/views/layouts/application.html.erb:32:in `_app_views_layouts_application_html_erb___1706484545150827382_50784100_116288242451556528'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3089747903224423605_51260300_116288242451556528 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Uncaught exception undefined method `is_seller' for nil:NilClass in method Container.is_seller):
+    29: 	<% require 'xmlrpc/client'%>
+    30: 	<% @my_address = IPSocket.getaddress(Socket.gethostname) %>
+    31: 	<% @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001) %>
+    32:    	<% sellervalue = @btserver.call("Container.is_seller", @my_address) %>
+    33: <script>
+    34: 	var isSeller = <%= myval = sellervalue["value"] %>;
+    35: </script>
+  app/views/layouts/application.html.erb:32:in `_app_views_layouts_application_html_erb___1706484545150827382_51254720_116288242451556528'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3089747903224423605_41597620_116288242451556528 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Uncaught exception undefined method `is_seller?' for nil:NilClass in method Container.is_seller):
+    29: 	<% require 'xmlrpc/client'%>
+    30: 	<% @my_address = IPSocket.getaddress(Socket.gethostname) %>
+    31: 	<% @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001) %>
+    32:    	<% sellervalue = @btserver.call("Container.is_seller", @my_address) %>
+    33: <script>
+    34: 	var isSeller = <%= myval = sellervalue["value"] %>;
+    35: </script>
+  app/views/layouts/application.html.erb:32:in `_app_views_layouts_application_html_erb___1706484545150827382_41590980_116288242451556528'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3089747903224423605_50555440_116288242451556528 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Uncaught exception undefined method `is_seller?' for []:ActiveRecord::Relation in method Container.is_seller):
+    29: 	<% require 'xmlrpc/client'%>
+    30: 	<% @my_address = IPSocket.getaddress(Socket.gethostname) %>
+    31: 	<% @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001) %>
+    32:    	<% sellervalue = @btserver.call("Container.is_seller", @my_address) %>
+    33: <script>
+    34: 	var isSeller = <%= myval = sellervalue["value"] %>;
+    35: </script>
+  app/views/layouts/application.html.erb:32:in `_app_views_layouts_application_html_erb___1706484545150827382_50552800_116288242451556528'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3089747903224423605_41674440_116288242451556528 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Uncaught exception undefined method `is_seller?' for []:ActiveRecord::Relation in method Container.is_seller):
+    29: 	<% require 'xmlrpc/client'%>
+    30: 	<% @my_address = IPSocket.getaddress(Socket.gethostname) %>
+    31: 	<% @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001) %>
+    32:    	<% sellervalue = @btserver.call("Container.is_seller", @my_address) %>
+    33: <script>
+    34: 	var isSeller = <%= myval = sellervalue["value"] %>;
+    35: </script>
+  app/views/layouts/application.html.erb:32:in `_app_views_layouts_application_html_erb___1706484545150827382_41664340_116288242451556528'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3551318906494935023_61165400_295328674224463361 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (No route to host - connect(2)):
+    29: 	<% require 'xmlrpc/client'%>
+    30: 	<% @my_address = IPSocket.getaddress(Socket.gethostname) %>
+    31: 	<% @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001) %>
+    32:    	<% sellervalue = @btserver.call("Container.get_seller", @my_address) %>
+    33: <script>
+    34: 	var isSeller = <%= myval = sellervalue["value"] %>;
+    35: </script>
+  app/views/layouts/application.html.erb:32:in `_app_views_layouts_application_html_erb___2331632422974964731_61179480_295328674224463361'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3551318906494935023_57241440_295328674224463361 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Uncaught exception undefined method `is_seller?' for nil:NilClass in method Container.get_seller):
+    29: 	<% require 'xmlrpc/client'%>
+    30: 	<% @my_address = IPSocket.getaddress(Socket.gethostname) %>
+    31: 	<% @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001) %>
+    32:    	<% sellervalue = @btserver.call("Container.get_seller", @my_address) %>
+    33: <script>
+    34: 	var isSeller = <%= myval = sellervalue["value"] %>;
+    35: </script>
+  app/views/layouts/application.html.erb:32:in `_app_views_layouts_application_html_erb___2331632422974964731_57224200_295328674224463361'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___4099676602562259762_51726820__426222145137672285 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Uncaught exception undefined method `is_seller?' for nil:NilClass in method Container.get_seller):
+    30: 	<% @my_address = IPSocket.getaddress(Socket.gethostname) %>
+    31: 	<% @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001) %>
+    32:    	<script>alert(<%@my_address%>);</script>
+    33: 	<% sellervalue = @btserver.call("Container.get_seller", @my_address) %>
+    34: <script>
+    35: 	var isSeller = <%= myval = sellervalue["value"] %>;
+    36: </script>
+  app/views/layouts/application.html.erb:33:in `_app_views_layouts_application_html_erb__3510570226704678791_51724540__426222145137672285'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___4099676602562259762_52489200__426222145137672285 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+
+RuntimeError (Wrong type NilClass. Not allowed!):
+  app/controllers/items_controller.rb:45:in `index'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___4099676602562259762_51761120__426222145137672285 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___4099676602562259762_52625240__426222145137672285 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___691480823671069373_50711760__1462932790528486611 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__2545662449097273678_60504920__1533175508989471083 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___1752348246400638359_53526540_3980214767243310144 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___1752348246400638359_53555380_3980214767243310144 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___1752348246400638359_51131260_3980214767243310144 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__2704798231168452962_56834380_93938061728528947 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___3887070004902745455_53946340_2509461916209942689 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___4222070823900619104_52785980_3143030902632770954 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___1306662499285882733_53367760_229647118905400917 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (No route to host - connect(2)):
+    28: <body>
+    29: 	<% require 'xmlrpc/client'%>
+    30: 	<% @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001) %>
+    31: 	<% sellervalue = @btserver.call("Container.get_seller") %>
+    32: <script>
+    33: 	var isSeller = <%sellervalue["value"]%>;
+    34: </script>
+  app/views/layouts/application.html.erb:31:in `_app_views_layouts_application_html_erb__577561699875822704_53364360_229647118905400917'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___1306662499285882733_54674580_229647118905400917 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Uncaught exception undefined local variable or method `current_user' for RpcController:Class in method Container.get_seller):
+    28: <body>
+    29: 	<% require 'xmlrpc/client'%>
+    30: 	<% @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001) %>
+    31: 	<% sellervalue = @btserver.call("Container.get_seller") %>
+    32: <script>
+    33: 	var isSeller = <%sellervalue["value"]%>;
+    34: </script>
+  app/views/layouts/application.html.erb:31:in `_app_views_layouts_application_html_erb__577561699875822704_54672320_229647118905400917'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___1306662499285882733_50482080_229647118905400917 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Uncaught exception undefined local variable or method `current_user' for RpcController:Class in method Container.get_seller):
+    28: <body>
+    29: 	<% require 'xmlrpc/client'%>
+    30: 	<% @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001) %>
+    31: 	<% sellervalue = @btserver.call("Container.get_seller") %>
+    32: <script>
+    33: 	var isSeller = <%sellervalue["value"]%>;
+    34: </script>
+  app/views/layouts/application.html.erb:31:in `_app_views_layouts_application_html_erb__577561699875822704_50479260_229647118905400917'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__1312613064860485751_52574100_2445430256093050923 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Uncaught exception undefined local variable or method `current_user' for RpcController:Class in method Container.get_seller):
+    32: <body>
+    33: 	<% require 'xmlrpc/client'%>
+    34: 	<% @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001) %>
+    35: 	<% sellervalue = @btserver.call("Container.get_seller") %>
+    36: <script>
+    37: 	
+    38: 	var isSeller = <%sellervalue["value"]%>;
+  app/views/layouts/application.html.erb:35:in `_app_views_layouts_application_html_erb___2687141059023275218_52571820_2445430256093050923'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___2410106655776026357_53275080__1750582477587477380 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__630970682291753821_69824059310380_3201714214719364722 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___1756567938216441362_59096460_2104470525041775292 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___4441841753622350997_61282720__1349405220833337089 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Wrong type NilClass. Not allowed!):
+    30: 	<% require 'xmlrpc/client'%>
+    31: 	<% @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001) %>
+    32: 	<%= cookies[:email]%>
+    33: 	<% sellervalue = @btserver.call("Container.get_seller", cookies[:email]) %>
+    34: <script>
+    35: 	
+    36: 	var isSeller = <%=sellervalue["value"]%>;
+  app/views/layouts/application.html.erb:33:in `_app_views_layouts_application_html_erb__1461482912391616038_61280420__1349405220833337089'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___3017984524751465759_53542260__3785601336565737866 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+    35: 	<% end %>
+    36: <script>
+    37: 	
+    38: 	var isSeller = <%=sellervalue["value"]%>;
+    39: </script>
+    40: <script type="text/javascript" src="/javascripts/storageAPI.js"></script>
+    41: <script type="text/javascript">
+  app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb__481939759427041331_53539080__3785601336565737866'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___366456891670977796_61316680_552442310043763520 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___366456891670977796_70205371036120_552442310043763520 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___366456891670977796_15936700_552442310043763520 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___366456891670977796_21767240_552442310043763520 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___366456891670977796_39831620_552442310043763520 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___366456891670977796_70205370767420_552442310043763520 at /home/prajakta/18842_projects/projects/p2p_client/app/views/pages/home.html.erb:26)
+
+RuntimeError (Wrong type NilClass. Not allowed!):
+  app/controllers/items_controller.rb:45:in `index'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/projects/p2p_client/config/routes.rb:1)
