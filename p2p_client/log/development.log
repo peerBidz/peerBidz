@@ -644,3 +644,13 @@ DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>
 DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__189122399_105003260__657135988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
 DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__189122399_104222470__657135988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
 DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__189122399_104462410__657135988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
+  app/controllers/users_controller.rb:16:in `show'
+
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
+  app/controllers/users_controller.rb:16:in `show'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__189122399_99156730__657135988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__189122399_99367770__657135988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
