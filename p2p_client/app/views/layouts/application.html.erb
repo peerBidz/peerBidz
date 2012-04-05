@@ -58,8 +58,9 @@ function listener(event)
 	}
 	else
 	{
+		this.document.location.href = "/items?browse=" + arr[0] +"&parent=" + arr[1] + "&isSeller=" + 0;
 	
-	if(isSeller == 0)
+	/*if(isSeller == 0)
 	{
 		this.document.location.href = "/items?browse=" + arr[0] +"&parent=" + arr[1] + "&isSeller=" + uname;
 	}
@@ -74,7 +75,7 @@ function listener(event)
 			uname = 0;
 		}
 		this.document.location.href = "/items/new?category=" + arr[0] +"&parent=" + arr[1]+ "&isSeller=" + uname;
-	}
+	}*/
 	}
 }
 
