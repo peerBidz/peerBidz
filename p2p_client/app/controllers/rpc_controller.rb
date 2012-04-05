@@ -25,7 +25,7 @@ class RpcController < ApplicationController
     @request.save
 
     @search_id = Searchdb.where("category = :ct AND buyeripaddress = :it AND searchquery = :sq ", {:ct => category_name, :it => ip_address, :sq => search_string})
-    @items = Item.find(:all, :conditions => ['title LIKE ? AND category = ?', "%#{params[:search]}%", cookies[:CURRCATEGORY]])
+    @items = Item.find(:all, :conditions => ['title LIKE ? AND category = ?', "%#{search_string}%", category_name])
     @ip_address = IPSocket.getaddress(Socket.gethostname)
 
       if @items == nil
@@ -46,7 +46,7 @@ class RpcController < ApplicationController
 
   add_method 'Container.get_sellerip' do |search_string, category_name, ip_address, search_id|
 
-    @items = Item.find(:all, :conditions => ['title LIKE ? AND category = ?', "%#{params[:search]}%", cookies[:CURRCATEGORY]])
+    @items = Item.find(:all, :conditions => ['title LIKE ? AND category = ?', "%#{search_string}%", category_name])
     @my_address = IPSocket.getaddress(Socket.gethostname)
 
       if @items == nil
@@ -73,8 +73,8 @@ class RpcController < ApplicationController
         @is_present = Searchdb.find(search_id)
 
         if @is_present != nil
-          @server1 = XMLRPC::Client.new(@is_present.buyeripaddress, "/api/xmlrpc", 3000)
-          @server1.call("Container.get_sellerip", search_string,category_name, ip_address)
+          @server1 = XMLRPC::Client.new(@is_present.buyeripaddress, "/items?results=#ip_address&category=#@is_present.category&searchstring=#@is_present.searchquery", 3000)
+          @server1.call("index")
           { "value" => nil}
         else
 
