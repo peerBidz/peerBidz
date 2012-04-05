@@ -100,5 +100,11 @@ class RpcController < ApplicationController
 
         end
     end
-           
+  add_method 'Container.getIdentity' do |isSeller, email|
+   
+	identDB = User.new
+	identDB.email = email
+	identDB.is_seller = isSeller
+	identDB.save	
+  end 
 end

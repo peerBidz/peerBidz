@@ -717,3 +717,15 @@ DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>
 Timeout::Error (execution expired):
   app/controllers/items_controller.rb:109:in `index'
 
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__166599699_91979210__610340860 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__166599699_103448320__610340860 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__166599699_108122490__610340860 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+Timeout::Error (execution expired):
+  app/controllers/items_controller.rb:109:in `index'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__166599699_93421090__610340860 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+Timeout::Error (execution expired):
+  app/controllers/items_controller.rb:109:in `index'
+
