@@ -14,13 +14,26 @@ class RpcController < ApplicationController
     { "value" => @myvar.ipaddress }
   end
 
-  add_method 'Container.method_name' do |category|
+  add_method 'Container.sellermethod' do |ipaddress, category|
 
-     @myvar = Sellerring.where("category = ?", category).order("updated_at asc").first
-     @myvar.updated_at = DateTime.now
-     @myvar.save
+     @myvar = Sellerring.where("category = :ct AND iptype = :pt", {:ct => category, :pt => "predecessor"})
+     if @myvar != nil
+     @predecessor = @myvar.ipaddress     
 
-    { "value" => @myvar.ipaddress }
+     @dbvalue = Sellerring.new
+     @dbvalue.ipaddress = ipaddress
+     @dbvalue.iptype = 'predecessor'
+     @dbvalue.category = category
+     @dbvalue.updated_at = DateTime.now
+     @dbvalue.created_at = DateTime.now
+     @dbvalue.save 
+     @myvar.destroy
+
+    { "value" => @predecessor }
+
+    else
+      { "value" => nil }
+    end
   end
 
   add_method 'Container.get_sellerorigin' do |search_string, category_name, ip_address|
