@@ -1,8 +1,7 @@
-<%# if user_signed_in? %>
-	<%# if current_user.is_seller? %>
-		<% CategoryMembers.create(:ipAddress => request.env['REMOTE_ADDR'], :category => params[:url])%>
-	<%#end%>
-<%#end%>
+<% isPresent = CategoryMembers.where("category = ? and ipaddress = ?", params[:url], request.env['REMOTE_ADDR']) %>
+<% if isPresent == nil %>
+	<% CategoryMembers.create(:ipAddress => request.env['REMOTE_ADDR'], :category => params[:url])%>
+<%end%>
 
 <!-- pick IP addresses round robin style by oldest updated_at -->
 <% db = CategoryMembers.where("category = ? and ipaddress <> ?", params[:url], request.env['REMOTE_ADDR']).order("updated_at asc") %>
