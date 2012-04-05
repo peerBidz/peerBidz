@@ -6,6 +6,16 @@ class ApplicationController < ActionController::Base
   # from your application log (in this case, all fields with names like "password").
   #filter_parameter_logging :card_number, :card_verification
 
+#  @test = "test"
+#  session[:BOOTSTRAPSERVER] = @test
+  helper_method :my_var
+
+  def my_var
+  @test = "test"
+  session[:BOOTSTRAPSERVER] = @test
+    $support = "192.168.48.200"
+  end
+
   def current_cart
 
     #session[:cart_id] = nil

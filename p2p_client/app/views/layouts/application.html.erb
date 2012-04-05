@@ -28,7 +28,7 @@
 <body>
 <% if cookies[:email] != nil %>
 	<% require 'xmlrpc/client'%>
-	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+	<% @btserver = XMLRPC::Client.new("128.237.240.210", "/api/xmlrpc", 3001) %>
     	<% sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
 <script>
 	var isSeller = <%= myval = sellervalue["value"] %>;
@@ -62,8 +62,9 @@ else
 </script>
 <div class="container-fluid">
 <div class="sidebar">
+Here is 128.237.240.210
 <div id="iframe" class="well">
-<iframe  height=400 width=175 src="http://127.0.0.1:3001/categories" ></iframe>
+<iframe  height=400 width=175 src="http://128.237.240.210:3001/categories" ></iframe>
 </div>
 </div>
   <div class="content">

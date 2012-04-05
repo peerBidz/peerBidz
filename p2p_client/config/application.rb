@@ -31,6 +31,7 @@ module BestBay
 
     # JavaScript files you want as :defaults (application.js is always included).
     # config.action_view.javascript_expansions[:defaults] = %w()
+    #BOOTSTRAPSERVER = "192.168.1.1"
     config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails application)
     # config.action_view.javascript_expansions[:defaults] = ['jquery', 'jquery-ujs/src/rails']
@@ -45,5 +46,6 @@ module BestBay
     config.time_zone = 'Eastern Time (US & Canada)'
     config.active_record.default_timezone = :utc
     config.action_mailer.default_url_options = { :host => 'localhost: 3000' } 
+#	BOOTSTRAPSERVER = "192.168.1.1"
   end
 end
