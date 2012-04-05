@@ -26,6 +26,14 @@
 
 </head>
 <body>
+<% if cookies[:email] != nil %>
+	<% require 'xmlrpc/client'%>
+	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    	<% sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+<script>
+	var isSeller = <%= myval = sellervalue["value"] %>;
+</script>
+<%end%>
 <script type="text/javascript" src="/javascripts/storageAPI.js"></script>
 <script type="text/javascript">
 var src = 'http://127.0.0.1:3000/categories#' + encodeURIComponent(document.location.href);
@@ -33,14 +41,15 @@ var src = 'http://127.0.0.1:3000/categories#' + encodeURIComponent(document.loca
 function listener(event)
 {
 	var arr = event.data.split(" ");
-	<% require 'xmlrpc/client'%>
-	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
-    	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
-	<% if @sellervalue == 1 %>
+	<!-- <%myval%> -->
+	if(isSeller == 0)
+	{
 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
-	<% else %>
+	}
+	else
+	{
 		this.document.location.href = "http://127.0.0.1:3000/items/new?category=" + arr[0] +"&parent=" + arr[1];
-	<% end %>
+	}
 }
 
 if(window.addEventListener){
@@ -57,7 +66,7 @@ else
 <iframe  height=400 width=175 src="http://127.0.0.1:3001/categories" ></iframe>
 </div>
 </div>
-  <div onload="getLogin()" class="content">
+  <div class="content">
     <!-- Main hero unit for the home page -->
 
     <% if notice.present? -%>

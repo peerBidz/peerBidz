@@ -1837,3 +1837,301 @@ ActionView::Template::Error (Uncaught exception undefined method `is_seller' for
   app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb__817954042_106846130_771810683'
 
 DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___960217841_110406120_771810683 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___960217841_107491680_771810683 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___960217841_101359130_771810683 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_103215520_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_104848820_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_104881720_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_104888770_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_105027260_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_105027060_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_105249250_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+Errno::ECONNREFUSED (Connection refused - connect(2)):
+  app/controllers/items_controller.rb:101:in `index'
+
+
+Errno::ECONNREFUSED (Connection refused - connect(2)):
+  app/controllers/items_controller.rb:101:in `index'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_104884470_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_104904030_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (/home/code/peer/p2p_client/app/views/layouts/application.html.erb:39: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+... @sellervalue["value"] == "1" );@output_buffer.safe_concat('
+...                               ^
+/home/code/peer/p2p_client/app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_else, expecting ')'
+');	 else 
+   	     ^
+/home/code/peer/p2p_client/app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_end, expecting ')'
+');	 end 
+   	    ^
+/home/code/peer/p2p_client/app/views/layouts/application.html.erb:77: syntax error, unexpected keyword_ensure, expecting ')'
+/home/code/peer/p2p_client/app/views/layouts/application.html.erb:79: syntax error, unexpected keyword_end, expecting ')'):
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<%= if @sellervalue["value"] == "1" %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+    42: 		this.document.location.href = "http://127.0.0.1:3000/items/new?category=" + arr[0] +"&parent=" + arr[1];
+  app/controllers/items_controller.rb:162:in `new'
+
+
+ActionView::Template::Error (/home/code/peer/p2p_client/app/views/layouts/application.html.erb:39: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+... @sellervalue["value"] == "1" );@output_buffer.safe_concat('
+...                               ^
+/home/code/peer/p2p_client/app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_else, expecting ')'
+');	 else 
+   	     ^
+/home/code/peer/p2p_client/app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_end, expecting ')'
+');	 end 
+   	    ^
+/home/code/peer/p2p_client/app/views/layouts/application.html.erb:77: syntax error, unexpected keyword_ensure, expecting ')'
+/home/code/peer/p2p_client/app/views/layouts/application.html.erb:79: syntax error, unexpected keyword_end, expecting ')'):
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<%= if @sellervalue["value"] == "1" %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+    42: 		this.document.location.href = "http://127.0.0.1:3000/items/new?category=" + arr[0] +"&parent=" + arr[1];
+  app/controllers/items_controller.rb:162:in `new'
+
+
+ActionView::Template::Error (/home/code/peer/p2p_client/app/views/layouts/application.html.erb:39: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+... @sellervalue["value"] == "1" );@output_buffer.safe_concat('
+...                               ^
+/home/code/peer/p2p_client/app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_else, expecting ')'
+');	 else 
+   	     ^
+/home/code/peer/p2p_client/app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_end, expecting ')'
+');	 end 
+   	    ^
+/home/code/peer/p2p_client/app/views/layouts/application.html.erb:77: syntax error, unexpected keyword_ensure, expecting ')'
+/home/code/peer/p2p_client/app/views/layouts/application.html.erb:79: syntax error, unexpected keyword_end, expecting ')'):
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<%= if @sellervalue["value"] == "1" %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+    42: 		this.document.location.href = "http://127.0.0.1:3000/items/new?category=" + arr[0] +"&parent=" + arr[1];
+  app/controllers/items_controller.rb:162:in `new'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_91166660_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (/home/code/peer/p2p_client/app/views/layouts/application.html.erb:39: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+... @sellervalue["value"] == "1" );@output_buffer.safe_concat('
+...                               ^
+/home/code/peer/p2p_client/app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_else, expecting ')'
+');	 else 
+   	     ^
+/home/code/peer/p2p_client/app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_end, expecting ')'
+');	 end 
+   	    ^
+/home/code/peer/p2p_client/app/views/layouts/application.html.erb:77: syntax error, unexpected keyword_ensure, expecting ')'
+/home/code/peer/p2p_client/app/views/layouts/application.html.erb:79: syntax error, unexpected keyword_end, expecting ')'):
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<%= if @sellervalue["value"] == "1" %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+    42: 		this.document.location.href = "http://127.0.0.1:3000/items/new?category=" + arr[0] +"&parent=" + arr[1];
+  
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_104979220_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (/home/code/peer/p2p_client/app/views/layouts/application.html.erb:39: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...f sellervalue["value"] == "1" );@output_buffer.safe_concat('
+...                               ^
+/home/code/peer/p2p_client/app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_else, expecting ')'
+');	 else 
+   	     ^
+/home/code/peer/p2p_client/app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_end, expecting ')'
+');	 end 
+   	    ^
+/home/code/peer/p2p_client/app/views/layouts/application.html.erb:77: syntax error, unexpected keyword_ensure, expecting ')'
+/home/code/peer/p2p_client/app/views/layouts/application.html.erb:79: syntax error, unexpected keyword_end, expecting ')'):
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<%= if sellervalue["value"] == "1" %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+    42: 		this.document.location.href = "http://127.0.0.1:3000/items/new?category=" + arr[0] +"&parent=" + arr[1];
+  
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_98907830_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (/home/code/peer/p2p_client/app/views/layouts/application.html.erb:39: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...if sellervalue[:value] == "1" );@output_buffer.safe_concat('
+...                               ^
+/home/code/peer/p2p_client/app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_else, expecting ')'
+');	 else 
+   	     ^
+/home/code/peer/p2p_client/app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_end, expecting ')'
+');	 end 
+   	    ^
+/home/code/peer/p2p_client/app/views/layouts/application.html.erb:77: syntax error, unexpected keyword_ensure, expecting ')'
+/home/code/peer/p2p_client/app/views/layouts/application.html.erb:79: syntax error, unexpected keyword_end, expecting ')'):
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<%= if sellervalue[:value] == "1" %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+    42: 		this.document.location.href = "http://127.0.0.1:3000/items/new?category=" + arr[0] +"&parent=" + arr[1];
+  app/controllers/items_controller.rb:162:in `new'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_104563910_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_101634380_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_105138320_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_93195890_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_94187600_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_93996090_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (undefined local variable or method `seller' for #<#<Class:0xb34a160>:0xb3492d8>):
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<% myval = seller["value"] %>
+    40: 	<% if myval  == "1" %>
+    41: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    42: 	<% else %>
+  app/views/layouts/application.html.erb:39:in `_app_views_layouts_application_html_erb___503348780_93994920_765693988'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_98745740_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_98911950_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (undefined local variable or method `myval' for #<#<Class:0xbcaa674>:0xbca97ec>):
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<!-- <%myval%> -->
+    40: 	<% myval = sellervalue["value"] %>
+    41: 	<% if myval  == "1" %>
+    42: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+  app/views/layouts/application.html.erb:39:in `_app_views_layouts_application_html_erb___503348780_98910800_765693988'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_104398510_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_73914400_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_74576060_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_81225320_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_104749100_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+Errno::ECONNREFUSED (Connection refused - connect(2)):
+  app/controllers/items_controller.rb:101:in `index'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_88619040_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_101814030_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__98305457_105399310_765693988 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__950387857_96111790__207849769 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Connection refused - connect(2)):
+    28: <body>
+    29: 	<% require 'xmlrpc/client'%>
+    30: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    31:     	<% sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    32: <script>
+    33: 	var isSeller = <%= myval = sellervalue["value"] %>;
+    34: </script>
+  app/views/layouts/application.html.erb:31:in `_app_views_layouts_application_html_erb___780985986_96110320__207849769'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__950387857_98255240__207849769 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__950387857_69424060__207849769 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Wrong type NilClass. Not allowed!):
+    28: <body>
+    29: 	<% require 'xmlrpc/client'%>
+    30: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    31:     	<% sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    32: <script>
+    33: 	var isSeller = <%= myval = sellervalue["value"] %>;
+    34: </script>
+  app/views/layouts/application.html.erb:31:in `_app_views_layouts_application_html_erb___780985986_69421950__207849769'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__950387857_92391320__207849769 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Wrong type NilClass. Not allowed!):
+    28: <body>
+    29: 	<% require 'xmlrpc/client'%>
+    30: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    31:     	<% sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    32: <script>
+    33: 	var isSeller = <%= myval = sellervalue["value"] %>;
+    34: </script>
+  app/views/layouts/application.html.erb:31:in `_app_views_layouts_application_html_erb___780985986_92390140__207849769'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__950387857_77213440__207849769 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+    32:     	<% sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    33: <%end%>
+    34: <script>
+    35: 	var isSeller = <%= myval = sellervalue["value"] %>;
+    36: </script>
+    37: <script type="text/javascript" src="/javascripts/storageAPI.js"></script>
+    38: <script type="text/javascript">
+  app/views/layouts/application.html.erb:35:in `_app_views_layouts_application_html_erb___780985986_77212200__207849769'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__950387857_96152420__207849769 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+    64: <div class="sidebar">
+    65: <div id="iframe" class="well">
+    66: <iframe  height=400 width=175 src="http://127.0.0.1:3001/categories" ></iframe>
+    67: <p> HERE	<%= sellervalue["value"] %></p>
+    68: </div>
+    69: </div>
+    70:   <div class="content">
+  app/views/layouts/application.html.erb:67:in `_app_views_layouts_application_html_erb___780985986_96137170__207849769'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__950387857_86919500__207849769 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+    64: <div class="sidebar">
+    65: <div id="iframe" class="well">
+    66: <iframe  height=400 width=175 src="http://127.0.0.1:3001/categories" ></iframe>
+    67: <p> HERE	<%= sellervalue["value"] %></p>
+    68: </div>
+    69: </div>
+    70:   <div class="content">
+  app/views/layouts/application.html.erb:67:in `_app_views_layouts_application_html_erb___780985986_86914550__207849769'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__950387857_98359330__207849769 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__950387857_79844100__207849769 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+Errno::ECONNREFUSED (Connection refused - connect(2)):
+  app/controllers/items_controller.rb:101:in `index'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__950387857_74793820__207849769 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+Errno::ECONNREFUSED (Connection refused - connect(2)):
+  app/controllers/items_controller.rb:101:in `index'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__950387857_90975820__207849769 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__950387857_98228890__207849769 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+Errno::ECONNREFUSED (Connection refused - connect(2)):
+  app/controllers/items_controller.rb:101:in `index'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__950387857_86938350__207849769 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__950387857_77695310__207849769 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+Errno::ECONNREFUSED (Connection refused - connect(2)):
+  app/controllers/items_controller.rb:101:in `index'
+
