@@ -7,7 +7,7 @@ gem 'rake', '0.9.2.2'
 gem "time_diff", "~> 0.2.2"
 
 gem  'mysql2', "~> 0.2.7"
-
+gem 'rails-xmlrpc'
 #Heroku
 gem 'heroku'
 gem 'taps'

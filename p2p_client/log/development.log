@@ -1548,3 +1548,292 @@ ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: searchresu
 NoMethodError (undefined method `bidding' for #<Item:0xd32b218>):
   app/controllers/items_controller.rb:107:in `show'
 
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__528185969_93887680_440211555 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (/home/code/peer/p2p_client/app/views/layouts/application.html.erb:79: syntax error, unexpected keyword_ensure, expecting $end):
+    76: </body>
+    77: </html>
+  
+
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: items: SELECT "items".* FROM "items"):
+  app/controllers/pages_controller.rb:5:in `home'
+
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: items: SELECT "items".* FROM "items"):
+  app/controllers/pages_controller.rb:5:in `home'
+
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: items: SELECT "items".* FROM "items"):
+  app/controllers/pages_controller.rb:5:in `home'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__528185969_103705140_440211555 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (HTTP-Error: 500 Internal Server Error ):
+    35: 	var arr = event.data.split(" ");
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies['email']) %>
+    39: 	<% if @sellervalue == 1 %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+  app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb__650086872_103663350_440211555'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__528185969_111649320_440211555 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (HTTP-Error: 500 Internal Server Error ):
+    35: 	var arr = event.data.split(" ");
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<% if @sellervalue == 1 %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+  app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb__650086872_111647250_440211555'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__528185969_104816010_440211555 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (HTTP-Error: 404 Not Found ):
+    35: 	var arr = event.data.split(" ");
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<% if @sellervalue == 1 %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+  app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb__650086872_104814850_440211555'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__528185969_112101220_440211555 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (HTTP-Error: 404 Not Found ):
+    35: 	var arr = event.data.split(" ");
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<% if @sellervalue == 1 %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+  app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb__650086872_112098030_440211555'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__528185969_106767460_440211555 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (HTTP-Error: 404 Not Found ):
+    35: 	var arr = event.data.split(" ");
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<% if @sellervalue == 1 %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+  app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb__650086872_106766280_440211555'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__528185969_92129360_440211555 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (HTTP-Error: 500 Internal Server Error ):
+    35: 	var arr = event.data.split(" ");
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<% if @sellervalue == 1 %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+  app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb__650086872_92109240_440211555'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__528185969_108780540_440211555 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (HTTP-Error: 404 Not Found ):
+    35: 	var arr = event.data.split(" ");
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<% if @sellervalue == 1 %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+  app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb__650086872_108778730_440211555'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__528185969_94305450_440211555 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (HTTP-Error: 404 Not Found ):
+    35: 	var arr = event.data.split(" ");
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<% if @sellervalue == 1 %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+  app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb__650086872_94181270_440211555'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__528185969_110488090_440211555 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (HTTP-Error: 404 Not Found ):
+    35: 	var arr = event.data.split(" ");
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<% if @sellervalue == 1 %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+  app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb__650086872_110486920_440211555'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__528185969_97817720_440211555 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (HTTP-Error: 404 Not Found ):
+    35: 	var arr = event.data.split(" ");
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<% if @sellervalue == 1 %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+  app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb__650086872_97814210_440211555'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__528185969_111097870_440211555 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Connection refused - connect(2)):
+    35: 	var arr = event.data.split(" ");
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<% if @sellervalue == 1 %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+  app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb__650086872_111096070_440211555'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__528185969_103402280_440211555 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (HTTP-Error: 404 Not Found ):
+    35: 	var arr = event.data.split(" ");
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<% if @sellervalue == 1 %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+  app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb__650086872_103401140_440211555'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__528185969_111867390_440211555 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (HTTP-Error: 404 Not Found ):
+    35: 	var arr = event.data.split(" ");
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<% if @sellervalue == 1 %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+  app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb__650086872_111831370_440211555'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__528185969_105747760_440211555 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (HTTP-Error: 404 Not Found ):
+    35: 	var arr = event.data.split(" ");
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<% if @sellervalue == 1 %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+  app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb__650086872_105746600_440211555'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__528185969_91492160_440211555 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (HTTP-Error: 404 Not Found ):
+    35: 	var arr = event.data.split(" ");
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<% if @sellervalue == 1 %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+  app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb__650086872_91371050_440211555'
+
+
+ActionView::Template::Error (HTTP-Error: 404 Not Found ):
+    35: 	var arr = event.data.split(" ");
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<% if @sellervalue == 1 %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+  app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb__650086872_111873640_440211555'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___960217841_108020190_771810683 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Connection refused - connect(2)):
+    35: 	var arr = event.data.split(" ");
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<% if @sellervalue == 1 %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+  app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb__817954042_108018540_771810683'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___960217841_110608360_771810683 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Uncaught exception undefined method `is_seller?' for #<ActiveRecord::Relation:0xcb3980c> in method Container.is_seller):
+    35: 	var arr = event.data.split(" ");
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<% if @sellervalue == 1 %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+  app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb__817954042_110607220_771810683'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___960217841_110540740_771810683 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Uncaught exception undefined method `is_seller' for #<ActiveRecord::Relation:0xc760c58> in method Container.is_seller):
+    35: 	var arr = event.data.split(" ");
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<% if @sellervalue == 1 %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+  app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb__817954042_110539470_771810683'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___960217841_91802100_771810683 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Uncaught exception undefined method `is_seller' for #<ActiveRecord::Relation:0xcc60f50> in method Container.is_seller):
+    35: 	var arr = event.data.split(" ");
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<% if @sellervalue == 1 %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+  app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb__817954042_91800730_771810683'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___960217841_103240400_771810683 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Uncaught exception undefined method `is_seller' for #<ActiveRecord::Relation:0xc5a9dc4> in method Container.is_seller):
+    35: 	var arr = event.data.split(" ");
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<% if @sellervalue == 1 %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+  app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb__817954042_103239260_771810683'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___960217841_106857450_771810683 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Uncaught exception undefined method `is_seller' for #<ActiveRecord::Relation:0xcb1653c> in method Container.is_seller):
+    35: 	var arr = event.data.split(" ");
+    36: 	<% require 'xmlrpc/client'%>
+    37: 	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    38:     	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+    39: 	<% if @sellervalue == 1 %>
+    40: 		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+    41: 	<% else %>
+  app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb__817954042_106846130_771810683'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___960217841_110406120_771810683 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)

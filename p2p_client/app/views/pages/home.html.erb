@@ -82,7 +82,7 @@ var data = [
 <% if user_signed_in? %>
 
     <div class="hero-unit1">
-      <h2>Welcome, <%= current_user.first_name %> !</h2>
+      <h2>Welcome!</h2>
       <% if current_user.is_seller? %>
           <p> Why delay? Offer your items for bidding :-) </p>
           <a class="btn primary large" href='<%= new_item_path %>'>Offer Your Item »</a>

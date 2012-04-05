@@ -58,3 +58,82 @@ ActionView::Template::Error (undefined method `is_signed_in?' for nil:NilClass):
   app/views/pages/isLoggedIn.html.erb:4:in `_app_views_pages_is_ogged_n_html_erb___681182745_102824390__801446641'
 
 DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/bootstrap_server/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/bootstrap_server/config/routes.rb:1)
+
+SyntaxError (/home/code/peer/bootstrap_server/app/controllers/rpc_controller.rb:17: syntax error, unexpected $end, expecting keyword_end):
+  
+
+
+SyntaxError (/home/code/peer/bootstrap_server/app/controllers/rpc_controller.rb:17: syntax error, unexpected $end, expecting keyword_end):
+  
+
+
+ActionController::RoutingError (undefined local variable or method `exposes_xmlrpc_methods' for RpcController:Class):
+  app/controllers/rpc_controller.rb:6:in `<class:RpcController>'
+  app/controllers/rpc_controller.rb:4:in `<top (required)>'
+
+
+ActionController::RoutingError (undefined local variable or method `exposes_xmlrpc_methods' for RpcController:Class):
+  app/controllers/rpc_controller.rb:6:in `<class:RpcController>'
+  app/controllers/rpc_controller.rb:4:in `<top (required)>'
+
+
+ActionController::RoutingError (undefined local variable or method `exposes_xmlrpc_methods' for RpcController:Class):
+  app/controllers/rpc_controller.rb:6:in `<class:RpcController>'
+  app/controllers/rpc_controller.rb:4:in `<top (required)>'
+
+
+SyntaxError (/home/code/peer/bootstrap_server/app/controllers/rpc_controller.rb:17: syntax error, unexpected $end, expecting keyword_end):
+  
+
+
+ActionController::RoutingError (undefined local variable or method `exposes_xmlrpc_methods' for RpcController:Class):
+  app/controllers/rpc_controller.rb:6:in `<class:RpcController>'
+  app/controllers/rpc_controller.rb:4:in `<top (required)>'
+
+
+ActionController::RoutingError (undefined local variable or method `exposes_xmlrpc_methods' for RpcController:Class):
+  app/controllers/rpc_controller.rb:6:in `<class:RpcController>'
+  app/controllers/rpc_controller.rb:4:in `<top (required)>'
+
+
+ActionController::RoutingError (undefined local variable or method `exposes_xmlrpc_methods' for RpcController:Class):
+  app/controllers/rpc_controller.rb:6:in `<class:RpcController>'
+  app/controllers/rpc_controller.rb:4:in `<top (required)>'
+
+
+ActionController::RoutingError (undefined local variable or method `exposes_xmlrpc_methods' for RpcController:Class):
+  app/controllers/rpc_controller.rb:6:in `<class:RpcController>'
+  app/controllers/rpc_controller.rb:4:in `<top (required)>'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/bootstrap_server/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/bootstrap_server/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/bootstrap_server/config/routes.rb:1)
+
+ActionController::RoutingError (undefined local variable or method `exposes_xmlrpc_methods' for RpcController:Class):
+  app/controllers/rpc_controller.rb:6:in `<class:RpcController>'
+  app/controllers/rpc_controller.rb:4:in `<top (required)>'
+
+
+ActionController::RoutingError (undefined local variable or method `exposes_xmlrpc_methods' for RpcController:Class):
+  app/controllers/rpc_controller.rb:6:in `<class:RpcController>'
+  app/controllers/rpc_controller.rb:4:in `<top (required)>'
+
+
+ActionController::RoutingError (undefined local variable or method `exposes_xmlrpc_methods' for RpcController:Class):
+  app/controllers/rpc_controller.rb:6:in `<class:RpcController>'
+  app/controllers/rpc_controller.rb:4:in `<top (required)>'
+
+
+ActionController::RoutingError (undefined local variable or method `exposes_xmlrpc_methods' for RpcController:Class):
+  app/controllers/rpc_controller.rb:6:in `<class:RpcController>'
+  app/controllers/rpc_controller.rb:4:in `<top (required)>'
+
+
+ActionController::RoutingError (undefined local variable or method `exposes_xmlrpc_methods' for RpcController:Class):
+  app/controllers/rpc_controller.rb:6:in `<class:RpcController>'
+  app/controllers/rpc_controller.rb:4:in `<top (required)>'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/bootstrap_server/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/bootstrap_server/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/bootstrap_server/config/routes.rb:1)

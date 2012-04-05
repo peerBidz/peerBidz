@@ -33,7 +33,14 @@ var src = 'http://127.0.0.1:3000/categories#' + encodeURIComponent(document.loca
 function listener(event)
 {
 	var arr = event.data.split(" ");
-	this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+	<% require 'xmlrpc/client'%>
+	<% @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001) %>
+    	<% @sellervalue = @btserver.call("Container.is_seller", cookies[:email]) %>
+	<% if @sellervalue == 1 %>
+		this.document.location.href = "http://127.0.0.1:3000/items?browse=" + arr[0] +"&parent=" + arr[1];
+	<% else %>
+		this.document.location.href = "http://127.0.0.1:3000/items/new?category=" + arr[0] +"&parent=" + arr[1];
+	<% end %>
 }
 
 if(window.addEventListener){
