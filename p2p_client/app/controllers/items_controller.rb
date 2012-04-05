@@ -20,7 +20,7 @@ class ItemsController < ApplicationController
       @sellerIPAddress = Ipaddress.where("category = :ct AND iptype = :it", {:ct => cookies[:CURRCATEGORY], :it => "parent"})
 
       @sellerIPAddress.length.times do |i|
-        @server1 = XMLRPC::Client.new(@sellerIPAddress[i].ipaddress, "/api/xmlrpc", 3002)
+        @server1 = XMLRPC::Client.new(@sellerIPAddress[i].ipaddress, "/api/xmlrpc", 3000)
         @ip_address = @server1.call("Container.get_sellerorigin", @search_string, cookies[:CURRCATEGORY], @my_address)
         if @ip_address["value"] != nil
           @dbvalue = Searchresults.new
@@ -105,7 +105,7 @@ class ItemsController < ApplicationController
       @is_parentbackuppresent = Ipaddress.where("category = :ct AND iptype = :it", {:ct => params[:browse], :it => "parentbackup"})
       
       if @is_parentbackuppresent.length == 0
-        @server1 = XMLRPC::Client.new(@parentip, "/api/xmlrpc", 3002)
+        @server1 = XMLRPC::Client.new(@parentip, "/api/xmlrpc", 3000)
         @sellervalue = @server1.call("Container.method_name", params[:browse])
     
         if @sellervalue.length != 0

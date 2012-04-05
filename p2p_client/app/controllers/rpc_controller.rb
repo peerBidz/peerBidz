@@ -53,7 +53,7 @@ class RpcController < ApplicationController
     @neighbours.length.times do |i|
       @sucessor = @neighbours[i].ipaddress
 
-      @server1 = XMLRPC::Client.new(@successor, "/api/xmlrpc", 3003)
+      @server1 = XMLRPC::Client.new(@successor, "/api/xmlrpc", 3000)
       @server1.call2_async("Container.get_sellerip", search_string,category_name, @ip_address, @search.id)
       { "value" => nil}
     end
@@ -75,12 +75,12 @@ class RpcController < ApplicationController
       @neighbours.length.times do |i|
         @sucessor = @neighbours[i].ipaddress
           
-        @server1 = XMLRPC::Client.new(@successor, "/api/xmlrpc", 3004)
+        @server1 = XMLRPC::Client.new(@successor, "/api/xmlrpc", 3000)
         @server1.call2_async("Container.get_sellerip", search_string,category_name, ip_address)
       end
 
       if @items == nil
-          @server1 = XMLRPC::Client.new(ip_address, "/api/xmlrpc", 3002)
+          @server1 = XMLRPC::Client.new(ip_address, "/api/xmlrpc", 3000)
           @server1.call2_async("Container.get_itemavailability", my_address, search_id)
       end 
     end
