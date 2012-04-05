@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
           @dbvalue = Searchresults.new
           @dbvalue.search_string = @ip_address["search"]
           @dbvalue.category = @ip_address["category"]
-          @dbvaulue.ipaddress = @ip_address["value"]
+          @dbvalue.ipaddress = @ip_address["value"]
           @dbvalue.save
         end
       end
@@ -40,23 +40,29 @@ class ItemsController < ApplicationController
      :expires => 1.year.from_now
     }
 
-    @checkcategory = Ipaddress.find_all_by_category(params[:browse]) 
-   
-    if (@checkcategory.length == 0)
-      @parentip = params[:parent]
-      @category = params[:browse] 
-      @mydb = Ipaddress.new 
-      @mydb.ipaddress = @parentip
-      @mydb.category = @category
-      @mydb.iptype = 'parent' 
-      @mydb.save 
-    else
-      @checkcategory.each {|f| @parentip = f.ipaddress }
-    end
 
-#    if current_user.is_seller?
+    @btserver = XMLRPC::Client.new("127.0.0.1", "/api/xmlrpc", 3001)
+    @sellervalue = @btserver.call("Container.is_seller", cookies['email'])
+
+   if @sellervalue["value"] == "1"
+      
        
-#    else
+   else
+
+      @checkcategory = Ipaddress.find_all_by_category(params[:browse])
+  
+      if (@checkcategory.length == 0)
+        @parentip = params[:parent]
+        @category = params[:browse]
+        @mydb = Ipaddress.new
+        @mydb.ipaddress = @parentip
+        @mydb.category = @category
+        @mydb.iptype = 'parent'
+        @mydb.save
+      else
+        @checkcategory.each {|f| @parentip = f.ipaddress }
+      end
+
       @is_parentbackuppresent = Ipaddress.where("category = :ct AND iptype = :it", {:ct => params[:browse], :it => "parentbackup"})
       
       if @is_parentbackuppresent.length == 0
@@ -71,7 +77,7 @@ class ItemsController < ApplicationController
           @newdata.save
         end
       end
-#    end
+   end
 
     #@values = "%#{params[:browse]}%"       for debugging purpose WJ
 
@@ -83,7 +89,7 @@ class ItemsController < ApplicationController
       @dbvalue = Searchresults.new
       @dbvalue.search_string = @searchstring
       @dbvalue.category = @category
-      @dbvaulue.ipaddress = @ipaddress
+      @dbvalue.ipaddress = @ipaddress
       @dbvalue.save
 
 #    end
