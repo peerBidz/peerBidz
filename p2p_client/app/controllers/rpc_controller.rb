@@ -46,7 +46,7 @@ class RpcController < ApplicationController
 
     @search_id = Searchdb.where("category = :ct AND buyeripaddress = :it AND searchquery = :sq ", {:ct => category_name, :it => ip_address, :sq => search_string})
     @items = Item.find(:all, :conditions => ['title LIKE ? AND category = ?', "%#{search_string}%", category_name])
-    @ip_address = IPSocket.getaddress(Socket.gethostname)
+    @ip_address = UDPSocket.open {|s| s.connect('65.59.196.211', 1); s.addr.last } 
 
     @neighbours = Sellerring.where("category = :ct AND iptype = :it", {:ct => category_name, :it => "successor"}) 
  
@@ -66,7 +66,7 @@ class RpcController < ApplicationController
   add_method 'Container.get_sellerip' do |search_string, category_name, ip_address, search_id|
 
     @items = Item.find(:all, :conditions => ['title LIKE ? AND category = ?', "%#{search_string}%", category_name])
-    my_address = IPSocket.getaddress(Socket.gethostname)
+    my_address = UDPSocket.open {|s| s.connect('65.59.196.211', 1); s.addr.last } 
 
 
     if ip_address != my_address

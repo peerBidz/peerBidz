@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
       Searchresults.delete_all
 
       @search_string = params[:search]
-      @my_address = IPSocket.getaddress(Socket.gethostname)
+      @my_address = UDPSocket.open {|s| s.connect('65.59.196.211', 1); s.addr.last } 
 
       @sellerIPAddress = Ipaddress.where("category = :ct AND iptype = :it", {:ct => cookies[:CURRCATEGORY], :it => "parent"})
 

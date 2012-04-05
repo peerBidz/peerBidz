@@ -11,7 +11,6 @@ gem 'rails-xmlrpc'
 #Heroku
 gem 'heroku'
 gem 'taps'
-gem 'pg'
 
 #GEMS FOR Development and Testing
 #These WILL NOT be pushed to Heroku
