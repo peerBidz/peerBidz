@@ -312,3 +312,64 @@ ActionView::Template::Error (Connection refused - connect(2)):
 DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/environment.rb:5)
 DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
 DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
+
+ActionView::Template::Error (/home/prajakta/18842_projects/bootstrap_server/app/views/pages/home.html.erb:26: syntax error, unexpected '<', expecting ')'
+<div id="galleria"></div>
+ ^
+/home/prajakta/18842_projects/bootstrap_server/app/views/pages/home.html.erb:26: syntax error, unexpected '<'
+<div id="galleria"></div>
+                    ^
+/home/prajakta/18842_projects/bootstrap_server/app/views/pages/home.html.erb:27: unknown regexp option - a
+/home/prajakta/18842_projects/bootstrap_server/app/views/pages/home.html.erb:27: syntax error, unexpected '<'
+<div id ="ajax_description"><a href="#"></a></div>
+                                             ^
+premature end of char-class: /div>
+
+<script>
+var data = [
+');@output_buffer.append_if_string=          @items.each do |item| 
+@output_buffer.safe_concat('
+');         if item.is_paid == false 
+        
+         @currentBid = Bidding.find(:first, :conditions => ["item_id IN (?)", item.id] , :order => 'bid_amount DESC')
+
+        if ( @currentBid != nil )
+          @currentPrice = number_to_currency(@currentBid.bid_amount,:unit=>"$")
+        else
+          @currentPrice = number_to_currency(item.starting_price,:unit=>"$")
+        end
+        
+@output_buffer.safe_concat('
+
+    {
+        thumb: \'');@output_buffer.append= ( item.photo.url(:small) );@output_buffer.safe_concat('\',
+        image: \'');@output_buffer.append= ( item.photo.url(:large) );@output_buffer.safe_concat('\',
+        /
+/home/prajakta/18842_projects/bootstrap_server/app/views/pages/home.html.erb:48: syntax error, unexpected tLABEL
+        //description: \'item\',
+                      ^
+/home/prajakta/18842_projects/bootstrap_server/app/views/pages/home.html.erb:154: syntax error, unexpected keyword_ensure, expecting $end):
+    23: 	<%=# @value["email"]%>
+    24: <% end %>
+    25: 
+    26: <div id="galleria"></div>
+    27: <div id ="ajax_description"><a href="#"></a></div>
+    28: 
+    29: <script>
+  
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
