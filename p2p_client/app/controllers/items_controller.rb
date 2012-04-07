@@ -42,82 +42,72 @@ class ItemsController < ApplicationController
 
 
     myBoot = Sellerring.where("iptype= ?", "bootstrap").first 
-    bootIP = myBoot.ipaddress
 
-    @btserver = XMLRPC::Client.new(bootIP, "/api/xmlrpc", 3001)
-
-    #if params[:us] != nil 
-    #@sellervalue = @btserver.call("Container.get_seller", params[:user])
-    #end
-
-    #if @sellervalue["value"] == "1"
     @userinfo = Mydata.first
     if @userinfo != nil
 	if @userinfo.is_seller?
 
-      @checkcategory = Sellerring.where("category = :ct AND iptype = :pt", {:ct => params[:browse], :pt => "successor"})
+      		@checkcategory = Sellerring.where("category = :ct AND iptype = :pt", {:ct => params[:browse], :pt => "successor"})
   
-      if @checkcategory == nil
-        @successorip = params[:parent]
-        @category = params[:browse]
-        @mydb = Sellerring.new
-        @mydb.ipaddress = @successorip
-        @mydb.category = @category
-        @mydb.iptype = 'successor'
-        @mydb.save
-      else
-        @checkcategory.each {|f| @successorip = f.ipaddress }
-      end
+      		if @checkcategory == nil
+        		@successorip = params[:parent]
+        		@category = params[:browse]
+        		@mydb = Sellerring.new
+        		@mydb.ipaddress = @successorip
+        		@mydb.category = @category
+        		@mydb.iptype = 'successor'
+        		@mydb.save
+      		else
+        		@checkcategory.each {|f| @successorip = f.ipaddress }
+      		end
 
-     #if @sellervalue["value"] != nil
+      		 @checkcategory = Sellerring.where("category = :ct AND iptype = :pt", {:ct => params[:browse], :pt => "predecessor"})
 
-       @checkcategory = Sellerring.where("category = :ct AND iptype = :pt", {:ct => params[:browse], :pt => "predecessor"})
-
-      if @checkcategory == nil
-        @predecessorip = @sellervalue["value"]
-        @category = params[:browse]
-        @mydb = Sellerring.new
-        @mydb.ipaddress = @predecessorip
-        @mydb.category = @category
-        @mydb.iptype = 'predecessor'
-        @mydb.save
-      end     
-     end
+      		if @checkcategory == nil
+        		@predecessorip = @sellervalue["value"]
+        		@category = params[:browse]
+        		@mydb = Sellerring.new
+        		@mydb.ipaddress = @predecessorip
+        		@mydb.category = @category
+        		@mydb.iptype = 'predecessor'
+        		@mydb.save
+      		end     
+     	end
        
-   else
+   	else
 
-      @checkcategory = Ipaddress.find_all_by_category(params[:browse])
+      		@checkcategory = Ipaddress.find_all_by_category(params[:browse])
   
-      if (@checkcategory.length == 0)
-        @parentip = params[:parent]
-        @category = params[:browse]
-        @mydb = Ipaddress.new
-        @mydb.ipaddress = @parentip
-        @mydb.category = @category
-        @mydb.iptype = 'parent'
-        @mydb.save
-      else
-        @checkcategory.each {|f| @parentip = f.ipaddress }
-      end
+      		if (@checkcategory.length == 0)
+        		@parentip = params[:parent]
+        		@category = params[:browse]
+        		@mydb = Ipaddress.new
+        		@mydb.ipaddress = @parentip
+        		@mydb.category = @category
+        		@mydb.iptype = 'parent'
+        		@mydb.save
+      		else
+        		@checkcategory.each {|f| @parentip = f.ipaddress }
+      		end
 
-      @is_parentbackuppresent = Ipaddress.where("category = :ct AND iptype = :it", {:ct => params[:browse], :it => "parentbackup"})
+      		@is_parentbackuppresent = Ipaddress.where("category = :ct AND iptype = :it", {:ct => params[:browse], :it => "parentbackup"})
       
-      if @is_parentbackuppresent.length == 0
-        @server1 = XMLRPC::Client.new(@parentip, "/api/xmlrpc", 3000)
-        @sellervalue = @server1.call("Container.method_name", params[:browse])
+     	 	if @is_parentbackuppresent.length == 0
+        		@server1 = XMLRPC::Client.new(@parentip, "/api/xmlrpc", 3000)
+        		@sellervalue = @server1.call("Container.method_name", params[:browse])
     
-        if @sellervalue.length != 0
-          @newdata = Ipaddress.new
-          @newdata.ipaddress = @sellervalue["value"]
-          @newdata.iptype = 'parentbackup'
-          @newdata.category = params[:browse]
-          @newdata.save
-        end
-      end
+        	if @sellervalue.length != 0
+          		@newdata = Ipaddress.new
+          		@newdata.ipaddress = @sellervalue["value"]
+          		@newdata.iptype = 'parentbackup'
+          		@newdata.category = params[:browse]
+          		@newdata.save
+        	end
+      	end
    end
 
 
-    elsif params[:results]
+   elsif params[:results]
       @ipaddress = params[:results]
       @category = params[:category]
       @searchstring = params[:searchstring]
@@ -128,10 +118,8 @@ class ItemsController < ApplicationController
       @dbvalue.ipaddress = @ipaddress
       @dbvalue.save
 
-#    end
-
     else
-    @items = Searchresults.all
+	    @items = Searchresults.all
     end
 
     respond_to do |format|
