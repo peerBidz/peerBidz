@@ -52,26 +52,34 @@ class ItemsController < ApplicationController
       		if @checkcategory == nil
         		@successorip = params[:parent]
         		@category = params[:browse]
-        		@mydb = Sellerring.new
-        		@mydb.ipaddress = @successorip
-        		@mydb.category = @category
-        		@mydb.iptype = 'successor'
-        		@mydb.save
+			if @sucessorip != nil
+        			@mydb = Sellerring.new
+        			@mydb.ipaddress = @successorip
+        			@mydb.category = @category
+        			@mydb.iptype = 'successor'
+        			@mydb.save
+			end
       		else
         		@checkcategory.each {|f| @successorip = f.ipaddress }
       		end
 
       		 @checkcategory = Sellerring.where("category = :ct AND iptype = :pt", {:ct => params[:browse], :pt => "predecessor"})
 
-      		if @checkcategory == nil
-        		@predecessorip = @sellervalue["value"]
-        		@category = params[:browse]
-        		@mydb = Sellerring.new
-        		@mydb.ipaddress = @predecessorip
-        		@mydb.category = @category
-        		@mydb.iptype = 'predecessor'
-        		@mydb.save
-      		end     
+      		if @successorip != nil
+			if @checkcategory == nil
+        			@serverPre = XMLRPC::Client.new(@parentip, "/api/xmlrpc", 3000)
+        			@sellervalue = @serverPre.call("Container.sellermethod", my_address)
+        			@predecessorip = @sellervalue["value"]
+				if @predecessorip != nil
+        				@category = params[:browse]
+        				@mydb = Sellerring.new
+        				@mydb.ipaddress = @predecessorip
+        				@mydb.category = @category
+        				@mydb.iptype = 'predecessor'
+        				@mydb.save
+				end
+      			end     
+		end
      	end
        
    	else
