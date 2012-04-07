@@ -27,6 +27,16 @@ class RpcController < ApplicationController
        puts predecessor
     else
        puts "Not in var count"
+
+       # If there only two sellers in a category case
+       dbvalue = Sellerring.new
+       dbvalue.ipaddress = ipaddress
+       dbvalue.iptype = 'successor'
+       dbvalue.category = category
+       dbvalue.updated_at = DateTime.now
+       dbvalue.created_at = DateTime.now
+       dbvalue.save
+
        predecessor = 0
     end
 
