@@ -1,7 +1,9 @@
 require 'xmlrpc/server'
+require 'xmlrpc/client'
 require 'socket'
 
 class RpcController < ApplicationController
+
 
   exposes_xmlrpc_methods
 
@@ -18,7 +20,6 @@ class RpcController < ApplicationController
 
      @myvar = Sellerring.where("category = :ct AND iptype = :pt", {:ct => category, :pt => "predecessor"})
 
-     puts "#ipaddress"
      @dbvalue = Sellerring.new
      @dbvalue.ipaddress = ipaddress
      @dbvalue.iptype = 'predecessor'
@@ -100,11 +101,12 @@ class RpcController < ApplicationController
 
         end
     end
-  add_method 'Container.getIdentity' do |isSeller,email|
+  add_method 'Container.getIdentity' do |isSeller,email,ipaddress|
    
 	@identDB = Mydata.new
 	@identDB.email = email
 	@identDB.is_seller = isSeller
+        @identDB.ipaddress = ipaddress
 	@identDB.save
   end 
 end
