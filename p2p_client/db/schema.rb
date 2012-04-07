@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(:version => 20120406000701) do
 
   create_table "mydata", :force => true do |t|
     t.string   "email"
+    t.string   "localaddress"
     t.boolean  "is_seller"
     t.datetime "created_at"
     t.datetime "updated_at"

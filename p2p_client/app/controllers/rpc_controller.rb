@@ -106,7 +106,7 @@ class RpcController < ApplicationController
 	@identDB = Mydata.new
 	@identDB.email = email
 	@identDB.is_seller = isSeller
-        @identDB.ipaddress = ipaddress
+        @identDB.localaddress = ipaddress
 	@identDB.save
   end 
 end
