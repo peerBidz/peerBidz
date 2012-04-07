@@ -769,3 +769,38 @@ ActionView::Template::Error (undefined method `ipaddress' for nil:NilClass):
   app/views/devise/sessions/new.html.erb:2:in `_app_views_devise_sessions_new_html_erb___4197490305265482307_70254896860140__1839816148402005092'
 
 DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___3602917543152460437_22907740__1839816148402005092 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+
+Timeout::Error (Timeout::Error):
+  app/controllers/items_controller.rb:109:in `index'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__713945293_107126490__1004564585 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__713945293_106731750__1004564585 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__713945293_98680810__1004564585 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__331045734_110411360_55798734 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__331045734_106281870_55798734 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__331045734_111430180_55798734 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (undefined method `is_seller' for nil:NilClass):
+    13: 			<li>
+    14: 				<a href="#tabs-1">My watchlist items</a>
+    15: 			</li>
+    16: 			<% if current_user.is_seller != true %>
+    17: 			<li>
+    18: 				<a href="#tabs-2">Items I have won</a>
+    19: 			</li>
+  app/views/pages/myaccount.html.erb:16:in `_app_views_pages_myaccount_html_erb___156039468_92500490_55798734'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__331045734_103336960_55798734 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__331045734_103973770_55798734 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__331045734_111659670_55798734 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__331045734_100725780_55798734 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+Timeout::Error (execution expired):
+  app/controllers/items_controller.rb:109:in `index'
+
