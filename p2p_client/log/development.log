@@ -804,3 +804,11 @@ DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>
 Timeout::Error (execution expired):
   app/controllers/items_controller.rb:109:in `index'
 
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___225369111_103780510_259973839 at /home/code/peer/p2p_client/app/views/pages/home.html.erb:26)
+
+Timeout::Error (Timeout::Error):
+  app/controllers/items_controller.rb:109:in `index'
+

@@ -51,7 +51,9 @@ class ItemsController < ApplicationController
     #end
 
     #if @sellervalue["value"] == "1"
-    if params[:isSeller] == "1"
+    @userinfo = Mydata.first
+    if @userinfo != nil
+	if @userinfo.is_seller?
 
       @checkcategory = Sellerring.where("category = :ct AND iptype = :pt", {:ct => params[:browse], :pt => "successor"})
   
@@ -67,11 +69,7 @@ class ItemsController < ApplicationController
         @checkcategory.each {|f| @successorip = f.ipaddress }
       end
 
-     #@server = XMLRPC::Client.new(params[:parent], "/api/xmlrpc", 3001)
-     #@sellervalue = @server.call("Container.", params[:user])
-
      #if @sellervalue["value"] != nil
-     if params[:isSeller] != nil
 
        @checkcategory = Sellerring.where("category = :ct AND iptype = :pt", {:ct => params[:browse], :pt => "predecessor"})
 
@@ -118,7 +116,6 @@ class ItemsController < ApplicationController
       end
    end
 
-    #@values = "%#{params[:browse]}%"       for debugging purpose WJ
 
     elsif params[:results]
       @ipaddress = params[:results]
