@@ -20,21 +20,28 @@ class RpcController < ApplicationController
 
      @myvar = Sellerring.where("category = :ct AND iptype = :pt", {:ct => category, :pt => "predecessor"})
 
-     @dbvalue = Sellerring.new
-     @dbvalue.ipaddress = ipaddress
-     @dbvalue.iptype = 'predecessor'
-     @dbvalue.category = category
-     @dbvalue.updated_at = DateTime.now
-     @dbvalue.created_at = DateTime.now
-     @dbvalue.save 
-	
      if @myvar.count != 0
-       @predecessor = @myvar.ipaddress
-       @myvar.destroy
-       { "value" => @predecessor }
+       predecessor = @myvar.first.ipaddress
+       @myvar.first.destroy
+       puts "Var Count"
+       puts predecessor
     else
-       { "value" => nil }
+       puts "Not in var count"
+       predecessor = 0
     end
+
+
+     dbvalue = Sellerring.new
+     dbvalue.ipaddress = ipaddress
+     dbvalue.iptype = 'predecessor'
+     dbvalue.category = category
+     dbvalue.updated_at = DateTime.now
+     dbvalue.created_at = DateTime.now
+     dbvalue.save 
+
+     { "value" => predecessor }
+
+	
   end
 
   add_method 'Container.get_sellerorigin' do |search_string, category_name, ip_address|
