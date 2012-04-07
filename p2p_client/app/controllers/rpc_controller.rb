@@ -17,8 +17,9 @@ class RpcController < ApplicationController
   add_method 'Container.sellermethod' do |ipaddress, category|
 
      @myvar = Sellerring.where("category = :ct AND iptype = :pt", {:ct => category, :pt => "predecessor"})
-	 
-	 @dbvalue = Sellerring.new
+
+     puts "#ipaddress"
+     @dbvalue = Sellerring.new
      @dbvalue.ipaddress = ipaddress
      @dbvalue.iptype = 'predecessor'
      @dbvalue.category = category
@@ -26,12 +27,12 @@ class RpcController < ApplicationController
      @dbvalue.created_at = DateTime.now
      @dbvalue.save 
 	
-	 if @myvar != nil
-	  @predecessor = @myvar.ipaddress
-	  @myvar.destroy
-	  { "value" => @predecessor }
+     if @myvar.count != 0
+       @predecessor = @myvar.ipaddress
+       @myvar.destroy
+       { "value" => @predecessor }
     else
-      { "value" => nil }
+       { "value" => nil }
     end
   end
 
