@@ -9,13 +9,13 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.xml
   def index
+      @my_address = UDPSocket.open {|s| s.connect('65.59.196.211', 1); s.addr.last } 
     if params[:search]
 #      @items = Item.find(:all, :conditions => ['title LIKE ? AND category = ?', "%#{params[:search]}%", cookies[:CURRCATEGORY]])
       # Lets clear the Searchresults DB
       Searchresults.delete_all
 
       @search_string = params[:search]
-      @my_address = UDPSocket.open {|s| s.connect('65.59.196.211', 1); s.addr.last } 
 
       @sellerIPAddress = Ipaddress.where("category = :ct AND iptype = :it", {:ct => cookies[:CURRCATEGORY], :it => "parent"})
 
@@ -46,13 +46,17 @@ class ItemsController < ApplicationController
     @userinfo = Mydata.first
     if @userinfo != nil
 	if @userinfo.is_seller?
-
-      		@checkcategory = Sellerring.where("category = :ct AND iptype = :pt", {:ct => params[:browse], :pt => "successor"})
+		puts "i am a seller"
+      	
+		
+		@checkcategory = Sellerring.where("category = :ct AND iptype = :pt", {:ct => params[:browse], :pt => "successor"})
   
-      		if @checkcategory == nil
+      		if @checkcategory.count == 0
+			puts "no successor"
         		@successorip = params[:parent]
         		@category = params[:browse]
-			if @sucessorip != nil
+			if @successorip != nil
+				puts "adding a succesor"
         			@mydb = Sellerring.new
         			@mydb.ipaddress = @successorip
         			@mydb.category = @category
@@ -66,14 +70,23 @@ class ItemsController < ApplicationController
       		 @checkcategory = Sellerring.where("category = :ct AND iptype = :pt", {:ct => params[:browse], :pt => "predecessor"})
 
       		if @successorip != nil
-			if @checkcategory == nil
-        			@serverPre = XMLRPC::Client.new(@parentip, "/api/xmlrpc", 3000)
-        			@sellervalue = @serverPre.call("Container.sellermethod", my_address)
+			puts "successor isn't nil"
+			if @checkcategory.count == 0
+				puts "no predecessor"
+        			@serverPre = XMLRPC::Client.new(params[:parent], "/api/xmlrpc", 3000)
+        			@sellervalue = @serverPre.call("Container.sellermethod", @userinfo.localaddress, params[:browse])
         			@predecessorip = @sellervalue["value"]
-				if @predecessorip != nil
+				if @predecessorip != 0
         				@category = params[:browse]
         				@mydb = Sellerring.new
         				@mydb.ipaddress = @predecessorip
+        				@mydb.category = @category
+        				@mydb.iptype = 'predecessor'
+        				@mydb.save
+				else
+        				@category = params[:browse]
+        				@mydb = Sellerring.new
+        				@mydb.ipaddress = @successorip
         				@mydb.category = @category
         				@mydb.iptype = 'predecessor'
         				@mydb.save
