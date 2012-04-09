@@ -1,0 +1,33 @@
+<%= form_for(@sellerring) do |f| %>
+  <% if @sellerring.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sellerring.errors.count, "error") %> prohibited this sellerring from being saved:</h2>
+
+      <ul>
+      <% @sellerring.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ip %><br />
+    <%= f.text_field :ip %>
+  </div>
+  <div class="field">
+    <%= f.label :predecessor %><br />
+    <%= f.text_field :predecessor %>
+  </div>
+  <div class="field">
+    <%= f.label :successor %><br />
+    <%= f.text_field :successor %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br />
+    <%= f.text_field :category %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

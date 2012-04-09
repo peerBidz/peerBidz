@@ -1,0 +1,2 @@
+module SellerringsHelper
+end

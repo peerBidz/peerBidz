@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  ip: MyString
+  predecessor: MyString
+  successor: MyString
+  category: MyString
+
+two:
+  ip: MyString
+  predecessor: MyString
+  successor: MyString
+  category: MyString

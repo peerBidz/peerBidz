@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Ip:</b>
+  <%= @sellerring.ip %>
+</p>
+
+<p>
+  <b>Predecessor:</b>
+  <%= @sellerring.predecessor %>
+</p>
+
+<p>
+  <b>Successor:</b>
+  <%= @sellerring.successor %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @sellerring.category %>
+</p>
+
+
+<%= link_to 'Edit', edit_sellerring_path(@sellerring) %> |
+<%= link_to 'Back', sellerrings_path %>
