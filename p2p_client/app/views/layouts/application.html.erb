@@ -58,6 +58,10 @@ function listener(event)
 	}
 	else
 	{
+		if( arr[1] == "")
+		{
+			arr[1] = "0";
+		}
 		this.document.location.href = "/items?browse=" + arr[0] +"&parent=" + arr[1] + "&isSeller=" + 0;
 	
 	/*if(isSeller == 0)
