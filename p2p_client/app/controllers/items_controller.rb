@@ -56,12 +56,14 @@ class ItemsController < ApplicationController
         		@successorip = params[:parent]
         		@category = params[:browse]
 			if @successorip != nil
-				puts "adding a succesor"
-        			@mydb = Sellerring.new
-        			@mydb.ipaddress = @successorip
-        			@mydb.category = @category
-        			@mydb.iptype = 'successor'
-        			@mydb.save
+				if @successorip != 0
+					puts "adding a succesor"
+        				@mydb = Sellerring.new
+        				@mydb.ipaddress = @successorip
+        				@mydb.category = @category
+        				@mydb.iptype = 'successor'
+        				@mydb.save
+				end
 			end
       		else
         		@checkcategory.each {|f| @successorip = f.ipaddress }
@@ -98,8 +100,8 @@ class ItemsController < ApplicationController
    	else
 
       		@checkcategory = Ipaddress.find_all_by_category(params[:browse])
-  
-      		if (@checkcategory.length == 0)
+  		puts "buyer"
+      		if (@checkcategory.count == 0)
         		@parentip = params[:parent]
         		@category = params[:browse]
         		@mydb = Ipaddress.new
@@ -107,6 +109,7 @@ class ItemsController < ApplicationController
         		@mydb.category = @category
         		@mydb.iptype = 'parent'
         		@mydb.save
+			puts "saved parent"
       		else
         		@checkcategory.each {|f| @parentip = f.ipaddress }
       		end
