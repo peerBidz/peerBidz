@@ -39,6 +39,7 @@ class RpcController < ApplicationController
 
        predecessor = 0
     end
+end
   add_method 'Container.updateSucessor' do |ipaddress, category|
 
      @myvar = Sellerring.where("category = :ct AND iptype = :pt", {:ct => category, :pt => "successor"}).first
