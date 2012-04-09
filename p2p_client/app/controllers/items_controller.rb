@@ -79,15 +79,15 @@ class ItemsController < ApplicationController
 				puts "no predecessor"
         			@serverPre = XMLRPC::Client.new(params[:parent], "/api/xmlrpc", 3000)
         			@sellervalue = @serverPre.call("Container.sellermethod", @userinfo.localaddress, params[:browse])
-        			@predecessorip = @sellervalue["value"]
-				if @predecessorip != 0
+        			predecessorip = @sellervalue["value"]
+				if predecessorip != 0
         				@category = params[:browse]
         				@mydb = Sellerring.new
-        				@mydb.ipaddress = @predecessorip
+        				@mydb.ipaddress = predecessorip
         				@mydb.category = @category
         				@mydb.iptype = 'predecessor'
         				@mydb.save
-        				@mypred = XMLRPC::Client.new(@predecessorip, "/api/xmlrpc", 3000)
+        				@mypred = XMLRPC::Client.new(predecessorip, "/api/xmlrpc", 3000)
         				@mypred.call_async("Container.updateSuccessor", @userinfo.localaddress, @category)
 					
 				else
