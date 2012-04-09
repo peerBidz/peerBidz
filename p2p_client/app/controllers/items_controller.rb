@@ -73,6 +73,7 @@ class ItemsController < ApplicationController
       		 @checkcategory = Sellerring.where("category = :ct AND iptype = :pt", {:ct => params[:browse], :pt => "predecessor"})
 
       		if @successorip != nil
+		if @successorip != "0"
 			puts "successor isn't nil"
 			if @checkcategory.count == 0
 				puts "no predecessor"
@@ -97,6 +98,7 @@ class ItemsController < ApplicationController
       			end     
 		end
      	end
+	end
        
    	else
 
