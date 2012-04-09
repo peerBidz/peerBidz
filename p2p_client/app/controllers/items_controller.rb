@@ -87,6 +87,9 @@ class ItemsController < ApplicationController
         				@mydb.category = @category
         				@mydb.iptype = 'predecessor'
         				@mydb.save
+        				@mypred = XMLRPC::Client.new(@predecessorip, "/api/xmlrpc", 3000)
+        				@mypred.call_async("Container.updateSuccessor", @userinfo.localaddress, @category)
+					
 				else
         				@category = params[:browse]
         				@mydb = Sellerring.new

@@ -39,18 +39,11 @@ class RpcController < ApplicationController
 
        predecessor = 0
     end
+  add_method 'Container.updateSucessor' do |ipaddress, category|
 
-
-     dbvalue = Sellerring.new
-     dbvalue.ipaddress = ipaddress
-     dbvalue.iptype = 'predecessor'
-     dbvalue.category = category
-     dbvalue.updated_at = DateTime.now
-     dbvalue.created_at = DateTime.now
-     dbvalue.save 
-
-     { "value" => predecessor }
-
+     @myvar = Sellerring.where("category = :ct AND iptype = :pt", {:ct => category, :pt => "successor"}).first
+     @myvar.ipaddress = ipaddress
+     @myvar.save
 	
   end
 
