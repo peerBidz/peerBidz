@@ -55,10 +55,11 @@ class ItemsController < ApplicationController
 			puts "no successor"
         		@successorip = params[:parent]
         		@category = params[:browse]
-			if @successorip != nil
-				if @successorip != 0
+			if params[:parent] != nil
+				if params[:parent] != "0"
 					puts "adding a succesor"
-        				@mydb = Sellerring.new
+        				puts params[:parent]
+					@mydb = Sellerring.new
         				@mydb.ipaddress = @successorip
         				@mydb.category = @category
         				@mydb.iptype = 'successor'
