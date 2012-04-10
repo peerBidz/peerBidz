@@ -73,35 +73,34 @@ class ItemsController < ApplicationController
       		 @checkcategory = Sellerring.where("category = :ct AND iptype = :pt", {:ct => params[:browse], :pt => "predecessor"})
 
       		if @successorip != nil
-		if @successorip != "0"
-			puts "successor isn't nil"
-			if @checkcategory.count == 0
-				puts "no predecessor"
-        			@serverPre = XMLRPC::Client.new(params[:parent], "/api/xmlrpc", 3000)
-        			@sellervalue = @serverPre.call("Container.sellermethod", @userinfo.localaddress, params[:browse])
-        			predecessorip = @sellervalue["value"]
-				if predecessorip != 0
-        				@category = params[:browse]
-        				@mydb = Sellerring.new
-        				@mydb.ipaddress = predecessorip
-        				@mydb.category = @category
-        				@mydb.iptype = 'predecessor'
-        				@mydb.save
-        				@mypred = XMLRPC::Client.new(predecessorip, "/api/xmlrpc", 3000)
-        				@mypred.call_async("Container.updateSuccessor", @userinfo.localaddress, @category)
+			if @successorip != "0"
+				puts "successor isn't nil"
+				if @checkcategory.count == 0
+					puts "no predecessor"
+        				@serverPre = XMLRPC::Client.new(params[:parent], "/api/xmlrpc", 3000)
+        				@sellervalue = @serverPre.call("Container.sellermethod", @userinfo.localaddress, params[:browse])
+        				predecessorip = @sellervalue["value"]
+					if predecessorip != 0
+        					@category = params[:browse]
+        					@mydb = Sellerring.new
+        					@mydb.ipaddress = predecessorip
+        					@mydb.category = @category
+        					@mydb.iptype = 'predecessor'
+        					@mydb.save
+        					@mypred = XMLRPC::Client.new(predecessorip, "/api/xmlrpc", 3000)
+        					@mypred.call_async("Container.updateSuccessor", @userinfo.localaddress, @category)
 					
-				else
-        				@category = params[:browse]
-        				@mydb = Sellerring.new
-        				@mydb.ipaddress = @successorip
-        				@mydb.category = @category
-        				@mydb.iptype = 'predecessor'
-        				@mydb.save
-				end
-      			end     
-		end
-     	end
-	end
+					else	
+        					@category = params[:browse]
+        					@mydb = Sellerring.new
+        					@mydb.ipaddress = @successorip
+        					@mydb.category = @category
+        					@mydb.iptype = 'predecessor'
+        					@mydb.save
+					end
+      				end     
+			end
+     		end
        
    	else
 
@@ -135,6 +134,7 @@ class ItemsController < ApplicationController
         	end
       	end
    end
+end
 
 
    elsif params[:results]
