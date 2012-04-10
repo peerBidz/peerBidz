@@ -37,8 +37,18 @@ class RpcController < ApplicationController
        dbvalue.created_at = DateTime.now
        dbvalue.save
 
+       dbvalue = Sellerring.new
+       dbvalue.ipaddress = ipaddress
+       dbvalue.iptype = 'predecessor'
+       dbvalue.category = category
+       dbvalue.updated_at = DateTime.now
+       dbvalue.created_at = DateTime.now
+       dbvalue.save
+
        predecessor = 0
     end
+    
+    {"value" => predecessor}
 end
   add_method 'Container.updateSucessor' do |ipaddress, category|
 
