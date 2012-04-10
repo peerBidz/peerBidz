@@ -87,10 +87,12 @@ end
       
   
       if @items != nil
+	puts "have items to send"
         { "value" => @ip_address, "search" => search_string, "category" => category_name }
-      end
-
+	else
       { "value" => "0"}
+	end
+
 
   end
 
