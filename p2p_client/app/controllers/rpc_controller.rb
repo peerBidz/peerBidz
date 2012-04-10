@@ -22,7 +22,8 @@ class RpcController < ApplicationController
 
      if @myvar.count != 0
        predecessor = @myvar.first.ipaddress
-       @myvar.first.destroy
+       @myvar.first.ipaddress = ipaddress
+       @myvar.first.save
        puts "Var Count"
        puts predecessor
     else
