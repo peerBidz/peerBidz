@@ -59,56 +59,65 @@ end
 	
   end
 
-  add_method 'Container.get_sellerorigin' do |search_string, category_name, ip_address|
+  add_method 'Container.get_sellerorigin' do |search_string, category_name, ip|
 
     @request = Searchdb.new 
-    @request.buyeripaddress = ip_address
+    @request.buyeripaddress = ip
     @request.searchquery = search_string
     @request.category = category_name
     @request.save
 
-    @search_id = Searchdb.where("category = :ct AND buyeripaddress = :it AND searchquery = :sq ", {:ct => category_name, :it => ip_address, :sq => search_string})
+    @search_id = Searchdb.where("category = :ct AND buyeripaddress = :it AND searchquery = :sq ", {:ct => category_name, :it => ip, :sq => search_string}).first
     @items = Item.find(:all, :conditions => ['title LIKE ? AND category = ?', "%#{search_string}%", category_name])
-    @ip_address = UDPSocket.open {|s| s.connect('65.59.196.211', 1); s.addr.last } 
+    @ip_address = Mydata.first.localaddress 
 
-    @neighbours = Sellerring.where("category = :ct AND iptype = :it", {:ct => category_name, :it => "successor"}) 
+    @neighbors = Sellerring.where("category = :ct AND iptype = :it", {:ct => category_name, :it => "successor"}) 
  
-    @neighbours.length.times do |i|
-      @sucessor = @neighbours[i].ipaddress
+
+if @neighbors != nil
+	puts "neighbor is not nil"
+      @successor = @neighbors.first.ipaddress
 
       @server1 = XMLRPC::Client.new(@successor, "/api/xmlrpc", 3000)
-      @server1.call2_async("Container.get_sellerip", search_string,category_name, @ip_address, @search.id)
-      { "value" => nil}
-    end
-        
+      Thread.new {
+	@server1.call_async("Container.get_sellerip", search_string,category_name, @ip_address, @search_id.id)
+	}
+	puts "after async"
+end
+      
+  
       if @items != nil
         { "value" => @ip_address, "search" => search_string, "category" => category_name }
       end
+
+      { "value" => "0"}
+
   end
 
   add_method 'Container.get_sellerip' do |search_string, category_name, ip_address, search_id|
 
     @items = Item.find(:all, :conditions => ['title LIKE ? AND category = ?', "%#{search_string}%", category_name])
-    my_address = UDPSocket.open {|s| s.connect('65.59.196.211', 1); s.addr.last } 
-
-
+	my_address = Mydata.first.localaddress
+	
     if ip_address != my_address
-      @neighbours = Sellerring.where("category = :ct AND iptype = :it", {:ct => category_name, :it => "successor"})
+      @neighbors = Sellerring.where("category = :ct AND iptype = :it", {:ct => category_name, :it => "successor"})
 
-      @neighbours.length.times do |i|
-        @sucessor = @neighbours[i].ipaddress
+        @successor = @neighbors.first.ipaddress
           
+	Thread.new {
         @server1 = XMLRPC::Client.new(@successor, "/api/xmlrpc", 3000)
-        @server1.call2_async("Container.get_sellerip", search_string,category_name, ip_address)
-      end
-
-      if @items == nil
+        @server1.call2_async("Container.get_sellerip", search_string,category_name, ip_address, search_id)
+   
+	}
+      if @items != nil
           @server1 = XMLRPC::Client.new(ip_address, "/api/xmlrpc", 3000)
-          @server1.call2_async("Container.get_itemavailability", my_address, search_id)
-      end 
+        Thread.new {  
+		@server1.call2_async("Container.get_itemavailability", my_address, search_id)
+	}      
+	end 
     end
 
-    { "value" => nil}
+    { "value" => "0"}
   end
 
   add_method 'Container.get_itemavailability' do |ip_address, search_id|

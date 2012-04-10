@@ -31,7 +31,6 @@
 This is from the immediate seller <%= @sellervalue["value"] %>
 <%end%>
 
-<% if @items != nil %>
 <h2> Here are your search results </h2>
 <table>
   <tr>
@@ -40,16 +39,15 @@ This is from the immediate seller <%= @sellervalue["value"] %>
     <th>Seller Ip address</th>
   </tr>
 
-<% @items.each do |item| %>
+<% Searchresults.all do |item| %>
 
   <tr>
     <td><%= item.search_string %></td>
     <td><%= item.category %></td>
     <td><%= item.ipaddress %></td>
   </tr>
-<% end %>
-</table>
 <%end%>
+</table>
 
 <script>
     $(function() {

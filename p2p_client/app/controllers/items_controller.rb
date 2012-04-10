@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.xml
   def index
-      @my_address = UDPSocket.open {|s| s.connect('65.59.196.211', 1); s.addr.last } 
+      @my_address = Mydata.first.localaddress 
     if params[:search]
 #      @items = Item.find(:all, :conditions => ['title LIKE ? AND category = ?', "%#{params[:search]}%", cookies[:CURRCATEGORY]])
       # Lets clear the Searchresults DB
@@ -17,19 +17,19 @@ class ItemsController < ApplicationController
 
       @search_string = params[:search]
 
-      @sellerIPAddress = Ipaddress.where("category = :ct AND iptype = :it", {:ct => cookies[:CURRCATEGORY], :it => "parent"})
+      @sellerIPAddress = Ipaddress.where("category = :ct AND iptype = :it", {:ct => cookies[:CURRCATEGORY], :it => "parent"}).first
 
-      @sellerIPAddress.length.times do |i|
-        @server1 = XMLRPC::Client.new(@sellerIPAddress[i].ipaddress, "/api/xmlrpc", 3000)
+if @sellerIPAddress != nil
+        @server1 = XMLRPC::Client.new(@sellerIPAddress.ipaddress, "/api/xmlrpc", 3000)
         @ip_address = @server1.call("Container.get_sellerorigin", @search_string, cookies[:CURRCATEGORY], @my_address)
-        if @ip_address["value"] != nil
+        if @ip_address["value"] != "0"
           @dbvalue = Searchresults.new
           @dbvalue.search_string = @ip_address["search"]
           @dbvalue.category = @ip_address["category"]
           @dbvalue.ipaddress = @ip_address["value"]
           @dbvalue.save
         end
-      end
+end
 
     elsif params[:browse]
     #@items = Item.find(:all, :conditions => ['category_id LIKE ?', "#{params[:browse]}"])
