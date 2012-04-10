@@ -1,0 +1,10 @@
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___3668638994679203254_70061656666340__3393951800910869886 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___3668638994679203254_59344180__3393951800910869886 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+
+ActiveRecord::RecordNotFound (Couldn't find Item with ID=results):
+  app/controllers/items_controller.rb:165:in `show'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___3668638994679203254_59333020__3393951800910869886 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)

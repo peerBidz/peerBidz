@@ -125,11 +125,9 @@ end
         @is_present = Searchdb.find(search_id)
 
         if @is_present != nil
-          @server1 = XMLRPC::Client.new(@is_present.buyeripaddress, "/items?results=#ip_address&category=#@is_present.category&searchstring=#@is_present.searchquery", 3000)
+          @server1 = XMLRPC::Client.new(@is_present.buyeripaddress, "/items?results", 3000)
           @server1.call("index")
           { "value" => nil}
-        else
-
         end
     end
   add_method 'Container.getIdentity' do |isSeller,email,ipaddress|
