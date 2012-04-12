@@ -100,3 +100,76 @@ DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>
 DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/environment.rb:6)
 DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
 DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__2747728280913047137_63614140__263870155967297296 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+
+SyntaxError (/home/naveen/Distributed/test/p2p_client/app/controllers/rpc_controller.rb:98: syntax error, unexpected tSTRING_BEG
+..."category" => category_name . "returnedstring" => @items.fir...
+...                               ^
+/home/naveen/Distributed/test/p2p_client/app/controllers/rpc_controller.rb:98: syntax error, unexpected tASSOC, expecting keyword_end
+...gory_name . "returnedstring" => @items.first.title}
+...                               ^
+/home/naveen/Distributed/test/p2p_client/app/controllers/rpc_controller.rb:98: syntax error, unexpected '}', expecting keyword_end
+/home/naveen/Distributed/test/p2p_client/app/controllers/rpc_controller.rb:140: syntax error, unexpected '='
+          if @is_present.count ! = 0
+                                  ^
+/home/naveen/Distributed/test/p2p_client/app/controllers/rpc_controller.rb:171: unterminated string meets end of file
+/home/naveen/Distributed/test/p2p_client/app/controllers/rpc_controller.rb:171: syntax error, unexpected $end, expecting keyword_end):
+  
+
+
+SyntaxError (/home/naveen/Distributed/test/p2p_client/app/controllers/rpc_controller.rb:98: syntax error, unexpected tSTRING_BEG
+..."category" => category_name . "returnedstring" => @items.fir...
+...                               ^
+/home/naveen/Distributed/test/p2p_client/app/controllers/rpc_controller.rb:98: syntax error, unexpected tASSOC, expecting keyword_end
+...gory_name . "returnedstring" => @items.first.title}
+...                               ^
+/home/naveen/Distributed/test/p2p_client/app/controllers/rpc_controller.rb:98: syntax error, unexpected '}', expecting keyword_end
+/home/naveen/Distributed/test/p2p_client/app/controllers/rpc_controller.rb:140: syntax error, unexpected '='
+          if @is_present.count ! = 0
+                                  ^
+/home/naveen/Distributed/test/p2p_client/app/controllers/rpc_controller.rb:171: unterminated string meets end of file
+/home/naveen/Distributed/test/p2p_client/app/controllers/rpc_controller.rb:171: syntax error, unexpected $end, expecting keyword_end):
+  
+
+
+SyntaxError (/home/naveen/Distributed/test/p2p_client/app/controllers/rpc_controller.rb:98: syntax error, unexpected tSTRING_BEG
+..."category" => category_name . "returnedstring" => @items.fir...
+...                               ^
+/home/naveen/Distributed/test/p2p_client/app/controllers/rpc_controller.rb:98: syntax error, unexpected tASSOC, expecting keyword_end
+...gory_name . "returnedstring" => @items.first.title}
+...                               ^
+/home/naveen/Distributed/test/p2p_client/app/controllers/rpc_controller.rb:98: syntax error, unexpected '}', expecting keyword_end
+/home/naveen/Distributed/test/p2p_client/app/controllers/rpc_controller.rb:171: unterminated string meets end of file
+/home/naveen/Distributed/test/p2p_client/app/controllers/rpc_controller.rb:171: syntax error, unexpected $end, expecting keyword_end):
+  
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+
+SyntaxError (/home/naveen/Distributed/test/p2p_client/app/controllers/rpc_controller.rb:98: syntax error, unexpected tSTRING_BEG
+..."category" => category_name . "returnedstring" => @items.fir...
+...                               ^
+/home/naveen/Distributed/test/p2p_client/app/controllers/rpc_controller.rb:98: syntax error, unexpected tASSOC, expecting keyword_end
+...gory_name . "returnedstring" => @items.first.title}
+...                               ^
+/home/naveen/Distributed/test/p2p_client/app/controllers/rpc_controller.rb:98: syntax error, unexpected '}', expecting keyword_end
+/home/naveen/Distributed/test/p2p_client/app/controllers/rpc_controller.rb:171: unterminated string meets end of file
+/home/naveen/Distributed/test/p2p_client/app/controllers/rpc_controller.rb:171: syntax error, unexpected $end, expecting keyword_end):
+  
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3396038709951224895_51743120_781873351955803058 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+
+SyntaxError (/home/naveen/Distributed/test/p2p_client/app/controllers/rpc_controller.rb:171: unterminated string meets end of file
+/home/naveen/Distributed/test/p2p_client/app/controllers/rpc_controller.rb:171: syntax error, unexpected $end, expecting keyword_end):
+  
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
