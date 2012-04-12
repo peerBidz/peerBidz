@@ -27,6 +27,7 @@ if @sellerIPAddress != nil
           @dbvalue.search_string = @ip_address["search"]
           @dbvalue.category = @ip_address["category"]
           @dbvalue.ipaddress = @ip_address["value"]
+          @dbvalue.returned_string = @ip_address["returnedstring"] 
           @dbvalue.save
         end
 end
