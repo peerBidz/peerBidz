@@ -95,7 +95,7 @@ end
       if @items != nil
 	if @items.count != 0
 	puts "have items to send"
-        { "value" => @ip_address, "search" => search_string, "category" => category_name . "returnedstring" => @items.first.title}
+        { "value" => @ip_address, "search" => search_string, "category" => category_name , "returnedstring" => @items.first.title}
 	else
       { "value" => "0"}
 	end
@@ -138,7 +138,7 @@ end
         @is_present = Searchdb.where("id = :ct", {:ct => search_id})
 
         if @is_present != nil
-          if @is_present.count ! = 0
+          if @is_present.count != 0
             @server1 = XMLRPC::Client.new(@is_present.buyeripaddress, "/api/xmlrpc", 3000)
 
             Thread.new {
@@ -169,7 +169,7 @@ end
 	@identDB = Mydata.new
 	@identDB.email = email
 	@identDB.is_seller = isSeller
-        @identDB.loc`aladdress = ipaddress
+        @identDB.localaddress = ipaddress
 	@identDB.save
   end 
 end
