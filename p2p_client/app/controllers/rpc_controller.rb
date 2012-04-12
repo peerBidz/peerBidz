@@ -79,6 +79,7 @@ end
  
 
 if @neighbors != nil
+if @neighbors.count != 0
 	puts "neighbor is not nil"
       @successor = @neighbors.first.ipaddress
 
@@ -86,6 +87,7 @@ if @neighbors != nil
       Thread.new {
 	@server1.call_async("Container.get_sellerip", search_string,category_name, @ip_address, @search_id.id)
 	}
+end
 	puts "after async"
 end
       
