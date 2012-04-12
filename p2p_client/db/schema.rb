@@ -170,6 +170,7 @@ ActiveRecord::Schema.define(:version => 20120406000701) do
     t.string   "search_string"
     t.string   "category"
     t.string   "ipaddress"
+    t.string   "returned_string"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

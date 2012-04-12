@@ -95,7 +95,7 @@ end
       if @items != nil
 	if @items.count != 0
 	puts "have items to send"
-        { "value" => @ip_address, "search" => search_string, "category" => category_name }
+        { "value" => @ip_address, "search" => search_string, "category" => category_name . "returnedstring" => @items.first.title}
 	else
       { "value" => "0"}
 	end
@@ -125,7 +125,7 @@ end
           @server1 = XMLRPC::Client.new(ip_address, "/api/xmlrpc", 3000)
 	puts "found item"
         Thread.new {  
-		@server1.call2_async("Container.get_itemavailability", my_address, search_id)
+		@server1.call2_async("Container.get_itemavailability", my_address, search_id, @items.first.title)
 	}      
 	end 
     end
@@ -133,22 +133,43 @@ end
     { "value" => "0"}
   end
 
-  add_method 'Container.get_itemavailability' do |ip_address, search_id|
+  add_method 'Container.get_itemavailability' do |ip_address, search_id, item_name|
 
-        @is_present = Searchdb.find(search_id)
+        @is_present = Searchdb.where("id = :ct", {:ct => search_id})
 
         if @is_present != nil
-          @server1 = XMLRPC::Client.new(@is_present.buyeripaddress, "/items?results", 3000)
-          @server1.call("index")
-          { "value" => nil}
+          if @is_present.count ! = 0
+            @server1 = XMLRPC::Client.new(@is_present.buyeripaddress, "/api/xmlrpc", 3000)
+
+            Thread.new {
+                 @server1.call2_async("Container.get_itemFound", ip_address, item_name, @is_present.category, @is_present.searchquery)
+            }
+
+          end
         end
+            { "value" => "0"}
+
     end
+
+  add_method 'Container.itemFound' do |ip_address, item_name, category, search_query|
+
+        dbvalue = Searchresults.new
+ 
+        dbvalue.search_string = search_query
+        dbvalue.category = category
+        dbvalue.ipaddress = ip_address
+
+        dbvalue.returned_string = item_name
+        dbvalue.save
+
+    end
+
   add_method 'Container.getIdentity' do |isSeller,email,ipaddress|
    
 	@identDB = Mydata.new
 	@identDB.email = email
 	@identDB.is_seller = isSeller
-        @identDB.localaddress = ipaddress
+        @identDB.loc`aladdress = ipaddress
 	@identDB.save
   end 
 end

@@ -4,6 +4,7 @@ class CreateSearchresults < ActiveRecord::Migration
       t.string :search_string
       t.string :category
       t.string :ipaddress
+      t.string :returned_string
 
       t.timestamps
     end
