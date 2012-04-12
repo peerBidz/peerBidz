@@ -7,16 +7,20 @@ class RpcController < ApplicationController
 
   exposes_xmlrpc_methods
 
-  add_method 'Container.method_name' do |category|
+  add_method 'Container.getBackupParent' do |category|
    
      @myvar = Sellerring.where("category = ?", category).order("updated_at asc").first 
+     
+    if @myvar != nil
      @myvar.updated_at = DateTime.now  
      @myvar.save 
  
-    { "value" => @myvar.ipaddress }
-  end
-
-  add_method 'Container.sellermethod' do |ipaddress, category|
+     { "value" => @myvar.ipaddress }
+     end
+   
+     { "value" => "0" }
+   end
+  add_method 'Container.extendSellerRing' do |ipaddress, category|
 
      @myvar = Sellerring.where("category = :ct AND iptype = :pt", {:ct => category, :pt => "predecessor"})
 
@@ -87,8 +91,12 @@ end
       
   
       if @items != nil
+	if @items.count != 0
 	puts "have items to send"
         { "value" => @ip_address, "search" => search_string, "category" => category_name }
+	else
+      { "value" => "0"}
+	end
 	else
       { "value" => "0"}
 	end
