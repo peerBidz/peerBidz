@@ -123,6 +123,7 @@ end
 	}
       if @items != nil
           @server1 = XMLRPC::Client.new(ip_address, "/api/xmlrpc", 3000)
+	puts "found item"
         Thread.new {  
 		@server1.call2_async("Container.get_itemavailability", my_address, search_id)
 	}      
