@@ -78,7 +78,7 @@ end
 				if @checkcategory.count == 0
 					puts "no predecessor"
         				@serverPre = XMLRPC::Client.new(params[:parent], "/api/xmlrpc", 3000)
-        				@sellervalue = @serverPre.call("Container.sellermethod", @userinfo.localaddress, params[:browse])
+        				@sellervalue = @serverPre.call("Container.extendSellerRing", @userinfo.localaddress, params[:browse])
         				predecessorip = @sellervalue["value"]
 					if predecessorip != 0
         					@category = params[:browse]
@@ -123,14 +123,16 @@ end
       
      	 	if @is_parentbackuppresent.length == 0
         		@server1 = XMLRPC::Client.new(@parentip, "/api/xmlrpc", 3000)
-        		@sellervalue = @server1.call("Container.method_name", params[:browse])
+        		@sellervalue = @server1.call("Container.getBackupParent", params[:browse])
     
         	if @sellervalue.length != 0
+                  if @sellervalue["value"] != "0"
           		@newdata = Ipaddress.new
           		@newdata.ipaddress = @sellervalue["value"]
           		@newdata.iptype = 'parentbackup'
           		@newdata.category = params[:browse]
           		@newdata.save
+                  end
         	end
       	end
    end
