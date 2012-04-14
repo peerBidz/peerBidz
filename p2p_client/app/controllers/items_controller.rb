@@ -139,18 +139,6 @@ end
    end
 end
 
-
-   elsif params[:results]
-      @ipaddress = params[:results]
-      @category = params[:category]
-      @searchstring = params[:searchstring]
-
-      @dbvalue = Searchresults.new
-      @dbvalue.search_string = @searchstring
-      @dbvalue.category = @category
-      @dbvalue.ipaddress = @ipaddress
-      @dbvalue.save
-
     else
 	    @items = Searchresults.all
     end

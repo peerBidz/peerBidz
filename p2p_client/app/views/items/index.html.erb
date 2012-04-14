@@ -1,5 +1,5 @@
 <!-- This page display all the items present in the system -->
-<META HTTP-EQUIV=Refresh CONTENT="5; URL=http://localhost:3000/items?browse=<%= cookies[:CURRCATEGORY %>">
+<META HTTP-EQUIV=Refresh CONTENT="5; URL=http://localhost:3000/items?results=<%= cookies[:CURRCATEGORY %>">
 <%require "xmlrpc/client"%>
 <% if user_signed_in? %>
     <% if current_user.is_seller? %>
@@ -38,8 +38,8 @@ This is from the immediate seller <%= @sellervalue["value"] %>
     <th>Category</th>
     <th>Seller Ip address</th>
   </tr>
-
-<% Searchresults.all do |item| %>
+<% @is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+<% @is_present.each do |item| %>
 
   <tr>
     <td><%= item.search_string %></td>
