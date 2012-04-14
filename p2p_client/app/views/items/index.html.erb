@@ -1,5 +1,5 @@
 <!-- This page display all the items present in the system -->
-
+<META HTTP-EQUIV=Refresh CONTENT="5; URL=http://localhost:3000/items?browse=<%= cookies[:CURRCATEGORY %>">
 <%require "xmlrpc/client"%>
 <% if user_signed_in? %>
     <% if current_user.is_seller? %>

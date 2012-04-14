@@ -7,6 +7,28 @@ class RpcController < ApplicationController
 
   exposes_xmlrpc_methods
 
+  add_method 'Container.placeBid' do |itemID, amount, ipaddress|
+  	highBid = Bidding.order("bid_amount desc").first.bid_amount
+	isHighest = 1
+	if highBid != nil
+		if highBid > amount
+			isHighest = 0
+		end
+	end
+
+	if isHighest == 1
+		@myBid = Bidding.new
+		@myBid.ipaddress = ipaddress
+		@myBid.amount = amount
+		@myBid.item_id = itemID
+		@myBid.bid_time = Time.now
+		@myBid.save
+     		{ "value" => "success" }
+	else
+		{ "value" => "Bid amount is lower than the current highest bid. Place a higher bid", "amount" => highBid }
+	end
+  end
+
   add_method 'Container.getBackupParent' do |category|
    
      @myvar = Sellerring.where("category = ?", category).order("updated_at asc").first 
@@ -20,6 +42,21 @@ class RpcController < ApplicationController
    
      { "value" => "0" }
    end
+  add_method 'Container.getItemInfo' do |category, title|
+
+	@myItem = Item.where("category = ? and title = ?", category, title).first
+	@myBids = Bidding.where("item_id = ?", @myItem.id).order("bid_amount desc")
+	
+	@highBid = "0"
+	if @myBids != nil
+		if @myBids.count != 0
+			@highBid = @myBids.first.bid_amount
+		end
+	end
+        { "description" => @myItem.description, "startprice" => @myItem.starting_price, "expires" => @myItem.expires_at, "highbid" => @highBid }
+
+
+  end
   add_method 'Container.extendSellerRing' do |ipaddress, category|
 
      @myvar = Sellerring.where("category = :ct AND iptype = :pt", {:ct => category, :pt => "predecessor"})
@@ -122,11 +159,13 @@ end
    
 	}
       if @items != nil
+	if @items.count != 0
           @server1 = XMLRPC::Client.new(ip_address, "/api/xmlrpc", 3000)
 	puts "found item"
         Thread.new {  
 		@server1.call2_async("Container.get_itemavailability", my_address, search_id, @items.first.title)
 	}      
+	end
 	end 
     end
 
@@ -139,10 +178,16 @@ end
 
         if @is_present != nil
           if @is_present.count != 0
-            @server1 = XMLRPC::Client.new(@is_present.buyeripaddress, "/api/xmlrpc", 3000)
 
+            @server1 = XMLRPC::Client.new(@is_present.first.buyeripaddress, "/api/xmlrpc", 3000)
+	    puts "item"
+		puts item_name 
+		puts "category"
+		puts  @is_present.first.category
+		puts "ip"
+		
             Thread.new {
-                 @server1.call2_async("Container.get_itemFound", ip_address, item_name, @is_present.category, @is_present.searchquery)
+                 @server1.call2_async("Container.itemFound", ip_address, item_name, @is_present.first.category, @is_present.first.searchquery)
             }
 
           end
