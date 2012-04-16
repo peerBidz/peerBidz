@@ -153,9 +153,8 @@ end
   # GET /items/1
   # GET /items/1.xml
   def show
-    @item = Searchresults.find(params[:id]).first
+    @item = Searchresults.where("id = ? ", params[:id]).first
 
-    @time_diff_components = Time.diff(Time.now.utc, @item.expires_at.utc)
     @server1 = XMLRPC::Client.new(@item.ipaddress, "/api/xmlrpc", 3000)
     @iteminfo = @server1.call("Container.getItemInfo", cookies[:CURRCATEGORY], @item.returned_string)
     #@days = @time_diff_components[:week].to_i * 7  + @time_diff_components[:day]

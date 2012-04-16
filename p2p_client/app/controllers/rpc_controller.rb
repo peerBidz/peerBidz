@@ -8,7 +8,7 @@ class RpcController < ApplicationController
   exposes_xmlrpc_methods
 
   add_method 'Container.placeBid' do |itemID, amount, ipaddress|
-  	highBid = Bidding.order("bid_amount desc").first.bid_amount
+	highBid = Bidding.order("bid_amount desc").first.bid_amount
 	isHighest = 1
 	if highBid != nil
 		if highBid > amount
@@ -45,15 +45,22 @@ class RpcController < ApplicationController
   add_method 'Container.getItemInfo' do |category, title|
 
 	@myItem = Item.where("category = ? and title = ?", category, title).first
+	puts "line 1"
 	@myBids = Bidding.where("item_id = ?", @myItem.id).order("bid_amount desc")
-	
-	@highBid = "0"
+	puts "line 2"
+	highBid = "0"
+	puts "line 3"
 	if @myBids != nil
 		if @myBids.count != 0
-			@highBid = @myBids.first.bid_amount
+			highBid = @myBids.first.bid_amount
 		end
 	end
-        { "description" => @myItem.description, "startprice" => @myItem.starting_price, "expires" => @myItem.expires_at, "highbid" => @highBid }
+	puts "line 4"
+	puts @myItem.description
+	puts @myItem.starting_price
+	puts @myItem.expires_at
+	puts highBid
+        { "description" => @myItem.description, "startprice" => "100", "expires" => "time", "highbid" => "0" }
 
 
   end
