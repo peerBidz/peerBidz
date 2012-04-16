@@ -35,10 +35,14 @@
 
 </tr>
 
+<<<<<<< HEAD
 <%= form_tag(:method => "get") do %>
+=======
+<%= form_tag(:method => "get")  do %>
+>>>>>>> 4a8ed11e103e5cc55ddf3ffe0d755329215eef47
 	<%= label_tag(:amount, "Bid Amount:") %>
 	<%= text_field_tag(:amount) %>
-	<%= hidden_field_tag(:item_id,  @iteminfo["id"] ) %> 	
+	<%#= hidden_field_tag(:item_id,  @iteminfo["id"] ) %> 	
 <%end%>
 
 </table>
