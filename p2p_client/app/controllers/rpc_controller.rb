@@ -7,25 +7,40 @@ class RpcController < ApplicationController
 
   exposes_xmlrpc_methods
 
-  add_method 'Container.placeBid' do |itemID, amount, ipaddress|
-	highBid = Bidding.order("bid_amount desc").first.bid_amount
+  add_method 'Container.placeBid' do |name, category, amount, ipaddress|
+	@myItem = Item.where("title = ? and category =?", name, category)
+	@highBid = Bidding.where("item_id = ?", @myItem.first.id).order("bid_amount DESC").first	
+
 	isHighest = 1
-	if highBid != nil
-		if highBid > amount
+	if @myItem.first != nil
+		if @myItem.first.starting_price > Integer(amount)
+			puts "here"
 			isHighest = 0
 		end
+		if @highBid != nil
+			highVal = @highBid.bid_amount	
+			puts "amount is"
+			puts amount
+			if Integer(highVal) >= Integer(amount)
+				isHighest = 0
+			end
+		end
 	end
-
-	if isHighest == 1
-		@myBid = Bidding.new
-		@myBid.ipaddress = ipaddress
-		@myBid.amount = amount
-		@myBid.item_id = itemID
-		@myBid.bid_time = Time.now
-		@myBid.save
-     		{ "value" => "success" }
+	if @myItem.first != nil
+		
+		if isHighest == 1
+			@myBid = Bidding.new
+			@myBid.ipaddress = ipaddress
+			@myBid.bid_amount = amount
+			@myBid.item_id = @myItem.first.id
+			@myBid.bid_time = Time.now
+			@myBid.save
+     			{ "value" => "success" }
+		else
+			{ "value" => "Bid amount is lower than the current highest bid. Place a higher bid" }
+		end
 	else
-		{ "value" => "Bid amount is lower than the current highest bid. Place a higher bid", "amount" => highBid }
+		{"value" => "Invalid item"}
 	end
   end
 
@@ -45,22 +60,17 @@ class RpcController < ApplicationController
   add_method 'Container.getItemInfo' do |category, title|
 
 	@myItem = Item.where("category = ? and title = ?", category, title).first
-	puts "line 1"
 	@myBids = Bidding.where("item_id = ?", @myItem.id).order("bid_amount desc")
-	puts "line 2"
 	highBid = "0"
-	puts "line 3"
 	if @myBids != nil
 		if @myBids.count != 0
 			highBid = @myBids.first.bid_amount
 		end
 	end
-	puts "line 4"
 	puts @myItem.description
 	puts @myItem.starting_price
 	puts @myItem.expires_at
-	puts highBid
-        { "description" => @myItem.description, "startprice" => "100", "expires" => "time", "highbid" => "0" }
+        { "description" => @myItem.description, "startprice" => @myItem.starting_price.to_s(), "expires" => @myItem.expires_at.to_s(), "highbid" => highBid.to_s() }
 
 
   end
