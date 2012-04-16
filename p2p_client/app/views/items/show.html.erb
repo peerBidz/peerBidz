@@ -1,15 +1,18 @@
 <h3><%= @item.returned_string %></h3>
-<% if params[:item_id] != nil %>
+<% if params[:id] != nil %>
 	<% if params[:amount] != nil %>
 		<% ip_address = Mydata.first.localaddress %>
-		<% @server1 = XMLRPC::Client.new(@successor, "/api/xmlrpc", 3000) %>
-        	<% @result = @server1.call("Container.placeBid", params[:item_id] , params[:amount], ip_address) %>
-		<% if @result["value"] == "success" %>
-			<p><b> Bid of <%= params[:amount] %> placed <b></p> 
-		<% else %>
-			<p><b> Error placing bid. <%= @result["value"] %> </b></p>
-			<%= @iteminfo["highbid"] = @result["amount"] %>
-		<% end %>
+                <% @sellerip = Searchresults.where("id = ?", params[:id]).first %>
+                <% @server1 = XMLRPC::Client.new(@sellerip.ipaddress, "/api/xmlrpc", 3000) %>
+                <% @result = @server1.call("Container.placeBid", @sellerip.returned_string, @sellerip.category, params[:amount], ip_address) %>
+                <% if @result["value"] == "success" %>
+                        <p><b> Bid of <%= params[:amount] %> placed <b></p>
+                                    <% @iteminfo["highbid"] =  params[:amount] %>
+                <% else %>
+                        <p><b> Error placing bid. <%= @result["value"] %> </b></p>
+         
+                <% end %>
+                  
 	<%end %>
 <%end%>
 
@@ -27,11 +30,12 @@
 	<td> <%= @iteminfo["description"] %> </td>
 	<td> <%= @iteminfo["startprice"] %> </td>
 	<td> <%= @iteminfo["expires"] %> </td>
+        
 	<td> <%= @iteminfo["highbid"] %> </td>
 
 </tr>
 
-<%= form_tag do %>
+<%= form_tag(:method => "get") do %>
 	<%= label_tag(:amount, "Bid Amount:") %>
 	<%= text_field_tag(:amount) %>
 	<%= hidden_field_tag(:item_id,  @iteminfo["id"] ) %> 	

@@ -155,9 +155,14 @@ end
   def show
     @item = Searchresults.where("id = ? ", params[:id]).first
 
-    @server1 = XMLRPC::Client.new(@item.ipaddress, "/api/xmlrpc", 3000)
-    @iteminfo = @server1.call("Container.getItemInfo", cookies[:CURRCATEGORY], @item.returned_string)
-    #@days = @time_diff_components[:week].to_i * 7  + @time_diff_components[:day]
+    @test = cookies[:CURRCATEGORY] 
+    puts @test
+    puts @item.returned_string
+    if @item != nil
+      @server1 = XMLRPC::Client.new(@item.ipaddress, "/api/xmlrpc", 3000)
+      @iteminfo = @server1.call("Container.getItemInfo", cookies[:CURRCATEGORY], @item.returned_string)
+      #@days = @time_diff_components[:week].to_i * 7  + @time_diff_components[:day]
+    end
     
     
     respond_to do |format|

@@ -59,7 +59,7 @@ class RpcController < ApplicationController
 	puts @myItem.description
 	puts @myItem.starting_price
 	puts @myItem.expires_at
-	puts highBid
+	puts "highBid"
         { "description" => @myItem.description, "startprice" => "100", "expires" => "time", "highbid" => "0" }
 
 

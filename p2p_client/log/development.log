@@ -1,0 +1,562 @@
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__1007312916873377740_54856140__2167647616080011739 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__1007312916873377740_52241460__2167647616080011739 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionController::RoutingError (No route matches "/items/1"):
+  
+
+
+ActionController::RoutingError (No route matches "/items/1"):
+  
+
+
+ActionController::RoutingError (No route matches "/items/1"):
+  
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__1007312916873377740_42940600__2167647616080011739 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionController::RoutingError (No route matches "/items/1"):
+  
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+
+RuntimeError (Wrong type NilClass. Not allowed!):
+  app/controllers/items_controller.rb:159:in `show'
+
+
+RuntimeError (Wrong type NilClass. Not allowed!):
+  app/controllers/items_controller.rb:159:in `show'
+
+
+RuntimeError (Wrong type NilClass. Not allowed!):
+  app/controllers/items_controller.rb:159:in `show'
+
+
+RuntimeError (Wrong type NilClass. Not allowed!):
+  app/controllers/items_controller.rb:159:in `show'
+
+
+RuntimeError (Wrong type NilClass. Not allowed!):
+  app/controllers/items_controller.rb:160:in `show'
+
+
+RuntimeError (Wrong type NilClass. Not allowed!):
+  app/controllers/items_controller.rb:160:in `show'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__1007312916873377740_70088465263280__2167647616080011739 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+
+Timeout::Error (Timeout::Error):
+  app/controllers/items_controller.rb:127:in `index'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__1007312916873377740_55045860__2167647616080011739 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionController::RoutingError (No route matches "/items/2"):
+  
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__1007312916873377740_55185060__2167647616080011739 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+
+RuntimeError (Wrong type NilClass. Not allowed!):
+  app/controllers/items_controller.rb:160:in `show'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__1253541144802809873_47367240_3386156622955282288 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+
+RuntimeError (Wrong type NilClass. Not allowed!):
+  app/controllers/items_controller.rb:160:in `show'
+
+
+RuntimeError (Wrong type NilClass. Not allowed!):
+  app/controllers/items_controller.rb:163:in `show'
+
+
+RuntimeError (Wrong type NilClass. Not allowed!):
+  app/controllers/items_controller.rb:163:in `show'
+
+
+Timeout::Error (Timeout::Error):
+  app/controllers/items_controller.rb:127:in `index'
+
+
+Timeout::Error (Timeout::Error):
+  app/controllers/items_controller.rb:127:in `index'
+
+
+ActionView::Template::Error (/home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:152: unknown regexp options - crpt
+/home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:153: unterminated string meets end of file
+/home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:153: syntax error, unexpected $end, expecting keyword_end):
+    149:       source: availableTags
+    150:     });
+    151:   });
+    152: </script>
+  
+
+
+ActionView::Template::Error (/home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:113: syntax error, unexpected '<', expecting keyword_end
+</div>
+ ^
+/home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:123: unknown regexp option - h
+unmatched close parenthesis: /div>
+
+
+<!-- row of items -->
+<hr>
+<div class="row">
+');
+
+@output_buffer.safe_concat('      <div class="home-item-desc span6">
+
+        <h2 class="heading">');;@output_buffer.safe_concat('</
+/home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:123: syntax error, unexpected tINTEGER, expecting keyword_end
+        <h2 class="heading">');;@output_buffer.safe_concat('</h2>
+                                                                ^
+/home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:127: syntax error, unexpected '<', expecting keyword_end
+        <p>');;@output_buffer.safe_concat('</p>
+         ^
+/home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:131: unknown regexp options - dv
+unmatched close parenthesis: /p>
+
+
+');
+@output_buffer.safe_concat('      </i
+/home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:152: unknown regexp options - crpt
+/home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:153: unterminated string meets end of file
+/home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:153: syntax error, unexpected $end, expecting keyword_end):
+    110: <% end %>
+    111: 
+    112: <!-- <% #cookies.delete :CURRCATEGORY %> -- !>
+    113: </div>
+    114: 
+    115: 
+    116: <!-- row of items -->
+  
+
+
+ActionView::Template::Error (/home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:113: syntax error, unexpected '<', expecting keyword_end
+</div>
+ ^
+/home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:123: unknown regexp option - h
+unmatched close parenthesis: /div>
+
+
+<!-- row of items -->
+<hr>
+<div class="row">
+');
+
+@output_buffer.safe_concat('      <div class="home-item-desc span6">
+
+        <h2 class="heading">');;@output_buffer.safe_concat('</
+/home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:123: syntax error, unexpected tINTEGER, expecting keyword_end
+        <h2 class="heading">');;@output_buffer.safe_concat('</h2>
+                                                                ^
+/home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:127: syntax error, unexpected '<', expecting keyword_end
+        <p>');;@output_buffer.safe_concat('</p>
+         ^
+/home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:131: unknown regexp options - dv
+unmatched close parenthesis: /p>
+
+
+');
+@output_buffer.safe_concat('      </i
+/home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:152: unknown regexp options - crpt
+/home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:153: unterminated string meets end of file
+/home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:153: syntax error, unexpected $end, expecting keyword_end):
+    110: <% end %>
+    111: 
+    112: <!-- <% #cookies.delete :CURRCATEGORY %> -- !>
+    113: </div>
+    114: 
+    115: 
+    116: <!-- row of items -->
+  
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__1253541144802809873_47614660_3386156622955282288 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Timeout::Error):
+    3: 	<% if params[:amount] != nil %>
+    4: 		<% ip_address = Mydata.first.localaddress %>
+    5: 		<% @server1 = XMLRPC::Client.new(@successor, "/api/xmlrpc", 3000) %>
+    6:         	<% @result = @server1.call("Container.placeBid", params[:item_id] , params[:amount], ip_address) %>
+    7: 		<% if @result["value"] == "success" %>
+    8: 			<p><b> Bid of <%= params[:amount] %> placed <b></p> 
+    9: 		<% else %>
+  app/views/items/show.html.erb:6:in `_app_views_items_show_html_erb__3961306552747582706_47205560_3386156622955282288'
+  app/controllers/items_controller.rb:168:in `show'
+
+
+ActionView::Template::Error (Timeout::Error):
+    3: 	<% if params[:amount] != nil %>
+    4: 		<% ip_address = Mydata.first.localaddress %>
+    5: 		<% @server1 = XMLRPC::Client.new(@successor, "/api/xmlrpc", 3000) %>
+    6:         	<% @result = @server1.call("Container.placeBid", params[:item_id] , params[:amount], ip_address) %>
+    7: 		<% if @result["value"] == "success" %>
+    8: 			<p><b> Bid of <%= params[:amount] %> placed <b></p> 
+    9: 		<% else %>
+  app/views/items/show.html.erb:6:in `_app_views_items_show_html_erb__3961306552747582706_46920980_3386156622955282288'
+  app/controllers/items_controller.rb:168:in `show'
+
+
+ActionView::Template::Error (Timeout::Error):
+    3: 	<% if params[:amount] != nil %>
+    4: 		<% ip_address = Mydata.first.localaddress %>
+    5: 		<% @server1 = XMLRPC::Client.new(@successor, "/api/xmlrpc", 3000) %>
+    6:         	<% @result = @server1.call("Container.placeBid", params[:item_id] , params[:amount], ip_address) %>
+    7: 		<% if @result["value"] == "success" %>
+    8: 			<p><b> Bid of <%= params[:amount] %> placed <b></p> 
+    9: 		<% else %>
+  app/views/items/show.html.erb:6:in `_app_views_items_show_html_erb__3961306552747582706_46529660_3386156622955282288'
+  app/controllers/items_controller.rb:168:in `show'
+
+
+ActionView::Template::Error (Timeout::Error):
+    3: 	<% if params[:amount] != nil %>
+    4: 		<% ip_address = Mydata.first.localaddress %>
+    5: 		<% @server1 = XMLRPC::Client.new(@successor, "/api/xmlrpc", 3000) %>
+    6:         	<% @result = @server1.call("Container.placeBid", params[:item_id] , params[:amount], ip_address) %>
+    7: 		<% if @result["value"] == "success" %>
+    8: 			<p><b> Bid of <%= params[:amount] %> placed <b></p> 
+    9: 		<% else %>
+  app/views/items/show.html.erb:6:in `_app_views_items_show_html_erb__3961306552747582706_69985621958680_3386156622955282288'
+  app/controllers/items_controller.rb:168:in `show'
+
+
+ActionView::Template::Error (/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:6: syntax error, unexpected tIVAR, expecting ')'
+		 @server1 = XMLRPC::Client.new(sellerip, "/api/xmlrpc", 3000) 
+		         ^):
+    3: 	<% if params[:amount] != nil %>
+    4: 		<% ip_address = Mydata.first.localaddress %>
+    5:                 <% sellerip = Searchresults.where("id = ?", params[:item_id].first.ipaddress %>
+    6: 		<% @server1 = XMLRPC::Client.new(sellerip, "/api/xmlrpc", 3000) %>
+    7:         	<% @result = @server1.call("Container.placeBid", params[:item_id] , params[:amount], ip_address) %>
+    8: 		<% if @result["value"] == "success" %>
+    9: 			<p><b> Bid of <%= params[:amount] %> placed <b></p> 
+  app/controllers/items_controller.rb:168:in `show'
+
+
+ActionView::Template::Error (undefined method `ipaddress' for nil:NilClass):
+    2: <% if params[:item_id] != nil %>
+    3: 	<% if params[:amount] != nil %>
+    4: 		<% ip_address = Mydata.first.localaddress %>
+    5:                 <% sellerip = Searchresults.where("id = ?", params[:item_id]).first.ipaddress %>
+    6: 		<% @server1 = XMLRPC::Client.new(sellerip, "/api/xmlrpc", 3000) %>
+    7:         	<% @result = @server1.call("Container.placeBid", params[:item_id] , params[:amount], ip_address) %>
+    8: 		<% if @result["value"] == "success" %>
+  app/views/items/show.html.erb:5:in `_app_views_items_show_html_erb__3961306552747582706_69985622373680_3386156622955282288'
+  app/controllers/items_controller.rb:168:in `show'
+
+
+ActionView::Template::Error (undefined method `ipaddress' for nil:NilClass):
+    3: 	<% if params[:amount] != nil %>
+    4: 		<% ip_address = Mydata.first.localaddress %>
+    5:                 <% @sellerip = Searchresults.where("id = ?", params[:item_id]).first %>
+    6: 		<% @server1 = XMLRPC::Client.new(@sellerip.ipaddress, "/api/xmlrpc", 3000) %>
+    7:         	<% @result = @server1.call("Container.placeBid", params[:item_id] , params[:amount], ip_address) %>
+    8: 		<% if @result["value"] == "success" %>
+    9: 			<p><b> Bid of <%= params[:amount] %> placed <b></p> 
+  app/views/items/show.html.erb:6:in `_app_views_items_show_html_erb__3961306552747582706_48414340_3386156622955282288'
+  app/controllers/items_controller.rb:168:in `show'
+
+
+ActionView::Template::Error (undefined method `ipaddress' for nil:NilClass):
+    3: 	<% if params[:amount] != nil %>
+    4: 		<% ip_address = Mydata.first.localaddress %>
+    5:                 <%= @sellerip = Searchresults.where("id = ?", params[:item_id]).first %>
+    6: 		<% @server1 = XMLRPC::Client.new(@sellerip.ipaddress, "/api/xmlrpc", 3000) %>
+    7:         	<% @result = @server1.call("Container.placeBid", params[:item_id] , params[:amount], ip_address) %>
+    8: 		<% if @result["value"] == "success" %>
+    9: 			<p><b> Bid of <%= params[:amount] %> placed <b></p> 
+  app/views/items/show.html.erb:6:in `_app_views_items_show_html_erb__3961306552747582706_69985621704940_3386156622955282288'
+  app/controllers/items_controller.rb:168:in `show'
+
+
+ActionView::Template::Error (/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:12: syntax error, unexpected '<'
+...put_buffer.safe_concat('			<p><b> Error placing bid. ');@out...
+...                        			    ^
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...concat('			<p><b> Error placing bid. ');@output_buffer.appen...
+...        			                    ^
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:12: syntax error, unexpected tSTRING_BEG
+...'			<p><b> Error placing bid. ');@output_buffer.append= ( #@...
+... 			                           ^
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:12: unknown regexp option - p
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:19: syntax error, unexpected '<', expecting ')'
+<table>
+ ^
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:22: unknown regexp options - th
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:23: syntax error, unexpected '<'
+    <th>Starting Price</th>
+     ^
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:23: syntax error, unexpected tCONSTANT, expecting keyword_do or '{' or '('
+    <th>Starting Price</th>
+                      ^
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:24: unknown regexp options - th
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:25: syntax error, unexpected '<'
+    <th>Highest Bid</th>
+     ^
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:25: syntax error, unexpected tCONSTANT, expecting keyword_do or '{' or '('
+    <th>Highest Bid</th>
+                   ^
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:26: unknown regexp options - tr
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:27: syntax error, unexpected '<'
+<tr>
+ ^
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:29: unknown regexp options - td
+unmatched close parenthesis: /td>
+	<td> ');@output_buffer.append= ( @iteminfo["description"] );@output_buffer.safe_concat(' </
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:30: syntax error, unexpected '<'
+	<td> ');@output_buffer.append=...
+	 ^
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:31: unknown regexp options - td
+unmatched close parenthesis: /td>
+	<td> ');@output_buffer.append= ( @iteminfo["expires"] );@output_buffer.safe_concat(' </
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:32: syntax error, unexpected '<'
+	<td> ');@output_buffer.append=...
+	 ^
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:34: unknown regexp options - tr
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:42: syntax error, unexpected '<', expecting ')'
+</table>
+ ^
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:42: unterminated regexp meets end of file):
+    9: 		<% #if @result["value"] == "success" %>
+    10: 			<p><b> Bid of <%= #params[:amount] %> placed <b></p> 
+    11: 		<% #else %>
+    12: 			<p><b> Error placing bid. <%= #@result["value"] %> </b></p>
+    13: 			<%= #@iteminfo["highbid"] = @result["amount"] %>
+    14: 		<% #end %>
+    15: 	<%end %>
+  app/controllers/items_controller.rb:168:in `show'
+
+
+ActionView::Template::Error (/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:12: syntax error, unexpected '<'
+...put_buffer.safe_concat('			<p><b> Error placing bid. ');@out...
+...                        			    ^
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...concat('			<p><b> Error placing bid. ');@output_buffer.appen...
+...        			                    ^
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:12: syntax error, unexpected tSTRING_BEG
+...'			<p><b> Error placing bid. ');@output_buffer.append= ( #@...
+... 			                           ^
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:12: unknown regexp option - p
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:19: syntax error, unexpected '<', expecting ')'
+<table>
+ ^
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:22: unknown regexp options - th
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:23: syntax error, unexpected '<'
+    <th>Starting Price</th>
+     ^
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:23: syntax error, unexpected tCONSTANT, expecting keyword_do or '{' or '('
+    <th>Starting Price</th>
+                      ^
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:24: unknown regexp options - th
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:25: syntax error, unexpected '<'
+    <th>Highest Bid</th>
+     ^
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:25: syntax error, unexpected tCONSTANT, expecting keyword_do or '{' or '('
+    <th>Highest Bid</th>
+                   ^
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:26: unknown regexp options - tr
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:27: syntax error, unexpected '<'
+<tr>
+ ^
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:29: unknown regexp options - td
+unmatched close parenthesis: /td>
+	<td> ');@output_buffer.append= ( @iteminfo["description"] );@output_buffer.safe_concat(' </
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:30: syntax error, unexpected '<'
+	<td> ');@output_buffer.append=...
+	 ^
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:31: unknown regexp options - td
+unmatched close parenthesis: /td>
+	<td> ');@output_buffer.append= ( @iteminfo["expires"] );@output_buffer.safe_concat(' </
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:32: syntax error, unexpected '<'
+	<td> ');@output_buffer.append=...
+	 ^
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:34: unknown regexp options - tr
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:42: syntax error, unexpected '<', expecting ')'
+</table>
+ ^
+/home/naveen/Distributed/test/p2p_client/app/views/items/show.html.erb:42: unterminated regexp meets end of file):
+    9: 		<% #if @result["value"] == "success" %>
+    10: 			<p><b> Bid of <%= #params[:amount] %> placed <b></p> 
+    11: 		<% #else %>
+    12: 			<p><b> Error placing bid. <%= #@result["value"] %> </b></p>
+    13: 			<%= #@iteminfo["highbid"] = @result["amount"] %>
+    14: 		<% #end %>
+    15: 	<%end %>
+  app/controllers/items_controller.rb:168:in `show'
+
+
+ActionView::Template::Error (undefined method `ipaddress' for nil:NilClass):
+    3: 	<% if params[:amount] != nil %>
+    4: 		<% ip_address = Mydata.first.localaddress %>
+    5:                 <% @sellerip = Searchresults.where("id = ?", params[:item_id]).first %>
+    6:                 <%= @sellerip.ipaddress%>
+    7: 	<%end %>
+    8: <%end%>
+    9: 
+  app/views/items/show.html.erb:6:in `_app_views_items_show_html_erb__3961306552747582706_50626680_3386156622955282288'
+  app/controllers/items_controller.rb:168:in `show'
+
+
+ActionView::Template::Error (undefined method `ipaddress' for nil:NilClass):
+    4: 		<% ip_address = Mydata.first.localaddress %>
+    5:                 <%= params[:item_id] %>
+    6:                 <% @sellerip = Searchresults.where("id = ?", params[:item_id]).first %>
+    7:                 <%= @sellerip.ipaddress%>
+    8: 	<%end %>
+    9: <%end%>
+    10: 
+  app/views/items/show.html.erb:7:in `_app_views_items_show_html_erb__3961306552747582706_69985623302880_3386156622955282288'
+  app/controllers/items_controller.rb:168:in `show'
+
+
+ActionView::Template::Error (undefined method `ipaddress' for nil:NilClass):
+    4: 		<% ip_address = Mydata.first.localaddress %>
+    5:                 <%= params[:item_id] %>
+    6:                 <% @sellerip = Searchresults.where("id = ?", params[:item_id]).first %>
+    7:                 <%= @sellerip.ipaddress%>
+    8: 	<%end %>
+    9: <%end%>
+    10: 
+  app/views/items/show.html.erb:7:in `_app_views_items_show_html_erb__3961306552747582706_69985622207640_3386156622955282288'
+  app/controllers/items_controller.rb:168:in `show'
+
+
+ActionView::Template::Error (Uncaught exception undefined method `amount=' for #<Bidding:0xd61eba0> in method Container.placeBid):
+    6:                 <% @sellerip = Searchresults.where("id = ?", params[:id]).first %>
+    7:                 <%= @sellerip.ipaddress%>
+    8:                 <% @server1 = XMLRPC::Client.new(@sellerip.ipaddress, "/api/xmlrpc", 3000) %>
+    9:                 <% @result = @server1.call("Container.placeBid", params[:id] , params[:amount], ip_address) %>
+    10:                 <% if @result["value"] == "success" %>
+    11:                         <p><b> Bid of <%= params[:amount] %> placed <b></p> 
+    12:                 <% else %>
+  app/views/items/show.html.erb:9:in `_app_views_items_show_html_erb__3961306552747582706_69985622670300_3386156622955282288'
+  app/controllers/items_controller.rb:168:in `show'
+
+
+Errno::ECONNRESET (Connection reset by peer):
+  app/controllers/items_controller.rb:163:in `show'
+
+
+ActionView::Template::Error (Uncaught exception Couldn't find Item with ID=2 in method Container.placeBid):
+    6:                 <% @sellerip = Searchresults.where("id = ?", params[:id]).first %>
+    7:                 <%= @sellerip.ipaddress%>
+    8:                 <% @server1 = XMLRPC::Client.new(@sellerip.ipaddress, "/api/xmlrpc", 3000) %>
+    9:                 <% @result = @server1.call("Container.placeBid", params[:id] , params[:amount], ip_address) %>
+    10:                 <% if @result["value"] == "success" %>
+    11:                         <p><b> Bid of <%= params[:amount] %> placed <b></p> 
+    12:                 <% else %>
+  app/views/items/show.html.erb:9:in `_app_views_items_show_html_erb__3961306552747582706_69985622641000_3386156622955282288'
+  app/controllers/items_controller.rb:168:in `show'
+
+
+Errno::ECONNRESET (Connection reset by peer):
+  app/controllers/items_controller.rb:163:in `show'
+
+
+ActionView::Template::Error (undefined method `category' for nil:NilClass):
+    6:                 <% @sellerip = Searchresults.where("id = ?", params[:id]).first %>
+    7:                 <%= @sellerip.ipaddress%>
+    8:                 <% @server1 = XMLRPC::Client.new(@sellerip.ipaddress, "/api/xmlrpc", 3000) %>
+    9:                 <% @result = @server1.call("Container.placeBid", @sellerip.returned_string, @seller.category, params[:amount], ip_address) %>
+    10:                 <% if @result["value"] == "success" %>
+    11:                         <p><b> Bid of <%= params[:amount] %> placed <b></p> 
+    12:                 <% else %>
+  app/views/items/show.html.erb:9:in `_app_views_items_show_html_erb__3961306552747582706_69985622419540_3386156622955282288'
+  app/controllers/items_controller.rb:168:in `show'
+
+
+ActionView::Template::Error (Uncaught exception undefined method `id' for #<ActiveRecord::Relation:0xcbfc244> in method Container.placeBid):
+    6:                 <% @sellerip = Searchresults.where("id = ?", params[:id]).first %>
+    7:                 <%= @sellerip.ipaddress%>
+    8:                 <% @server1 = XMLRPC::Client.new(@sellerip.ipaddress, "/api/xmlrpc", 3000) %>
+    9:                 <% @result = @server1.call("Container.placeBid", @sellerip.returned_string, @sellerip.category, params[:amount], ip_address) %>
+    10:                 <% if @result["value"] == "success" %>
+    11:                         <p><b> Bid of <%= params[:amount] %> placed <b></p> 
+    12:                 <% else %>
+  app/views/items/show.html.erb:9:in `_app_views_items_show_html_erb__3961306552747582706_35070440_3386156622955282288'
+  app/controllers/items_controller.rb:168:in `show'
+
+
+Errno::ECONNRESET (Connection reset by peer):
+  app/controllers/items_controller.rb:163:in `show'
+
+
+ActionView::Template::Error (Uncaught exception comparison of Fixnum with String failed in method Container.placeBid):
+    6:                 <% @sellerip = Searchresults.where("id = ?", params[:id]).first %>
+    7:                 <%= @sellerip.ipaddress%>
+    8:                 <% @server1 = XMLRPC::Client.new(@sellerip.ipaddress, "/api/xmlrpc", 3000) %>
+    9:                 <% @result = @server1.call("Container.placeBid", @sellerip.returned_string, @sellerip.category, params[:amount], ip_address) %>
+    10:                 <% if @result["value"] == "success" %>
+    11:                         <p><b> Bid of <%= params[:amount] %> placed <b></p>
+    12:                                     <% @iteminfo["highbid"] =  params[:amount] %>
+  app/views/items/show.html.erb:9:in `_app_views_items_show_html_erb__3961306552747582706_69985623334240_3386156622955282288'
+  app/controllers/items_controller.rb:168:in `show'
+
+
+ActionView::Template::Error (Connection reset by peer):
+    6:                 <% @sellerip = Searchresults.where("id = ?", params[:id]).first %>
+    7:                 <%= @sellerip.ipaddress%>
+    8:                 <% @server1 = XMLRPC::Client.new(@sellerip.ipaddress, "/api/xmlrpc", 3000) %>
+    9:                 <% @result = @server1.call("Container.placeBid", @sellerip.returned_string, @sellerip.category, params[:amount], ip_address) %>
+    10:                 <% if @result["value"] == "success" %>
+    11:                         <p><b> Bid of <%= params[:amount] %> placed <b></p>
+    12:                                     <% @iteminfo["highbid"] =  params[:amount] %>
+  app/views/items/show.html.erb:9:in `_app_views_items_show_html_erb__3961306552747582706_69985622343240_3386156622955282288'
+  app/controllers/items_controller.rb:168:in `show'
+
+
+ActionView::Template::Error (Uncaught exception undefined local variable or method `highBid' for RpcController:Class in method Container.placeBid):
+    6:                 <% @sellerip = Searchresults.where("id = ?", params[:id]).first %>
+    7:                 <%= @sellerip.ipaddress%>
+    8:                 <% @server1 = XMLRPC::Client.new(@sellerip.ipaddress, "/api/xmlrpc", 3000) %>
+    9:                 <% @result = @server1.call("Container.placeBid", @sellerip.returned_string, @sellerip.category, params[:amount], ip_address) %>
+    10:                 <% if @result["value"] == "success" %>
+    11:                         <p><b> Bid of <%= params[:amount] %> placed <b></p>
+    12:                                     <% @iteminfo["highbid"] =  params[:amount] %>
+  app/views/items/show.html.erb:9:in `_app_views_items_show_html_erb__3961306552747582706_69985622823860_3386156622955282288'
+  app/controllers/items_controller.rb:168:in `show'
+
+
+Errno::ECONNRESET (Connection reset by peer):
+  app/controllers/items_controller.rb:163:in `show'
+
+
+Timeout::Error (Timeout::Error):
+  app/controllers/items_controller.rb:163:in `show'
+
+
+Errno::ECONNRESET (Connection reset by peer):
+  app/controllers/items_controller.rb:163:in `show'
+
+
+ActionView::Template::Error (Uncaught exception undefined method `bid_amount' for nil:NilClass in method Container.placeBid):
+    4: 		<% ip_address = Mydata.first.localaddress %>
+    5:                 <% @sellerip = Searchresults.where("id = ?", params[:id]).first %>
+    6:                 <% @server1 = XMLRPC::Client.new(@sellerip.ipaddress, "/api/xmlrpc", 3000) %>
+    7:                 <% @result = @server1.call("Container.placeBid", @sellerip.returned_string, @sellerip.category, params[:amount], ip_address) %>
+    8:                 <% if @result["value"] == "success" %>
+    9:                         <p><b> Bid of <%= params[:amount] %> placed <b></p>
+    10:                                     <% @iteminfo["highbid"] =  params[:amount] %>
+  app/views/items/show.html.erb:7:in `_app_views_items_show_html_erb__3961306552747582706_69985622032220_3386156622955282288'
+  app/controllers/items_controller.rb:168:in `show'
+
+
+Errno::ECONNRESET (Connection reset by peer):
+  app/controllers/items_controller.rb:163:in `show'
+
+
+EOFError (end of file reached):
+  app/controllers/items_controller.rb:163:in `show'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__1253541144802809873_38410020_3386156622955282288 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__1253541144802809873_69985623186700_3386156622955282288 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
