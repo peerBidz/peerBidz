@@ -70,13 +70,8 @@ class RpcController < ApplicationController
 	puts @myItem.description
 	puts @myItem.starting_price
 	puts @myItem.expires_at
-<<<<<<< HEAD
 	puts "highBid"
-        { "description" => @myItem.description, "startprice" => "100", "expires" => "time", "highbid" => "0" }
-=======
         { "description" => @myItem.description, "startprice" => @myItem.starting_price.to_s(), "expires" => @myItem.expires_at.to_s(), "highbid" => highBid.to_s() }
->>>>>>> 4a8ed11e103e5cc55ddf3ffe0d755329215eef47
-
 
   end
   add_method 'Container.extendSellerRing' do |ipaddress, category|
