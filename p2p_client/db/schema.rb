@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20120406000701) do
   create_table "biddings", :force => true do |t|
     t.datetime "bid_time"
     t.integer  "bid_amount"
+    t.string   "ipaddress"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"

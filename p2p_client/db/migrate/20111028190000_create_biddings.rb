@@ -3,7 +3,7 @@ class CreateBiddings < ActiveRecord::Migration
     create_table :biddings do |t|
       t.datetime :bid_time
       t.integer :bid_amount
-
+      t.string :ipaddress
       t.timestamps
     end
   end
