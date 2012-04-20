@@ -43,7 +43,7 @@ if @sellerIPAddress != nil
 			@backupParent.save
         		begin 
 				@server1 = XMLRPC::Client.new(@backupParent.ipaddress, "/api/xmlrpc", 3000)
-        			@newBackup = @server1.call("Container.getBackupParent", params[:browse])
+        			@newBackup = @server1.call("Container.getBackupParent", cookies[:CURRCATEGORY])
 				
 				if @newBackup["value"] != nil
 					@newBackupEntry = Ipaddress.new
@@ -56,7 +56,7 @@ if @sellerIPAddress != nil
     				@myBoot = Sellerring.where("iptype= ?", "bootstrap").first 
 				if @myBoot != nil
 					@server1 = XMLRPC::Client.new(@myBoot.ipaddress, "/api/xmlrpc", 3001)
-        				@newParent = @server1.call("Container.getNewParent", params[:browse])
+        				@newParent = @server1.call("Container.getNewParent", cookies[:CURRCATEGORY], "0")
 					if @newParent["value"] != nil
 						@backupParent.ipaddress = @newParent["value"]
 						@backupParent.save
@@ -64,7 +64,7 @@ if @sellerIPAddress != nil
 
 						
 					@server1 = XMLRPC::Client.new(@backupParent.ipaddress, "/api/xmlrpc", 3000)
-        				@newBackup = @server1.call("Container.getBackupParent", params[:browse])
+        				@newBackup = @server1.call("Container.getBackupParent", cookies[:CURRCATEGORY])
 				
 					if @newBackup["value"] != nil
 						@newBackupEntry = Ipaddress.new
@@ -79,24 +79,34 @@ if @sellerIPAddress != nil
 			
 		else
 			puts "contact bootstrap"
-    				@myBoot = Sellerring.where("iptype= ?", "bootstrap").first 
+    				@myBoot = Sellerring.where("iptype = 'bootstrap'").first 
 				if @myBoot != nil
+					hey = @myBoot.ipaddress
+					puts hey
 					@server1 = XMLRPC::Client.new(@myBoot.ipaddress, "/api/xmlrpc", 3001)
-        				@newParent = @server1.call("Container.getNewParent", params[:browse])
-					if @newParent["value"] != nil
-						@backupParent.ipaddress = @newParent["value"]
-						@backupParent.save
+					ip = @sellerIPAddress.ipaddress 	
+					currcat = cookies[:CURRCATEGORY]
+					@newParent = @server1.call("Container.getNewParent", currcat, ip)
+					
+
+					if @newParent["value"] != "0" 
+						@sellerIPAddress.ipaddress = @newParent["value"]
+						@sellerIPAddress.save
+					else
+						puts "hejklkjkjk"
+						@sellerIPAddress.delete
 					end
+					
 
 					# Contacting bootstrap for new parent because no backup exists	
 					begin
 						@server1 = XMLRPC::Client.new(@backupParent.ipaddress, "/api/xmlrpc", 3000)
-        					@newBackup = @server1.call("Container.getBackupParent", params[:browse])
+        					@newBackup = @server1.call("Container.getBackupParent", cookies[:CURRCATEGORY])
 					rescue
 						puts "new parent from bootstrap is unavailable"
 					end
 
-					if @newBackup["value"] != nil
+					if @newBackup != nil
 						@newBackupEntry = Ipaddress.new
 						@newBackupEntry.iptype = "parentbackup"
 						@newBackupEntry.ipaddress = @newBackup["value"]
@@ -107,31 +117,47 @@ if @sellerIPAddress != nil
 		end
 	end
 else
-			puts "contact bootstrap"
+			puts "contact bootstrap123"
     				@myBoot = Sellerring.where("iptype= ?", "bootstrap").first 
 				if @myBoot != nil
 					@server1 = XMLRPC::Client.new(@myBoot.ipaddress, "/api/xmlrpc", 3001)
-        				@newParent = @server1.call("Container.getNewParent", params[:browse])
-					if @newParent["value"] != nil
-						@backupParent.ipaddress = @newParent["value"]
-						@backupParent.save
+        				@newParent = @server1.call("Container.getNewParent", cookies[:CURRCATEGORY], "0.0.0.0")
+					if @newParent["value"] != "0"
+						@sellerIPAddress = Ipaddress.new
+					    @sellerIPAddress.iptype = "parent"	
+						@sellerIPAddress.ipaddress = @newParent["value"]
+						@sellerIPAddress.category = cookies[:CURRCATEGORY]
+						@sellerIPAddress.save
 					end
 
 					# Contacting bootstrap for new parent because no backup exists	
 					begin
-						@server1 = XMLRPC::Client.new(@backupParent.ipaddress, "/api/xmlrpc", 3000)
-        					@newBackup = @server1.call("Container.getBackupParent", params[:browse])
+						@server1 = XMLRPC::Client.new(@sellerIPAddress.ipaddress, "/api/xmlrpc", 3000)
+        				@newBackup = @server1.call("Container.getBackupParent", cookies[:CURRCATEGORY])
+						if @newBackup["value"] != "0" 
+							@newBackupEntry = Ipaddress.new
+							@newBackupEntry.iptype = "parentbackup"
+							@newBackupEntry.ipaddress = @newBackup["value"]
+							@newBackupEntry.category = @backupParent.category
+							@newBackupEntry.save
+						end
+						@server1 = XMLRPC::Client.new(@sellerIPAddress.ipaddress, "/api/xmlrpc", 3000)
+						@ip_address = @server1.call("Container.get_sellerorigin", @search_string, cookies[:CURRCATEGORY], @my_address)
+                        
+						if @ip_address["value"] != "0"
+						@dbvalue = Searchresults.new
+						@dbvalue.search_string = @ip_address["search"]
+						@dbvalue.category = @ip_address["category"]
+						@dbvalue.ipaddress = @ip_address["value"]
+						@dbvalue.returned_string = @ip_address["returnedstring"] 
+						@dbvalue.save
+						end
+
 					rescue
 						puts "new parent from bootstrap is unavailable"
 					end
 
-					if @newBackup["value"] != nil
-						@newBackupEntry = Ipaddress.new
-						@newBackupEntry.iptype = "parentbackup"
-						@newBackupEntry.ipaddress = @newBackup["value"]
-						@newBackupEntry.category = @backupParent.category
-						@newBackupEntry.save
-					end
+
 				end
 end
 
@@ -235,7 +261,7 @@ end
       		@checkcategory = Ipaddress.find_all_by_category(params[:browse])
   		puts "buyer"
       		if (@checkcategory.count == 0)
-			if params[:parent] != 0
+			if params[:parent] != "0"
         			@parentip = params[:parent]
         			@category = params[:browse]
         			@mydb = Ipaddress.new
