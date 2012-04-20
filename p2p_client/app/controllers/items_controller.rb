@@ -106,6 +106,33 @@ if @sellerIPAddress != nil
 				end
 		end
 	end
+else
+			puts "contact bootstrap"
+    				@myBoot = Sellerring.where("iptype= ?", "bootstrap").first 
+				if @myBoot != nil
+					@server1 = XMLRPC::Client.new(@myBoot.ipaddress, "/api/xmlrpc", 3001)
+        				@newParent = @server1.call("Container.getNewParent", params[:browse])
+					if @newParent["value"] != nil
+						@backupParent.ipaddress = @newParent["value"]
+						@backupParent.save
+					end
+
+					# Contacting bootstrap for new parent because no backup exists	
+					begin
+						@server1 = XMLRPC::Client.new(@backupParent.ipaddress, "/api/xmlrpc", 3000)
+        					@newBackup = @server1.call("Container.getBackupParent", params[:browse])
+					rescue
+						puts "new parent from bootstrap is unavailable"
+					end
+
+					if @newBackup["value"] != nil
+						@newBackupEntry = Ipaddress.new
+						@newBackupEntry.iptype = "parentbackup"
+						@newBackupEntry.ipaddress = @newBackup["value"]
+						@newBackupEntry.category = @backupParent.category
+						@newBackupEntry.save
+					end
+				end
 end
 
     elsif params[:browse]
