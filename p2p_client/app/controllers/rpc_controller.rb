@@ -106,15 +106,27 @@ class RpcController < ApplicationController
 
        predecessor = 0
     end
-    
-    {"value" => predecessor}
+
+     @mySuccessor = Sellerring.where("category = :ct AND iptype = :pt", {:ct => category, :pt => "successor"})
+     backupSuccessor = "0"	
+     if @mySuccessor.count != 0
+       backupSuccessor = @mySuccessor.first.ipaddress
+     end
+
+    {"value" => predecessor, "backup_successor" => backupSuccessor}
 end
   add_method 'Container.updateSuccessor' do |ipaddress, category|
 
      @myvar = Sellerring.where("category = :ct AND iptype = :pt", {:ct => category, :pt => "successor"}).first
      @myvar.ipaddress = ipaddress
      @myvar.save
-	
+     
+     backupPred = "0"
+     @myPred = Sellerring.where("category = :ct AND iptype = :pt", {:ct => category, :pt => "predecessor"}).first
+     if @myPred != nil
+     	backupPred = @myPred.ipaddress
+     end
+     {"value" => backupPred }
   end
 
   add_method 'Container.get_sellerorigin' do |search_string, category_name, ip|

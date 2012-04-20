@@ -145,6 +145,7 @@ GEM
     responders (0.6.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    rexml-expansion-fix (1.0.1)
     rspec (2.7.0)
       rspec-core (~> 2.7.0)
       rspec-expectations (~> 2.7.0)
@@ -225,6 +226,7 @@ DEPENDENCIES
   rails (= 3.0.9)
   rails-xmlrpc
   rake (= 0.9.2.2)
+  rexml-expansion-fix
   rspec-rails
   ruby-debug-base19x
   ruby-debug-ide
