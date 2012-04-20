@@ -1,0 +1,21 @@
+<script>
+function messageParent(url)
+{
+	<% def clientIP %>
+        <% clientIP = request.env['REMOTE_ADDR'] %>
+        alert('<%= clientIP %>');
+	<% CategoryMembers.where(:ipAddress => clientIP, :category => category.name).first_or_create(:ipAddress => clientIP, :category => 'event.data')%>
+        <%end%>
+
+
+	var myParent = decodeURIComponent( document.location.hash.replace( /^#/, '');
+	parent.postMessage(url, parent);
+}
+</script>
+<table>
+<% @categories.each do |category| %>
+  <tr>
+    <td><a href='#' onclick="messageParent(<%= category.name %>)"><%= category.name %></a> </td>
+  </tr>
+<% end %>
+</table>

@@ -1,0 +1,6 @@
+<% CategoryMembers.create(:ipAddress => 'request.env['REMOTE_ADDR']', :category => 'params[:browse]')%>
+
+<script>
+window.parent.postMessage(<%= params[:browse] %>, '*');
+<script>
+
