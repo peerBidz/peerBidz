@@ -15,13 +15,26 @@ class RpcController < ApplicationController
      end
   end
 
-  add_method 'Container.getNewParent' do |category|
-	@newParent = CategoryMember.where("category = ?", category).order("updated_at asc").first
-	if @newParent != nil
-		@newParent.updated_at = DateTime.now
-		{"value" => @newParent.ipaddress}
+  add_method 'Container.getNewParent' do |category, failedseller|
+  @newParent = CategoryMembers.where("ipAddress = ?", failedseller)
+    if @newParent != nil 
+	    if @newParent.count != 0
+			@newParent.each do |element|
+				element.delete
+			end
+		end 
+    end 
+    puts "rchd"
+	@newParent = CategoryMembers.where("category = ?", category).order("updated_at asc").first
+    if @newParent != nil
+	   ip = @newParent.ipAddress	
+       @newParent.updated_at = DateTime.now
+	   @newParent.save
+	   {"value" => ip}
 	else
-		{"value" => "0"}
-	end
+		puts "hey"
+	   {"value" => "0"}
+	end 
   end
+
 end
