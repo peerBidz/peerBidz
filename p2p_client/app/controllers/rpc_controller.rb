@@ -45,18 +45,84 @@ class RpcController < ApplicationController
   end
 
   add_method 'Container.getBackupParent' do |category|
-   
+  	puts "IN GET BACKUP PARENT" 
      @myvar = Sellerring.where("category = ?", category).order("updated_at asc").first 
      
     if @myvar != nil
+	puts "not nil"
      @myvar.updated_at = DateTime.now  
      @myvar.save 
  
      { "value" => @myvar.ipaddress }
-     end
+ 	else
+
    
      { "value" => "0" }
+	end
    end
+  add_method 'Container.reestablishRing' do |category, deadIP, remoteIP|
+  	
+	{"value" => "0"}
+  end
+add_method 'Container.parentDeathSwitch' do |category, ipaddress|
+  	puts "PARENT DEATH" 
+	@boot = Sellerring.where("iptype = 'bootstrap'").first
+      	@server1 = XMLRPC::Client.new(@boot.ipaddress, "/api/xmlrpc", 3001)
+      	Thread.new {
+		@server1.call_async("Container.removeDeadSeller", ipaddress)
+	}
+     	
+	@myvar = Sellerring.where("category = ? and ipaddress <> ?", category, ipaddress).order("updated_at asc").first 
+    	puts "after 1st" 
+	@myDead = Sellerring.where("category = ? and ipaddress = ?", category, ipaddress)
+	puts "next"
+	if @myDead != nil
+		puts "not nil"
+		if @myDead.count == 2
+			puts "count = 2"
+			# No other ring members. delete predecessor/successor
+			@myDead.each do |entry|
+				entry.delete
+			end
+			puts "Lost predecessor/successor"
+		else
+			puts "not 2 count"
+			@dead = @myDead.first
+			if @dead.iptype == "predecessor"
+				# lost a predecessor
+				# TODO: RPC to update links
+				puts "Lost my predecessor"
+				@myBackup = Sellerring.where("category = ? and iptype = 'backup_predecessor'", category).first
+				if @myBackup != nil
+					# connect to backup successor
+					# todo: RPC to update links
+				else
+					# no successor, connect to predecessor
+				end
+			else
+				# lost a successor
+				puts "Lost my successor"
+				@myBackup = Sellerring.where("category = ? and iptype = 'backup_successor'", category).first
+				if @myBackup != nil
+					# connect to backup successor
+					# todo: RPC to update links
+				else
+					# no successor, connect to predecessor
+				end
+			end 
+		end
+	end
+	if @myvar != nil
+		puts "not nil"
+     		@myvar.updated_at = DateTime.now  
+     		@myvar.save 
+ 	
+     		{ "value" => @myvar.ipaddress }
+ 	else
+   		{ "value" => "0" }
+	end
+   end
+
   add_method 'Container.getItemInfo' do |category, title|
 
 	@myItem = Item.where("category = ? and title = ?", category, title).first

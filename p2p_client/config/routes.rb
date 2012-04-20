@@ -52,6 +52,7 @@ end
   match '/items/:id/add_to_watch_list', :to => 'items#add_to_watch_list'
   match '/items/:id/remove_from_watch_list', :to => 'items#remove_from_watch_list'
   match '/items/:id', :to => 'items#show'
+  match '/table', :to => 'items#table'
 
   root :to => 'pages#home'
 
