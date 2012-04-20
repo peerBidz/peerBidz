@@ -60,7 +60,11 @@ class RpcController < ApplicationController
      { "value" => "0" }
 	end
    end
-  add_method 'Container.parentDeathSwitch' do |category, ipaddress|
+  add_method 'Container.reestablishRing' do |category, deadIP, remoteIP|
+  	
+	{"value" => "0"}
+  end
+add_method 'Container.parentDeathSwitch' do |category, ipaddress|
   	puts "PARENT DEATH" 
 	@boot = Sellerring.where("iptype = 'bootstrap'").first
       	@server1 = XMLRPC::Client.new(@boot.ipaddress, "/api/xmlrpc", 300)
