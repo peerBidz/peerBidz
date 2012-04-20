@@ -24,9 +24,8 @@ class ItemsController < ApplicationController
 				##### If parent seller for the category exists in Ipaddress table contact parent to start search
 				@server1 = XMLRPC::Client.new(@sellerIPAddress.ipaddress, "/api/xmlrpc", 3000)
 				@ip_address = @server1.call("Container.get_sellerorigin", @search_string, cookies[:CURRCATEGORY], @my_address)
-				
 				if @ip_address["value"] != "0"
-					##### If parent seller	
+					##### If parent seller resturned a search result store in Searchresults table	
 					@dbvalue = Searchresults.new
 					@dbvalue.search_string = @ip_address["search"]
 					@dbvalue.category = @ip_address["category"]
@@ -34,159 +33,148 @@ class ItemsController < ApplicationController
 					@dbvalue.returned_string = @ip_address["returnedstring"] 
 					@dbvalue.save
 				end
-		rescue
-			##### Parent/origin seller did not respond. Lookup if parentbackup present
-			puts "Exception caught. Seller IP is bad."
-			@backupParent = Ipaddress.where("category = :ct AND iptype = :it", {:ct => cookies[:CURRCATEGORY], :it => "parentbackup"}).first
-
-			if @backupParent != nil
-				##### Parentbackup present. Remove parent entry from Ipaddress table. Change parentbackup type to parent
-				deadParentIp = @sellerIPAddress.ipaddress
-				@sellerIPAddress.delete
-				@backupParent.iptype = "parent"
-				@backupParent.save
-				begin
-					##### RPC to old parentbackup and get a new parentbackup from it	
-					@server1 = XMLRPC::Client.new(@backupParent.ipaddress, "/api/xmlrpc", 3000)
-					puts "Calling parent death switch"
-					@newBackup = @server1.call("Container.parentDeathSwitch", cookies[:CURRCATEGORY], deadParentIp)
-					if @newBackup["value"] != nil
-						puts "heyyyyyyyyyyyyyyy"
-						puts @newBackup["value"]
-						if @newBackup["value"] != "0"	
-							@newBackupEntry = Ipaddress.new
-							@newBackupEntry.iptype = "parentbackup"
-							@newBackupEntry.ipaddress = @newBackup["value"]
-							@newBackupEntry.category = @backupParent.category
-							@newBackupEntry.save
-						end
-					end
-				rescue
-					puts "Parent and backup were both dead...Contacting bootstrap"
-					@myBoot = Sellerring.where("iptype= ?", "bootstrap").first 
-					if @myBoot != nil
-						@server1 = XMLRPC::Client.new(@myBoot.ipaddress, "/api/xmlrpc", 3001)
-        				Thread.new {
-						@ret = @server1.call2_async("Container.removeDeadSeller", deadParentIp)
-						}
-						@server1 = XMLRPC::Client.new(@myBoot.ipaddress, "/api/xmlrpc", 3001)
-						@newParent = @server1.call("Container.getNewParent", cookies[:CURRCATEGORY], @backupParent.ipaddress)
-						if @newParent["value"] != nil
-
-							if @newParent["value"] != "0"
-								@backupParent.ipaddress = @newParent["value"]
-								@backupParent.save
-							else
-								puts "Bootstrap does not have anyone else in cat mem"
-								@backupParent.delete
+			rescue
+				##### Parent/origin seller did not respond. Lookup if parentbackup present
+				@backupParent = Ipaddress.where("category = :ct AND iptype = :it", {:ct => cookies[:CURRCATEGORY], :it => "parentbackup"}).first
+				if @backupParent != nil
+					##### Parentbackup present. Delete parent entry from Ipaddress table. Change parentbackup type to parent
+					deadParentIp = @sellerIPAddress.ipaddress
+					@sellerIPAddress.delete
+					@backupParent.iptype = "parent"
+					@backupParent.save
+					begin
+						##### RPC to old parentbackup (now your parent) and get a new parentbackup from it	
+						@server1 = XMLRPC::Client.new(@backupParent.ipaddress, "/api/xmlrpc", 3000)
+						@newBackup = @server1.call("Container.parentDeathSwitch", cookies[:CURRCATEGORY], deadParentIp)
+						if @newBackup["value"] != nil
+							if @newBackup["value"] != "0"	
+								##### New parent backup was returned. Add it to Ipaddress table
+								@newBackupEntry = Ipaddress.new
+								@newBackupEntry.iptype = "parentbackup"
+								@newBackupEntry.ipaddress = @newBackup["value"]
+								@newBackupEntry.category = @backupParent.category
+								@newBackupEntry.save
 							end
-
 						end
-						if @newParent["value"] != nil
-						   if @newParent["value"] != "0"
-
-								@server1 = XMLRPC::Client.new(@backupParent.ipaddress, "/api/xmlrpc", 3000)
-								puts "calling death Switch"
-								@newBackup = @server1.call("Container.getBackupParent", cookies[:CURRCATEGORY])
-								if @newBackup["value"] != nil
-									puts "Value ret from Death switch"
-									puts @newBackup["value"]
-									if puts @newBackup["value"] != "0"
-										@newBackupEntry = Ipaddress.new
-										@newBackupEntry.iptype = "parentbackup"
-										@newBackupEntry.ipaddress = @newBackup["value"]
-										@newBackupEntry.category = @backupParent.category
-										@newBackupEntry.save
+					rescue
+						##### Parent and backup were both dead.Contacting bootstrap
+						@myBoot = Sellerring.where("iptype= ?", "bootstrap").first 
+						if @myBoot != nil
+							##### Ask bootstrap to delete your deadParent seller from Catgeory Members
+							@server1 = XMLRPC::Client.new(@myBoot.ipaddress, "/api/xmlrpc", 3001)
+							Thread.new {
+								@ret = @server1.call2_async("Container.removeDeadSeller", deadParentIp)
+							}
+							##### Ask bootstrap for a new parent and request to delete your backupParent from Cateory Members
+							@server1 = XMLRPC::Client.new(@myBoot.ipaddress, "/api/xmlrpc", 3001)
+							@newParent = @server1.call("Container.getNewParent", cookies[:CURRCATEGORY], @backupParent.ipaddress)
+							if @newParent["value"] != nil
+								if @newParent["value"] != "0"
+									##### Bootstrap returned a new parent. Save the entry in Ipaddress table
+									@backupParent.ipaddress = @newParent["value"]
+									@backupParent.save
+								else
+									##### Bootstrap does not have anyone else in category members. Delete entry from Ipaddress table
+									@backupParent.delete
+								end
+							end
+							if @newParent["value"] != nil
+								if @newParent["value"] != "0"
+									##### Bootstrap returned a new parent. Contact it for a new backup
+									@server1 = XMLRPC::Client.new(@backupParent.ipaddress, "/api/xmlrpc", 3000)
+									@newBackup = @server1.call("Container.getBackupParent", cookies[:CURRCATEGORY])
+									if @newBackup["value"] != nil
+										if  @newBackup["value"] != "0"
+											##### The new parent returned a new backup parent. Save in Ipaddress table
+											@newBackupEntry = Ipaddress.new
+											@newBackupEntry.iptype = "parentbackup"
+											@newBackupEntry.ipaddress = @newBackup["value"]
+											@newBackupEntry.category = @backupParent.category
+											@newBackupEntry.save
+										end
 									end
 								end
 							end
-						end
-					end
-				end
-			
-		else
-			puts "contact bootstrap"
+						end #### end of @myBoot != nil
+					end  ##### end of rescue for backupparent being dead 
+				
+				else   ##### Backup parent was not present in buyer's Ipaddress table
+					##### Contact bootstrap for getting a new parent
     				@myBoot = Sellerring.where("iptype = 'bootstrap'").first 
-				if @myBoot != nil
-					hey = @myBoot.ipaddress
-					puts hey
-					@server1 = XMLRPC::Client.new(@myBoot.ipaddress, "/api/xmlrpc", 3001)
-					ip = @sellerIPAddress.ipaddress 	
-					currcat = cookies[:CURRCATEGORY]
-					@newParent = @server1.call("Container.getNewParent", currcat, ip)
-					
-
-					if @newParent["value"] != "0" 
-						@sellerIPAddress.ipaddress = @newParent["value"]
-						@sellerIPAddress.save
-					else
-						puts "hejklkjkjk"
-						@sellerIPAddress.delete
-					end
-					
-
-					# Contacting bootstrap for new parent because no backup exists	
+					if @myBoot != nil
+						@server1 = XMLRPC::Client.new(@myBoot.ipaddress, "/api/xmlrpc", 3001)
+						ip = @sellerIPAddress.ipaddress 	
+						currcat = cookies[:CURRCATEGORY]
+						@newParent = @server1.call("Container.getNewParent", currcat, ip)
+						if @newParent["value"] != "0"
+							##### Bootstrap returned a new parent. Save entry in Ipaddress table	
+							@sellerIPAddress.ipaddress = @newParent["value"]
+							@sellerIPAddress.save
+							begin
+								##### Contact new parent returned by bootstrap for a backup parent
+								@server1 = XMLRPC::Client.new(@sellerIPAddress.ipaddress, "/api/xmlrpc", 3000)
+								@newBackup = @server1.call("Container.getBackupParent", cookies[:CURRCATEGORY])
+							    if @newBackup != nil
+								    @newBackupEntry = Ipaddress.new
+							        @newBackupEntry.iptype = "parentbackup"
+							        @newBackupEntry.ipaddress = @newBackup["value"]
+							        @newBackupEntry.category = @backupParent.category
+							        @newBackupEntry.save
+									##### TODO need to start search here again
+							    end
+							rescue
+								puts "new parent from bootstrap also unavailable. Do not wish to support further fault tolerance"
+							end
+						else
+							##### Bootstrap did not return any new parent. Delete parent entry from Ipaddress table
+							@sellerIPAddress.delete
+						end
+					end ##### ends @myBoot != nil
+				end ##### ends if-else for @backupParent != nil	
+			end  ##### Ends begin-rescue for parent/origin seller not responding
+		else	##### No parent present in Ipaddress table
+			@myBoot = Sellerring.where("iptype= ?", "bootstrap").first 
+			if @myBoot != nil
+				##### Contact bootstrap for parent/origin seller
+				@server1 = XMLRPC::Client.new(@myBoot.ipaddress, "/api/xmlrpc", 3001)
+        		@newParent = @server1.call("Container.getNewParent", cookies[:CURRCATEGORY], "0.0.0.0")
+				if @newParent["value"] != "0"
+					##### Save parent returned by bootstrap in Ipaddress table
+					@sellerIPAddress = Ipaddress.new
+				    @sellerIPAddress.iptype = "parent"	
+					@sellerIPAddress.ipaddress = @newParent["value"]
+					@sellerIPAddress.category = cookies[:CURRCATEGORY]
+					@sellerIPAddress.save
 					begin
-						@server1 = XMLRPC::Client.new(@backupParent.ipaddress, "/api/xmlrpc", 3000)
-        					@newBackup = @server1.call("Container.getBackupParent", cookies[:CURRCATEGORY])
-					rescue
-						puts "new parent from bootstrap is unavailable"
-					end
-
-					if @newBackup != nil
-						@newBackupEntry = Ipaddress.new
-						@newBackupEntry.iptype = "parentbackup"
-						@newBackupEntry.ipaddress = @newBackup["value"]
-						@newBackupEntry.category = @backupParent.category
-						@newBackupEntry.save
-					end
-				end
-		end
-	end
-else
-			puts "contact bootstrap123"
-    				@myBoot = Sellerring.where("iptype= ?", "bootstrap").first 
-				if @myBoot != nil
-					@server1 = XMLRPC::Client.new(@myBoot.ipaddress, "/api/xmlrpc", 3001)
-        				@newParent = @server1.call("Container.getNewParent", cookies[:CURRCATEGORY], "0.0.0.0")
-					if @newParent["value"] != "0"
-						@sellerIPAddress = Ipaddress.new
-					    @sellerIPAddress.iptype = "parent"	
-						@sellerIPAddress.ipaddress = @newParent["value"]
-						@sellerIPAddress.category = cookies[:CURRCATEGORY]
-						@sellerIPAddress.save
-					end
-
-					# Contacting bootstrap for new parent because no backup exists	
-					begin
+						##### Contact parent for backup parent
 						@server1 = XMLRPC::Client.new(@sellerIPAddress.ipaddress, "/api/xmlrpc", 3000)
         				@newBackup = @server1.call("Container.getBackupParent", cookies[:CURRCATEGORY])
 						if @newBackup["value"] != "0" 
+							##### Backup parent returned by parent. Save in Ipaddress table
 							@newBackupEntry = Ipaddress.new
 							@newBackupEntry.iptype = "parentbackup"
 							@newBackupEntry.ipaddress = @newBackup["value"]
 							@newBackupEntry.category = @backupParent.category
 							@newBackupEntry.save
 						end
+						##### Contact parent/origin seller to start search
 						@server1 = XMLRPC::Client.new(@sellerIPAddress.ipaddress, "/api/xmlrpc", 3000)
 						@ip_address = @server1.call("Container.get_sellerorigin", @search_string, cookies[:CURRCATEGORY], @my_address)
-                        
-						if @ip_address["value"] != "0"
-						@dbvalue = Searchresults.new
-						@dbvalue.search_string = @ip_address["search"]
-						@dbvalue.category = @ip_address["category"]
-						@dbvalue.ipaddress = @ip_address["value"]
-						@dbvalue.returned_string = @ip_address["returnedstring"] 
-						@dbvalue.save
+                        if @ip_address["value"] != "0"
+							##### Parent returned search results
+							@dbvalue = Searchresults.new
+							@dbvalue.search_string = @ip_address["search"]
+							@dbvalue.category = @ip_address["category"]
+							@dbvalue.ipaddress = @ip_address["value"]
+							@dbvalue.returned_string = @ip_address["returnedstring"] 
+							@dbvalue.save
 						end
-
 					rescue
-						puts "new parent from bootstrap is unavailable"
+						puts "New parent from bootstrap also failed. Do no support more fault tolerance"
 					end
-
-
-				end
-end
+				end ##### ends @newParent[value] != "0"
+			end ##### ends @myBoot != null
+		end ##### ends if-else parent present in Ipaddress table
 
     elsif params[:browse]
     #@items = Item.find(:all, :conditions => ['category_id LIKE ?', "#{params[:browse]}"])
