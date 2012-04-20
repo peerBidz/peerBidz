@@ -37,4 +37,18 @@ class RpcController < ApplicationController
 	end 
   end
 
+  add_method 'Container.removeDeadSeller' do |failedseller|
+  puts "In removeDeadSeller"
+  puts failedseller
+  @seller = CategoryMembers.where("ipAddress = ?", failedseller)
+    if @seller != nil 
+	    if @seller.count != 0
+			@seller.each do |element|
+				element.delete
+				puts "Deleted a seller from Cat Mem"
+			end
+		end 
+    end 
+	{"value" => "0"}
+  end
 end
