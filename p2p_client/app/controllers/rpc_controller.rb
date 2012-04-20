@@ -67,7 +67,7 @@ class RpcController < ApplicationController
 add_method 'Container.parentDeathSwitch' do |category, ipaddress|
   	puts "PARENT DEATH" 
 	@boot = Sellerring.where("iptype = 'bootstrap'").first
-      	@server1 = XMLRPC::Client.new(@boot.ipaddress, "/api/xmlrpc", 300)
+      	@server1 = XMLRPC::Client.new(@boot.ipaddress, "/api/xmlrpc", 3001)
       	Thread.new {
 		@server1.call_async("Container.removeDeadSeller", ipaddress)
 	}

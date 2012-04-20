@@ -10,6 +10,9 @@ class ItemsController < ApplicationController
 
   # GET /items
   # GET /items.xml
+  def table
+  end 
+
   def index
       @my_address = Mydata.first.localaddress 
     if params[:search]
