@@ -5,10 +5,13 @@
   <a class="brand" href="/">PeerBidz!</a>
   <ul class="nav">
     <li class="active"><%= link_to "Home", root_path %></li>
-     <% if cookies['_BestBay_session'] %>
+     <% @mydat = Mydata.first %>
+	<% if @mydat != nil %>
             <li class="active"><%= link_to "My PeerBidz", myaccount_path %></li>
+	<% if @mydat.is_seller %>
             <li class="active"><%= link_to "Auction an Item", "/items/new" %></li>
-    <% end %>
+    	<%end%>
+	<% end %>
     <%= render 'devise/menu/registration_items' %>
     <%= render 'devise/menu/login_items' %>
   </ul>
