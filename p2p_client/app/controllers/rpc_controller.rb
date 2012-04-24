@@ -196,7 +196,15 @@ end
   end
 
   add_method 'Container.get_sellerorigin' do |search_string, category_name, ip|
+    # end old searches
+    @oldreq = Searchdb.where("buyeripaddress = ?", ip).all
+    if @oldreq != nil
+    	@oldreq.each do |old|
+		old.delete
+    	end
+    end
 
+    # start new search
     @request = Searchdb.new 
     @request.buyeripaddress = ip
     @request.searchquery = search_string
