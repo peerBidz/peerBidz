@@ -51,7 +51,6 @@ ActiveRecord::Schema.define(:version => 20120406000701) do
     t.string   "ipaddress"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
     t.integer  "item_id"
   end
 

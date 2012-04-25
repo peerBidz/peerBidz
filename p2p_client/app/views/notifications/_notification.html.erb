@@ -11,25 +11,21 @@
 		<% end %>
 		<%= notification.message %> 
 		<%if notification.notification_type && notification.notification_type.include?('W') %>
-		<% unless Item.find(notification.item_id).is_paid %>
 		<%= link_to "(Pay here)", :controller => 'carts', :action => 'show', :id => 'current' %>
-		<% end %>
 		<% elsif notification.notification_type && notification.notification_type.include?('P')%>
 			<!-- To show the shipping address of the buyer -->
 			<a href="#" id="dialog_link<%=notification.id%>">(Ship here)</a>
+                <% else %>
+		<% end %>
 			
 <!-- ui-dialog -->
 <div id="dialog<%=notification.id%>" title="Shipping Details">
-	<% highest_bid_row = Bidding.find(:first, :conditions => ["item_id IN (?)", notification.item_id] , :order => 'bid_amount DESC') %>
-	<% winner = User.find(highest_bid_row.user_id) %>
+        Came in to tgere
+	<% #highest_bid_row = Bidding.find(:first, :conditions => ["item_id IN (?)", notification.item_id] , :order => 'bid_amount DESC') %>
+	<% #winner = User.find(highest_bid_row.user_id) %>
 	<p>
-		Name = <%= winner.last_name %>, <%= winner.first_name %> 
+		Name = Naveen
 		<br />
-		Address = <%= winner.street %> <%= winner.city %> <%= winner.state %>
-		<br />
-		Phone =  <%= winner.phone %>
-		<br />
-		Email =  <%= winner.email %>
 	</p>
 </div>
 <script type="text/javascript">
@@ -60,6 +56,5 @@
 	});
 </script>
 
-		<% end %>
 	</li>
 </div>

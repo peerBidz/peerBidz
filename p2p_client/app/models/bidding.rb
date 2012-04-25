@@ -1,7 +1,7 @@
 class Bidding < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :bid_amount, :bid_time, :item_id, :user_id, :created_at
+  attr_accessible :bid_amount, :bid_time, :item_id, :created_at
 
   belongs_to :item
   belongs_to :user

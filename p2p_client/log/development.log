@@ -73,3 +73,114 @@ DEPRECATION WARNING: You are using the old router DSL which will be removed in R
 DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:6)
 DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
 DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___2186798259538676783_57461960__2497624382216364679 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___2186798259538676783_57528740__2497624382216364679 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__4160512977927600391_56237620__3809682549175120759 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__4160512977927600391_56297980__3809682549175120759 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__4160512977927600391_54331120__3809682549175120759 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::MissingTemplate (Missing template notifications/index with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml, :arb], :formats=>[:html], :locale=>[:en, :en]} in view paths "/home/naveen/Distributed/test/p2p_client/app/views", "/home/naveen/.rvm/gems/ruby-1.9.2-p180/gems/activeadmin-0.3.4/app/views", "/home/naveen/.rvm/gems/ruby-1.9.2-p180/gems/kaminari-0.12.4/app/views", "/home/naveen/.rvm/gems/ruby-1.9.2-p180/gems/devise-1.5.0/app/views"):
+  
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__4160512977927600391_56789660__3809682549175120759 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__4160512977927600391_42157600__3809682549175120759 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__4160512977927600391_56689980__3809682549175120759 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+    108:           <a class="btn primary large" href='<%= items_path %>'>Hot Items »</a>
+    109:         </div>
+    110:                 <h2>Your notifications</h2>
+    111:                 <div class="notifications" id="notifications" data-user-id="<%= current_user.id %>" >
+    112:                         <%= render Notifications.find(:all, :conditions=>["delivered=?", false]) %>
+    113:                 </div>
+    114: 
+  app/views/pages/home.html.erb:111:in `_app_views_pages_home_html_erb__4160512977927600391_56689980__3809682549175120759'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__4160512977927600391_69850465507080__3809682549175120759 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Notifications):
+    109:         </div>
+    110:                 <h2>Your notifications</h2>
+    111:                 <div class="notifications" id="notifications" >
+    112:                         <%= render Notifications.find(:all, :conditions=>["delivered=?", false]) %>
+    113:                 </div>
+    114: 
+    115: <% end %>
+  app/views/pages/home.html.erb:112:in `_app_views_pages_home_html_erb__4160512977927600391_69850465507080__3809682549175120759'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__4160512977927600391_35538180__3809682549175120759 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (Couldn't find Item with ID=1):
+    11: 		<% end %>
+    12: 		<%= notification.message %> 
+    13: 		<%if notification.notification_type && notification.notification_type.include?('W') %>
+    14: 		<% unless Item.find(notification.item_id).is_paid %>
+    15: 		<%= link_to "(Pay here)", :controller => 'carts', :action => 'show', :id => 'current' %>
+    16: 		<% end %>
+    17: 		<% elsif notification.notification_type && notification.notification_type.include?('P')%>
+  app/views/notifications/_notification.html.erb:14:in `_app_views_notifications__notification_html_erb__2019706466860132451_45757460__4529432315199717904'
+  app/views/notifications/index.js.erb:2:in `_app_views_notifications_index_js_erb___2751945447683442088_45850680__3809682549175120759'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__4160512977927600391_50030240__3809682549175120759 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (/home/naveen/Distributed/test/p2p_client/app/views/notifications/_notification.html.erb:16: syntax error, unexpected keyword_elsif, expecting keyword_end
+		 elsif notification.notification_ty...
+		      ^
+/home/naveen/Distributed/test/p2p_client/app/views/notifications/_notification.html.erb:62: syntax error, unexpected keyword_ensure, expecting $end):
+    13: 		<%if notification.notification_type && notification.notification_type.include?('W') %>
+    14: 		<%= link_to "(Pay here)", :controller => 'carts', :action => 'show', :id => 'current' %>
+    15: 		<% end %>
+    16: 		<% elsif notification.notification_type && notification.notification_type.include?('P')%>
+    17: 			<!-- To show the shipping address of the buyer -->
+    18: 			<a href="#" id="dialog_link<%=notification.id%>">(Ship here)</a>
+    19: 			
+  app/views/notifications/index.js.erb:2:in `_app_views_notifications_index_js_erb___2751945447683442088_45673960__3809682549175120759'
+
+
+ActionView::Template::Error (/home/naveen/Distributed/test/p2p_client/app/views/notifications/_notification.html.erb:16: syntax error, unexpected keyword_elsif, expecting keyword_end
+		 elsif notification.notification_ty...
+		      ^
+/home/naveen/Distributed/test/p2p_client/app/views/notifications/_notification.html.erb:62: syntax error, unexpected keyword_ensure, expecting $end):
+    13: 		<%if notification.notification_type && notification.notification_type.include?('W') %>
+    14: 		<%= link_to "(Pay here)", :controller => 'carts', :action => 'show', :id => 'current' %>
+    15: 		<% end %>
+    16: 		<% elsif notification.notification_type && notification.notification_type.include?('P')%>
+    17: 			<!-- To show the shipping address of the buyer -->
+    18: 			<a href="#" id="dialog_link<%=notification.id%>">(Ship here)</a>
+    19: 			
+  app/views/notifications/index.js.erb:2:in `_app_views_notifications_index_js_erb___2751945447683442088_54786500__3809682549175120759'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__4160512977927600391_53459380__3809682549175120759 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (/home/naveen/Distributed/test/p2p_client/app/views/notifications/_notification.html.erb:62: syntax error, unexpected keyword_ensure, expecting $end):
+    59: 	</li>
+    60: </div>
+  app/views/notifications/index.js.erb:2:in `_app_views_notifications_index_js_erb___2751945447683442088_52682920__3809682549175120759'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__4160512977927600391_55602400__3809682549175120759 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (/home/naveen/Distributed/test/p2p_client/app/views/notifications/_notification.html.erb:63: syntax error, unexpected keyword_ensure, expecting $end):
+    60: 	</li>
+    61: </div>
+  app/views/notifications/index.js.erb:2:in `_app_views_notifications_index_js_erb___2751945447683442088_54459400__3809682549175120759'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__4160512977927600391_56748780__3809682549175120759 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__4160512977927600391_54896340__3809682549175120759 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___2735482519292989715_70133598469640_1041348681558680265 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___2735482519292989715_70133596729760_1041348681558680265 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___2735482519292989715_70133596965920_1041348681558680265 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___2735482519292989715_70133596963980_1041348681558680265 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___2735482519292989715_59015320_1041348681558680265 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb___2735482519292989715_70133597050700_1041348681558680265 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
