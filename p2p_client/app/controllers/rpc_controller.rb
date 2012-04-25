@@ -120,15 +120,16 @@ add_method 'Container.neighborDeath' do |category, deadip, newip|
 end
 
 
-
+# Call this to update backup predecessor/successor
 add_method 'Container.updateRingBackup' do |category, deadip, newip|
 	@backups = Sellerring.where('category = ?').all
 	if @backups != nil
 		@backups.each do |back|
-			
+			back.ipaddress = newip			
 		end
 	end
 end
+
 add_method 'Container.parentDeathSwitch' do |category, ipaddress|
   	puts "PARENT DEATH" 
 	@boot = Sellerring.where("iptype = 'bootstrap'").first
@@ -161,9 +162,23 @@ add_method 'Container.parentDeathSwitch' do |category, ipaddress|
 				if @myBackup != nil
 					# connect to backup successor
 					# todo: RPC to update links
+					@localInfo = Mydata.first
+      					@callbackup = XMLRPC::Client.new(@myBackup.ipaddress, "/api/xmlrpc", 3000)
+      					Thread.new {
+						@callbackup.call_async("Container.neighborDeath", category, @dead.ipaddress, @localInfo.localaddress)
+					}
 					
 				else
-					# no successor, connect to predecessor
+					# no predecessor, connect to successor
+					@succInfo = Sellerring.where("category = ? and iptype='successor'", category).first
+					if @succInfo != nil
+						@localInfo = Mydata.first
+      						@callbackup = XMLRPC::Client.new(@succInfo.ipaddress, "/api/xmlrpc", 3000)
+      						Thread.new {
+							@callbackup.call_async("Container.neighborDeath", category, @dead.ipaddress, @localInfo.localaddress)
+						}
+						
+					end
 				end
 			else
 				# lost a successor
@@ -172,8 +187,24 @@ add_method 'Container.parentDeathSwitch' do |category, ipaddress|
 				if @myBackup != nil
 					# connect to backup successor
 					# todo: RPC to update links
+					puts "connect to backup"
+					@localInfo = Mydata.first
+      					@callbackup = XMLRPC::Client.new(@myBackup.ipaddress, "/api/xmlrpc", 3000)
+      					Thread.new {
+						@callbackup.call_async("Container.neighborDeath", category, @dead.ipaddress, @localInfo.localaddress)
+					}
 				else
 					# no successor, connect to predecessor
+					puts "connect to predecessor"
+					@predInfo = Sellerring.where("category = ? and iptype='predecessor'", category).first
+					if @predInfo != nil
+						@localInfo = Mydata.first
+      						@callbackup = XMLRPC::Client.new(@predInfo.ipaddress, "/api/xmlrpc", 3000)
+      						Thread.new {
+							@callbackup.call_async("Container.neighborDeath", category, @dead.ipaddress, @localInfo.localaddress)
+						}
+						
+					end
 				end
 			end 
 		end
