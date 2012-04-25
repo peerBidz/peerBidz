@@ -87,7 +87,7 @@ add_method 'Container.neighborDeath' do |category, deadip, newip|
 		@newPred.category = category
 		@newPred.save
 		
-		if lostSucc = 0
+		if lostSucc == 0
 			# tell successor to update backups accordingly
 			@successor = Sellerring.where("category = ? and iptype = 'successor'", category).first
 			if @successor != nil
@@ -106,7 +106,7 @@ add_method 'Container.neighborDeath' do |category, deadip, newip|
 		@newPred.ipaddress = newip
 		@newPred.category = category
 		@newPred.save
-		if lostPred = 0
+		if lostPred == 0
 			# tell successor to update backups accordingly
 			@cpred = Sellerring.where("category = ? and iptype = 'predecessor'", category).first
 			if @cpred != nil
@@ -122,8 +122,12 @@ end
 
 
 add_method 'Container.updateRingBackup' do |category, deadip, newip|
-	
-
+	@backups = Sellerring.where('category = ?').all
+	if @backups != nil
+		@backups.each do |back|
+			
+		end
+	end
 end
 add_method 'Container.parentDeathSwitch' do |category, ipaddress|
   	puts "PARENT DEATH" 

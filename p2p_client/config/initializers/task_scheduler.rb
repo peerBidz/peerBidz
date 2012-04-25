@@ -22,18 +22,21 @@
 require 'rubygems'
 require 'rake'
 require 'rufus/scheduler'
-
+require 'xmlrpc/client'
 #load File.join( Rails.root.to_s, 'lib', 'tasks', 'bidding_tasks.rake')
 
 scheduler = Rufus::Scheduler.start_new
 
-scheduler.every("20s") do
+scheduler.every("3s") do
   #Rake::Task["biddingTasks:winner_notify"].invoke
 
     @items = Item.find(:all, :conditions => ["bidding_closed = ?", false])
 
     @items.each do |item|
-      if DateTime.now.to_formatted_s(:db) >= item.expires_at.to_formatted_s(:db)
+	puts DateTime.now.to_s(:number)
+	puts "print item expires_at"
+	puts item.expires_at.to_s(:number)
+      if DateTime.now.to_s(:number) >= item.expires_at.to_s(:number)
         #puts("entered to item loop")
         Item.update(item.id, :bidding_closed => true)
         item.save
