@@ -60,10 +60,6 @@ class RpcController < ApplicationController
      { "value" => "0" }
 	end
    end
-  add_method 'Container.reestablishRing' do |category, deadIP, remoteIP|
-  	
-	{"value" => "0"}
-  end
   
 # Call this method when informing a neighbor of a dead IP
 add_method 'Container.neighborDeath' do |category, deadip, newip|
@@ -126,6 +122,8 @@ end
 
 
 add_method 'Container.updateRingBackup' do |category, deadip, newip|
+	
+
 end
 add_method 'Container.parentDeathSwitch' do |category, ipaddress|
   	puts "PARENT DEATH" 
