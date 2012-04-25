@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
 
     @itemsPaid.each do |item|
       @msg = Item.find(item.item_id).title+" has received payment and requires shipping"
-      Notification.create(:user_id=>Item.find(item.item_id).seller_id, :item_id=>item.item_id, :message=>@msg, :delivered=>"false", :notification_type => 'P')  
+      Notification.create( :item_id=>item.item_id, :message=>@msg, :delivered=>"false", :notification_type => 'P')  
     end
     #------
 
