@@ -381,5 +381,15 @@ end
 	@identDB.is_seller = isSeller
         @identDB.localaddress = ipaddress
 	@identDB.save
+  end
+
+  add_method 'Container.sendNotification' do |item_id,msg,state,type|
+
+        @identDB = Notification.new
+        @identDB.item_id = item_id
+        @identDB.delivered = state
+        @identDB.message = msg
+        @identDB.notification_type = type
+        @identDB.save
   end 
 end

@@ -122,7 +122,6 @@ ActiveRecord::Schema.define(:version => 20120406000701) do
   end
 
   create_table "notifications", :force => true do |t|
-    t.integer  "user_id"
     t.integer  "item_id"
     t.boolean  "delivered"
     t.datetime "created_at"

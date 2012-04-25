@@ -1,0 +1,52 @@
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3786826984222170198_53616160_1261270425594930245 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (undefined method `ipaddress' for nil:NilClass):
+    28: 
+    29: <body>
+    30: 	<% myBoot = Sellerring.where("iptype= ?", "bootstrap").first %>
+    31: 	<% bootIP = myBoot.ipaddress %>
+    32: 	<% require 'xmlrpc/client'%>
+    33: 	<% if cookies[:email] != nil %>
+    34: 	<% @btserver = XMLRPC::Client.new(bootIP, "/api/xmlrpc", 3001) %>
+  app/views/layouts/application.html.erb:31:in `_app_views_layouts_application_html_erb__908422354171033208_53613660_1261270425594930245'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3786826984222170198_56004820_1261270425594930245 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (undefined method `ipaddress' for nil:NilClass):
+    28: 
+    29: <body>
+    30: 	<% myBoot = Sellerring.where("iptype= ?", "bootstrap").first %>
+    31: 	<% bootIP = myBoot.ipaddress %>
+    32: 	<% require 'xmlrpc/client'%>
+    33: 	<% if cookies[:email] != nil %>
+    34: 	<% @btserver = XMLRPC::Client.new(bootIP, "/api/xmlrpc", 3001) %>
+  app/views/layouts/application.html.erb:31:in `_app_views_layouts_application_html_erb__908422354171033208_56002540_1261270425594930245'
+
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3786826984222170198_55908860_1261270425594930245 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_pages_home_html_erb__3786826984222170198_56075000_1261270425594930245 at /home/naveen/Distributed/test/p2p_client/app/views/pages/home.html.erb:26)
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Movies')):
+    9:     <th>Seller Ip address</th>
+    10:   </tr>
+    11: <% @is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    12: <% @is_present.each do |item| %>
+    13: 
+    14:   <tr>
+    15:     <td><%= item.search_string %></td>
+  app/views/items/table.html.erb:12:in `_app_views_items_table_html_erb__629613011624125691_55718100_1261270425594930245'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/test/p2p_client/config/routes.rb:1)
