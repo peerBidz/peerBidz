@@ -64,6 +64,69 @@ class RpcController < ApplicationController
   	
 	{"value" => "0"}
   end
+  
+# Call this method when informing a neighbor of a dead IP
+add_method 'Container.neighborDeath' do |category, deadip, newip|
+
+	@myDead = Sellerring.where("ipaddress = ? and category = ?", deadip, category).all
+	lostPred = 0;
+	lostSucc = 0;
+
+	# Delete dead IP from seller ring
+	@myDead.each do |entry|
+		if entry.iptype == "predecessor"
+			lostPred = 1;
+		end
+		if entry.iptype == "successor"
+			lostSucc = 1;
+		end
+		entry.delete
+	end
+
+	# if lost predecessor, add new predecessor
+	if lostPred == 1
+		@newPred = Sellerring.new
+		@newPred.iptype = "predecessor"
+		@newPred.ipaddress = newip
+		@newPred.category = category
+		@newPred.save
+		
+		if lostSucc = 0
+			# tell successor to update backups accordingly
+			@successor = Sellerring.where("category = ? and iptype = 'successor'", category).first
+			if @successor != nil
+      			@callsucc = XMLRPC::Client.new(@successor.ipaddress, "/api/xmlrpc", 3000)
+      			Thread.new {
+				@callsucc.call_async("Container.updateRingBackup", ipaddress)
+			}
+			end
+		end
+	end
+	
+	# if lost successor, add new successor
+	if lostSucc == 0
+		@newPred = Sellerring.new
+		@newPred.iptype = "successor"
+		@newPred.ipaddress = newip
+		@newPred.category = category
+		@newPred.save
+		if lostPred = 0
+			# tell successor to update backups accordingly
+			@cpred = Sellerring.where("category = ? and iptype = 'predecessor'", category).first
+			if @cpred != nil
+      			@callpred = XMLRPC::Client.new(@cpred.ipaddress, "/api/xmlrpc", 3000)
+      			Thread.new {
+				@callpred.call_async("Container.updateRingBackup", ipaddress)
+			}
+			end
+		end
+	end
+end
+
+
+
+add_method 'Container.updateRingBackup' do |category, deadip, newip|
+end
 add_method 'Container.parentDeathSwitch' do |category, ipaddress|
   	puts "PARENT DEATH" 
 	@boot = Sellerring.where("iptype = 'bootstrap'").first
@@ -96,6 +159,7 @@ add_method 'Container.parentDeathSwitch' do |category, ipaddress|
 				if @myBackup != nil
 					# connect to backup successor
 					# todo: RPC to update links
+					
 				else
 					# no successor, connect to predecessor
 				end
