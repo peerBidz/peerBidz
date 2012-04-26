@@ -97,7 +97,7 @@ var data = [
   
 	 	<h2>Your notifications</h2>
 		<div class="notifications" id="notifications" data-user-id="<%= current_user.id %>" >
-  			<%= render current_user.notifications.find(:all, :conditions=>["delivered=?", true]) %>
+  			<%= render Notifications.find(:all, :conditions=>["delivered=?", false]) %>
  		</div>
 
 
@@ -107,6 +107,11 @@ var data = [
           <p> Now, checkout the hot items. Register with us to participate in auctions </p>
           <a class="btn primary large" href='<%= items_path %>'>Hot Items »</a>
         </div>
+                <h2>Your notifications</h2>
+                <div class="notifications" id="notifications" >
+                        <% render Notification.find(:all, :conditions=>["delivered=?", false]) %>
+                </div>
+
 <% end %>
 
 </div>
