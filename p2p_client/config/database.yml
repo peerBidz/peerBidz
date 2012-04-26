@@ -3,7 +3,7 @@
 development:
   adapter: sqlite3
   database: db/development.sql
-  pool: 5
+  pool: 25
   timeout: 5000
 
 # Warning: The database defined as "test" will be erased and

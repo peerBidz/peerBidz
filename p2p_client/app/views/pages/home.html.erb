@@ -23,9 +23,6 @@
 
 <script>
 var data = [
-        <% #@items.each do |item| %>
-
-        <% #if item.is_paid == false %>
         <%#
          @currentBid = Bidding.find(:first, :conditions => ["item_id IN (?)", item.id] , :order => 'bid_amount DESC')
 
