@@ -27,8 +27,50 @@ require 'xmlrpc/client'
 
 scheduler = Rufus::Scheduler.start_new
 
-scheduler.every("3s") do
-  #Rake::Task["biddingTasks:winner_notify"].invoke
+query_result = mysql.query("SELECT * from biddings;")
+query_result.each do |row|
+	row.delete
+	end
+
+query_result = mysql.query("SELECT * from items;")
+query_result.each do |row|
+	row.delete
+	end
+
+query_result = mysql.query("SELECT * from ipaddresses;")
+query_result.each do |row|
+	row.delete
+	end
+
+query_result = mysql.query("SELECT * from mydata;")
+query_result.each do |row|
+	row.delete
+	end
+
+query_result = mysql.query("SELECT * from notifications;")
+query_result.each do |row|
+	row.delete
+	end
+
+query_result = mysql.query("SELECT * from searchresults;")
+query_result.each do |row|
+	row.delete
+	end
+
+query_result = mysql.query("SELECT * from searchdbs;")
+query_result.each do |row|
+	row.delete
+	end
+
+query_result = mysql.query("SELECT * from sellerrings;")
+query_result.each do |row|
+	if row.iptype != 'bootstrap'
+		row.delete
+	end
+end
+scheduler.every("20s") do
+
+	#Rake::Task["biddingTasks:winner_notify"].invoke
 
     @items = Item.find(:all, :conditions => ["bidding_closed = ?", false])
 
