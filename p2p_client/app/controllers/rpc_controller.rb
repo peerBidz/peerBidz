@@ -23,6 +23,14 @@ class RpcController < ApplicationController
 			puts amount
 			if Integer(highVal) >= Integer(amount)
 				isHighest = 0
+                        else 
+                          msg = "You have been outbid on: " + @myItem.first.title
+                          begin
+                            @serverPre = XMLRPC::Client.new(@highBid.ipaddress, "/api/xmlrpc", 3000)
+                            @sellervalue = @serverPre.call("Container.sendNotification", @myItem.first.id, msg, "false", "O")
+                          rescue
+                            puts "Failed to connect to the out bid buyer"
+                          end
 			end
 		end
 	end
@@ -35,6 +43,10 @@ class RpcController < ApplicationController
 			@myBid.item_id = @myItem.first.id
 			@myBid.bid_time = Time.now
 			@myBid.save
+
+                        @msg =  "There is a new bid on your item (" + @myItem.first.title") for $" + amount + " !"
+                        Notification.create(:item_id=>@myItem.first.id, :message=>@msg, :delivered=>"false", :notification_type => 'N')
+
      			{ "value" => "success" }
 		else
 			{ "value" => "Bid amount is lower than the current highest bid. Place a higher bid" }
