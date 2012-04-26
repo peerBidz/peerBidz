@@ -1,2 +1,9 @@
+<% require 'xmlrpc/client'%>
 <h4> Shipping Information Sent </h4>
-
+<% @notes = Notification.where("notification_type ='W'").all %>
+<% @notes.each do |entry| %>
+	<% @serverPre = XMLRPC::Client.new( entry.ipaddress, "/api/xmlrpc", 3000)%>
+	<% @serverPre.call("Container.buyerInfo", entry.item_id, entry.name, entry.street, entry.city, entry.state, entry.zip, entry.country) %>
+	<% entry.notification_type = 'S' %>
+	<% entry.save %>
+<%end%>
