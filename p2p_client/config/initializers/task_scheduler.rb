@@ -27,17 +27,28 @@ require 'xmlrpc/client'
 #load File.join( Rails.root.to_s, 'lib', 'tasks', 'bidding_tasks.rake')
 
 scheduler = Rufus::Scheduler.start_new
+if ActiveRecord::Base.connection.table_exists? 'searchresults'
 Searchresults.delete_all
+end
+if ActiveRecord::Base.connection.table_exists? 'ipaddresses'
 Ipaddress.delete_all
+end
+if ActiveRecord::Base.connection.table_exists? 'mydata'
 Mydata.delete_all
+end
+if ActiveRecord::Base.connection.table_exists? 'notifications'
 Notification.delete_all
+end
+if ActiveRecord::Base.connection.table_exists? 'searchdbs'
 Searchdb.delete_all
+end
 
+if ActiveRecord::Base.connection.table_exists? 'searchdbs'
 @myvar = Sellerring.where("iptype <> 'bootstrap'")
 @myvar.each do |entry|
 	entry.delete
 	end
-
+end
 scheduler.every("20s") do
 
 	#Rake::Task["biddingTasks:winner_notify"].invoke
@@ -57,16 +68,17 @@ scheduler.every("20s") do
         #notify buyer (winner of item)
         @serverPre = XMLRPC::Client.new(@highest_bid_row.ipaddress, "/api/xmlrpc", 3000)
           begin
+            @my_address = Mydata.first.localaddress
             msg = "Congrats! You have won "+item.title 
             @serverPre = XMLRPC::Client.new(@highest_bid_row.ipaddress, "/api/xmlrpc", 3000)
-            @sellervalue = @serverPre.call("Container.sendNotification", item.id, msg, "false", "W")
+            @sellervalue = @serverPre.call("Container.sendNotification", @my_address, item.id, msg, "false", "W")
           rescue
             #Fault tolerance here
             puts "failed to connect to top buyer"
           end
   
           #notify seller
-          Notification.create!(:item_id => item.id , :message => "Congrats! You have sold "+ item.title, :delivered => false, :notification_type => "S")
+          Notification.create!(:ipaddress =>  @my_address, :item_id => item.id , :message => "Congrats! You have sold "+ item.title, :delivered => false, :notification_type => "S")
         end
         else
       end

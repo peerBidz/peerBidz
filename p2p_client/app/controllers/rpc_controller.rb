@@ -23,11 +23,12 @@ class RpcController < ApplicationController
 			puts amount
 			if Integer(highVal) >= Integer(amount)
 				isHighest = 0
-                        else 
+                        else
+                          @my_address =  Mydata.first.localaddress 
                           msg = "You have been outbid on: " + @myItem.first.title
                           begin
                             @serverPre = XMLRPC::Client.new(@highBid.ipaddress, "/api/xmlrpc", 3000)
-                            @sellervalue = @serverPre.call("Container.sendNotification", @myItem.first.id, msg, "false", "O")
+                            @sellervalue = @serverPre.call("Container.sendNotification", @my_address, @myItem.first.id, msg, "false", "O")
                           rescue
                             puts "Failed to connect to the out bid buyer"
                           end
@@ -45,7 +46,7 @@ class RpcController < ApplicationController
 			@myBid.save
 
                         @msg =  "There is a new bid on your item (" + @myItem.first.title + ") for $" + amount + " !"
-                        Notification.create(:item_id=>@myItem.first.id, :message=>@msg, :delivered=>"false", :notification_type => 'N')
+                        Notification.create(:ipaddress=> @my_address, :item_id=>@myItem.first.id, :message=>@msg, :delivered=>"false", :notification_type => 'N')
 
      			{ "value" => "success" }
 		else
@@ -430,10 +431,11 @@ end
 	@identDB.save
   end
 
-  add_method 'Container.sendNotification' do |item_id,msg,state,type|
+  add_method 'Container.sendNotification' do |ipaddress, item_id,msg,state,type|
 
         @identDB = Notification.new
         @identDB.item_id = item_id
+        @identDB.ipaddress = ipaddress
         @identDB.delivered = state
         @identDB.message = msg
         @identDB.notification_type = type

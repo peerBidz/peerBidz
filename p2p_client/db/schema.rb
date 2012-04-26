@@ -123,6 +123,7 @@ ActiveRecord::Schema.define(:version => 20120406000701) do
   create_table "notifications", :force => true do |t|
     t.integer  "item_id"
     t.boolean  "delivered"
+    t.string   "ipaddress"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "message"
