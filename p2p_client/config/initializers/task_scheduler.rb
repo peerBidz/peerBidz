@@ -28,8 +28,6 @@ require 'xmlrpc/client'
 
 scheduler = Rufus::Scheduler.start_new
 Searchresults.delete_all
-Bidding.delete_all
-Item.delete_all
 Ipaddress.delete_all
 Mydata.delete_all
 Notification.delete_all
