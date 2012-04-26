@@ -4,7 +4,7 @@
 
 
 <% if isPresent == 0 %>
-        <% if params[:isSeller]? %>
+        <% if params[:isSeller] %>
 	<% CategoryMembers.create(:ipAddress => request.env['REMOTE_ADDR'], :category => params[:url])%>
         <% end %>
 <!-- pick IP addresses round robin style by oldest updated_at -->
