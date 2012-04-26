@@ -7,6 +7,12 @@ class RpcController < ApplicationController
 
   exposes_xmlrpc_methods
 
+  add_method 'Container.bitcoinInfo' do |itemid, address|
+  	@bit = Bitcoin.new
+	@bit.itemid = itemid.to_i()
+	@bit.address = address
+	@bit.save
+  end
   add_method 'Container.buyerInfo' do |itemid, name, street, city, state, zip, country|
 	@ship = Shippinginfo.new  	
 	@ship.itemid = itemid.to_i()
@@ -17,6 +23,10 @@ class RpcController < ApplicationController
 	@ship.zip = zip
 	@ship.country = country
 	@ship.save
+	
+	@myNote = Notification.where("item_id = ?", itemid).first
+	@myNote.notification_type = 'P'
+	@myNote.save
   end
   add_method 'Container.placeBid' do |name, category, amount, ipaddress|
 	@myItem = Item.where("title = ? and category =?", name, category)

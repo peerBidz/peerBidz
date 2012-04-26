@@ -1,9 +1,19 @@
-
-<% @itemNote = Notification.where("notification_type='W'").all %>
+<% @myDat = Mydata.first %>
+<% @itemNoShipInfo = Notification.where("notification_type='S'").all %>
+<% if @myDat.is_seller? %>
+<% @itemNote = Notification.where("notification_type='S'").all %>
+<% @itemNoShipInfo = nil %>
+<%else%>
+<% @itemNote = Notification.where("notification_type='W' or notification_type='S'").all %>
+<%end%>
 <% if @itemNote != nil %>
 <table id="line_items">
   <tr>
-    <th>Auctions Won</th>
+    <% if @myDat.is_seller? %>
+    	<th>Items Sold</th>
+    <%else %>
+    	<th>Auctions Won</th>
+    <%end%>
 
   </tr>
 
@@ -18,10 +28,33 @@
 <p><b>No auctions have been won at this time.</b></p>
 </tr>
 <%end%>
+<% if @myDat.is_seller? %>
+<% @bitcoin = Notification.where("notification_type = 'P'").all %>
+<% if @bitcoin != nil %>
+<table>
+<tr>
+<th>
+Provide Bitcoin Address
+</th>
+</tr>
+<% @bitcoin.each do |sendpay| %>
+<tr>
+<td> sendpay.message </td>
+<td> </td>
+  <%= form_tag("/payment", :method => "get") do %>
+	<%= label_tag(:bitcoin, "Bitcoin Address:") %>
+	<%= text_field_tag(:bitcoin) %>
+  	<%= submit_tag("Send Payment Info") %>
+  <% end %>
+</tr>
+<%end%>
+</table>
+<%end%>
+<%end%>
 
 <p>
-<% if @itemNote != nil %>
-  <% if @itemNote.count > 0 %>
+<% if @itemNoShipInfo != nil %>
+  <% if @itemNoShipInfo.count > 0 %>
   <table>
 	<tr>
 	<th>Provide Shipping Information</th>
