@@ -4,6 +4,6 @@
 <% @notes.each do |entry| %>
 	<% @serverPre = XMLRPC::Client.new( entry.ipaddress, "/api/xmlrpc", 3000)%>
 	<% @serverPre.call("Container.buyerInfo", entry.item_id, entry.name, entry.street, entry.city, entry.state, entry.zip, entry.country) %>
-	<% entry.notification_type = 'S' %>
+	<% entry.notification_type = 'T' %>
 	<% entry.save %>
 <%end%>
