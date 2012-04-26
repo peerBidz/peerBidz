@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120406000701) do
+ActiveRecord::Schema.define(:version => 20120426223756) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -179,6 +179,17 @@ ActiveRecord::Schema.define(:version => 20120406000701) do
     t.string   "ipaddress"
     t.string   "iptype"
     t.string   "category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shippinginfos", :force => true do |t|
+    t.integer  "itemid"
+    t.string   "name"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

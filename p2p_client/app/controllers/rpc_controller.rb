@@ -7,8 +7,16 @@ class RpcController < ApplicationController
 
   exposes_xmlrpc_methods
 
-  add_method 'Container.buyerInfo' do |title, category, firstname, lastname, street, city, zip, country|
-  	
+  add_method 'Container.buyerInfo' do |itemid, name, street, city, state, zip, country|
+	@ship = Shippinginfo.new  	
+	@ship.itemid = itemid.to_i()
+	@ship.name = name
+	@ship.street = street
+	@ship.city = city
+	@ship.state = state
+	@ship.zip = zip
+	@ship.country = country
+	@ship.save
   end
   add_method 'Container.placeBid' do |name, category, amount, ipaddress|
 	@myItem = Item.where("title = ? and category =?", name, category)
