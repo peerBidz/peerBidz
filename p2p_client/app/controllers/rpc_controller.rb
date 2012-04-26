@@ -44,7 +44,7 @@ class RpcController < ApplicationController
 			@myBid.bid_time = Time.now
 			@myBid.save
 
-                        @msg =  "There is a new bid on your item (" + @myItem.first.title") for $" + amount + " !"
+                        @msg =  "There is a new bid on your item (" + @myItem.first.title + ") for $" + amount + " !"
                         Notification.create(:item_id=>@myItem.first.id, :message=>@msg, :delivered=>"false", :notification_type => 'N')
 
      			{ "value" => "success" }
