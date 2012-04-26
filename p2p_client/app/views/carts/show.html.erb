@@ -1,51 +1,67 @@
-<h4>Add items to your cart</h4>
 
-
-<% @unpaid_items = Item.find(:all, :conditions => ["is_paid != ?", true]) %>
-<% @unpaid_items.each do |item| %>
-    <% @itemNote = Notification.find(:first, :conditions => ["notification_type=? AND item_id=?" , "W",item.id ]) %>
-
-      <% if @itemNote && @itemNote.user_id == current_user.id %>
-
-          <div class="row" style="height: 70px;">
-            <div class="span1">
-                   <%= item.title %>
-            </div>
-            <div class="span15">
-                   <%= link_to "Add", line_items_path(:item_id => @itemNote.item_id), :method => :post, :class => "btn primary medium" %>
-            </div>
-          </div>
-
-      <% end %>
-<% end %>
-
-
-  <h4>Your cart</h4>
-
+<% @itemNote = Notification.where("notification_type='W'").all %>
+<% if @itemNote != nil %>
 <table id="line_items">
   <tr>
-    <th>Product</th>
+    <th>Auctions Won</th>
 
-    <th class="price">Final Price</th>
   </tr>
 
-  <% for line_item in @cart.line_items %>
+<% @itemNote.each do |item| %>
     <tr class="">
-      <td><%=h line_item.item.title %></td>
-
-      <td class="price"><%= number_to_currency(line_item.full_price) %></td>
-      <td><%= button_to 'Remove from cart', line_item, :method => :delete, :class => "btn medium primary" %></td>
+      <td><%= item.message %></td>
     </tr>
-  <% end %>
-  <tr>
-    <td class="total price" colspan="4">
-      Total: <%= number_to_currency @cart.total_price %>
-    </td>
-  </tr>
+<% end %>
 </table>
+<%else%>
+<tr>
+<p><b>No auctions have been won at this time.</b></p>
+</tr>
+<%end%>
 
 <p>
-  <% if @cart.total_price != 0 %>
-    <%= link_to "Pay Now", information_path, :class => "btn primary medium" %>
+<% if @itemNote != nil %>
+  <% if @itemNote.count > 0 %>
+  <table>
+	<tr>
+	<th>Provide Shipping Information</th>
+	</tr>
+  <%= form_tag("/payment", :method => "get") do %>
+  	<tr><td>
+	<%= label_tag(:name, "Name") %>
+  	</td><td>
+	<%= text_field_tag(:name) %>
+  	</td></tr>
+  	<tr><td>
+	<%= label_tag(:street, "Street") %>
+  	</td><td>
+  	<%= text_field_tag(:street) %>
+  	</td></tr>
+  	<tr><td>
+  	<%= label_tag(:city, "City") %>
+  	</td><td>
+  	<%= text_field_tag(:city) %>
+  	</td></tr>
+  	<tr><td>
+  	<%= label_tag(:state, "State") %>
+  	</td><td>
+  	<%= text_field_tag(:state) %>
+  	</td></tr>
+  	<tr><td>
+  	<%= label_tag(:zip, "Zip") %>
+  	</td><td>
+  	<%= text_field_tag(:zip) %>
+  	</td></tr>
+  	<tr><td>
+  	<%= label_tag(:country, "Country") %>
+  	</td><td>
+  	<%= text_field_tag(:country) %>
+  	</td></tr>
+  	<tr><td>
+  	<%= submit_tag("Send Shipping Info") %>
+  	</td></tr>
   <% end %>
+  </table>  
+  <% end %>
+<%end%>
 </p>

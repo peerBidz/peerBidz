@@ -27,7 +27,7 @@ require 'xmlrpc/client'
 
 scheduler = Rufus::Scheduler.start_new
 
-scheduler.every("3s") do
+scheduler.every("20s") do
   #Rake::Task["biddingTasks:winner_notify"].invoke
 
     @items = Item.find(:all, :conditions => ["bidding_closed = ?", false])

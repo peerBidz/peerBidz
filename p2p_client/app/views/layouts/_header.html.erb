@@ -7,10 +7,12 @@
     <li class="active"><%= link_to "Home", root_path %></li>
      <% @mydat = Mydata.first %>
 	<% if @mydat != nil %>
-            <li class="active"><%= link_to "My PeerBidz", myaccount_path %></li>
 	<% if @mydat.is_seller %>
+            <li class="active"><%= link_to "Sold Items", "/carts/purchase" %></li>
             <li class="active"><%= link_to "Auction an Item", "/items/new" %></li>
-    	<%end%>
+    	<%else%>
+            <li class="active"><%= link_to "My Cart", "/carts/purchase" %></li>
+	<%end%>
 	<% end %>
     <%= render 'devise/menu/registration_items' %>
     <%= render 'devise/menu/login_items' %>

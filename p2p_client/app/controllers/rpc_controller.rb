@@ -7,6 +7,9 @@ class RpcController < ApplicationController
 
   exposes_xmlrpc_methods
 
+  add_method 'Container.buyerInfo' do |title, category, firstname, lastname, street, city, zip, country|
+  	
+  end
   add_method 'Container.placeBid' do |name, category, amount, ipaddress|
 	@myItem = Item.where("title = ? and category =?", name, category)
 	@highBid = Bidding.where("item_id = ?", @myItem.first.id).order("bid_amount DESC").first	
