@@ -23,51 +23,23 @@ require 'rubygems'
 require 'rake'
 require 'rufus/scheduler'
 require 'xmlrpc/client'
+
 #load File.join( Rails.root.to_s, 'lib', 'tasks', 'bidding_tasks.rake')
 
 scheduler = Rufus::Scheduler.start_new
+Searchresults.delete_all
+Bidding.delete_all
+Item.delete_all
+Ipaddress.delete_all
+Mydata.delete_all
+Notification.delete_all
+Searchdb.delete_all
 
-query_result = mysql.query("SELECT * from biddings;")
-query_result.each do |row|
-	row.delete
+@myvar = Sellerring.where("iptype <> 'bootstrap'")
+@myvar.each do |entry|
+	entry.delete
 	end
 
-query_result = mysql.query("SELECT * from items;")
-query_result.each do |row|
-	row.delete
-	end
-
-query_result = mysql.query("SELECT * from ipaddresses;")
-query_result.each do |row|
-	row.delete
-	end
-
-query_result = mysql.query("SELECT * from mydata;")
-query_result.each do |row|
-	row.delete
-	end
-
-query_result = mysql.query("SELECT * from notifications;")
-query_result.each do |row|
-	row.delete
-	end
-
-query_result = mysql.query("SELECT * from searchresults;")
-query_result.each do |row|
-	row.delete
-	end
-
-query_result = mysql.query("SELECT * from searchdbs;")
-query_result.each do |row|
-	row.delete
-	end
-
-query_result = mysql.query("SELECT * from sellerrings;")
-query_result.each do |row|
-	if row.iptype != 'bootstrap'
-		row.delete
-	end
-end
 scheduler.every("20s") do
 
 	#Rake::Task["biddingTasks:winner_notify"].invoke
