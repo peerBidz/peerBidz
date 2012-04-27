@@ -82,6 +82,8 @@ scheduler.every("20s") do
             #Fault tolerance here
             puts "failed to connect to top buyer. Trying the next one"
           end
+
+           Notification.create!(:ipaddress =>  @my_address, :item_id => item.id , :message => "None of your buyers are online for "+ item.title, :delivered => false, :notification_type => "D")
         end
       end
     end
