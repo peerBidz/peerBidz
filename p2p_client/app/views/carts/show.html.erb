@@ -1,5 +1,5 @@
 <% @myDat = Mydata.first %>
-<% @itemNoShipInfo = Notification.where("notification_type='S'").all %>
+<% @itemNoShipInfo = Notification.where("notification_type='W'").all %>
 <% if @myDat.is_seller? %>
 <% @itemNote = Notification.where("notification_type='S'").all %>
 <% @itemNoShipInfo = nil %>
