@@ -306,8 +306,7 @@ class ItemsController < ApplicationController
 				if @is_parentbackuppresent != nil
 					if @is_parentbackuppresent.count == 0
 						puts "No backup parent found"
-						@server1 = XMLRPC::Client.new(@parentip, "/api/xmlrpc", 3000)
-						puts @parentip
+						@server1 = XMLRPC::Client.new(@is_parentpresent.first.ipaddress, "/api/xmlrpc", 3000)
 						begin
 							@sellervalue = @server1.call("Container.getBackupParent", params[:browse])
 							puts "made a call to parent" 
