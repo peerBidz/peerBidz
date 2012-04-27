@@ -285,7 +285,6 @@ class ItemsController < ApplicationController
    	else
 
       	@checkcategory = Ipaddress.find_all_by_category(params[:browse])
-	@parentip = 0
   		puts "buyer"
       	if (@checkcategory.count == 0)
 			if params[:parent] != "0"
@@ -298,36 +297,37 @@ class ItemsController < ApplicationController
         		@mydb.save
 				puts "saved parent"
 			end
-      	else
-        		@checkcategory.each {|f| @parentip = f.ipaddress }
-      	end
-  		@is_parentbackuppresent = Ipaddress.where("category = :ct AND iptype = :it", {:ct => params[:browse], :it => "parentbackup"})
-		puts "Entered here"
+  		end
+		@is_parentpresent = Ipaddress.where("category = :ct AND iptype = :it", {:ct => params[:browse], :it => "parent"})
 		if @is_parentbackuppresent != nil
 			if @is_parentbackuppresent.count == 0
-        		puts "No backup parent found"
-				if @parentip != 0
-					@server1 = XMLRPC::Client.new(@parentip, "/api/xmlrpc", 3000)
-					puts @parentip
-        				begin
-						@sellervalue = @server1.call("Container.getBackupParent", params[:browse])
-						puts "made a call to parent" 
-						if @sellervalue != nil
-							if @sellervalue["value"] != "0"
-								puts "Adding backup parent to db"
-								@newdata = Ipaddress.new
-								@newdata.ipaddress = @sellervalue["value"]
-								@newdata.iptype = 'parentbackup'
-								@newdata.category = params[:browse]
-								@newdata.save
+				@is_parentbackuppresent = Ipaddress.where("category = :ct AND iptype = :it", {:ct => params[:browse], :it => "parentbackup"})
+				puts "Entered here"
+				if @is_parentbackuppresent != nil
+					if @is_parentbackuppresent.count == 0
+						puts "No backup parent found"
+						@server1 = XMLRPC::Client.new(@parentip, "/api/xmlrpc", 3000)
+						puts @parentip
+						begin
+							@sellervalue = @server1.call("Container.getBackupParent", params[:browse])
+							puts "made a call to parent" 
+							if @sellervalue != nil
+								if @sellervalue["value"] != "0"
+									puts "Adding backup parent to db"
+									@newdata = Ipaddress.new
+									@newdata.ipaddress = @sellervalue["value"]
+									@newdata.iptype = 'parentbackup'
+									@newdata.category = params[:browse]
+									@newdata.save
+								end
 							end
+						rescue	
+							puts "Rescue for buyer"
 						end
-					rescue	
-						puts "Rescue for buyer"
 					end
 				end
 			end
-      	end
+		end
 	end
 end
 
