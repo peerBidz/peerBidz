@@ -300,7 +300,7 @@ class ItemsController < ApplicationController
   		end
 		@is_parentpresent = Ipaddress.where("category = :ct AND iptype = :it", {:ct => params[:browse], :it => "parent"})
 		if @is_parentpresent != nil
-			if @is_parentpresent.count == 0
+			if @is_parentpresent.count != 0
 				@is_parentbackuppresent = Ipaddress.where("category = :ct AND iptype = :it", {:ct => params[:browse], :it => "parentbackup"})
 				puts "Entered here"
 				if @is_parentbackuppresent != nil
