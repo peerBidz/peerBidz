@@ -284,8 +284,10 @@ class ItemsController < ApplicationController
      		end
        
    	else
-
-      	@checkcategory = Ipaddress.find_all_by_category(params[:browse])
+		if ActiveRecord::Base.connection.table_exists? 'searchresults'
+			Searchresults.delete_all
+		end  
+		@checkcategory = Ipaddress.find_all_by_category(params[:browse])
   		puts "buyer"
       	if (@checkcategory.count == 0)
 			if params[:parent] != "0"

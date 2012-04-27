@@ -44,15 +44,19 @@ class RpcController < ApplicationController
 			puts amount
 			if Integer(highVal) >= Integer(amount)
 				isHighest = 0
-                        else
-                          @my_address =  Mydata.first.localaddress 
+                        else 
+                          if ipaddress != @highBid.ipaddress
+			  @my_address =  Mydata.first.localaddress 
                           msg = "You have been outbid on: " + @myItem.first.title
                           begin
                             @serverPre = XMLRPC::Client.new(@highBid.ipaddress, "/api/xmlrpc", 3000)
-                            @sellervalue = @serverPre.call("Container.sendNotification", @my_address, @myItem.first.id, msg, "false", "O")
-                          rescue
+				Thread.new{
+                            		@serverPre.call2_async("Container.sendNotification", @my_address, @myItem.first.id, msg, "false", "O")
+                         	} 
+			 rescue
                             puts "Failed to connect to the out bid buyer"
                           end
+			end
 			end
 		end
 	end
