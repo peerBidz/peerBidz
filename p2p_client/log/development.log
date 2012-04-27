@@ -1,3 +1,19 @@
 DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/environment.rb:6)
 DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/routes.rb:1)
 DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/routes.rb:1)
+
+ActionView::Template::Error (Uncaught exception undefined method `country=' for #<Shippinginfo:0xc0e0d4c> in method Container.buyerInfo):
+    4: 	<% @notes = Notification.where("notification_type ='W'").all %>
+    5: 	<% @notes.each do |entry| %>
+    6: 		<% @serverPre = XMLRPC::Client.new( entry.ipaddress, "/api/xmlrpc", 3000)%>
+    7: 		<% @serverPre.call("Container.buyerInfo", entry.item_id, params[:name], params[:street], params[:city], params[:state], params[:zip], params[:country]) %>
+    8: 		<% entry.notification_type = 'T' %>
+    9: 		<% entry.save %>
+    10: 	<%end%>
+  app/views/pages/payment.html.erb:7:in `block in _app_views_pages_payment_html_erb___2248985677802302395_70220738161500_2167597071217482595'
+  app/views/pages/payment.html.erb:5:in `each'
+  app/views/pages/payment.html.erb:5:in `_app_views_pages_payment_html_erb___2248985677802302395_70220738161500_2167597071217482595'
+
