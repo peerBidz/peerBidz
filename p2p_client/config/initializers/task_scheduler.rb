@@ -50,8 +50,6 @@ if ActiveRecord::Base.connection.table_exists? 'searchdbs'
 	end
 end
 scheduler.every("20s") do
-  #Rake::Task["biddingTasks:winner_notify"].invoke
-	#Rake::Task["biddingTasks:winner_notify"].invoke
 
     @items = Item.find(:all, :conditions => ["bidding_closed = ?", false])
 
@@ -63,24 +61,30 @@ scheduler.every("20s") do
         #puts("entered to item loop")
         Item.update(item.id, :bidding_closed => true)
         item.save
-        @highest_bid_row = Bidding.find(:first, :conditions => ["item_id IN (?)", item.id] , :order => 'bid_amount DESC')
-        if @highest_bid_row
+        @highest_bid_row = Bidding.find(:all, :conditions => ["item_id IN (?)", item.id] , :order => 'bid_amount DESC')
+        puts @highest_bid_row.length
+
+        @highest_bid_row.length.times do |i|
+
         #notify buyer (winner of item)
-        @serverPre = XMLRPC::Client.new(@highest_bid_row.ipaddress, "/api/xmlrpc", 3000)
+        puts @highest_bid_row[i].ipaddress
+        @serverPre = XMLRPC::Client.new(@highest_bid_row[i].ipaddress, "/api/xmlrpc", 3000)
+
           begin
             @my_address = Mydata.first.localaddress
-            msg = "Congrats! You have won "+item.title 
-            @serverPre = XMLRPC::Client.new(@highest_bid_row.ipaddress, "/api/xmlrpc", 3000)
+            msg = "Congrats! You have won "+item.title
             @sellervalue = @serverPre.call("Container.sendNotification", @my_address, item.id, msg, "false", "W")
+
+            # Notify
+            Notification.create!(:ipaddress =>  @my_address, :item_id => item.id , :message => "Congrats! You have sold "+ item.title, :delivered => false, :notification_type => "S")
+            break
           rescue
             #Fault tolerance here
-            puts "failed to connect to top buyer"
+            puts "failed to connect to top buyer. Trying the next one"
           end
-  
-          #notify seller
-          Notification.create!(:ipaddress =>  @my_address, :item_id => item.id , :message => "Congrats! You have sold "+ item.title, :delivered => false, :notification_type => "S")
+
+           Notification.create!(:ipaddress =>  @my_address, :item_id => item.id , :message => "None of your buyers are online for "+ item.title, :delivered => false, :notification_type => "D")
         end
-        else
       end
     end
 end
