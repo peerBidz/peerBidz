@@ -17,3 +17,24 @@ ActionView::Template::Error (Uncaught exception undefined method `country=' for 
   app/views/pages/payment.html.erb:5:in `each'
   app/views/pages/payment.html.erb:5:in `_app_views_pages_payment_html_erb___2248985677802302395_70220738161500_2167597071217482595'
 
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/routes.rb:1)
+
+ActionView::Template::Error (Timeout::Error):
+    4: 		<% ip_address = Mydata.first.localaddress %>
+    5:                 <% @sellerip = Searchresults.where("id = ?", params[:id]).first %>
+    6:                 <% @server1 = XMLRPC::Client.new(@sellerip.ipaddress, "/api/xmlrpc", 3000) %>
+    7:                 <% @result = @server1.call("Container.placeBid", @sellerip.returned_string, @sellerip.category, params[:amount], ip_address) %>
+    8:                 <% if @result["value"] == "success" %>
+    9:                         <p><b> Bid of <%= params[:amount] %> placed <b></p>
+    10:                                     <% @iteminfo["highbid"] =  params[:amount] %>
+  app/views/items/show.html.erb:7:in `_app_views_items_show_html_erb__4045137112367659401_49931560_2406452169201575655'
+  app/controllers/items_controller.rb:360:in `show'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/routes.rb:1)
