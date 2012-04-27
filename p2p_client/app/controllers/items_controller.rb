@@ -48,6 +48,7 @@ class ItemsController < ApplicationController
 						@newBackup = @server1.call("Container.parentDeathSwitch", cookies[:CURRCATEGORY], deadParentIp)
 						if @newBackup["value"] != nil
 							if @newBackup["value"] != "0"	
+								puts "Was returned a new parent backup"
 								##### New parent backup was returned. Add it to Ipaddress table
 								@newBackupEntry = Ipaddress.new
 								@newBackupEntry.iptype = "parentbackup"
