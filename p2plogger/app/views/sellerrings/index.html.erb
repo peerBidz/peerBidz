@@ -1,22 +1,179 @@
 <h1>Listing sellerrings</h1>
-
-<table>
-  <tr>
-    <th>Node IP</th>
-    <th>Predecessor IP</th>
-    <th>Successor IP</th>
-    <th>Category</th>
-  </tr>
-
-<% @sellerrings.each do |sellerring| %>
-  <tr>
-    <td><%= sellerring.ip %></td>
-    <td><%= sellerring.predecessor %></td>
-    <td><%= sellerring.successor %></td>
-    <td><%= sellerring.category %></td>
-  </tr>
+<%= javascript_include_tag "d3.js"%>
+<%= javascript_include_tag "bing.js"%>
+<style type = 'text/css'>
+	.chart {
+	  background: #fff;
+	  border: solid 1px #ddd;
+	  box-shadow: 0 0 4px rgba(0,0,0,.2);
+	  font: 10px sans-serif;
+	  height: 300px;
+	  position: relative;
+	  width: 400px;
+	}
+	
+	.chart svg {
+	  border-left: solid 2px #ddd;
+	  left: 0px;
+	  position: absolute;
+	  top: 0;
+	}
+	
+	.chart pre {
+	  font: 12px monospace;
+	  height: 60px;
+	  left: 10px;
+	  position: absolute;
+	  top: 0;
+	  width: 340px;
+	}
+	
+	.chart circle.little {
+	  fill: #aaa;
+	  stroke: #666;
+	  stroke-width: 1.5px;
+	}
+	
+	.chart button {
+	  left: 275px;
+	  position: absolute;
+	  top: 145px;
+	  width: 80px;
+	}
+	
+	.chart .data rect {
+	  fill: #eee;
+	  stroke: #ccc;
+	}
+	line.link {
+  	  stroke: #999;
+  	  stroke-opacity: .6;
+	}
+</style>
+<script>
+var category_array = [];
+function DynamicDiv(id){
+	var dyndiv = document.createElement("div");
+	dyndiv.id = id;
+	dyndiv.class = "chart";
+	document.body.appendChild(dyndiv);
+}
+//DynamicDiv("chart-2");
+<% @sellerrings.length.times do |i| %>
+var catarray = 0;
+var isfound = 0;
+for (catarray = 0; catarray < category_array.length; catarray++){
+	if (category_array[catarray] == '<%= @sellerrings[i].category%>'){
+		isfound = 1;		
+		break;
+	}
+}
+if (isfound == 0)
+category_array.push('<%= @sellerrings[i].category%>');
 <% end %>
+</script>
 </table>
+<!--
+<input type = "Text" id = "index_Text" size = '20'>
+<input type="button" onclick="init('#chart-2')" value="Refresh!">
+-->
+<table>
+<script>
+var chart_count = 0;
+function init(chart_id){
+remove();
+var array = [];
+var buyer_array = [];
+var mycategory = chart_id;
+function addIP(i, IP){
+    length = array.length;
+    var k;
+    for (k = length - 1; k == i - 1; k--){
+        array[k + 1] = array[k]   
+    }
+    array[i] = IP;
+}
 
+<% @sellerrings.length.times do |i| %>
+
+	var predecessor = '<%= @sellerrings[i].predecessor %>';
+	var IP = '<%= @sellerrings[i].ip%>';
+	var successor = '<%= @sellerrings[i].successor%>';
+	var category = '<%= @sellerrings[i].category%>';
+	var is_seller = '<%= @sellerrings[i].is_seller%>';
+	
+	if ((category == mycategory) & (is_seller == "t")){
+		if (predecessor == 0){
+			array[0] == predecessor;
+            		array[1] = IP;
+            		array[2] = successor;
+		}
+		else{
+			var found = 0;
+			var j;
+			for (j = 0; j < array.length; j++){
+				//alert(array[j]);
+				if (array[j] == predecessor){
+                            	//alert('predecessor');
+					found = 1;
+					if (array[j +1] == successor)
+                           			addIP(j+1,IP);
+					else{
+                            			addIP(j+1,IP);
+						addIP(j+2,successor);
+					}
+                            		break;
+                        	}               
+                        	else if (array[j] == successor){
+                            		//alert('sucessor');
+					found = 1;
+					if(array[j-1 ]== predecessor)
+                            			addIP(j,IP);
+                            		else if (array[j-1] == null)
+						break;
+					else{
+						addIP(j,IP);    
+                            			addIP(j-1,predecessor);
+					}
+					break;              
+                        	}
+				else if (array[j] == IP){
+					//alert('IP');
+					found = 1;
+					if (array[j+1] != successor){
+						array[j+1] = successor;
+						break;
+					}
+					break;
+				}
+			}
+			if (found == 0){
+				//alert('not found');
+                        	array[array.length] = predecessor;
+                        	array[array.length] = IP;
+                        	array[array.length] = successor;
+                    	}
+		}
+	}
+	else if ((category == mycategory) & (is_seller == "f")){				
+		buyer_array.push(String(successor) + ":" + String(IP));
+	}
+<% end %>
+draw(array, "#" + chart_id, buyer_array);
+}
+</script>
+</table>
+<table>
+<script>
+for (catarray = 0; catarray < category_array.length; catarray++){
+	var newtext = document.createTextNode(category_array[catarray]);
+	document.body.appendChild(newtext);
+	DynamicDiv(category_array[catarray]);
+	init(category_array[catarray]);
+}
+</script>
+<!--<div class='chart' id='chart-2'>
+</div>-->
+</table>
 <br />
-
+	
