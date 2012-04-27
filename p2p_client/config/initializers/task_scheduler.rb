@@ -76,7 +76,7 @@ scheduler.every("20s") do
             @sellervalue = @serverPre.call("Container.sendNotification", @my_address, item.id, msg, "false", "W")
 
             # Notify
-            Notification.create!(:ipaddress =>  @my_address, :item_id => item.id , :message => "Congrats! You have sold "+ item.title, :delivered => false, :notification_type => "S")
+            Notification.create!(:ipaddress =>  @highest_bid_row[i].ipaddress, :item_id => item.id , :message => "Congrats! You have sold "+ item.title, :delivered => false, :notification_type => "S")
             break
           rescue
             #Fault tolerance here

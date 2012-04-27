@@ -18,7 +18,7 @@
 <%end%>
 <% if params[:bitcoin] != nil %>
 	<h4> Buyer Notified of Payment Address </h4>
-	<% @bidinfo = Bidding.where("item_id = ?", params[:itemid]).order("bid_amount desc").first %>
+	<% @bidinfo = Notification.where("item_id = :it AND notification_type = :nt", {:it => params[:itemid], :nt => "S"}).first %>
 	<% @serverPre = XMLRPC::Client.new( @bidinfo.ipaddress, "/api/xmlrpc", 3000)%>
 	<% @serverPre.call("Container.bitcoinInfo", params[:itemid], params[:bitcoin]) %>
 	<% @toChange = Notification.where("item_id = ?", params[:itemid]).all %>
