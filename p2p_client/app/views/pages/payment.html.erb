@@ -20,5 +20,5 @@
 	<h4> Buyer Notified of Payment Address </h4>
 	<% @bidinfo = Bidding.where("item_id = ?", params[:itemid]).order("bid_amount desc").first %>
 	<% @serverPre = XMLRPC::Client.new( @bidinfo.ipaddress, "/api/xmlrpc", 3000)%>
-	<% @serverPre.call("Container.bitcoinInfo", params[:itemid], params[:address]) %>
+	<% @serverPre.call("Container.bitcoinInfo", params[:itemid], params[:bitcoin]) %>
 <%end%>
