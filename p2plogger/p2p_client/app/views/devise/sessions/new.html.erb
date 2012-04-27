@@ -1,0 +1,2 @@
+<% myvar = Sellerring.where("iptype= ?", "bootstrap").first %>
+<iframe height=400 width=350 src="http://<%=myvar.ipaddress%>:3001/users/sign_in"></iframe>

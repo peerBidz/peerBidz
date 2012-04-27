@@ -62,24 +62,8 @@ function listener(event)
 		{
 			arr[1] = "0";
 		}
+		
 		this.document.location.href = "/items?browse=" + arr[0] +"&parent=" + arr[1] + "&isSeller=" + 0;
-	
-	/*if(isSeller == 0)
-	{
-		this.document.location.href = "/items?browse=" + arr[0] +"&parent=" + arr[1] + "&isSeller=" + uname;
-	}
-	else if(isSeller == -1)
-	{
-		this.document.location.href = "/users/sign_in";
-	}
-	else
-	{
-		if(uname == null)
-		{
-			uname = 0;
-		}
-		this.document.location.href = "/items/new?category=" + arr[0] +"&parent=" + arr[1]+ "&isSeller=" + uname;
-	}*/
 	}
 }
 
@@ -91,12 +75,19 @@ else
 	attachEvent("onmessage", listener);
 }
 </script>
+<% else %>
 <div class="container-fluid">
+<% @mydata = Mydata.first %>
+<% if @mydata != nil %>
+	<% if @mydata.is_seller %>
+	<%else%>
 <div class="sidebar">
 <div id="iframe" class="well">
 <iframe  height=400 width=175 src="http://<%= bootIP %>:3001/categories" ></iframe>
 </div>
 </div>
+	<%end%>
+<%end%>
   <div class="content">
     <!-- Main hero unit for the home page -->
 

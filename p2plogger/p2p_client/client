@@ -1,0 +1,14 @@
+require "xmlrpc/client"
+
+# Make an object to represent the XML-RPC server.
+@test = "RPC2"
+server = XMLRPC::Client.new("127.0.0.1","/#@test",8080)
+
+# Call the remote server and get our result
+result = server.call("sample.sumAndDifference", 5, 3)
+
+sum = result["sum"]
+difference = result["difference"]
+
+puts "Sum: #{sum}, Difference: #{difference}"
+

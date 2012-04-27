@@ -1,0 +1,21 @@
+<% isPresent = CategoryMembers.where("category = ? and ipaddress = ?", params[:url], request.env['REMOTE_ADDR']).count  %>
+<% myvar = CategoryMembers.new %>
+<% myvar.ipAddress = "0" %>
+
+
+<% if isPresent == 0 %>
+	<% CategoryMembers.create(:ipAddress => request.env['REMOTE_ADDR'], :category => params[:url])%>
+<!-- pick IP addresses round robin style by oldest updated_at -->
+<% db = CategoryMembers.where("category = ? and ipaddress <> ?", params[:url], request.env['REMOTE_ADDR']).count %>
+<% myvar = CategoryMembers.new %>
+<% if db != 0 %>
+	<% myvar = CategoryMembers.where("category = ? and ipaddress <> ?", params[:url], request.env['REMOTE_ADDR']).order("updated_at asc").first %>
+	<% myvar.updated_at = DateTime.now  %>
+	<% myvar.save %>
+<% end %>
+<%end%>
+
+
+<script type="text/javascript">
+	window.parent.postMessage("<%= params[:url] %> <%= myvar.ipAddress %>", '*');
+</script>

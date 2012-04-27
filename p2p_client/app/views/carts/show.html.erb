@@ -1,51 +1,120 @@
-<h4>Add items to your cart</h4>
-
-
-<% @unpaid_items = Item.find(:all, :conditions => ["is_paid != ?", true]) %>
-<% @unpaid_items.each do |item| %>
-    <% @itemNote = Notification.find(:first, :conditions => ["notification_type=? AND item_id=?" , "W",item.id ]) %>
-
-      <% if @itemNote && @itemNote.user_id == current_user.id %>
-
-          <div class="row" style="height: 70px;">
-            <div class="span1">
-                   <%= item.title %>
-            </div>
-            <div class="span15">
-                   <%= link_to "Add", line_items_path(:item_id => @itemNote.item_id), :method => :post, :class => "btn primary medium" %>
-            </div>
-          </div>
-
-      <% end %>
-<% end %>
-
-
-  <h4>Your cart</h4>
-
+<% @myDat = Mydata.first %>
+<% @itemNoShipInfo = Notification.where("notification_type='W'").all %>
+<% if @myDat.is_seller? %>
+<% @itemNote = Notification.where("notification_type='S'").all %>
+<% @itemNoShipInfo = nil %>
+<%else%>
+<% @itemNote = Notification.where("notification_type='W' or notification_type='T'").all %>
+<%end%>
+<% if @itemNote != nil %>
 <table id="line_items">
   <tr>
-    <th>Product</th>
+    <% if @myDat.is_seller? %>
+    	<th>Items Sold</th>
+    <%else %>
+    	<th>Auctions Won</th>
+    <%end%>
 
-    <th class="price">Final Price</th>
   </tr>
 
-  <% for line_item in @cart.line_items %>
+<% @itemNote.each do |item| %>
     <tr class="">
-      <td><%=h line_item.item.title %></td>
-
-      <td class="price"><%= number_to_currency(line_item.full_price) %></td>
-      <td><%= button_to 'Remove from cart', line_item, :method => :delete, :class => "btn medium primary" %></td>
+      <td><%= item.message %></td>
     </tr>
-  <% end %>
-  <tr>
-    <td class="total price" colspan="4">
-      Total: <%= number_to_currency @cart.total_price %>
-    </td>
-  </tr>
+<% end %>
 </table>
+<%else%>
+<tr>
+<p><b>No auctions have been won at this time.</b></p>
+</tr>
+<%end%>
+<% if @myDat.is_seller? %>
+<% @bitcoin = Notification.where("notification_type = 'P'").all %>
+<% if @bitcoin != nil %>
+<table>
+<tr>
+<th>
+Provide Bitcoin Address
+</th>
+</tr>
+<% @bitcoin.each do |sendpay| %>
+<tr>
+<td> sendpay.message </td>
+<td> </td>
+  <%= form_tag("/payment", :method => "get") do %>
+	<%= label_tag(:bitcoin, "Bitcoin Address:") %>
+	<%= text_field_tag(:bitcoin) %>
+	<%= hidden_field_tag(:itemid, sendpay.item_id) %>
+  	<%= submit_tag("Send Payment Info") %>
+  <% end %>
+</tr>
+<%end%>
+</table>
+<%end%>
+<%end%>
 
 <p>
-  <% if @cart.total_price != 0 %>
-    <%= link_to "Pay Now", information_path, :class => "btn primary medium" %>
+<% if @itemNoShipInfo != nil %>
+  <% if @itemNoShipInfo.count > 0 %>
+  <table>
+	<tr>
+	<th>Provide Shipping Information</th>
+	</tr>
+  <%= form_tag("/payment", :method => "get") do %>
+  	<tr><td>
+	<%= label_tag(:name, "Name") %>
+  	</td><td>
+	<%= text_field_tag(:name) %>
+  	</td></tr>
+  	<tr><td>
+	<%= label_tag(:street, "Street") %>
+  	</td><td>
+  	<%= text_field_tag(:street) %>
+  	</td></tr>
+  	<tr><td>
+  	<%= label_tag(:city, "City") %>
+  	</td><td>
+  	<%= text_field_tag(:city) %>
+  	</td></tr>
+  	<tr><td>
+  	<%= label_tag(:state, "State") %>
+  	</td><td>
+  	<%= text_field_tag(:state) %>
+  	</td></tr>
+  	<tr><td>
+  	<%= label_tag(:zip, "Zip") %>
+  	</td><td>
+  	<%= text_field_tag(:zip) %>
+  	</td></tr>
+  	<tr><td>
+  	<%= label_tag(:country, "Country") %>
+  	</td><td>
+  	<%= text_field_tag(:country) %>
+  	</td></tr>
+  	<tr><td>
+  	<%= submit_tag("Send Shipping Info") %>
+  	</td></tr>
   <% end %>
+  </table>  
+  <% end %>
+<%end%>
 </p>
+<% if @myDat.is_seller? %>
+<%else%>
+	<% @mybits = Bitcoin.all %>
+	<% if @mybits != nil %>
+		<table>
+		<tr>
+			<th> Pay for Items </th>
+		</tr>
+		<% @mybits.each do |bit| %>
+			<% @bitNote = Notification.where("item_id =?", bit.itemid).first %>
+			<tr>
+			<td>Message: <%=@bitNote.message%></td>
+			<td>Bitcoin Address: <%= bit.address %></td>
+			<td><%= form_tag("/payment", :method => "get") do %><%= hidden_field_tag(:delBitcoin, bit.itemid) %><%= submit_tag("Mark as Paid") %><%end%></td>
+			</tr>
+		<%end%>
+		</table>
+	<%end%>
+<%end%>

@@ -22,30 +22,69 @@
 require 'rubygems'
 require 'rake'
 require 'rufus/scheduler'
+require 'xmlrpc/client'
 
 #load File.join( Rails.root.to_s, 'lib', 'tasks', 'bidding_tasks.rake')
 
 scheduler = Rufus::Scheduler.start_new
+if ActiveRecord::Base.connection.table_exists? 'searchresults'
+Searchresults.delete_all
+end
+if ActiveRecord::Base.connection.table_exists? 'ipaddresses'
+Ipaddress.delete_all
+end
+if ActiveRecord::Base.connection.table_exists? 'mydata'
+Mydata.delete_all
+end
+if ActiveRecord::Base.connection.table_exists? 'notifications'
+Notification.delete_all
+end
+if ActiveRecord::Base.connection.table_exists? 'searchdbs'
+Searchdb.delete_all
+end
 
+if ActiveRecord::Base.connection.table_exists? 'searchdbs'
+@myvar = Sellerring.where("iptype <> 'bootstrap'")
+@myvar.each do |entry|
+	entry.delete
+	end
+end
 scheduler.every("20s") do
-  #Rake::Task["biddingTasks:winner_notify"].invoke
 
     @items = Item.find(:all, :conditions => ["bidding_closed = ?", false])
 
     @items.each do |item|
-      if DateTime.now.to_formatted_s(:db) >= item.expires_at.to_formatted_s(:db)
+	puts DateTime.now.to_s(:number)
+	puts "print item expires_at"
+	puts item.expires_at.to_s(:number)
+      if DateTime.now.to_s(:number) >= item.expires_at.to_s(:number)
         #puts("entered to item loop")
         Item.update(item.id, :bidding_closed => true)
         item.save
-        @highest_bid_row = Bidding.find(:first, :conditions => ["item_id IN (?)", item.id] , :order => 'bid_amount DESC')
-        if @highest_bid_row
-        #notify buyer (winner of item)
-        Notification.create!(:user_id => @highest_bid_row.user_id, :item_id => item.id , :message => "Congrats! You have won "+item.title, :delivered => false, :notification_type => "W")
+        @highest_bid_row = Bidding.find(:all, :conditions => ["item_id IN (?)", item.id] , :order => 'bid_amount DESC')
+        puts @highest_bid_row.length
 
-        #notify seller
-        Notification.create!(:user_id => item.seller_id, :item_id => item.id , :message => "Congrats! You have sold "+ item.title, :delivered => false, :notification_type => "S")
+        @highest_bid_row.length.times do |i|
+
+        #notify buyer (winner of item)
+        puts @highest_bid_row[i].ipaddress
+        @serverPre = XMLRPC::Client.new(@highest_bid_row[i].ipaddress, "/api/xmlrpc", 3000)
+
+          begin
+            @my_address = Mydata.first.localaddress
+            msg = "Congrats! You have won "+item.title
+            @sellervalue = @serverPre.call("Container.sendNotification", @my_address, item.id, msg, "false", "W")
+
+            # Notify
+            Notification.create!(:ipaddress =>  @my_address, :item_id => item.id , :message => "Congrats! You have sold "+ item.title, :delivered => false, :notification_type => "S")
+            break
+          rescue
+            #Fault tolerance here
+            puts "failed to connect to top buyer. Trying the next one"
+          end
+
+           Notification.create!(:ipaddress =>  @my_address, :item_id => item.id , :message => "None of your buyers are online for "+ item.title, :delivered => false, :notification_type => "D")
         end
-        else
       end
     end
 end

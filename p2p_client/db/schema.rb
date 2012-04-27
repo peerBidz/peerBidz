@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120406000701) do
+ActiveRecord::Schema.define(:version => 20120426231559) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -48,10 +48,17 @@ ActiveRecord::Schema.define(:version => 20120406000701) do
   create_table "biddings", :force => true do |t|
     t.datetime "bid_time"
     t.integer  "bid_amount"
+    t.string   "ipaddress"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
     t.integer  "item_id"
+  end
+
+  create_table "bitcoins", :force => true do |t|
+    t.integer  "itemid"
+    t.string   "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "carts", :force => true do |t|
@@ -121,9 +128,9 @@ ActiveRecord::Schema.define(:version => 20120406000701) do
   end
 
   create_table "notifications", :force => true do |t|
-    t.integer  "user_id"
     t.integer  "item_id"
     t.boolean  "delivered"
+    t.string   "ipaddress"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "message"
@@ -179,6 +186,18 @@ ActiveRecord::Schema.define(:version => 20120406000701) do
     t.string   "ipaddress"
     t.string   "iptype"
     t.string   "category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shippinginfos", :force => true do |t|
+    t.integer  "itemid"
+    t.string   "name"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "country"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

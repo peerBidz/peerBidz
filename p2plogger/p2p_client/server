@@ -1,0 +1,16 @@
+require "xmlrpc/server"
+
+s = XMLRPC::Server.new(8080)
+
+class MyHandler
+  def sumAndDifference(a, b)
+    { "sum" => a + b, "difference" => a - b }
+  end
+
+  def sendHi()
+    { "value" => "hi from the seller" }
+  end
+end
+
+s.add_handler("sample", MyHandler.new)
+s.serve

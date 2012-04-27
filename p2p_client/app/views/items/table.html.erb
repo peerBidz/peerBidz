@@ -1,0 +1,22 @@
+<% if params[:search] != nil %>
+<% if params[:search] != "" %>
+<h2> Here are your search results </h2>
+<table>
+  <tr>
+    <th>Search String</th>
+    <th>Category</th>
+    <th>Seller Ip address</th>
+  </tr>
+<% @is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+<% @is_present.each do |item| %>
+
+  <tr>
+    <td><%= item.search_string %></td>
+    <td><%= item.category %></td>
+    <td><%= item.ipaddress %></td>
+    <td><a href="/items/<%=item.id%>" >More Information</a></td>
+  </tr>
+<%end%>
+</table>
+<%end%>
+<%end%>

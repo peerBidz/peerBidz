@@ -1,0 +1,180 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, Verdana, Sans-serif;
+    font-size: 12px;
+    color: #666666;
+    background: #ffffff;
+}
+
+/* overridding default "container-fluid" in twitter CSS
+ to remove issue where the content jumps down if the window is resized */
+.container-fluid {
+    width: 1400px;
+}
+
+
+/* container used for item show page */
+.container {
+    width: 850px;
+    margin: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+#main-nav {
+    height: 50px;
+    font-size: 12px;
+    padding: 10px;
+    text-align: right;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer {
+    width: 850px;
+    margin: auto;
+}
+
+#sidebar-a {
+    float: left;
+    width: 180px;
+    line-height: 18px;
+    font-size: 20px;
+}
+
+#content {
+    margin-left: 180px;
+    line-height: 18px;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+#content h2 {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 15px;
+}
+
+#content p {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 15px;
+}
+
+#content .padding {
+    padding: 25px;
+}
+
+/* CSS FROM RAILS TUTORIAL:  */
+header img {
+    padding: 1em;
+    background: #fff;
+}
+
+/* Links */
+
+a {
+    color: #09c;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #069;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #069;
+}
+
+/* Navigation */
+
+nav {
+    float: right;
+}
+
+nav {
+    background-color: white;
+    padding: 0 0.7em;
+    white-space: nowrap;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 0.2em 0;
+}
+
+nav ul li a {
+    padding: 0 5px;
+    font-weight: bold;
+}
+
+nav ul li a:visited {
+    color: #09c;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.header-links {
+    font: 12px;
+    color: #0099ff;
+    text-align: right;
+}
+
+.footer-links {
+    font: 12px;
+    color: #0099ff;
+    text-align: center;
+}
+
+/* Item View(show) Page */
+.item-show-container {
+   height: 300px;
+}
+
+.item-image {
+   float: left;
+   width: 49%;
+   height: 99%; 
+   }
+
+.item-details {
+   float: right;
+   width: 49%;
+   text-align: left; /* depends on element width */
+   height: 99%;
+   }
+
+.current-price-value {
+ font-size: 24px;
+ color: #3366ff;
+    font-weight: bold;
+}
+
+.welcome-text {
+    font-size: 18px;
+    font-weight: bold;
+}

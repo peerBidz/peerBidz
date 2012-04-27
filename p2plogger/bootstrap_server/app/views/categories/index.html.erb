@@ -1,0 +1,14 @@
+<% my_address = UDPSocket.open {|s| s.connect('65.59.196.211', 1); s.addr.last }%>
+<script>
+	function messageParent(url)
+	{
+			this.document.location.href = "http://<%=my_address%>:3001/redirect?url=" +url;
+	}
+</script>
+<table>
+<% @categories.each do |category| %>
+  <tr>
+    <td><a href='#' onclick="messageParent('<%= category.name %>')"><%= category.name %></a></td>
+</tr>
+<% end %>
+</table>

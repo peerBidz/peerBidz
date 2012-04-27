@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Photo</th>
+    <th>Description</th>
+    <th>Condition</th>
+    <th>Starting price</th>
+    <!--<th>Duration</th>-->
+    <th>Category</th>
+    <th>Seller</th>
+    <th></th>
+    <% if user_signed_in? %>
+        <%if current_user.is_seller? %>
+                <th></th>
+                <th></th>
+        <% end %>
+    <%end%>
+  </tr>
+
+
+<%if @search.items.empty?%>
+      <h5>No Match results were found.</h>
+<%else %>
+
+<% @search.items.each do |item| %>
+
+  <tr>
+    <td><%= item.title %></td>
+    <td><%= link_to (image_tag (item.photo.url(:small)), :action => 'show', :controller => 'items'), item %></td>
+    <td><%= item.description %></td>
+    <td><%if item.condition?%>
+            New
+        <%else%>
+            Used
+        <%end%>
+    </td>
+    <td><%= item.starting_price %></td>
+    <!--<td><%#= item.duration %></td>         -->
+
+    <td><%= Category.find(item.category_id).name %></td>
+    <td><%= User.find(item.seller_id).email %></td>
+
+
+        <td><%= link_to 'Show', item %></td>
+        <!-- WJ need admin role -->
+        <%if user_signed_in? && current_user.is_seller? %>
+            <%if current_user== User.find(item.seller_id) %>
+                <td><%= link_to 'Edit', edit_item_path(item) %></td>
+                <td><%= link_to 'Delete', item, :confirm => 'Are you sure?', :method => :delete %></td>
+            <% end%>
+        <% end %>
+
+  </tr>
+<% end %>
+<% end %>
+</table>

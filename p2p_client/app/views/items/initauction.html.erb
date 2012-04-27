@@ -1,4 +1,5 @@
 <% myBoot = Sellerring.where("iptype= ?", "bootstrap").first %>
 <% bootIP = myBoot.ipaddress %>
 
-<iframe src="http://<%= bootIP %>:3001/redirect?url=<%= @item.category %>&isSeller=1"></iframe>
+<% isSeller = Mydata.first.is_seller %>
+<iframe src="http://<%= bootIP %>:3001/redirect?url=<%= @item.category %>&isSeller=<%= isSeller %>"></iframe>

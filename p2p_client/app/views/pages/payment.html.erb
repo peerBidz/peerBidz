@@ -1,83 +1,24 @@
-<% @order = Order.new %>
-
-<%= form_for(@order) do |f| %>
-  <% if @order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
-
-      <ul>
-      <% @order.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="row" style="width: 100%; padding-left: 20px">
-     <div class="span10">
-      <h4>Payment Information</h4>
-      <div class="field">
-        <%= f.label :first_name %><br />
-        <%= f.text_field :first_name %>
-      </div>
-      <div class="field">
-        <%= f.label :last_name %><br />
-        <%= f.text_field :last_name %>
-      </div>
-      <div class="field">
-        <%= f.label :card_number %><br />
-        <%= f.text_field :card_number %>
-      </div>
-      <div class="field">
-        <%= f.label :card_type %><br />
-        <%= f.select :card_type, [["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]] %>
-      </div>
-      <div class="field">
-        <%= f.label :card_expires_on %><br />
-        <%= f.date_select :card_expires_on, :discard_day => true, :start_year => Date.today.year, :end_year => (Date.today.year+10), :add_month_numbers => true %>
-      </div>
-      <div class="field">
-        <%= f.label :card_verification, "Card Verification Value (CVV)" %><br />
-        <%= f.text_field :card_verification %>
-      </div>      <br/>
-
-       </div>
-
-     <div class="span6" style="width: 400px;">
-
-      <h4>Billing Address</h4>
-      <div class="field">
-        <%= f.label :street %><br />
-        <%= f.text_field :street, :value => current_user.street%>
-      </div>
-      <div class="field">
-        <%= f.label :city %><br />
-        <%= f.text_field :city, :value => current_user.city %>
-      </div>
-      <div class="field">
-        <%= f.label :state %><br />
-        <%= f.text_field :state, :value => current_user.state %>
-      </div>
-
-      <div class="field">
-        <%= f.label :zip %><br />
-        <%= f.text_field :zip, :value => current_user.zip %>
-      </div>
-
-      <div class="field">
-        <%= f.label :phone %><br />
-        <%= f.text_field :phone, :value => current_user.phone %>
-      </div>
-      <div class="field">
-        <%= f.label :country %><br />
-        <%= f.text_field :country, :value => current_user.country %>
-      </div>
-
-      <div class="actions">
-        <%= f.submit "Proceed to Checkout",:class => "btn primary medium", :cart_id => 324 %>
-      </div>
-
-     </div>
-  </div>
-
-<% end %>
+<% require 'xmlrpc/client'%>
+<% if params[:name] != nil %>
+	<h4> Shipping Information Sent </h4>
+	<% @notes = Notification.where("notification_type ='W'").all %>
+	<% @notes.each do |entry| %>
+		<% @serverPre = XMLRPC::Client.new( entry.ipaddress, "/api/xmlrpc", 3000)%>
+		<% @serverPre.call("Container.buyerInfo", entry.item_id, params[:name], params[:street], params[:city], params[:state], params[:zip], params[:country]) %>
+		<% entry.notification_type = 'T' %>
+		<% entry.save %>
+	<%end%>
+<%end%>
+<% if params[:delBitcoin] != nil %>
+	<h4> Item Marked as Paid </h4>
+	<% @bitList = Bitcoin.where("itemid = ?", params[:delBitcoin]).all %>
+	<% @bitList.each do |bit| %>
+		<% bit.delete %>
+	<%end%>
+<%end%>
+<% if params[:bitcoin] != nil %>
+	<h4> Buyer Notified of Payment Address </h4>
+	<% @bidinfo = Bidding.where("item_id = ?", params[:itemid]).order("bid_amount desc").first %>
+	<% @serverPre = XMLRPC::Client.new( @bidinfo.ipaddress, "/api/xmlrpc", 3000)%>
+	<% @serverPre.call("Container.bitcoinInfo", params[:itemid], params[:bitcoin]) %>
+<%end%>
