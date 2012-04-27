@@ -39,14 +39,15 @@ Provide Bitcoin Address
 </tr>
 <% @bitcoin.each do |sendpay| %>
 <tr>
-<td> sendpay.message </td>
-<td> </td>
+<td> <%= sendpay.message %> </td>
+<td> 
   <%= form_tag("/payment", :method => "get") do %>
 	<%= label_tag(:bitcoin, "Bitcoin Address:") %>
 	<%= text_field_tag(:bitcoin) %>
 	<%= hidden_field_tag(:itemid, sendpay.item_id) %>
   	<%= submit_tag("Send Payment Info") %>
   <% end %>
+</td>
 </tr>
 <%end%>
 </table>
