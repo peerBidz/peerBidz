@@ -44,6 +44,7 @@ Provide Bitcoin Address
   <%= form_tag("/payment", :method => "get") do %>
 	<%= label_tag(:bitcoin, "Bitcoin Address:") %>
 	<%= text_field_tag(:bitcoin) %>
+	<%= hidden_field_tag(:itemid, sendpay.item_id) %>
   	<%= submit_tag("Send Payment Info") %>
   <% end %>
 </tr>
@@ -98,3 +99,22 @@ Provide Bitcoin Address
   <% end %>
 <%end%>
 </p>
+<% if @myDat.is_seller? %>
+<%else%>
+	<% @mybits = Bitcoin.all %>
+	<% if @mybits != nil %>
+		<table>
+		<tr>
+			<th> Pay for Items </th>
+		</tr>
+		<% @mybits.each do |bit| %>
+			<% @bitNote = Notification.where("item_id =?", bit.itemid).first %>
+			<tr>
+			<td>Message: <%=@bitNote.message%></td>
+			<td>Bitcoin Address: <%= bit.address %></td>
+			<td><%= form_tag("/payment", :method => "get") do %><%= hidden_field_tag(:delBitcoin, bit.itemid) %><%= submit_tag("Mark as Paid") %><%end%></td>
+			</tr>
+		<%end%>
+		</table>
+	<%end%>
+<%end%>

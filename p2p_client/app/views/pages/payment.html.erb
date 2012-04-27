@@ -1,9 +1,24 @@
 <% require 'xmlrpc/client'%>
-<h4> Shipping Information Sent </h4>
-<% @notes = Notification.where("notification_type ='W'").all %>
-<% @notes.each do |entry| %>
-	<% @serverPre = XMLRPC::Client.new( entry.ipaddress, "/api/xmlrpc", 3000)%>
-	<% @serverPre.call("Container.buyerInfo", entry.item_id, entry.name, entry.street, entry.city, entry.state, entry.zip, entry.country) %>
-	<% entry.notification_type = 'T' %>
-	<% entry.save %>
+<% if params[:name] != nil %>
+	<h4> Shipping Information Sent </h4>
+	<% @notes = Notification.where("notification_type ='W'").all %>
+	<% @notes.each do |entry| %>
+		<% @serverPre = XMLRPC::Client.new( entry.ipaddress, "/api/xmlrpc", 3000)%>
+		<% @serverPre.call("Container.buyerInfo", entry.item_id, params[:name], params[:street], params[:city], params[:state], params[:zip], params[:country]) %>
+		<% entry.notification_type = 'T' %>
+		<% entry.save %>
+	<%end%>
+<%end%>
+<% if params[:delBitcoin] != nil %>
+	<h4> Item Marked as Paid </h4>
+	<% @bitList = Bitcoin.where("itemid = ?", params[:delBitcoin]).all %>
+	<% @bitList.each do |bit| %>
+		<% bit.delete %>
+	<%end%>
+<%end%>
+<% if params[:bitcoin] != nil %>
+	<h4> Buyer Notified of Payment Address </h4>
+	<% @bidinfo = Bidding.where("item_id = ?", params[:itemid]).order("bid_amount desc").first %>
+	<% @serverPre = XMLRPC::Client.new( @bidinfo.ipaddress, "/api/xmlrpc", 3000)%>
+	<% @serverPre.call("Container.bitcoinInfo", params[:itemid], params[:address]) %>
 <%end%>

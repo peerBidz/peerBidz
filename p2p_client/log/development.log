@@ -77,3 +77,32 @@ ActionView::Template::Error (undefined method `is_seller?' for nil:NilClass):
     6: <%else%>
   app/views/carts/show.html.erb:3:in `_app_views_carts_show_html_erb___748004959_89536190__460611316'
 
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/code/peer/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/code/peer/p2p_client/config/routes.rb:1)
+
+ActionView::Template::Error (undefined method `message' for nil:NilClass):
+    109: 		<% @mybits.each do |bit| %>
+    110: 			<% @bitNote = Notification.where("item_id =?", bit.itemid).first %>
+    111: 			<tr>
+    112: 			<td>Message: <%=@bitNote.message%></td>
+    113: 			<td>Bitcoin Address: <%= @bit.address %></td>
+    114: 			<td><%= form_tag("/search", :method => "get") do %><%= hidden_field_tag(:delBitcoin, bit.itemid) %><%= submit_tag("Mark as Paid") %><%end%></td>
+    115: 			</tr>
+  app/views/carts/show.html.erb:112:in `block in _app_views_carts_show_html_erb___748004959_100957200__460611316'
+  app/views/carts/show.html.erb:109:in `each'
+  app/views/carts/show.html.erb:109:in `_app_views_carts_show_html_erb___748004959_100957200__460611316'
+
+
+ActionView::Template::Error (undefined method `address' for nil:NilClass):
+    110: 			<% @bitNote = Notification.where("item_id =?", bit.itemid).first %>
+    111: 			<tr>
+    112: 			<td>Message: <%=@bitNote.message%></td>
+    113: 			<td>Bitcoin Address: <%= @bit.address %></td>
+    114: 			<td><%= form_tag("/search", :method => "get") do %><%= hidden_field_tag(:delBitcoin, bit.itemid) %><%= submit_tag("Mark as Paid") %><%end%></td>
+    115: 			</tr>
+    116: 		<%end%>
+  app/views/carts/show.html.erb:113:in `block in _app_views_carts_show_html_erb___748004959_101160310__460611316'
+  app/views/carts/show.html.erb:109:in `each'
+  app/views/carts/show.html.erb:109:in `_app_views_carts_show_html_erb___748004959_101160310__460611316'
+
