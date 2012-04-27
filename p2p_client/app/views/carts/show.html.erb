@@ -4,7 +4,7 @@
 <% @itemNote = Notification.where("notification_type='S'").all %>
 <% @itemNoShipInfo = nil %>
 <%else%>
-<% @itemNote = Notification.where("notification_type='W' or notification_type='T'").all %>
+<% @itemNote = Notification.where("notification_type='W'").all %>
 <%end%>
 <% if @itemNote != nil %>
 <table id="line_items">
