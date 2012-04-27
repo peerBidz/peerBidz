@@ -53,6 +53,8 @@ scheduler.every("20s") do
 
     @items = Item.find(:all, :conditions => ["bidding_closed = ?", false])
 
+    bflag = 1
+
     @items.each do |item|
 	puts DateTime.now.to_s(:number)
 	puts "print item expires_at"
@@ -77,14 +79,19 @@ scheduler.every("20s") do
 
             # Notify
             Notification.create!(:ipaddress =>  @highest_bid_row[i].ipaddress, :item_id => item.id , :message => "Congrats! You have sold "+ item.title, :delivered => false, :notification_type => "S")
+            bflag = 0
             break
           rescue
             #Fault tolerance here
             puts "failed to connect to top buyer. Trying the next one"
           end
+        end
 
+        # If none of the buyers are online
+        if bflag == 1
            Notification.create!(:ipaddress =>  @my_address, :item_id => item.id , :message => "None of your buyers are online for "+ item.title, :delivered => false, :notification_type => "D")
         end
+
       end
     end
 end
