@@ -120,7 +120,18 @@ class ItemsController < ApplicationController
 							        @newBackupEntry.ipaddress = @newBackup["value"]
 							        @newBackupEntry.category = @backupParent.category
 							        @newBackupEntry.save
-									##### TODO need to start search here again
+							    	#todo
+								@server1 = XMLRPC::Client.new(@sellerIPAddress.ipaddress, "/api/xmlrpc", 3000)
+								@ip_address = @server1.call("Container.get_sellerorigin", @search_string, cookies[:CURRCATEGORY], @my_address)
+                        					if @ip_address["value"] != "0"
+								##### Parent returned search results
+									@dbvalue = Searchresults.new
+									@dbvalue.search_string = @ip_address["search"]
+									@dbvalue.category = @ip_address["category"]
+									@dbvalue.ipaddress = @ip_address["value"]
+									@dbvalue.returned_string = @ip_address["returnedstring"] 
+									@dbvalue.save
+								end
 							    end
 							rescue
 								puts "new parent from bootstrap also unavailable. Do not wish to support further fault tolerance"
@@ -274,6 +285,7 @@ class ItemsController < ApplicationController
    	else
 
       	@checkcategory = Ipaddress.find_all_by_category(params[:browse])
+	@parentip = 0
   		puts "buyer"
       	if (@checkcategory.count == 0)
 			if params[:parent] != "0"
@@ -294,23 +306,25 @@ class ItemsController < ApplicationController
 		if @is_parentbackuppresent != nil
 			if @is_parentbackuppresent.count == 0
         		puts "No backup parent found"
-				@server1 = XMLRPC::Client.new(@parentip, "/api/xmlrpc", 3000)
-				puts @parentip
-        		begin
-					@sellervalue = @server1.call("Container.getBackupParent", params[:browse])
-					puts "made a call to parent" 
-					if @sellervalue != nil
-						if @sellervalue["value"] != "0"
-							puts "Adding backup parent to db"
-							@newdata = Ipaddress.new
-							@newdata.ipaddress = @sellervalue["value"]
-							@newdata.iptype = 'parentbackup'
-							@newdata.category = params[:browse]
-							@newdata.save
+				if @parentip != 0
+					@server1 = XMLRPC::Client.new(@parentip, "/api/xmlrpc", 3000)
+					puts @parentip
+        				begin
+						@sellervalue = @server1.call("Container.getBackupParent", params[:browse])
+						puts "made a call to parent" 
+						if @sellervalue != nil
+							if @sellervalue["value"] != "0"
+								puts "Adding backup parent to db"
+								@newdata = Ipaddress.new
+								@newdata.ipaddress = @sellervalue["value"]
+								@newdata.iptype = 'parentbackup'
+								@newdata.category = params[:browse]
+								@newdata.save
+							end
 						end
+					rescue	
+						puts "Rescue for buyer"
 					end
-				rescue
-					puts "Rescue for buyer"
 				end
 			end
       	end
