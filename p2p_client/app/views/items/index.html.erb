@@ -10,21 +10,14 @@ function ()
 $('#dataDisplay').load("/table");
 }, 2000); // refresh every 10000 milliseconds
 </script>
-
-<% if user_signed_in? %>
-    <% if current_user.is_seller? %>
-        <a class="btn primary large offer-item" href='<%= new_item_path %>'>Offer your item for bidding »</a>
-    <% else %>
-        <a class="btn primary large offer-item" href='/users/sign_out'>Register as a seller to offer your item »</a>
-        <!--ACTION ITEM: user should be redirected to seller register with is_seller already checked-in-->
-    <% end %>
-<% else %>
-    <a class="btn primary large offer-item" href='/users/sign_in'>Login to offer your item »</a>
-<% end %>
+<% @mydat = Mydata.first %>
 
 <!-- Save parent IP in the database -->
 
 <!-- SEARCH BAR -->
+<% if @mydat != nil %>
+<% if @mydat.is_seller? %>
+<%else%>
 <%= form_tag items_path, :method => 'get' do %>
   <p>
   <%#= text_field_tag :search, params[:search] %>
@@ -35,12 +28,18 @@ $('#dataDisplay').load("/table");
     <%= link_to "Advanced Search", advsearch_path %>
 
   </p>
+<%end%>
 <% end %>
+<%end%>
 <h1>Category: <%= cookies[:CURRCATEGORY] %> </h1>
-
+<% if @mydat != nil %>
+<% if @mydat.is_seller? %>
+<p> Category joined successfully. </p>
+<% else %>
 <div id="dataDisplay">
 </div>
-
+<%end%>
+<%end%>
 <script>
     $(function() {
         var availableTags = [
