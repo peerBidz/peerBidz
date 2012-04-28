@@ -125,7 +125,6 @@ puts "b"
 		@newPred.ipaddress = newip
 		@newPred.category = category
 		@newPred.save
-		{"value"=> "0"}
 puts "c"
 		if lostSucc == 0
 			# tell successor to update backups accordingly
@@ -138,7 +137,6 @@ puts "d"
 				@callsucc.call_async("Container.updateBackup", @mydat.localaddress, category, "backup_predecessor")
 			}
 puts "e"
-			{"value" => @successor.ipaddress}
 			end
 puts "f"
 		end
@@ -151,7 +149,6 @@ puts "f"
 		@news.ipaddress = newip
 		@news.category = category
 		@news.save
-		{"value"=> "0"}
 		if lostPred == 0
 			# tell successor to update backups accordingly
 			@cpred = Sellerring.where("category = ? and iptype = 'predecessor'", category).first
@@ -161,7 +158,6 @@ puts "f"
 				@mydat = Mydata.first
 				@callpred.call_async("Container.updateBackup", @mydat.localaddress, category, "backup_successor")
 			}
-			{"value" => @cpred.ipaddress}
 			end
 		end
 	end
@@ -241,19 +237,7 @@ add_method 'Container.parentDeathSwitch' do |category, ipaddress|
 					@localInfo = Mydata.first
       					@callbackup = XMLRPC::Client.new(@myBackup.ipaddress, "/api/xmlrpc", 3000)
       					Thread.new {
-						@result = @callbackup.call("Container.neighborDeath", category, @dead.ipaddress, @localInfo.localaddress)
-						if @result["value"] != "0"
-							@back = Sellerring.where("iptype='backup_successor' and category = ?", category).first
-							if @back != nil
-								@back.ipaddress = @result["value"]
-								@back.save
-							else
-								@newBack = Sellerring.new
-								@newBack.iptype = 'backup_successor'
-								@newBack.ipaddress = @result["value"]
-								@newBack.save
-							end
-						end
+						 @callbackup.call2_async("Container.neighborDeath", category, @dead.ipaddress, @localInfo.localaddress)
 					}
 				else
 					# no successor, connect to predecessor
@@ -268,19 +252,7 @@ add_method 'Container.parentDeathSwitch' do |category, ipaddress|
 						@localInfo = Mydata.first
       						@callbackup = XMLRPC::Client.new(@predInfo.ipaddress, "/api/xmlrpc", 3000)
       						Thread.new {
-							@result = @callbackup.call_async("Container.neighborDeath", category, @dead.ipaddress, @localInfo.localaddress)
-						if @result["value"] != "0"
-							@back = Sellerring.where("iptype='backup_predecessor' and category = ?", category).first
-							if @back != nil
-								@back.ipaddress = @result["value"]
-								@back.save
-							else
-								@newBack = Sellerring.new
-								@newBack.iptype = 'backup_predecessor'
-								@newBack.ipaddress = @result["value"]
-								@newBack.save
-							end
-						end
+							@callbackup.call2_async("Container.neighborDeath", category, @dead.ipaddress, @localInfo.localaddress)
 						}
 					else
 						if @succInfo != nil
