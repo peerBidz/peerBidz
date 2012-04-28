@@ -312,11 +312,10 @@ add_method 'Container.parentDeathSwitch' do |category, ipaddress|
      @mySuccessor = Sellerring.where("category = :ct AND iptype = :pt", {:ct => category, :pt => "successor"})
      backupSuccessor = "0"	
      if @mySuccessor.count != 0
-		if(@mySuccessor.first.ipaddress != ipaddress)
+		 if @mySuccessor.first.ipaddress != ipaddress
 			backupSuccessor = @mySuccessor.first.ipaddress
 			@mysucc = XMLRPC::Client.new(backupSuccessor, "/api/xmlrpc", 3000)
-			Thread.new
-			{
+			Thread.new{
 				@mysucc.call2_async("Container.updateBackup", ipaddress, @category, "backup_predecessor")
 			}
 		end
