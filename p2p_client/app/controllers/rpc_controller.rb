@@ -285,6 +285,14 @@ add_method 'Container.parentDeathSwitch' do |category, ipaddress|
        @myvar.first.save
        puts "Var Count"
        puts predecessor
+	   dbvalue = Sellerring.new
+	   dbvalue.ipaddress = predecessor
+	   dbvalue.iptype = 'backup_predecessor'
+	   dbvalue.category = category
+	   dbvalue.updated_at = DateTime.now
+	   dbvalue.created_at = DateTime.now
+	   dbvalue.save
+
 	   
     else
        puts "Not in var count"

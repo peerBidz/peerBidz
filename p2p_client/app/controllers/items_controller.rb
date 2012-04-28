@@ -267,7 +267,7 @@ class ItemsController < ApplicationController
         						@mydb.save
 						end
 						Thread.new{   
-							@mypred.call2_async("Container.updateBackup", params[:parent], @category, "backup_backup_successor")
+							@mypred.call2_async("Container.updateBackup", params[:parent], @category, "backup_successor")
 						}  
 					else	
         					@category = params[:browse]
