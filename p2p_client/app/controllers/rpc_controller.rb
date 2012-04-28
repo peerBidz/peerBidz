@@ -131,7 +131,8 @@ add_method 'Container.neighborDeath' do |category, deadip, newip|
 			if @successor != nil
       			@callsucc = XMLRPC::Client.new(@successor.ipaddress, "/api/xmlrpc", 3000)
       			Thread.new {
-				@callsucc.call_async("Container.updateRingBackup", ipaddress)
+				@mydat = Mydata.first
+				@callsucc.call_async("Container.updateRingBackup", @mydat.localaddress, category, "backup_predecessor")
 			}
 			{"value" => @successor.ipaddress}
 			end
@@ -139,19 +140,21 @@ add_method 'Container.neighborDeath' do |category, deadip, newip|
 	end
 	
 	# if lost successor, add new successor
-	if lostSucc == 0
-		@newPred = Sellerring.new
-		@newPred.iptype = "successor"
-		@newPred.ipaddress = newip
-		@newPred.category = category
-		@newPred.save
+	if lostSucc == 1
+		@news = Sellerring.new
+		@news.iptype = "successor"
+		@news.ipaddress = newip
+		@news.category = category
+		@news.save
+		{"value"=> "0"}
 		if lostPred == 0
 			# tell successor to update backups accordingly
 			@cpred = Sellerring.where("category = ? and iptype = 'predecessor'", category).first
 			if @cpred != nil
       			@callpred = XMLRPC::Client.new(@cpred.ipaddress, "/api/xmlrpc", 3000)
       			Thread.new {
-				@callpred.call_async("Container.updateRingBackup", ipaddress)
+				@mydat = Mydata.first
+				@callpred.call_async("Container.updateBackup", @mydat.localaddress, category, "backup_successor")
 			}
 			{"value" => @cpred.ipaddress}
 			end
@@ -162,6 +165,7 @@ end
 
 # Call this to update backup predecessor/successor
 add_method 'Container.updateRingBackup' do |category, deadip, newip|
+	puts "update ring backup"
 	@backups = Sellerring.where('category = ?').all
 	if @backups != nil
 		@backups.each do |back|
