@@ -103,16 +103,16 @@ class RpcController < ApplicationController
 add_method 'Container.neighborDeath' do |category, deadip, newip|
 
 	@myDead = Sellerring.where("ipaddress = ? and category = ?", deadip, category).all
-	lostPred = 0;
-	lostSucc = 0;
+	lostPred = 0
+	lostSucc = 0
 
 	# Delete dead IP from seller ring
 	@myDead.each do |entry|
 		if entry.iptype == "predecessor"
-			lostPred = 1;
+			lostPred = 1
 		end
 		if entry.iptype == "successor"
-			lostSucc = 1;
+			lostSucc = 1
 		end
 		entry.delete
 	end
