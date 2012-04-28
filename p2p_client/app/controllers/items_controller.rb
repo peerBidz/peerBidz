@@ -258,7 +258,6 @@ class ItemsController < ApplicationController
         					@mydb.save
         					@mypred = XMLRPC::Client.new(predecessorip, "/api/xmlrpc", 3000)
         					@backupPred = @mypred.call("Container.updateSuccessor", @userinfo.localaddress, @category)
-					
 						if @backupPred["value"] != 0
         						@category = params[:browse]
         						@mydb = Sellerring.new
@@ -267,6 +266,10 @@ class ItemsController < ApplicationController
         						@mydb.iptype = 'backup_predecessor'
         						@mydb.save
 						end
+						Thread.new
+						{   
+							@mypred.call2_async("Container.updateBackup", params[:parent], @category, "backup_backup_successor")
+						}  
 					else	
         					@category = params[:browse]
         					@mydb = Sellerring.new

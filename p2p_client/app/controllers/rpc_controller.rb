@@ -285,6 +285,7 @@ add_method 'Container.parentDeathSwitch' do |category, ipaddress|
        @myvar.first.save
        puts "Var Count"
        puts predecessor
+	   
     else
        puts "Not in var count"
 
@@ -313,11 +314,18 @@ add_method 'Container.parentDeathSwitch' do |category, ipaddress|
      if @mySuccessor.count != 0
 		if(@mySuccessor.first.ipaddress != ipaddress)
 			backupSuccessor = @mySuccessor.first.ipaddress
+			@mysucc = XMLRPC::Client.new(backupSuccessor, "/api/xmlrpc", 3000)
+			Thread.new
+			{
+				@mysucc.call2_async("Container.updateBackup", ipaddress, @category, "backup_predecessor")
+			}
 		end
      end
 
     {"value" => predecessor, "backup_successor" => backupSuccessor}
 end
+
+
   add_method 'Container.updateSuccessor' do |ipaddress, category|
 
      @myvar = Sellerring.where("category = :ct AND iptype = :pt", {:ct => category, :pt => "successor"}).first
@@ -332,6 +340,23 @@ end
      {"value" => backupPred }
   end
 
+  add_method 'Container.updateBackup' do |ipaddress, category, type|
+
+     @myvar = Sellerring.where("category = :ct AND iptype = :pt", {:ct => category, :pt => type}).first
+     if @myvar != nil
+		@myvar.ipaddress = ipaddress
+		@myvar.save
+	 else 
+		dbvalue = Sellerring.new
+       dbvalue.ipaddress = ipaddress
+       dbvalue.iptype = type
+       dbvalue.category = category
+       dbvalue.updated_at = DateTime.now
+       dbvalue.created_at = DateTime.now
+       dbvalue.save	   
+	 end
+
+  end
   add_method 'Container.get_sellerorigin' do |search_string, category_name, ip|
     # end old searches
     @oldreq = Searchdb.where("buyeripaddress = ?", ip).all
