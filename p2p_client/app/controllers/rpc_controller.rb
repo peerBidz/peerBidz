@@ -178,7 +178,7 @@ add_method 'Container.parentDeathSwitch' do |category, ipaddress|
      	
 	@myvar = Sellerring.where("category = ? and ipaddress <> ?", category, ipaddress).order("updated_at asc").first 
     	puts "after 1st" 
-	@myDead = Sellerring.where("category = ? and ipaddress = ?", category, ipaddress)
+	@myDead = Sellerring.where("category = ? and ipaddress = ? and (iptype='predecessor' or iptype='successor') ", category, ipaddress)
 	puts "next"
 	if @myDead != nil
 		puts "not nil"
