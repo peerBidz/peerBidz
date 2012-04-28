@@ -266,8 +266,7 @@ class ItemsController < ApplicationController
         						@mydb.iptype = 'backup_predecessor'
         						@mydb.save
 						end
-						Thread.new
-						{   
+						Thread.new{   
 							@mypred.call2_async("Container.updateBackup", params[:parent], @category, "backup_backup_successor")
 						}  
 					else	
