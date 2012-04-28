@@ -311,7 +311,9 @@ add_method 'Container.parentDeathSwitch' do |category, ipaddress|
      @mySuccessor = Sellerring.where("category = :ct AND iptype = :pt", {:ct => category, :pt => "successor"})
      backupSuccessor = "0"	
      if @mySuccessor.count != 0
-       backupSuccessor = @mySuccessor.first.ipaddress
+		if(@mySuccessor.first.ipaddress != ipaddress)
+			backupSuccessor = @mySuccessor.first.ipaddress
+		end
      end
 
     {"value" => predecessor, "backup_successor" => backupSuccessor}

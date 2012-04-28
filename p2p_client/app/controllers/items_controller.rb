@@ -240,8 +240,12 @@ class ItemsController < ApplicationController
 					backupSuccessor = 0
 					begin
 						@sellervalue = @serverPre.call("Container.extendSellerRing", @userinfo.localaddress, params[:browse])
-        					predecessorip = @sellervalue["value"]
-						backupSuccessor = @sellervalue["backup_successor"]
+						if @sellervalue["value"] != "0"	
+							predecessorip = @sellervalue["value"]
+						end
+						if @sellervalue["backup_successor"] != "0"
+							backupSuccessor = @sellervalue["backup_successor"]
+						end
 					rescue
 						puts "Exception caught. Bad IP address"
 					end
