@@ -235,13 +235,21 @@ add_method 'Container.parentDeathSwitch' do |category, ipaddress|
 					# no successor, connect to predecessor
 					puts "connect to predecessor"
 					@predInfo = Sellerring.where("category = ? and iptype='predecessor'", category).first
+					@succInfo = Sellerring.where("category = ? and iptype='successor'", category).first
 					if @predInfo != nil
+						if @succInfo != nil
+							@succInfo.ipaddress = @predInfo.ipaddress
+							@succInfo.save
+						end
 						@localInfo = Mydata.first
       						@callbackup = XMLRPC::Client.new(@predInfo.ipaddress, "/api/xmlrpc", 3000)
       						Thread.new {
 							@callbackup.call_async("Container.neighborDeath", category, @dead.ipaddress, @localInfo.localaddress)
 						}
-						
+					else
+						if @succInfo != nil
+							@succInfo.delete
+						end	
 					end
 				end
 			end 
