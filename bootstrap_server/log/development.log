@@ -1,81 +1,8 @@
 DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/environment.rb:5)
 DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
 DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
-DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/environment.rb:5)
-DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
-DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
-DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/environment.rb:5)
-DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
-DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
-
-ActionView::Template::Error (Connection timed out - connect(2)):
-    13: <% if user_signed_in? %>
-    14: 	<%=request.env['REMOTE_ADDR']%>
-    15:     <% @loggedInUser = XMLRPC::Client.new(request.env['REMOTE_ADDR'], "/api/xmlrpc", 3000) %>
-    16:     <% @loggedInUser.call2_async("Container.getIdentity", current_user.is_seller, current_user.email, request.env['REMOTE_ADDR'])%>
-    17:     <% if current_user.is_seller? %>
-    18:         <p class="welcome-text">Offer Items and Mint Money in Minutes !! </p>
-    19:     <% else %>
-  app/views/pages/home.html.erb:16:in `_app_views_pages_home_html_erb__2257039178008475826_69958611445960__2829368021567111893'
-
-DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/environment.rb:5)
-DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
-DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
-DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/environment.rb:5)
-DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
-DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
 
 ActionView::Template::Error (Connection refused - connect(2)):
-    13: <% if user_signed_in? %>
-    14: 	<%=request.env['REMOTE_ADDR']%>
-    15:     <% @loggedInUser = XMLRPC::Client.new(request.env['REMOTE_ADDR'], "/api/xmlrpc", 3000) %>
-    16:     <% @loggedInUser.call2_async("Container.getIdentity", current_user.is_seller, current_user.email, request.env['REMOTE_ADDR'])%>
-    17:     <% if current_user.is_seller? %>
-    18:         <p class="welcome-text">Offer Items and Mint Money in Minutes !! </p>
-    19:     <% else %>
-  app/views/pages/home.html.erb:16:in `_app_views_pages_home_html_erb__3621059429538355246_56952180_2727692220443990700'
-
-
-ActionView::Template::Error (Connection refused - connect(2)):
-    13: <% if user_signed_in? %>
-    14: 	<%=request.env['REMOTE_ADDR']%>
-    15:     <% @loggedInUser = XMLRPC::Client.new(request.env['REMOTE_ADDR'], "/api/xmlrpc", 3000) %>
-    16:     <% @loggedInUser.call2_async("Container.getIdentity", current_user.is_seller, current_user.email, request.env['REMOTE_ADDR'])%>
-    17:     <% if current_user.is_seller? %>
-    18:         <p class="welcome-text">Offer Items and Mint Money in Minutes !! </p>
-    19:     <% else %>
-  app/views/pages/home.html.erb:16:in `_app_views_pages_home_html_erb__3621059429538355246_59615180_2727692220443990700'
-
-
-ActionView::Template::Error (Connection refused - connect(2)):
-    13: <% if user_signed_in? %>
-    14: 	<%=request.env['REMOTE_ADDR']%>
-    15:     <% @loggedInUser = XMLRPC::Client.new(request.env['REMOTE_ADDR'], "/api/xmlrpc", 3000) %>
-    16:     <% @loggedInUser.call2_async("Container.getIdentity", current_user.is_seller, current_user.email, request.env['REMOTE_ADDR'])%>
-    17:     <% if current_user.is_seller? %>
-    18:         <p class="welcome-text">Offer Items and Mint Money in Minutes !! </p>
-    19:     <% else %>
-  app/views/pages/home.html.erb:16:in `_app_views_pages_home_html_erb__3621059429538355246_56436200_2727692220443990700'
-
-
-ActionView::Template::Error (Connection refused - connect(2)):
-    13: <% if user_signed_in? %>
-    14: 	<%=request.env['REMOTE_ADDR']%>
-    15:     <% @loggedInUser = XMLRPC::Client.new(request.env['REMOTE_ADDR'], "/api/xmlrpc", 3000) %>
-    16:     <% @loggedInUser.call2_async("Container.getIdentity", current_user.is_seller, current_user.email, request.env['REMOTE_ADDR'])%>
-    17:     <% if current_user.is_seller? %>
-    18:         <p class="welcome-text">Offer Items and Mint Money in Minutes !! </p>
-    19:     <% else %>
-  app/views/pages/home.html.erb:16:in `_app_views_pages_home_html_erb__3621059429538355246_55917860_2727692220443990700'
-
-DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/environment.rb:5)
-DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
-DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
-DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/environment.rb:5)
-DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
-DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
-
-ActionView::Template::Error (HTTP-Error: 500 Internal Server Error ):
     13: <% if user_signed_in? %>
     14: 	<%=request.env['REMOTE_ADDR']%>
     15:     <% @loggedInUser = XMLRPC::Client.new(request.env['REMOTE_ADDR'], "/api/xmlrpc", 3000) %>
@@ -83,39 +10,5 @@ ActionView::Template::Error (HTTP-Error: 500 Internal Server Error ):
     17:     <% if current_user.is_seller? %>
     18:         <p class="welcome-text">Welcome to peerBidz! </p>
     19:     <% else %>
-  app/views/pages/home.html.erb:16:in `_app_views_pages_home_html_erb__4582997171219706519_56273920_4555131583898870286'
+  app/views/pages/home.html.erb:16:in `_app_views_pages_home_html_erb__1787285588185872493_52496860__1638471172839182637'
 
-
-ActionView::Template::Error (HTTP-Error: 500 Internal Server Error ):
-    13: <% if user_signed_in? %>
-    14: 	<%=request.env['REMOTE_ADDR']%>
-    15:     <% @loggedInUser = XMLRPC::Client.new(request.env['REMOTE_ADDR'], "/api/xmlrpc", 3000) %>
-    16:     <% @loggedInUser.call2_async("Container.getIdentity", current_user.is_seller, current_user.email, request.env['REMOTE_ADDR'])%>
-    17:     <% if current_user.is_seller? %>
-    18:         <p class="welcome-text">Welcome to peerBidz! </p>
-    19:     <% else %>
-  app/views/pages/home.html.erb:16:in `_app_views_pages_home_html_erb__4582997171219706519_55855960_4555131583898870286'
-
-
-ActionView::Template::Error (HTTP-Error: 500 Internal Server Error ):
-    13: <% if user_signed_in? %>
-    14: 	<%=request.env['REMOTE_ADDR']%>
-    15:     <% @loggedInUser = XMLRPC::Client.new(request.env['REMOTE_ADDR'], "/api/xmlrpc", 3000) %>
-    16:     <% @loggedInUser.call2_async("Container.getIdentity", current_user.is_seller, current_user.email, request.env['REMOTE_ADDR'])%>
-    17:     <% if current_user.is_seller? %>
-    18:         <p class="welcome-text">Welcome to peerBidz! </p>
-    19:     <% else %>
-  app/views/pages/home.html.erb:16:in `_app_views_pages_home_html_erb__4582997171219706519_56525320_4555131583898870286'
-
-DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/environment.rb:5)
-DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
-DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
-DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/environment.rb:5)
-DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
-DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
-DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/environment.rb:5)
-DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
-DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
-DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/naveen/bootstrap_server/config/environment.rb:5)
-DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/naveen/bootstrap_server/config/routes.rb:1)
-DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/naveen/bootstrap_server/config/routes.rb:1)
