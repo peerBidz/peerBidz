@@ -13,12 +13,22 @@ class RpcController < ApplicationController
 	myentry.category = category
 	myentry.save
 	myentry.is_seller = is_seller
-	if is_seller = 't'
+	if is_seller == "t"
 		@predecessor = Sellerring.where("ip = ? and is_seller = ? and category = ?",predecessor,is_seller,category)
 		@predecessor.successor = address
 		@successor = Sellerring.where("ip = ? and is_seller = ? and category = ?",successor,is_seller,category)
 		@successor.predecessor = address
   	end
+
+        { "value" => "0" } 
   end
 
-end
+  add_method 'Container.removeseller' do |address, category|
+	myentry = Sellerring.where("ip = ? and is_seller = 't' and category = ?", address, category)
+	@predecessor = Sellerring.where("ip = ? and is_seller = 't' and category = ?", myentry.predecessor, category)
+	@successor = Sellerring.where("ip = ? and is_seller = 't' and category = ?", myentry.successor, category)
+	@predecessor.successor = @successor.ip
+	@successor.predecessor = @predecessor.ip
+	myentry.delete
+        { "value" => "0" }
+  end
