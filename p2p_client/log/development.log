@@ -140,3 +140,50 @@ DEPRECATION WARNING: You are using the old router DSL which will be removed in R
 RuntimeError (Wrong type NilClass. Not allowed!):
   
 
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/dstest/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/dstest/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/dstest/test/p2p_client/config/routes.rb:1)
+
+RuntimeError (Wrong type NilClass. Not allowed!):
+  
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/dstest/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/dstest/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/dstest/test/p2p_client/config/routes.rb:1)
+
+RuntimeError (Wrong type NilClass. Not allowed!):
+  
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/dstest/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/dstest/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/dstest/test/p2p_client/config/routes.rb:1)
+
+ActionView::Template::Error (undefined method `is_seller' for nil:NilClass):
+    1: <% myBoot = Sellerring.where("iptype= ?", "bootstrap").first %>
+    2: <% bootIP = myBoot.ipaddress %>
+    3: 
+    4: <% isSeller = Mydata.first.is_seller %>
+    5: <iframe src="http://<%= bootIP %>:3001/redirect?url=<%= @item.category %>&isSeller=<%= isSeller %>"></iframe>
+  app/views/items/initauction.html.erb:4:in `_app_views_items_initauction_html_erb___3727920748896428390_49991420_4593471201587824122'
+  app/controllers/items_controller.rb:398:in `block (2 levels) in create'
+  app/controllers/items_controller.rb:396:in `create'
+
+
+RuntimeError (Wrong type NilClass. Not allowed!):
+  
+
+
+RuntimeError (Wrong type NilClass. Not allowed!):
+  
+
+
+ThreadError (Attempt to unlock a mutex which is locked by another thread):
+  
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/dstest/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/dstest/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/dstest/test/p2p_client/config/routes.rb:1)
+
+NoMethodError (undefined method `localaddress' for nil:NilClass):
+  app/controllers/items_controller.rb:13:in `index'
+

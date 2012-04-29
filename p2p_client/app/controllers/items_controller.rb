@@ -55,6 +55,12 @@ class ItemsController < ApplicationController
 								@newBackupEntry.ipaddress = @newBackup["value"]
 								@newBackupEntry.category = @backupParent.category
 								@newBackupEntry.save
+                                                                @logger = Sellerring.where("iptype= ?", "logger").first
+                                                                @logconn = XMLRPC::Client.new(@logger, "/api/xmlrpc", 3002)
+                                                                Thread.new {
+                                                                   @ret = @logconn.call2_async("Container.putRingInfo", @my_address, @backupParent.ipaddress, @newbackup["value"], @backupParent.category, "f")
+                                                                }
+
 							end
 						end
 					rescue
@@ -92,6 +98,14 @@ class ItemsController < ApplicationController
 											@newBackupEntry.ipaddress = @newBackup["value"]
 											@newBackupEntry.category = @backupParent.category
 											@newBackupEntry.save
+                                                                                        @logger = Sellerring.where("iptype= ?", "logger").first
+                                                                                        @logconn = XMLRPC::Client.new(@logger, "/api/xmlrpc", 3002)
+                                                                                        Thread.new {
+                                                                                          @ret = @logconn.call2_async("Container.putRingInfo", @my_address, @backupParent.ipaddress, @newbackup["value"], @backupParent.category, "f")
+                                                                                        }
+
+
+
 										end
 									end
 								end
@@ -327,6 +341,11 @@ class ItemsController < ApplicationController
 									@newdata.iptype = 'parentbackup'
 									@newdata.category = params[:browse]
 									@newdata.save
+                                                                        @logger = Sellerring.where("iptype= ?", "logger").first
+                                                                        @logconn = XMLRPC::Client.new(@logger, "/api/xmlrpc", 3002) 
+                                                                        Thread.new {
+                                                                          @ret = @logconn.call2_async("Container.putRingInfo", @my_address, @is_parentpresent.first.ipaddress, @sellervalue["value"], params[:browse], "f")
+                                                                        }
 								end
 							end
 						rescue	

@@ -105,10 +105,13 @@ function addIP(i, IP){
 	
 	if ((category == mycategory) & (is_seller == "t")){
 		if (predecessor == 0){
-			array[0] == predecessor;
-            		array[1] = IP;
-            		array[2] = successor;
+            		array[0] = IP;
 		}
+		else if(predecessor == successor){
+			array[0] = IP;
+			array[1] = predecessor;
+		}
+
 		else{
 			var found = 0;
 			var j;
