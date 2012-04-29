@@ -170,3 +170,26 @@ DEPRECATION WARNING: You are using the old router DSL which will be removed in R
 DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/naveen/p2p_client/config/environment.rb:6)
 DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/naveen/p2p_client/config/routes.rb:1)
 DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/naveen/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/naveen/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/naveen/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/naveen/p2p_client/config/routes.rb:1)
+
+ActionView::Template::Error (can't convert nil into String):
+    33: 	<td> <%= @iteminfo["expires"] %> </td>
+    34:         
+    35: 	<td> <%= @iteminfo["highbid"] %> </td>
+    36:         <td> <%= image_tag @item["image"] %> </td>
+    37: 
+    38: </tr>
+    39: 
+  app/views/items/show.html.erb:36:in `_app_views_items_show_html_erb__2424805353602159086_70240701771120__4144226557930575242'
+  app/controllers/items_controller.rb:368:in `show'
+
+
+ActionController::RoutingError (No route matches "/system/photos/13/medium/MacBook.jpg"):
+  
+
+
+ActionController::RoutingError (No route matches "/system/photos/13/medium/MacBook.jpg"):
+  
+
