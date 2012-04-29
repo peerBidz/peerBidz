@@ -134,7 +134,7 @@ puts "c"
 puts "d"
       			Thread.new {
 				@mydat = Mydata.first
-				@callsucc.call_async("Container.updateBackup", @mydat.localaddress, category, "backup_predecessor")
+				@callsucc.call2_async("Container.updateBackup", @mydat.localaddress, category, "backup_predecessor")
 			}
 puts "e"
 			end
@@ -156,12 +156,13 @@ puts "f"
       			@callpred = XMLRPC::Client.new(@cpred.ipaddress, "/api/xmlrpc", 3000)
       			Thread.new {
 				@mydat = Mydata.first
-				@callpred.call_async("Container.updateBackup", @mydat.localaddress, category, "backup_successor")
+				@callpred.call2_async("Container.updateBackup", @mydat.localaddress, category, "backup_successor")
 			}
 			end
 		end
 	end
 puts "g"
+{ "value" => "0" }
 end
 
 
@@ -288,7 +289,7 @@ add_method 'Container.parentDeathSwitch' do |category, ipaddress|
 	puts @myItem.starting_price
 	puts @myItem.expires_at
 	puts "highBid"
-        { "description" => @myItem.description, "startprice" => @myItem.starting_price.to_s(), "expires" => @myItem.expires_at.to_s(), "highbid" => highBid.to_s() }
+        { "description" => @myItem.description, "startprice" => @myItem.starting_price.to_s(), "expires" => @myItem.expires_at.to_s(), "highbid" => highBid.to_s(), "image" => @myItem.photo.url(:medium) }
 
   end
   add_method 'Container.extendSellerRing' do |ipaddress, category|
@@ -386,9 +387,10 @@ puts "updatebackup6"
        dbvalue.save	   
 puts "updatebackup7"
 	 end
-puts "updatebackup8"
-
+puts "updatebackup8" 
+    {"value" => "0"}
   end
+
   add_method 'Container.get_sellerorigin' do |search_string, category_name, ip|
     # end old searches
     @oldreq = Searchdb.where("buyeripaddress = ?", ip).all

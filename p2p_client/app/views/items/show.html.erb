@@ -24,6 +24,7 @@
     <th>Starting Price</th>
     <th>Auction Expires</th>
     <th>Highest Bid</th>
+    <th> Photo </th>
   </tr>
 <tr>
 	<td> <%= @item.returned_string %> </td>
@@ -32,6 +33,7 @@
 	<td> <%= @iteminfo["expires"] %> </td>
         
 	<td> <%= @iteminfo["highbid"] %> </td>
+        <td> <%= image_tag @item["image"] %> </td>
 
 </tr>
 
