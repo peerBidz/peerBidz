@@ -12,3 +12,45 @@ ActionView::Template::Error (Connection refused - connect(2)):
     19:     <% else %>
   app/views/pages/home.html.erb:16:in `_app_views_pages_home_html_erb__1787285588185872493_52496860__1638471172839182637'
 
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
+
+ActionView::Template::Error (Network is unreachable - connect(2)):
+    1: <% my_address = UDPSocket.open {|s| s.connect('65.59.196.211', 1); s.addr.last }%>
+    2: <script>
+    3: 	function messageParent(url)
+    4: 	{
+  app/views/categories/index.html.erb:1:in `connect'
+  app/views/categories/index.html.erb:1:in `block in _app_views_categories_index_html_erb__2108333785142855587_69953980222660_1344267431479382887'
+  app/views/categories/index.html.erb:1:in `open'
+  app/views/categories/index.html.erb:1:in `_app_views_categories_index_html_erb__2108333785142855587_69953980222660_1344267431479382887'
+  app/controllers/categories_controller.rb:7:in `index'
+
+
+ActionView::Template::Error (Network is unreachable - connect(2)):
+    1: <% my_address = UDPSocket.open {|s| s.connect('65.59.196.211', 1); s.addr.last }%>
+    2: <script>
+    3: 	function messageParent(url)
+    4: 	{
+  app/views/categories/index.html.erb:1:in `connect'
+  app/views/categories/index.html.erb:1:in `block in _app_views_categories_index_html_erb__2108333785142855587_69953979758880_1344267431479382887'
+  app/views/categories/index.html.erb:1:in `open'
+  app/views/categories/index.html.erb:1:in `_app_views_categories_index_html_erb__2108333785142855587_69953979758880_1344267431479382887'
+  app/controllers/categories_controller.rb:7:in `index'
+
+
+ActionView::Template::Error (Network is unreachable - connect(2)):
+    1: <% my_address = UDPSocket.open {|s| s.connect('65.59.196.211', 1); s.addr.last }%>
+    2: <script>
+    3: 	function messageParent(url)
+    4: 	{
+  app/views/categories/index.html.erb:1:in `connect'
+  app/views/categories/index.html.erb:1:in `block in _app_views_categories_index_html_erb__2108333785142855587_42678260_1344267431479382887'
+  app/views/categories/index.html.erb:1:in `open'
+  app/views/categories/index.html.erb:1:in `_app_views_categories_index_html_erb__2108333785142855587_42678260_1344267431479382887'
+  app/controllers/categories_controller.rb:7:in `index'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/environment.rb:5)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/bootstrap_server/config/routes.rb:1)

@@ -1,0 +1,75 @@
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/routes.rb:1)
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__1023884180216707369_70325528545740_357452121655746851'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__1023884180216707369_7205460_357452121655746851'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__1023884180216707369_51659540_357452121655746851'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__1023884180216707369_7189700_357452121655746851'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: items: SELECT "items".* FROM "items"):
+  app/controllers/pages_controller.rb:7:in `home'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/routes.rb:1)
+
+ActionView::Template::Error (undefined method `ipaddress' for nil:NilClass):
+    28: 
+    29: <body>
+    30: 	<% myBoot = Sellerring.where("iptype= ?", "bootstrap").first %>
+    31: 	<% bootIP = myBoot.ipaddress %>
+    32: 	<% require 'xmlrpc/client'%>
+    33: 	<% if cookies[:email] != nil %>
+    34: 	<% @btserver = XMLRPC::Client.new(bootIP, "/api/xmlrpc", 3001) %>
+  app/views/layouts/application.html.erb:31:in `_app_views_layouts_application_html_erb___2324790286072647003_60299780_2006055313345349737'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/prajakta/18842_projects/p2p_client/config/routes.rb:1)
