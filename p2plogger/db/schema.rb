@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20120409170214) do
     t.string   "predecessor"
     t.string   "successor"
     t.string   "category"
+    t.string   "is_seller"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

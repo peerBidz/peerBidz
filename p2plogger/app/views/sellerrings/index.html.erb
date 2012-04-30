@@ -11,14 +11,14 @@
 	  position: relative;
 	  width: 400px;
 	}
-	
+
 	.chart svg {
 	  border-left: solid 2px #ddd;
 	  left: 0px;
 	  position: absolute;
 	  top: 0;
 	}
-	
+
 	.chart pre {
 	  font: 12px monospace;
 	  height: 60px;
@@ -27,20 +27,20 @@
 	  top: 0;
 	  width: 340px;
 	}
-	
+
 	.chart circle.little {
 	  fill: #aaa;
 	  stroke: #666;
 	  stroke-width: 1.5px;
 	}
-	
+
 	.chart button {
 	  left: 275px;
 	  position: absolute;
 	  top: 145px;
 	  width: 80px;
 	}
-	
+
 	.chart .data rect {
 	  fill: #eee;
 	  stroke: #ccc;
@@ -50,7 +50,7 @@
   	  stroke-opacity: .6;
 	}
 </style>
-<meta http-equiv="refresh" content="5"/> 
+<meta http-equiv="refresh" content="20"/> 
 <script>
 var category_array = [];
 function DynamicDiv(id){
@@ -102,7 +102,7 @@ function addIP(i, IP){
 	var successor = '<%= @sellerrings[i].successor%>';
 	var category = '<%= @sellerrings[i].category%>';
 	var is_seller = '<%= @sellerrings[i].is_seller%>';
-	
+
 	if ((category == mycategory) & (is_seller == "t")){
 		if (predecessor == 0){
             		array[0] = IP;
@@ -180,4 +180,3 @@ for (catarray = 0; catarray < category_array.length; catarray++){
 </div>-->
 </table>
 <br />
-	

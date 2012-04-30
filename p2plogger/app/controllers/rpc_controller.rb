@@ -12,8 +12,8 @@ class RpcController < ApplicationController
         myentry.successor = successor
         myentry.predecessor = predecessor
         myentry.category = category
-        myentry.save
         myentry.is_seller = is_seller
+        myentry.save
         if is_seller == "t"
                 @predecessor = Sellerring.where("ip = ? and is_seller = ? and category = ?",predecessor,is_seller,category)
                 @predecessor.successor = address

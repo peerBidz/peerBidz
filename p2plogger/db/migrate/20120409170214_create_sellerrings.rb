@@ -5,7 +5,7 @@ class CreateSellerrings < ActiveRecord::Migration
       t.string :predecessor
       t.string :successor
       t.string :category
-
+      t.string :is_seller
       t.timestamps
     end
   end
