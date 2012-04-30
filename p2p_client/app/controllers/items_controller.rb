@@ -350,7 +350,7 @@ class ItemsController < ApplicationController
 									puts @sellervalue["value"]
 									Thread.new {
 										puts "Entered here"	
-									@logconn.call2_async("Container.putRingInfo", @my_address, @is_parentpresent.first.ipaddress, @sellervalue["value"], params[:browse], "f")
+									@ret = @logconn.call2_async("Container.putRingInfo", @my_address, @is_parentpresent.first.ipaddress, @sellervalue["value"], params[:browse], "f")
                                                                         }
 								end
 							end
