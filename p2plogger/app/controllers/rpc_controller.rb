@@ -7,6 +7,11 @@ class RpcController < ApplicationController
  exposes_xmlrpc_methods
 
   add_method 'Container.putRingInfo' do |address,successor,predecessor,category,is_seller|
+
+        # Delete these entries before we proceed
+        Sellerring.delete_all("ip = ?", address) 
+
+        # add the entries
         myentry = Sellerring.new
         myentry.ip = address
         myentry.successor = successor
@@ -14,6 +19,8 @@ class RpcController < ApplicationController
         myentry.category = category
         myentry.is_seller = is_seller
         myentry.save
+
+        
         if is_seller == "t"
                 @predecessor = Sellerring.where("ip = ? and is_seller = ? and category = ?",predecessor,is_seller,category)
                 @predecessor.successor = address
