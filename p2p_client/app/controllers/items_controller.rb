@@ -135,6 +135,15 @@ class ItemsController < ApplicationController
 							        @newBackupEntry.ipaddress = @newBackup["value"]
 							        @newBackupEntry.category = @backupParent.category
 							        @newBackupEntry.save
+
+                                                                # Send it to logger
+                                                                @logger = Sellerring.where("iptype= ?", "logger").first
+                                                                @logconn = XMLRPC::Client.new(@logger.ipaddress, "/api/xmlrpc", 3002)
+                                                                Thread.new {
+                                                                  @ret = @logconn.call2_async("Container.putRingInfo", @my_address, @sellerIPAddress.ipaddress, @newbackup["value"], @backupParent.category, "f")
+                                                                }
+
+
 							    	#todo
 								@server1 = XMLRPC::Client.new(@sellerIPAddress.ipaddress, "/api/xmlrpc", 3000)
 								@ip_address = @server1.call("Container.get_sellerorigin", @search_string, cookies[:CURRCATEGORY], @my_address)
@@ -182,6 +191,14 @@ class ItemsController < ApplicationController
 							@newBackupEntry.ipaddress = @newBackup["value"]
 							@newBackupEntry.category = @backupParent.category
 							@newBackupEntry.save
+
+                                                        @logger = Sellerring.where("iptype= ?", "logger").first
+                                                        @logconn = XMLRPC::Client.new(@logger.ipaddress, "/api/xmlrpc", 3002)
+                                                        Thread.new {
+                                                          @ret = @logconn.call2_async("Container.putRingInfo", @my_address, @sellerIPAddress.ipaddress, @newbackup["value"], @backupParent.category, "f")
+                                                        }
+
+
 						end
 						##### Contact parent/origin seller to start search
 						@server1 = XMLRPC::Client.new(@sellerIPAddress.ipaddress, "/api/xmlrpc", 3000)
@@ -270,6 +287,16 @@ class ItemsController < ApplicationController
         					@mydb.category = @category
         					@mydb.iptype = 'predecessor'
         					@mydb.save
+
+                                                # Send it to logger
+                                                @logger = Sellerring.where("iptype= ?", "logger").first
+                                                @logconn = XMLRPC::Client.new(@logger.ipaddress, "/api/xmlrpc", 3002)
+                                                Thread.new {
+                                                  @ret = @logconn.call2_async("Container.putRingInfo", @my_address, params[:parent], predecessorip, @category, "t")
+                                                  }
+
+
+
         					@mypred = XMLRPC::Client.new(predecessorip, "/api/xmlrpc", 3000)
         					@backupPred = @mypred.call("Container.updateSuccessor", @userinfo.localaddress, @category)
 						if @backupPred["value"] != 0
@@ -290,6 +317,15 @@ class ItemsController < ApplicationController
         					@mydb.category = @category
         					@mydb.iptype = 'predecessor'
         					@mydb.save
+
+                                                # Send it to logger
+                                                @logger = Sellerring.where("iptype= ?", "logger").first
+                                                @logconn = XMLRPC::Client.new(@logger.ipaddress, "/api/xmlrpc", 3002)
+                                                Thread.new {
+                                                  @ret = @logconn.call2_async("Container.putRingInfo", @my_address, params[:parent], @successorip, @category, "t")
+                                                  }
+
+
 					end
 					if backupSuccessor != 0
         					@category = params[:browse]

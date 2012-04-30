@@ -103,15 +103,18 @@ class RpcController < ApplicationController
 add_method 'Container.neighborDeath' do |category, deadip, newip|
 
 	@myDead = Sellerring.where("ipaddress = ? and category = ?", deadip, category).all
+        @my_address = Mydata.first.localaddress
 	lostPred = 0
 	lostSucc = 0
 
 	# Delete dead IP from seller ring
 	@myDead.each do |entry|
 		if entry.iptype == "predecessor"
+                        @my_ip = entry.ipaddress
 			lostPred = 1
 		end
 		if entry.iptype == "successor"
+                        @my_ip = entry.ipaddress
 			lostSucc = 1
 		end
 		entry.delete
@@ -125,6 +128,14 @@ puts "b"
 		@newPred.ipaddress = newip
 		@newPred.category = category
 		@newPred.save
+
+                # Send it to logger
+                @logger = Sellerring.where("iptype= ?", "logger").first
+                @logconn = XMLRPC::Client.new(@logger.ipaddress, "/api/xmlrpc", 3002)
+                Thread.new {
+                  @ret = @logconn.call2_async("Container.putRingInfo", @my_address, @my_ip, newip, category, "t")
+                }
+
 puts "c"
 		if lostSucc == 0
 			# tell successor to update backups accordingly
@@ -149,6 +160,14 @@ puts "f"
 		@news.ipaddress = newip
 		@news.category = category
 		@news.save
+
+                # Send it to logger
+                @logger = Sellerring.where("iptype= ?", "logger").first
+                @logconn = XMLRPC::Client.new(@logger.ipaddress, "/api/xmlrpc", 3002)
+                Thread.new {
+                  @ret = @logconn.call2_async("Container.putRingInfo", @my_address, newip, @my_ip, category, "t")
+                }
+
 		if lostPred == 0
 			# tell successor to update backups accordingly
 			@cpred = Sellerring.where("category = ? and iptype = 'predecessor'", category).first
@@ -296,6 +315,8 @@ add_method 'Container.parentDeathSwitch' do |category, ipaddress|
 
      @myvar = Sellerring.where("category = :ct AND iptype = :pt", {:ct => category, :pt => "predecessor"})
 
+     @my_address = Mydata.first.localaddress
+
      if @myvar.count != 0
        predecessor = @myvar.first.ipaddress
        @myvar.first.ipaddress = ipaddress
@@ -332,6 +353,14 @@ add_method 'Container.parentDeathSwitch' do |category, ipaddress|
        dbvalue.save
 
        predecessor = 0
+
+       # Send it to logger
+       @logger = Sellerring.where("iptype= ?", "logger").first
+       @logconn = XMLRPC::Client.new(@logger.ipaddress, "/api/xmlrpc", 3002)
+       Thread.new {
+          @ret = @logconn.call2_async("Container.putRingInfo", @my_address, ipaddress, ipaddress, category, "t")
+       }
+
     end
 
      @mySuccessor = Sellerring.where("category = :ct AND iptype = :pt", {:ct => category, :pt => "successor"})
