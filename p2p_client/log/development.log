@@ -1,0 +1,121 @@
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/naveen/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/naveen/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/naveen/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/naveen/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/naveen/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/naveen/p2p_client/config/routes.rb:1)
+
+ActionController::RoutingError (No route matches "/public/system/photos/1/medium/Screenshot%20at%202012-04-11%2014:37:23.png"):
+  
+
+
+ActionController::RoutingError (No route matches "/photos/1/medium/Screenshot%20at%202012-04-11%2014:37:23.png"):
+  
+
+
+ActionController::RoutingError (No route matches "/photo/1/medium/Screenshot%20at%202012-04-11%2014:37:23.png"):
+  
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/naveen/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/naveen/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/naveen/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/naveen/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/naveen/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/naveen/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/naveen/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/naveen/Distributed/naveen/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/naveen/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/naveen/Distributed/naveen/p2p_client/config/routes.rb:1)
+
+Errno::EHOSTUNREACH (No route to host - connect(2)):
+  app/controllers/items_controller.rb:424:in `show'
+
+
+Timeout::Error (Timeout::Error):
+  app/controllers/items_controller.rb:424:in `show'
+
+
+Timeout::Error (Timeout::Error):
+  app/controllers/items_controller.rb:424:in `show'
+
+
+Timeout::Error (Timeout::Error):
+  app/controllers/items_controller.rb:175:in `index'
+
+
+Timeout::Error (Timeout::Error):
+  app/controllers/items_controller.rb:424:in `show'
+
+
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00000007ec5138>:0x00000007ec3130>):
+    63: 
+    64: <%= form_tag(:method => "get")  do %>
+    65: 	<%= label_tag(:amount, "Bid Amount:") %>
+    66:         <%= f.submit "Upload Item",:class => "btn primary medium"%>
+    67: 	<%= text_field_tag(:amount) %>
+    68: <%end%>
+    69: 
+  app/views/items/show.html.erb:66:in `block in _app_views_items_show_html_erb___3707199556556669258_66383860__3914460754064583875'
+  app/views/items/show.html.erb:64:in `_app_views_items_show_html_erb___3707199556556669258_66383860__3914460754064583875'
+  app/controllers/items_controller.rb:429:in `show'
+
+
+Timeout::Error (Timeout::Error):
+  app/controllers/items_controller.rb:424:in `show'
+
+
+Errno::EHOSTUNREACH (No route to host - connect(2)):
+  app/controllers/items_controller.rb:424:in `show'
+
+
+Errno::EHOSTUNREACH (No route to host - connect(2)):
+  app/controllers/items_controller.rb:424:in `show'
+
+
+Timeout::Error (Timeout::Error):
+  app/controllers/items_controller.rb:424:in `show'
+
+
+NoMethodError (undefined method `returned_string' for nil:NilClass):
+  app/controllers/items_controller.rb:421:in `show'
+
+
+Timeout::Error (Timeout::Error):
+  app/controllers/items_controller.rb:424:in `show'
+
+
+ActionView::Template::Error (Uncaught exception Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id in method Container.placeBid):
+    4: 		<% ip_address = Mydata.first.localaddress %>
+    5:                 <% @sellerip = Searchresults.where("id = ?", params[:id]).first %>
+    6:                 <% @server1 = XMLRPC::Client.new(@sellerip.ipaddress, "/api/xmlrpc", 3000) %>
+    7:                 <% @result = @server1.call("Container.placeBid", @sellerip.returned_string, @sellerip.category, params[:amount], ip_address) %>
+    8:                 <% if @result["value"] == "success" %>
+    9:                         <p><b> Bid of <%= params[:amount] %> placed <b></p>
+    10:                                     <% @iteminfo["highbid"] =  params[:amount] %>
+  app/views/items/show.html.erb:7:in `_app_views_items_show_html_erb___3707199556556669258_69919519952320__3914460754064583875'
+  app/controllers/items_controller.rb:429:in `show'
+
+
+ActionView::Template::Error (Uncaught exception Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id in method Container.placeBid):
+    4: 		<% ip_address = Mydata.first.localaddress %>
+    5:                 <% @sellerip = Searchresults.where("id = ?", params[:id]).first %>
+    6:                 <% @server1 = XMLRPC::Client.new(@sellerip.ipaddress, "/api/xmlrpc", 3000) %>
+    7:                 <% @result = @server1.call("Container.placeBid", @sellerip.returned_string, @sellerip.category, params[:amount], ip_address) %>
+    8:                 <% if @result["value"] == "success" %>
+    9:                         <p><b> Bid of <%= params[:amount] %> placed <b></p>
+    10:                                     <% @iteminfo["highbid"] =  params[:amount] %>
+  app/views/items/show.html.erb:7:in `_app_views_items_show_html_erb___3707199556556669258_69919520431000__3914460754064583875'
+  app/controllers/items_controller.rb:429:in `show'
+
+
+ActionView::Template::Error (Uncaught exception Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id in method Container.placeBid):
+    4: 		<% ip_address = Mydata.first.localaddress %>
+    5:                 <% @sellerip = Searchresults.where("id = ?", params[:id]).first %>
+    6:                 <% @server1 = XMLRPC::Client.new(@sellerip.ipaddress, "/api/xmlrpc", 3000) %>
+    7:                 <% @result = @server1.call("Container.placeBid", @sellerip.returned_string, @sellerip.category, params[:amount], ip_address) %>
+    8:                 <% if @result["value"] == "success" %>
+    9:                         <p><b> Bid of <%= params[:amount] %> placed <b></p>
+    10:                                     <% @iteminfo["highbid"] =  params[:amount] %>
+  app/views/items/show.html.erb:7:in `_app_views_items_show_html_erb___3707199556556669258_69919520347280__3914460754064583875'
+  app/controllers/items_controller.rb:429:in `show'
+

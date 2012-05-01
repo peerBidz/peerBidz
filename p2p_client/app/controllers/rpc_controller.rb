@@ -29,8 +29,11 @@ class RpcController < ApplicationController
 	@myNote.save
   end
   add_method 'Container.placeBid' do |name, category, amount, ipaddress|
-	@myItem = Item.where("title = ? and category =?", name, category)
-	@highBid = Bidding.where("item_id = ?", @myItem.first.id).order("bid_amount DESC").first	
+	@myItem = Item.where("title = ? and category =? and bidding_closed='f'", name, category)
+        
+        if @myItem.first != nil
+          @highBid = Bidding.where("item_id = ?", @myItem.first.id).order("bid_amount DESC").first	 
+        end
 
 	isHighest = 1
 	if @myItem.first != nil
@@ -78,7 +81,7 @@ class RpcController < ApplicationController
 			{ "value" => "Bid amount is lower than the current highest bid. Place a higher bid" }
 		end
 	else
-		{"value" => "Invalid item"}
+		{"value" => "Auction item expired"}
 	end
   end
 

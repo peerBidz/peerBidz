@@ -17,32 +17,55 @@
 <%end%>
 
 
-<table>
- <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Starting Price</th>
-    <th>Auction Expires</th>
-    <th>Highest Bid</th>
-    <th> Photo </th>
-  </tr>
-<tr>
-	<td> <%= @item.returned_string %> </td>
-	<td> <%= @iteminfo["description"] %> </td>
-	<td> <%= @iteminfo["startprice"] %> </td>
-	<td> <%= @iteminfo["expires"] %> </td>
-        
-	<td> <%= @iteminfo["highbid"] %> </td>
-        <% @sellip = Searchresults.where("id = ?", params[:id]).first %>
-        <td> <img src="http://<%=@sellip.ipaddress%>/public<%= @iteminfo["image"] %>" ></td>
 
-</tr>
+
+<div class="item-show-container">
+
+	<div class="item-image">
+        <% @sellip = Searchresults.where("id = ?", params[:id]).first %>
+        <img src="http://<%=@sellip.ipaddress%>:3000<%= @iteminfo["image"] %>" height="350" width="350"/>
+        </div>
+
+        <br/><br /><br /><br /> <br/> <br /> <br /> <br /><br/><br /><br /><br /> <br/> <br /> <br /> <br /><br/><br /><br /><br /> <br/> <br />
+
+        <div class ="item-details">
+		<p>
+
+			<b>Description:</b>
+
+			<%= @iteminfo["description"] %>
+
+		</p>
+
+		<p>
+
+			<b>Starting price:</b>
+
+			<%= @iteminfo["startprice"] %>
+
+		</p>
+
+		<p id="current-price">
+
+			<b>Highes Bid</b>
+
+                        <%= @iteminfo["highbid"] %>                         
+		</p>
+
+		<p id="expires-at">
+
+			<b>Expires at:</b> <%= @iteminfo["expires"] %>
+
+		</p>
+
+        </div>
+
 
 <%= form_tag(:method => "get")  do %>
 	<%= label_tag(:amount, "Bid Amount:") %>
 	<%= text_field_tag(:amount) %>
-	<%#= hidden_field_tag(:item_id,  @iteminfo["id"] ) %> 	
+        <%= submit_tag "Submit", :type => 'button', :class => "btn primary medium" %>
 <%end%>
 
-</table>
+</div>
 
