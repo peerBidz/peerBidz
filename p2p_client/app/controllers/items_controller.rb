@@ -252,7 +252,18 @@ class ItemsController < ApplicationController
         				@mydb.category = @category
         				@mydb.iptype = 'successor'
         				@mydb.save
-				end
+                                else
+
+                                # Send it to logger
+                                @logger = Sellerring.where("iptype= ?", "logger").first
+                                @logconn = XMLRPC::Client.new(@logger.ipaddress, "/api/xmlrpc", 3002)
+                                Thread.new {
+                                  @ret = @logconn.call2_async("Container.putRingInfo", @my_address, "0", "0", @category, "t")
+                                }
+
+
+                                end
+                               
 			end
       		else
         		@checkcategory.each {|f| @successorip = f.ipaddress }

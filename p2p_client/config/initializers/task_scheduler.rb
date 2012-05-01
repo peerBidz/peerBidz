@@ -44,7 +44,7 @@ Searchdb.delete_all
 end
 
 if ActiveRecord::Base.connection.table_exists? 'searchdbs'
-@myvar = Sellerring.where("iptype <> 'bootstrap'")
+@myvar = Sellerring.where("iptype <> 'bootstrap' AND iptype <> 'logger'")
 @myvar.each do |entry|
 	entry.delete
 	end
