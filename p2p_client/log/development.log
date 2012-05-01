@@ -1,0 +1,955 @@
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/dstest/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/dstest/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/dstest/test/p2p_client/config/routes.rb:1)
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_61271440__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_42755100__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_61472360__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_49707420__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_61876480__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_59188340__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_62315560__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_59650120__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_17454660__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_47457520__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_61572560__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_49472720__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_61802720__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_59101820__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_62226480__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_59498640__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_62464280__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_60237100__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_22839840__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_60216240__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_22803240__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_60866680__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_38223520__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_61126040__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_44793060__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_61385080__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_48048820__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_61720920__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_58945660__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_61756520__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_58994640__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_62115420__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_59477720__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_62439260__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_60231360__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_22213580__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_60878780__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_38247140__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_61149260__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_39933440__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_61170580__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_44783100__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_61407000__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_48028860__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_61736260__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_58293080__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_62114420__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_59423020__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_62435460__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_59464360__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_62439280__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_60226580__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_22437540__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_60877400__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_38347320__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_61153040__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_44839540__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_61399340__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb__3933869710031288698_47961820__3128391560582953132'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/dstest/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/dstest/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/dstest/test/p2p_client/config/routes.rb:1)
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb___1660449554442827934_51905860_3210243535549959728'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb___1660449554442827934_32942860_3210243535549959728'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb___1660449554442827934_52200860_3210243535549959728'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb___1660449554442827934_40015000_3210243535549959728'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb___1660449554442827934_52426540_3210243535549959728'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb___1660449554442827934_49718460_3210243535549959728'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb___1660449554442827934_52696720_3210243535549959728'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb___1660449554442827934_50062360_3210243535549959728'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb___1660449554442827934_52983100_3210243535549959728'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb___1660449554442827934_36929020_3210243535549959728'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb___1660449554442827934_52034320_3210243535549959728'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb___1660449554442827934_38231620_3210243535549959728'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb___1660449554442827934_52239860_3210243535549959728'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb___1660449554442827934_40044880_3210243535549959728'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb___1660449554442827934_52516420_3210243535549959728'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb___1660449554442827934_49713920_3210243535549959728'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb___1660449554442827934_52704940_3210243535549959728'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb___1660449554442827934_50070020_3210243535549959728'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: searchresults: SELECT "searchresults".* FROM "searchresults" WHERE (category = 'Women')):
+    6:     <th>Seller Ip address</th>
+    7:   </tr>
+    8: <%#@is_present = Searchresults.where("category = :ct", {:ct => cookies[:CURRCATEGORY]})%>
+    9: <% @is_present.each do |item| %>
+    10: 
+    11:   <tr>
+    12:     <td><%= item.search_string %></td>
+  app/views/rtable/index.html.erb:9:in `_app_views_rtable_index_html_erb___1660449554442827934_53054080_3210243535549959728'
+  app/controllers/rtable_controller.rb:4:in `index'
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/dstest/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/dstest/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/dstest/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/dstest/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/dstest/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/dstest/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/dstest/test/p2p_client/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/dstest/test/p2p_client/config/routes.rb:1)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /home/dstest/test/p2p_client/config/routes.rb:1)
+
+Timeout::Error (Timeout::Error):
+  app/controllers/items_controller.rb:312:in `index'
+
