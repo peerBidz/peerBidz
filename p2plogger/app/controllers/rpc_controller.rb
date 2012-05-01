@@ -11,7 +11,8 @@ class RpcController < ApplicationController
         # Delete these entries before we proceed
         
 	@check_ip = Sellerring.where("ip = ? and category = ?", address, category)
-	if @check_ip.count != 0
+        if is_seller == "t"
+    	if @check_ip.count != 0
 		if @check_ip.first.predecessor != predecessor
 			Sellerring.delete("ip = ? and category = ?", predecessor, category )
 		elsif @check_ip.first.successor != successor
@@ -19,6 +20,7 @@ class RpcController < ApplicationController
 		end
 		@check_ip.first.delete	
 	end
+        end
         # add the entries
         myentry = Sellerring.new
         myentry.ip = address
