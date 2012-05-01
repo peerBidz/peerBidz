@@ -33,7 +33,8 @@
 	<td> <%= @iteminfo["expires"] %> </td>
         
 	<td> <%= @iteminfo["highbid"] %> </td>
-        <td> <%= image_tag @iteminfo["image"] %> </td>
+        <% @sellip = Searchresults.where("id = ?", params[:id]).first %>
+        <td> <img src="http://<%=@sellip.ipaddress%>/public<%= @iteminfo["image"] %>" ></td>
 
 </tr>
 
