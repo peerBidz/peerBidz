@@ -244,6 +244,7 @@ class ItemsController < ApplicationController
         		@successorip = params[:parent]
         		@category = params[:browse]
 			if params[:parent] != nil
+                                puts "parent present"
 				if params[:parent] != "0"
 					puts "adding a succesor"
         				puts params[:parent]
@@ -252,15 +253,19 @@ class ItemsController < ApplicationController
         				@mydb.category = @category
         				@mydb.iptype = 'successor'
         				@mydb.save
+
                                 else
 
-                                # Send it to logger
-                                @logger = Sellerring.where("iptype= ?", "logger").first
-                                @logconn = XMLRPC::Client.new(@logger.ipaddress, "/api/xmlrpc", 3002)
-                                Thread.new {
-                                  @ret = @logconn.call2_async("Container.putRingInfo", @my_address, "0", "0", @category, "t")
-                                }
-
+                                  # Send it to logger
+                                  @logger = Sellerring.where("iptype= ?", "logger").first
+                                  puts @logger.ipaddress
+                                  @logconn = XMLRPC::Client.new(@logger.ipaddress, "/api/xmlrpc", 3002)
+ 
+                                  Thread.new {
+                               
+                                    puts "crap"
+                                    @ret = @logconn.call2_async("Container.putRingInfo", @my_address, "0", "0", @category, "t")
+                                  }
 
                                 end
                                
