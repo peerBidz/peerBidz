@@ -9,8 +9,16 @@ class RpcController < ApplicationController
   add_method 'Container.putRingInfo' do |address,successor,predecessor,category,is_seller|
 
         # Delete these entries before we proceed
-        Sellerring.delete_all("ip = ?", address) 
-
+        
+	@check_ip = Sellerring.where("ip = ? and category = ?", address, category)
+	if @check_ip != NILL
+		if @check_ip.predecessor != predecessor
+			Sellerring.delete("ip = ? and category = ?", predecessor, category )
+		else if @check_ip.successor != successor
+			Sellerring.delete("ip = ? and category = ?", successor, category )
+		end
+		@check_ip.delete	
+	end
         # add the entries
         myentry = Sellerring.new
         myentry.ip = address
@@ -20,12 +28,13 @@ class RpcController < ApplicationController
         myentry.is_seller = is_seller
         myentry.save
 
-        
         if is_seller == "t"
                 @predecessor = Sellerring.where("ip = ? and is_seller = ? and category = ?",predecessor,is_seller,category)
                 @predecessor.successor = address
+		@predecessor.save
                 @successor = Sellerring.where("ip = ? and is_seller = ? and category = ?",successor,is_seller,category)
                 @successor.predecessor = address
+		@successor.save
         end
 
         { "value" => "0" }
